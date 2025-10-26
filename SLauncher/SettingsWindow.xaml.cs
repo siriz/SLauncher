@@ -331,12 +331,12 @@ panel.Children.Add(modifierCombo);
    /// </summary>
    private void UpdateSettingsWindowUI()
     {
-            try
+      try
         {
  // Window title
      this.Title = LocalizationManager.GetString("SettingsTitle");
-         AppTitleBar.Title = LocalizationManager.GetString("SettingsTitle");
-    
+ AppTitleBar.Title = LocalizationManager.GetString("SettingsTitle");
+  
       // Close button
    CloseButton.Content = LocalizationManager.GetString("ButtonClose");
 
@@ -346,12 +346,27 @@ panel.Children.Add(modifierCombo);
  StartWithWindowsToggleSwitch.OnContent = LocalizationManager.GetString("ToggleSwitchOn");
 StartWithWindowsToggleSwitch.OffContent = LocalizationManager.GetString("ToggleSwitchOff");
 
-      // Grid alignment combo box items
-    if (GridAlignComboBox.Items.Count >= 2)
+  // Grid alignment combo box items - Need to recreate the items
+    string currentSelection = GridAlignComboBox.SelectedItem?.ToString();
+    GridAlignComboBox.Items.Clear();
+    GridAlignComboBox.Items.Add(LocalizationManager.GetString("GridAlignmentLeft"));
+    GridAlignComboBox.Items.Add(LocalizationManager.GetString("GridAlignmentCenter"));
+    
+    // Restore selection
+    if (currentSelection == "Left" || currentSelection == LocalizationManager.GetString("GridAlignmentLeft"))
     {
-        (GridAlignComboBox.Items[0] as string) = LocalizationManager.GetString("GridAlignmentLeft");
-      (GridAlignComboBox.Items[1] as string) = LocalizationManager.GetString("GridAlignmentCenter");
-  }
+        GridAlignComboBox.SelectedIndex = 0;
+    }
+    else if (currentSelection == "Center" || currentSelection == LocalizationManager.GetString("GridAlignmentCenter"))
+    {
+        GridAlignComboBox.SelectedIndex = 1;
+    }
+    else
+    {
+        // Default to user's saved setting
+   GridAlignComboBox.SelectedItem = UserSettingsClass.GridPosition == "Left" ? 
+            GridAlignComboBox.Items[0] : GridAlignComboBox.Items[1];
+    }
 
     // Cache buttons
      ClearCacheButton.Content = LocalizationManager.GetString("SettingsClearCacheButton");
@@ -361,13 +376,13 @@ StartWithWindowsToggleSwitch.OffContent = LocalizationManager.GetString("ToggleS
  catch (Exception ex)
      {
      System.Diagnostics.Debug.WriteLine($"[SettingsWindow] Error updating UI: {ex.Message}");
-            }
+          }
    }
 
         private void CloseButton_Click(object sender, RoutedEventArgs e)
         {
   // Close Window
-       this.Close();
+    this.Close();
   }
     }
 }
