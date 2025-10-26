@@ -266,8 +266,6 @@ SLauncher/
 - システムトレイ統合
 - ファビコンキャッシング
 
-完全な変更履歴については[CHANGELOG.md](CHANGELOG.md)を参照してください。
-
 ---
 
 <div align="center">

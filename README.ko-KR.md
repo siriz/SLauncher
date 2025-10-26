@@ -266,8 +266,6 @@ SLauncher/
 - 시스템 트레이 통합
 - 파비콘 캐싱
 
-전체 변경 로그는 [CHANGELOG.md](CHANGELOG.md)를 참조하세요.
-
 ---
 
 <div align="center">

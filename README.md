@@ -266,8 +266,6 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 - System tray integration
 - Favicon caching
 
-See full changelog in [CHANGELOG.md](CHANGELOG.md)
-
 ---
 
 <div align="center">
