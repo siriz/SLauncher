@@ -27,7 +27,8 @@
         <Grid
             x:Name="Container"
             VerticalAlignment="Stretch"
-            Loaded="Container_Loaded">
+            Loaded="Container_Loaded"
+            PointerWheelChanged="Container_PointerWheelChanged">
             <Grid.Background>
                 <!--  Fallback solid colour in case both Mica and Acrylic are unsupported  -->
                 <SolidColorBrush

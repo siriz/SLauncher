@@ -289,11 +289,11 @@ Microsoft.UI.Xaml.Controls.ToolTipService.SetToolTip(SettingsButton, Localizatio
         /// <summary>
         /// Handle Ctrl + Mouse Wheel for icon scaling
         /// </summary>
-        private void ItemsGridView_PointerWheelChanged(object sender, Microsoft.UI.Xaml.Input.PointerRoutedEventArgs e)
-        {
+        private void Container_PointerWheelChanged(object sender, Microsoft.UI.Xaml.Input.PointerRoutedEventArgs e)
+     {
          try
             {
-        var pointer = e.GetCurrentPoint(ItemsGridView);
+   var pointer = e.GetCurrentPoint(Container);
       var properties = pointer.Properties;
    
          // Check if Ctrl key is pressed
@@ -301,18 +301,18 @@ Microsoft.UI.Xaml.Controls.ToolTipService.SetToolTip(SettingsButton, Localizatio
   .HasFlag(Windows.UI.Core.CoreVirtualKeyStates.Down);
 
    if (ctrlPressed && IconScaleSlider != null)
-         {
-          // Prevent default scrolling behavior
+    {
+        // Prevent default scrolling behavior
         e.Handled = true;
        
        // Get mouse wheel delta (positive = scroll up, negative = scroll down)
       int wheelDelta = properties.MouseWheelDelta;
      
-           // Calculate new scale value
+         // Calculate new scale value
                // Each wheel "click" changes by 0.1
       double scaleChange = (wheelDelta > 0) ? 0.1 : -0.1;
      double newScale = Math.Round(IconScaleSlider.Value + scaleChange, 2);
-           
+   
  // Clamp to min/max values
      newScale = Math.Max(0.25, Math.Min(6.00, newScale));
    
@@ -321,9 +321,18 @@ Microsoft.UI.Xaml.Controls.ToolTipService.SetToolTip(SettingsButton, Localizatio
             }
         }
          catch (Exception ex)
-            {
-         System.Diagnostics.Debug.WriteLine($"Error handling mouse wheel: {ex}");
+    {
+   System.Diagnostics.Debug.WriteLine($"Error handling mouse wheel: {ex}");
    }
+        }
+
+    /// <summary>
+        /// Handle Ctrl + Mouse Wheel on ItemsGridView (for backward compatibility)
+     /// </summary>
+        private void ItemsGridView_PointerWheelChanged(object sender, Microsoft.UI.Xaml.Input.PointerRoutedEventArgs e)
+     {
+            // Delegate to Container handler
+ Container_PointerWheelChanged(sender, e);
         }
 
     private void SettingsButton_Click(object sender, RoutedEventArgs e)
