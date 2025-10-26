@@ -1,97 +1,73 @@
 # SLauncher
 
-**Modern app launcher for Windows** - Built with WinUI 3
+<div align="center">
 
-[![.NET 8](https://img.shields.io/badge/.NET-8.0-512BD4?logo=.net)](https://dotnet.microsoft.com/)
-[![WinUI 3](https://img.shields.io/badge/WinUI-3-0078D4?logo=windows)](https://microsoft.github.io/microsoft-ui-xaml/)
-[![License](https://img.shields.io/badge/license-MIT-green)](LICENSE.txt)
+**A modern, multi-language app launcher for Windows**
+
+[![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
+[![.NET](https://img.shields.io/badge/.NET-8.0-512BD4)](https://dotnet.microsoft.com/download)
+[![WinUI 3](https://img.shields.io/badge/WinUI-3-0078D4)](https://microsoft.github.io/microsoft-ui-xaml/)
+
+[Features](#-features) ? [Installation](#-installation) ? [Usage](#-usage) ? [Building](#-building-from-source) ? [Contributing](#-contributing)
+
+</div>
 
 ---
 
-## ?? Screenshots
+## ?? Features
 
-### Main Window
-![Main Window](.github/images/main-window.png)
-*Organize your apps and shortcuts with a clean, modern interface*
-
-### Tab Management
-![Tab Management](.github/images/tab-management.png)
-*Multiple tabs with color coding for better organization*
+### Core Functionality
+- ? **Quick Launch** - Access your favorite apps, folders, and websites instantly
+- ?? **Global Hotkey** - Show/hide launcher from anywhere (default: `Ctrl + Space`)
+- ?? **Tab Organization** - Organize items into multiple tabs with custom names and colors
+- ??? **Drag & Drop** - Easy item management with intuitive drag-and-drop
+- ?? **Smart Search** - Find items or directly open files/folders/URLs from search
+- ?? **Icon Scaling** - Adjust icon size with slider or `Ctrl + Mouse Wheel` (0.25x - 6.00x)
 
 ### Multi-Language Support
-![Multi-Language](.github/images/multi-language.png)
-*Switch between English, Korean, and Japanese in real-time*
+- ???? **English**
+- ???? **и措橫** (Korean)
+- ???? **擨塓槧** (Japanese)
+- ? Real-time language switching - No restart required!
 
-### Settings
-![Settings Window](.github/images/settings.png)
-*Customize your experience with various settings*
+### Modern UI
+- ?? **Windows 11 Design** - Native WinUI 3 with Mica/Acrylic effects
+- ?? **Theme Support** - Automatically follows system dark/light theme
+- ?? **Fullscreen Mode** - Immersive launcher experience
+- ?? **Grid Alignment** - Choose between Left or Center alignment
+- ?? **Tab Colors** - 8 preset colors for tab customization
 
----
-
-## ? Features
-
-- ?? **Tab Support** - Organize your apps and shortcuts into multiple tabs
-- ?? **Multi-Language** - English, Korean (и措橫), Japanese (擨塓槧)
-- ?? **Real-time Language Switching** - No restart required
-- ?? **Global Hotkey** - Quick access with Ctrl+Space
-- ?? **System Tray** - Minimize to tray and quick actions
-- ?? **Customizable Tabs** - Rename and color-code your tabs
-- ??? **Icon Scaling** - Adjust icon sizes with Ctrl+Mouse Wheel
-- ?? **Linked Folders** - Auto-sync folder contents
-- ?? **Website Shortcuts** - Add websites with favicons
-- ?? **Portable** - All settings in AppData folder
+### Performance & Portability
+- ?? **Portable** - All data stored in executable folder (`UserCache/`)
+- ?? **Fast Startup** - Cached data for instant loading
+- ?? **Favicon Cache** - Website icons cached locally
+- ?? **Lightweight** - Minimal resource usage
 
 ---
 
-## ?? Quick Start
+## ?? Installation
 
 ### Requirements
-- Windows 10 version 1809 (build 17763) or later
-- Windows 11 recommended
-- .NET 8 Runtime (included in self-contained builds)
+- **Windows 10** version 1809 (Build 17763) or later
+- **Windows 11** (recommended for best experience)
+- **.NET 8.0 Runtime** (included in self-contained builds)
 
-### Installation
+### Quick Install
+1. Download the latest release from [Releases](https://github.com/yourusername/SLauncher/releases)
+2. Extract the ZIP file to any folder
+3. Run `SLauncher.exe`
+4. (Optional) Enable "Start with Windows" in Settings
 
-1. **Download** the latest release from [Releases](../../releases)
-2. **Extract** the ZIP file
-3. **Run** `SLauncher.exe`
-
----
-
-## ?? Documentation
-
-Comprehensive documentation is available in the [`docs`](docs/) folder:
-
-### Getting Started
-- [README](docs/README.md) - Original README with detailed information
-- [VS Build Guide](docs/VS-BUILD-GUIDE.md) - Building from source
-
-### Features
-- [Localization](docs/LOCALIZATION-README.md) - Multi-language support details
-- [Tab Feature](docs/TAB-FEATURE-COMPLETE.md) - Tab management guide
-- [Global Hotkey](docs/GLOBAL-HOTKEY-COMPLETE.md) - Hotkey configuration
-- [System Tray](docs/SYSTEM-TRAY-IMPLEMENTATION.md) - Tray icon functionality
-
-### Deployment
-- [Deployment Guide](docs/DEPLOYMENT-GUIDE.md) - Distribution options
-- [Portable Build](docs/PORTABLE-SELFCONTAINED-GUIDE.md) - Self-contained builds
-- [Air-Gapped Deployment](docs/AIR-GAPPED-DEPLOYMENT.md) - Offline installation
-
-### Development
-- [MainWindow Refactoring](docs/MAINWINDOW-REFACTORING-COMPLETE.md) - Code structure
-- [Bug Fixes](docs/) - Various bug fix documentation
-
----
-
-## ?? Supported Languages
-
-| Language | Code | Status |
-|----------|------|--------|
-| ???? English | en-US | ? Complete |
-| ???? и措橫 | ko-KR | ? Complete |
-| ???? 擨塓槧 | ja-JP | ? Complete |
-
-Change language in **Settings** ⊥ **Language** (no restart required!)
+### Portable Mode
+All settings and data are stored in the `UserCache` folder next to the executable:
+```
+SLauncher/
+戍式式 SLauncher.exe
+戌式式 UserCache/
+    戍式式 Settings/   # User preferences
+    戍式式 Files/        # Item data
+  戌式式 FaviconCache/    # Website icons
+```
 
 ---
 
@@ -99,75 +75,244 @@ Change language in **Settings** ⊥ **Language** (no restart required!)
 
 ### Adding Items
 
-1. **Files**: Click "Add File" button or drag & drop
-2. **Folders**: Click "Add Folder" button
-3. **Websites**: Click "Add Website" button and enter URL
+#### Method 1: Buttons
+- **Add File**: Click button and select `.exe`, `.lnk`, or any file
+- **Add Folder**: Click button and select any folder
+- **Add Website**: Click button and enter URL (e.g., `https://github.com`)
 
-### Managing Tabs
+#### Method 2: Drag & Drop
+- Drag files, folders, or shortcuts directly into the window
+- Drag between tabs to move items
+- Drag one item onto another to create a group
 
-- **New Tab**: Click the `+` button
-- **Rename Tab**: Right-click tab ⊥ Rename
-- **Change Color**: Right-click tab ⊥ Change Color
-- **Delete Tab**: Right-click tab ⊥ Delete
+### Managing Items
+
+| Action | Method |
+|--------|--------|
+| **Edit** | Right-click item ⊥ Edit |
+| **Delete** | Right-click item ⊥ Delete or press `Delete` key |
+| **Create Group** | Drag one item onto another |
+| **Reorder** | Drag items to new positions |
+
+### Tab Management
+
+#### Creating Tabs
+- Click **+** button next to tabs
+- Each tab can have different items and settings
+
+#### Tab Options (Right-click tab)
+- **Rename** - Give tab a custom name
+- **Change Color** - Choose from 8 preset colors
+- **Delete** - Remove tab (requires confirmation if has items)
+
+### Search
+
+The search box supports multiple input types:
+
+| Input Type | Example | Result |
+|------------|---------|--------|
+| **Item Name** | `notepad` | Search through all items |
+| **File Path** | `C:\Windows\notepad.exe` | Open file directly |
+| **Folder Path** | `C:\Users\Documents` | Open folder in Explorer |
+| **Website URL** | `https://google.com` | Open in default browser |
+| **Search Query** | `search:keyword` | Search with default browser |
 
 ### Keyboard Shortcuts
 
-- `Ctrl+Space` - Show/Hide SLauncher (global hotkey)
-- `Ctrl+Mouse Wheel` - Adjust icon size
-- `Enter` in search - Launch selected item
+| Shortcut | Action |
+|----------|--------|
+| `Ctrl + Space` | Show/hide launcher (customizable in Settings) |
+| `Ctrl + Mouse Wheel` | Adjust icon size (works anywhere in window) |
+| `Delete` | Delete selected item |
+| `Esc` | Close launcher (in fullscreen mode) |
+| `Enter` | Open first search result |
+
+### Icon Scaling
+
+Adjust icon size using:
+- **Slider** in bottom-right corner
+- **Ctrl + Mouse Wheel** anywhere in the window
+- Range: 0.25x to 6.00x
 
 ---
 
-## ?? Building from Source
+## ?? Settings
+
+### General Settings
+- **Enable Fullscreen** - Use launcher in fullscreen mode
+- **Grid Alignment** - Left (fills width) or Center (fixed width)
+- **Start with Windows** - Launch automatically at startup
+- **Global Hotkey** - Customize show/hide hotkey
+  - Modifiers: Ctrl, Alt, Shift, Ctrl+Shift, Ctrl+Alt
+  - Keys: Space, Tab, Enter, Esc, F1-F4
+- **Language** - Select preferred language (English, Korean, Japanese)
+
+### Cache Management
+- **View Cache Size** - Monitor favicon cache usage
+- **Clear Cache** - Remove all cached website icons
+- **Open Cache Folder** - Access cache directory directly
+- **Cache Location** - Portable: `UserCache\FaviconCache\`
+
+---
+
+## ??? Building from Source
 
 ### Prerequisites
-- Visual Studio 2022 (17.8 or later)
-- .NET 8 SDK
-- Windows App SDK 1.6
+- **Visual Studio 2022** (17.8 or later)
+  - Workload: ".NET Desktop Development"
+  - Component: "Windows App SDK C# Templates"
+- **Windows App SDK 1.5** or later
+- **.NET 8.0 SDK**
 
-### Build Steps
+### Clone and Build
 
-```powershell
+```bash
 # Clone repository
 git clone https://github.com/yourusername/SLauncher.git
 cd SLauncher
 
-# Restore packages
+# Restore NuGet packages
 dotnet restore
 
-# Build
+# Build solution
 dotnet build -c Release
+
+# Or open in Visual Studio
+start SLauncher.sln
 ```
 
-See [VS Build Guide](docs/VS-BUILD-GUIDE.md) for detailed instructions.
-
----
-
-## ??? Project Structure
+### Project Structure
 
 ```
 SLauncher/
-戍式式 SLauncher/         # Main WinUI 3 application
-弛 戍式式 Classes/         # Core logic and helpers
-弛   戍式式 Controls/  # Custom UI controls
-弛   戍式式 Strings/        # Localization resources
-弛   戌式式 Resources/       # Images and icons
-戍式式 WinFormsClassLibrary/      # WinForms interop (for file picker)
-戍式式 Setup/        # Installer scripts
-戌式式 docs/ # Documentation
+戍式式 SLauncher/              # Main WinUI 3 project
+弛   戍式式 Classes/       # Core classes
+弛   弛   戍式式 LocalizationManager.cs   # Multi-language support
+弛   弛   戍式式 UserSettingsClass.cs     # Settings management
+弛   弛   戍式式 GlobalHotkeyManager.cs   # Hotkey registration
+弛   弛   戌式式 IconHelpers.cs       # Icon extraction & cache
+弛   戍式式 Controls/           # Custom controls
+弛   弛   戍式式 GridViewTile.xaml    # App tile control
+弛   弛   戍式式 GridViewTileGroup.xaml   # Group control
+弛   弛   戌式式 AboutSectionControl.xaml # About page
+弛   戍式式 Strings/  # Localization resources
+弛   弛 戍式式 en-US/Resources.resw     # English
+弛   弛   戍式式 ko-KR/Resources.resw     # Korean
+弛   弛   戌式式 ja-JP/Resources.resw# Japanese
+弛   戍式式 MainWindow*.cs  # Main window (partial classes)
+弛   弛   戍式式 MainWindow.xaml.cs       # Main logic
+弛   弛   戍式式 MainWindow.UI.cs   # UI management
+弛   弛   戍式式 MainWindow.Tabs.cs       # Tab management
+弛   弛戍式式 MainWindow.Items.cs      # Item management
+弛   弛   戍式式 MainWindow.DragDrop.cs# Drag & drop
+弛   弛   戍式式 MainWindow.Search.cs     # Search logic
+弛   弛   戌式式 MainWindow.Hotkeys.cs    # Hotkey & tray
+弛   戌式式 SettingsWindow*.cs  # Settings window (partial classes)
+弛       戍式式 SettingsWindow.xaml.cs      # Main logic
+弛       戍式式 SettingsWindow.Localization.cs # Language UI
+弛       戍式式 SettingsWindow.Cache.cs     # Cache management
+弛       戍式式 SettingsWindow.Hotkey.cs    # Hotkey config
+弛       戌式式 SettingsWindow.Settings.cs  # Settings toggles
+戌式式 WinFormsClassLibrary/   # Helper library (file dialogs)
 ```
+
+### Partial Classes Pattern
+
+Both `MainWindow` and `SettingsWindow` use partial classes for better code organization:
+- Each partial class file handles a specific feature area
+- Makes code easier to navigate and maintain
+- Follows the same pattern as `MainWindow` for consistency
+
+---
+
+## ?? Localization
+
+### Supported Languages
+
+| Language | Code | Status | Resources |
+|----------|------|--------|-----------|
+| ???? English | en-US | ? Complete | 90 strings |
+| ???? и措橫 | ko-KR | ? Complete | 91 strings |
+| ???? 擨塓槧 | ja-JP | ? Complete | 91 strings |
+
+### Adding New Language
+
+1. **Create Resource File**
+   ```
+   SLauncher/Strings/{language-code}/Resources.resw
+   ```
+
+2. **Copy Template**
+   ```bash
+   cp SLauncher/Strings/en-US/Resources.resw SLauncher/Strings/{language-code}/
+   ```
+
+3. **Translate**
+   - Open `Resources.resw` in Visual Studio
+   - Translate `<value>` content (keep `<data name>` unchanged)
+   - Test UI layout (some languages are longer)
+
+4. **Add to Settings**
+   ```xaml
+   <!-- SettingsWindow.xaml -->
+   <ComboBox x:Name="LanguageComboBox">
+    <ComboBoxItem Content="Your Language Name" Tag="{language-code}" />
+   </ComboBox>
+   ```
+
+5. **Test**
+   - Build and run
+   - Select new language in Settings ⊥ Language
+   - Verify all UI elements display correctly
+
+### Translation Guidelines
+- Keep placeholders: `{0}`, `{1}` (used for string formatting)
+- Maintain line breaks and formatting
+- Use native conventions (punctuation, quotes)
+- Test with long translations (may affect layout)
+- Keep technical terms consistent (e.g., "cache", "hotkey")
 
 ---
 
 ## ?? Contributing
 
-Contributions are welcome! Please feel free to submit a Pull Request.
+Contributions are welcome! Here's how you can help:
 
-### Areas for Contribution
-- ?? Translations (more languages)
-- ?? Bug fixes
-- ? New features
-- ?? Documentation improvements
+### Ways to Contribute
+- ?? **Translations** - Add new languages or improve existing ones
+- ?? **Bug Reports** - Report issues on [GitHub Issues](https://github.com/yourusername/SLauncher/issues)
+- ? **Feature Requests** - Suggest new features
+- ?? **Code** - Submit pull requests
+- ?? **Documentation** - Improve README or code comments
+
+### Development Workflow
+1. **Fork** the repository
+2. **Clone** your fork
+   ```bash
+   git clone https://github.com/your-username/SLauncher.git
+   ```
+3. **Create** feature branch
+   ```bash
+   git checkout -b feature/AmazingFeature
+   ```
+4. **Make** changes and test thoroughly
+5. **Commit** with clear messages
+ ```bash
+   git commit -m "feat: Add amazing feature"
+   ```
+6. **Push** to your fork
+   ```bash
+   git push origin feature/AmazingFeature
+   ```
+7. **Open** Pull Request
+
+### Code Style Guidelines
+- Follow existing code patterns
+- Use meaningful variable/method names
+- Add XML comments for public methods
+- Keep methods focused (single responsibility)
+- Use partial classes for large files
+- Add localization for all UI text
 
 ---
 
@@ -175,30 +320,57 @@ Contributions are welcome! Please feel free to submit a Pull Request.
 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
+### Third-Party Libraries
+- **WinUI 3** - MIT License
+- **CommunityToolkit.WinUI** - MIT License
+- **WinUIEx** - MIT License
+- **System.Drawing.Common** - MIT License
+
 ---
 
 ## ?? Acknowledgments
 
-- **WinUI 3** - Modern Windows UI framework
-- **CommunityToolkit** - WinUI extensions
-- **WinUIEx** - Window management utilities
-- **System.Drawing.Common** - Icon extraction
+- **Based on**: [LauncherX](https://github.com/Lolle2000la/LauncherX) by Lolle2000la
+- **UI Framework**: [WinUI 3](https://microsoft.github.io/microsoft-ui-xaml/)
+- **Community Toolkit**: [Windows Community Toolkit](https://github.com/CommunityToolkit/Windows)
+- **Window Management**: [WinUIEx](https://github.com/dotMorten/WinUIEx)
+- **Icons**: [Segoe Fluent Icons](https://docs.microsoft.com/en-us/windows/apps/design/style/segoe-fluent-icons-font)
 
 ---
 
-## ?? Contact
+## ?? Support
 
-- **Issues**: [GitHub Issues](../../issues)
-- **Discussions**: [GitHub Discussions](../../discussions)
+- **Issues**: [GitHub Issues](https://github.com/yourusername/SLauncher/issues)
+- **Discussions**: [GitHub Discussions](https://github.com/yourusername/SLauncher/discussions)
+- **Email**: your.email@example.com
 
 ---
+
+## ?? Changelog
+
+### v2.2.0 (Latest)
+- ? Multi-language support (English, Korean, Japanese)
+- ? Real-time language switching
+- ? Partial class refactoring for better code organization
+- ? Window-wide Ctrl+MouseWheel icon scaling
+- ?? Fixed Grid Alignment localization
+- ?? Fixed Cache Management subtitle localization
+- ?? Comprehensive localization (90+ strings per language)
+
+### v2.1.x
+- Tab management with colors
+- Global hotkey support
+- System tray integration
+- Favicon caching
+
+See full changelog in [CHANGELOG.md](CHANGELOG.md)
+
+---
+
+<div align="center">
 
 **Made with ?? for Windows power users**
 
----
+[? Back to Top](#slauncher)
 
-## ?? Version
-
-**Current Version**: 2.1.2
-
-See [RELEASE-NOTES-v2.1.2.md](docs/RELEASE-NOTES-v2.1.2.md) for changelog.
+</div>
