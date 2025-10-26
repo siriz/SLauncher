@@ -146,48 +146,47 @@ namespace SLauncher
       CloseButton.Content = LocalizationManager.GetString("ButtonClose");
 
   // Toggle switches
-                FullscreenToggleSwitch.OnContent = LocalizationManager.GetString("ToggleSwitchOn");
+       FullscreenToggleSwitch.OnContent = LocalizationManager.GetString("ToggleSwitchOn");
          FullscreenToggleSwitch.OffContent = LocalizationManager.GetString("ToggleSwitchOff");
-        StartWithWindowsToggleSwitch.OnContent = LocalizationManager.GetString("ToggleSwitchOn");
+      StartWithWindowsToggleSwitch.OnContent = LocalizationManager.GetString("ToggleSwitchOn");
        StartWithWindowsToggleSwitch.OffContent = LocalizationManager.GetString("ToggleSwitchOff");
 
-    // Grid alignment combo box items - Need to recreate the items
-          string currentSelection = GridAlignComboBox.SelectedItem?.ToString();
+  // Grid alignment combo box items - Save current setting value (Left/Center)
+  string savedPosition = UserSettingsClass.GridPosition;
         GridAlignComboBox.Items.Clear();
           GridAlignComboBox.Items.Add(LocalizationManager.GetString("GridAlignmentLeft"));
    GridAlignComboBox.Items.Add(LocalizationManager.GetString("GridAlignmentCenter"));
 
-    // Restore selection
-          if (currentSelection == "Left" || currentSelection == LocalizationManager.GetString("GridAlignmentLeft"))
+    // Restore selection based on saved position (not translated text)
+   if (savedPosition == "Left")
    {
   GridAlignComboBox.SelectedIndex = 0;
  }
-             else if (currentSelection == "Center" || currentSelection == LocalizationManager.GetString("GridAlignmentCenter"))
-            {
+           else if (savedPosition == "Center")
+    {
           GridAlignComboBox.SelectedIndex = 1;
   }
-           else
-                {
-          // Default to user's saved setting
-          GridAlignComboBox.SelectedItem = UserSettingsClass.GridPosition == "Left" ?
-           GridAlignComboBox.Items[0] : GridAlignComboBox.Items[1];
+       else
+  {
+          // Default to Left
+          GridAlignComboBox.SelectedIndex = 0;
   }
 
        // Cache buttons
          ClearCacheButton.Content = LocalizationManager.GetString("SettingsClearCacheButton");
 
-          // Update cache info
-                UpdateCacheInfo();
+// Update cache info
+           UpdateCacheInfo();
 
-                // Reload all XAML static texts
+      // Reload all XAML static texts
        LoadLocalizedXamlElements();
 
          System.Diagnostics.Debug.WriteLine("[SettingsWindow] UI updated with new language");
        }
-         catch (Exception ex)
+     catch (Exception ex)
             {
-                System.Diagnostics.Debug.WriteLine($"[SettingsWindow] Error updating UI: {ex.Message}");
-          }
+     System.Diagnostics.Debug.WriteLine($"[SettingsWindow] Error updating UI: {ex.Message}");
+    }
         }
 
         /// <summary>

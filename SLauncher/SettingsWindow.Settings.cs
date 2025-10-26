@@ -23,9 +23,17 @@ namespace SLauncher
         /// Handle grid alignment combo box selection change
       /// </summary>
         private void GridAlignComboBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
-        {
-  // Update UserSettingsClass
-       UserSettingsClass.GridPosition = GridAlignComboBox.SelectedItem.ToString();
+     {
+    // Save position as "Left" or "Center" (not translated text)
+       if (GridAlignComboBox.SelectedIndex == 0)
+     {
+                UserSettingsClass.GridPosition = "Left";
+  }
+    else if (GridAlignComboBox.SelectedIndex == 1)
+     {
+         UserSettingsClass.GridPosition = "Center";
+    }
+      
             UserSettingsClass.WriteSettingsFile();
 }
 
