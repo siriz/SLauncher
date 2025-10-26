@@ -2,6 +2,8 @@
 
 <div align="center">
 
+<img src=".github/images/icon.png" alt="SLauncher Logo" width="128" height="128">
+
 **A modern, multi-language app launcher for Windows**
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
@@ -48,6 +50,22 @@
 - 🚀 **Fast Startup** - Cached data for instant loading
 - 💾 **Favicon Cache** - Website icons cached locally
 - 🪶 **Lightweight** - Minimal resource usage
+
+---
+
+## 📸 Screenshots
+
+### Main Window
+<div align="center">
+<img src=".github/images/MainWindow.png" alt="Main Window" width="800">
+<p><i>Clean and intuitive interface with tab organization</i></p>
+</div>
+
+### Settings Window
+<div align="center">
+<img src=".github/images/SettingsWindow.png" alt="Settings Window" width="600">
+<p><i>Comprehensive settings with multi-language support</i></p>
+</div>
 
 ---
 

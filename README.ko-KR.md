@@ -2,6 +2,8 @@
 
 <div align="center">
 
+<img src=".github/images/icon.png" alt="SLauncher 로고" width="128" height="128">
+
 **Windows용 모던 멀티 언어 앱 런처**
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
@@ -48,6 +50,22 @@
 - 🚀 **빠른 시작** - 캐시된 데이터로 즉시 로딩
 - 💾 **파비콘 캐시** - 웹사이트 아이콘 로컬 캐싱
 - 🪶 **가벼움** - 최소한의 리소스 사용
+
+---
+
+## 📸 스크린샷
+
+### 메인 화면
+<div align="center">
+<img src=".github/images/MainWindow.png" alt="메인 화면" width="800">
+<p><i>탭 구성으로 깔끔하고 직관적인 인터페이스</i></p>
+</div>
+
+### 설정 화면
+<div align="center">
+<img src=".github/images/SettingsWindow.png" alt="설정 화면" width="600">
+<p><i>다국어 지원을 포함한 포괄적인 설정</i></p>
+</div>
 
 ---
 

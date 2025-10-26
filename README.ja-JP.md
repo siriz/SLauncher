@@ -2,6 +2,8 @@
 
 <div align="center">
 
+<img src=".github/images/icon.png" alt="SLauncher ロゴ" width="128" height="128">
+
 **Windows用モダンマルチ言語アプリランチャー**
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
@@ -48,6 +50,22 @@
 - 🚀 **高速起動** - キャッシュされたデータで即座にロード
 - 💾 **ファビコンキャッシュ** - ウェブサイトアイコンをローカルにキャッシュ
 - 🪶 **軽量** - 最小限のリソース使用
+
+---
+
+## 📸 スクリーンショット
+
+### メイン画面
+<div align="center">
+<img src=".github/images/MainWindow.png" alt="メイン画面" width="800">
+<p><i>タブ構成でクリーンで直感的なインターフェース</i></p>
+</div>
+
+### 設定画面
+<div align="center">
+<img src=".github/images/SettingsWindow.png" alt="設定画面" width="600">
+<p><i>多言語サポートを含む包括的な設定</i></p>
+</div>
 
 ---
 
