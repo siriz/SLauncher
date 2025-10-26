@@ -14,18 +14,20 @@ using System.Reflection;
 using System.Runtime.InteropServices.WindowsRuntime;
 using Windows.Foundation;
 using Windows.Foundation.Collections;
-using Windows.ApplicationModel.Resources;
+using SLauncher.Classes;
 
 namespace SLauncher.Controls
 {
     public sealed partial class AboutSectionControl : UserControl
     {
-        private ResourceLoader _resourceLoader;
-
         public AboutSectionControl()
         {
             this.InitializeComponent();
-            _resourceLoader = ResourceLoader.GetForViewIndependentUse();
+            this.Loaded += AboutSectionControl_Loaded;
+        }
+
+        private void AboutSectionControl_Loaded(object sender, RoutedEventArgs e)
+        {
             LoadLocalizedStrings();
         }
 
@@ -33,13 +35,13 @@ namespace SLauncher.Controls
         {
             try
             {
-                SubtitleText.Text = _resourceLoader.GetString("AboutSubtitle");
-                VersionLabel.Text = _resourceLoader.GetString("AboutVersion");
-                ForkByLabel.Text = _resourceLoader.GetString("AboutForkBy");
-                BasedOnLabel.Text = _resourceLoader.GetString("AboutBasedOn");
-                GitHubLabel.Text = _resourceLoader.GetString("AboutGitHub");
-                LicenseLabel.Text = _resourceLoader.GetString("AboutLicense");
-                LicenseLink.Content = _resourceLoader.GetString("AboutViewLicense");
+                SubtitleText.Text = LocalizationManager.GetString("AboutSubtitle");
+                VersionLabel.Text = LocalizationManager.GetString("AboutVersion");
+                ForkByLabel.Text = LocalizationManager.GetString("AboutForkBy");
+                BasedOnLabel.Text = LocalizationManager.GetString("AboutBasedOn");
+                GitHubLabel.Text = LocalizationManager.GetString("AboutGitHub");
+                LicenseLabel.Text = LocalizationManager.GetString("AboutLicense");
+                LicenseLink.Content = LocalizationManager.GetString("AboutViewLicense");
             }
             catch (Exception ex)
             {
