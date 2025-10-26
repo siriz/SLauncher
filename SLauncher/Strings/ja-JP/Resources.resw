@@ -179,11 +179,127 @@
   <data name="SettingsTitle" xml:space="preserve">
     <value>設定</value>
   </data>
+  <data name="SettingsSubtitle" xml:space="preserve">
+    <value>設定は変更されると自動的に保存されます。</value>
+  </data>
+  
+  <!-- Settings - General -->
+  <data name="SettingsFullscreenHeader" xml:space="preserve">
+    <value>全画面表示を有効にする</value>
+  </data>
+  <data name="SettingsFullscreenDescription" xml:space="preserve">
+    <value>SLauncherを全画面モードで使用します。</value>
+  </data>
+  <data name="SettingsGridAlignmentHeader" xml:space="preserve">
+    <value>グリッド配置</value>
+  </data>
+  <data name="SettingsGridAlignmentDescription" xml:space="preserve">
+    <value>アイテムが表示されるグリッドの配置方法を選択します。</value>
+  </data>
+  <data name="SettingsStartWithWindowsHeader" xml:space="preserve">
+    <value>Windowsと同時に起動</value>
+  </data>
+  <data name="SettingsStartWithWindowsDescription" xml:space="preserve">
+    <value>Windowsの起動時にSLauncherを自動的に起動します。</value>
+  </data>
+  <data name="SettingsGlobalHotkeyHeader" xml:space="preserve">
+    <value>グローバルホットキー</value>
+  </data>
+  <data name="SettingsGlobalHotkeyDescription" xml:space="preserve">
+    <value>どこからでもホットキーを押してSLauncherを表示/非表示。クリックして変更。</value>
+  </data>
+  <data name="SettingsLanguageHeader" xml:space="preserve">
+    <value>言語</value>
+  </data>
+  <data name="SettingsLanguageDescription" xml:space="preserve">
+    <value>お好みの言語を選択してください。適用には再起動が必要です。</value>
+  </data>
+  
+  <!-- Settings - Cache Management -->
+  <data name="SettingsCacheManagementTitle" xml:space="preserve">
+    <value>キャッシュ管理</value>
+  </data>
+  <data name="SettingsCacheManagementSubtitle" xml:space="preserve">
+    <value>ウェブサイトアイコンは実行ファイルフォルダにローカルにキャッシュされます。</value>
+  </data>
+  <data name="SettingsFaviconCacheHeader" xml:space="preserve">
+    <value>ファビコンキャッシュ</value>
+  </data>
+  <data name="SettingsFaviconCacheDescription" xml:space="preserve">
+    <value>キャッシュされたファビコンはUserCache\FaviconCache\フォルダに保存されます。</value>
+  </data>
+  <data name="SettingsCacheSizeCalculating" xml:space="preserve">
+  <value>キャッシュサイズ: 計算中...</value>
+  </data>
+  <data name="SettingsCacheSizeFormat" xml:space="preserve">
+    <value>キャッシュサイズ: {0}</value>
+  </data>
+  <data name="SettingsClearCacheButton" xml:space="preserve">
+    <value>キャッシュをクリア</value>
+  </data>
+  <data name="SettingsCacheLocationHeader" xml:space="preserve">
+    <value>キャッシュの場所</value>
+  </data>
+  <data name="SettingsCacheLocationDescription" xml:space="preserve">
+    <value>ポータブル: すべてのデータは実行ファイルフォルダ\UserCache\に保存されます</value>
+  </data>
+  <data name="SettingsOpenFolderButton" xml:space="preserve">
+    <value>フォルダを開く</value>
+  </data>
+  
+  <!-- Settings - About -->
+  <data name="SettingsAboutTitle" xml:space="preserve">
+    <value>について</value>
+  </data>
+  <data name="SettingsAboutHeader" xml:space="preserve">
+    <value>SLauncherについて</value>
+  </data>
+  <data name="SettingsAboutDescription" xml:space="preserve">
+    <value>SLauncherに関する情報を表示します。</value>
+  </data>
+  <data name="AboutSubtitle" xml:space="preserve">
+    <value>多言語サポート付きLauncherXのフォーク</value>
+  </data>
+  <data name="AboutVersion" xml:space="preserve">
+    <value>バージョン:</value>
+  </data>
+  <data name="AboutForkBy" xml:space="preserve">
+    <value>フォーク作成者:</value>
+  </data>
+  <data name="AboutBasedOn" xml:space="preserve">
+    <value>ベース:</value>
+  </data>
+  <data name="AboutGitHub" xml:space="preserve">
+    <value>GitHub:</value>
+  </data>
+  <data name="AboutLicense" xml:space="preserve">
+  <value>ライセンス:</value>
+  </data>
+  <data name="AboutViewLicense" xml:space="preserve">
+  <value>MITライセンスを表示</value>
+  </data>
+  
+  <!-- Toggle Switch -->
+  <data name="ToggleSwitchOn" xml:space="preserve">
+    <value>はい</value>
+  </data>
+  <data name="ToggleSwitchOff" xml:space="preserve">
+    <value>いいえ</value>
+  </data>
+  
+  <!-- Grid Alignment Options -->
+  <data name="GridAlignmentLeft" xml:space="preserve">
+ <value>左</value>
+  </data>
+  <data name="GridAlignmentCenter" xml:space="preserve">
+    <value>中央</value>
+  </data>
+  
   <data name="SettingsLanguage" xml:space="preserve">
     <value>言語</value>
   </data>
   <data name="SettingsLanguageDescription" xml:space="preserve">
-    <value>お好みの言語を選択してください</value>
+  <value>お好みの言語を選択してください</value>
   </data>
   <data name="SettingsRestartRequired" xml:space="preserve">
     <value>言語変更を適用するには再起動が必要です</value>

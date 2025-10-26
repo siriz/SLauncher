@@ -14,17 +14,37 @@ using System.Reflection;
 using System.Runtime.InteropServices.WindowsRuntime;
 using Windows.Foundation;
 using Windows.Foundation.Collections;
-
-// To learn more about WinUI, the WinUI project structure,
-// and more about our project templates, see: http://aka.ms/winui-project-info.
+using Windows.ApplicationModel.Resources;
 
 namespace SLauncher.Controls
 {
     public sealed partial class AboutSectionControl : UserControl
     {
+        private ResourceLoader _resourceLoader;
+
         public AboutSectionControl()
         {
             this.InitializeComponent();
+            _resourceLoader = ResourceLoader.GetForViewIndependentUse();
+            LoadLocalizedStrings();
+        }
+
+        private void LoadLocalizedStrings()
+        {
+            try
+            {
+                SubtitleText.Text = _resourceLoader.GetString("AboutSubtitle");
+                VersionLabel.Text = _resourceLoader.GetString("AboutVersion");
+                ForkByLabel.Text = _resourceLoader.GetString("AboutForkBy");
+                BasedOnLabel.Text = _resourceLoader.GetString("AboutBasedOn");
+                GitHubLabel.Text = _resourceLoader.GetString("AboutGitHub");
+                LicenseLabel.Text = _resourceLoader.GetString("AboutLicense");
+                LicenseLink.Content = _resourceLoader.GetString("AboutViewLicense");
+            }
+            catch (Exception ex)
+            {
+                System.Diagnostics.Debug.WriteLine($"[AboutSectionControl] Error loading localized strings: {ex.Message}");
+            }
         }
 
         private void VersionText_Loaded(object sender, RoutedEventArgs e)
@@ -36,4 +56,5 @@ namespace SLauncher.Controls
         }
     }
 }
+
 

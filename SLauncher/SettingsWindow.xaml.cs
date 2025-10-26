@@ -329,30 +329,46 @@ panel.Children.Add(modifierCombo);
         /// <summary>
         /// Update SettingsWindow UI with new language
    /// </summary>
-        private void UpdateSettingsWindowUI()
-   {
-     try
-   {
-       // Update window title
-    this.Title = LocalizationManager.GetString("SettingsTitle");
-       AppTitleBar.Title = LocalizationManager.GetString("SettingsTitle");
-  
-    // Update section headers and descriptions
-    // (Add more UI elements as needed)
-       
-  System.Diagnostics.Debug.WriteLine("[SettingsWindow] UI updated with new language");
-       }
-  catch (Exception ex)
-       {
-    System.Diagnostics.Debug.WriteLine($"[SettingsWindow] Error updating UI: {ex.Message}");
-}
-        }
+   private void UpdateSettingsWindowUI()
+    {
+            try
+        {
+ // Window title
+     this.Title = LocalizationManager.GetString("SettingsTitle");
+         AppTitleBar.Title = LocalizationManager.GetString("SettingsTitle");
+    
+      // Close button
+   CloseButton.Content = LocalizationManager.GetString("ButtonClose");
+
+   // Toggle switches
+    FullscreenToggleSwitch.OnContent = LocalizationManager.GetString("ToggleSwitchOn");
+  FullscreenToggleSwitch.OffContent = LocalizationManager.GetString("ToggleSwitchOff");
+ StartWithWindowsToggleSwitch.OnContent = LocalizationManager.GetString("ToggleSwitchOn");
+StartWithWindowsToggleSwitch.OffContent = LocalizationManager.GetString("ToggleSwitchOff");
+
+      // Grid alignment combo box items
+    if (GridAlignComboBox.Items.Count >= 2)
+    {
+        (GridAlignComboBox.Items[0] as string) = LocalizationManager.GetString("GridAlignmentLeft");
+      (GridAlignComboBox.Items[1] as string) = LocalizationManager.GetString("GridAlignmentCenter");
+  }
+
+    // Cache buttons
+     ClearCacheButton.Content = LocalizationManager.GetString("SettingsClearCacheButton");
+      
+    System.Diagnostics.Debug.WriteLine("[SettingsWindow] UI updated with new language");
+      }
+ catch (Exception ex)
+     {
+     System.Diagnostics.Debug.WriteLine($"[SettingsWindow] Error updating UI: {ex.Message}");
+            }
+   }
 
         private void CloseButton_Click(object sender, RoutedEventArgs e)
-     {
-    // Close Window
-      this.Close();
- }
+        {
+  // Close Window
+       this.Close();
+  }
     }
 }
 
