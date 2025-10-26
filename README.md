@@ -4,7 +4,27 @@
 
 [![.NET 8](https://img.shields.io/badge/.NET-8.0-512BD4?logo=.net)](https://dotnet.microsoft.com/)
 [![WinUI 3](https://img.shields.io/badge/WinUI-3-0078D4?logo=windows)](https://microsoft.github.io/microsoft-ui-xaml/)
-[![License](https://img.shields.io/badge/license-MIT-green)](LICENSE)
+[![License](https://img.shields.io/badge/license-MIT-green)](LICENSE.txt)
+
+---
+
+## ?? Screenshots
+
+### Main Window
+![Main Window](.github/images/main-window.png)
+*Organize your apps and shortcuts with a clean, modern interface*
+
+### Tab Management
+![Tab Management](.github/images/tab-management.png)
+*Multiple tabs with color coding for better organization*
+
+### Multi-Language Support
+![Multi-Language](.github/images/multi-language.png)
+*Switch between English, Korean, and Japanese in real-time*
+
+### Settings
+![Settings Window](.github/images/settings.png)
+*Customize your experience with various settings*
 
 ---
 
@@ -98,7 +118,7 @@ Change language in **Settings** ¡æ **Language** (no restart required!)
 
 ---
 
-## ??? Building from Source
+## ?? Building from Source
 
 ### Prerequisites
 - Visual Studio 2022 (17.8 or later)
@@ -123,7 +143,7 @@ See [VS Build Guide](docs/VS-BUILD-GUIDE.md) for detailed instructions.
 
 ---
 
-## ?? Project Structure
+## ??? Project Structure
 
 ```
 SLauncher/
