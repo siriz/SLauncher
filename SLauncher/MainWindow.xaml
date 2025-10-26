@@ -249,6 +249,7 @@
                             DragItemsCompleted="ItemsGridView_DragItemsCompleted"
                             DragItemsStarting="ItemsGridView_DragItemsStarting"
                             IsItemClickEnabled="True"
+                            PointerWheelChanged="ItemsGridView_PointerWheelChanged"
                             SelectionMode="Single">
                             <GridView.ItemContainerStyle>
                                 <Style TargetType="GridViewItem">
