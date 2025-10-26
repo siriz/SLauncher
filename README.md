@@ -55,7 +55,7 @@
 - **.NET 8.0 Runtime** (included in self-contained builds)
 
 ### Quick Install
-1. Download the latest release from [Releases](https://github.com/yourusername/SLauncher/releases)
+1. Download the latest release from [Releases](https://github.com/siriz/SLauncher/releases)
 2. Extract the ZIP file to any folder
 3. Run `SLauncher.exe`
 4. (Optional) Enable "Start with Windows" in Settings
@@ -170,7 +170,7 @@ Adjust icon size using:
 
 ```bash
 # Clone repository
-git clone https://github.com/yourusername/SLauncher.git
+git clone https://github.com/siriz/SLauncher.git
 cd SLauncher
 
 # Restore NuGet packages
@@ -188,27 +188,27 @@ start SLauncher.sln
 ```
 SLauncher/
 ├── SLauncher/   # Main WinUI 3 project
-│   ├── Classes/       # Core classes
-│ │   ├── LocalizationManager.cs   # Multi-language support
+│   ├── Classes/     # Core classes
+│   │   ├── LocalizationManager.cs   # Multi-language support
 │   │   ├── UserSettingsClass.cs     # Settings management
 │   │   ├── GlobalHotkeyManager.cs   # Hotkey registration
 │   │   └── IconHelpers.cs       # Icon extraction & cache
 │   ├── Controls/   # Custom controls
-│   │   ├── GridViewTile.xaml    # App tile control
+│   │   ├── GridViewTile.xaml  # App tile control
 │   │   ├── GridViewTileGroup.xaml   # Group control
 │   │   └── AboutSectionControl.xaml # About page
 │   ├── Strings/  # Localization resources
 │   │   ├── en-US/Resources.resw     # English
-│   │   ├── ko-KR/Resources.resw     # Korean
+│   │   ├── ko-KR/Resources.resw   # Korean
 │   │   └── ja-JP/Resources.resw# Japanese
 │   ├── MainWindow*.cs  # Main window (partial classes)
-│   │   ├── MainWindow.xaml.cs       # Main logic
+│   │   ├── MainWindow.xaml.cs  # Main logic
 │   │   ├── MainWindow.UI.cs   # UI management
 │   │   ├── MainWindow.Tabs.cs       # Tab management
 │   │   ├── MainWindow.Items.cs      # Item management
 │   │   ├── MainWindow.DragDrop.cs# Drag & drop
 │   │   ├── MainWindow.Search.cs     # Search logic
-│   │   └── MainWindow.Hotkeys.cs    # Hotkey & tray
+│   │   └── MainWindow.Hotkeys.cs# Hotkey & tray
 │   └── SettingsWindow*.cs  # Settings window (partial classes)
 │       ├── SettingsWindow.xaml.cs    # Main logic
 │       ├── SettingsWindow.Localization.cs # Language UI
@@ -246,7 +246,7 @@ Both `MainWindow` and `SettingsWindow` use partial classes for better code organ
 
 2. **Copy Template**
    ```bash
-   cp SLauncher/Strings/en-US/Resources.resw SLauncher/Strings/{language-code}/
+ cp SLauncher/Strings/en-US/Resources.resw SLauncher/Strings/{language-code}/
    ```
 
 3. **Translate**
@@ -282,7 +282,7 @@ Contributions are welcome! Here's how you can help:
 
 ### Ways to Contribute
 - 🌍 **Translations** - Add new languages or improve existing ones
-- 🐛 **Bug Reports** - Report issues on [GitHub Issues](https://github.com/yourusername/SLauncher/issues)
+- 🐛 **Bug Reports** - Report issues on [GitHub Issues](https://github.com/siriz/SLauncher/issues)
 - ✨ **Feature Requests** - Suggest new features
 - 💻 **Code** - Submit pull requests
 - 📖 **Documentation** - Improve README or code comments
@@ -342,8 +342,8 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 ## 📧 Support
 
-- **Issues**: [GitHub Issues](https://github.com/yourusername/SLauncher/issues)
-- **Discussions**: [GitHub Discussions](https://github.com/yourusername/SLauncher/discussions)
+- **Issues**: [GitHub Issues](https://github.com/siriz/SLauncher/issues)
+- **Discussions**: [GitHub Discussions](https://github.com/siriz/SLauncher/discussions)
 - **Email**: your.email@example.com
 
 ---
