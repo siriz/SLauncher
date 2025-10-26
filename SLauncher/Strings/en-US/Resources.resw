@@ -124,7 +124,7 @@
   </data>
   <!-- Tabs -->
   <data name="DefaultTabName" xml:space="preserve">
-    <value>All Items</value>
+    <value>Main</value>
   </data>
   <data name="NewTabName" xml:space="preserve">
     <value>New Tab {0}</value>
