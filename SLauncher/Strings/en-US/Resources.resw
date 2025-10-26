@@ -183,15 +183,15 @@
  <value>Settings are automatically saved once modified.</value>
   </data>
   
-  <!-- Settings - General -->
+<!-- Settings - General -->
   <data name="SettingsFullscreenHeader" xml:space="preserve">
-    <value>Enable fullscreen</value>
+ <value>Enable fullscreen</value>
   </data>
   <data name="SettingsFullscreenDescription" xml:space="preserve">
     <value>Use SLauncher in fullscreen mode.</value>
   </data>
   <data name="SettingsGridAlignmentHeader" xml:space="preserve">
-    <value>Grid alignment</value>
+<value>Grid alignment</value>
   </data>
   <data name="SettingsGridAlignmentDescription" xml:space="preserve">
     <value>Choose how to align the grid where your items are displayed.</value>
@@ -212,7 +212,10 @@
     <value>Language</value>
   </data>
   <data name="SettingsLanguageDescription" xml:space="preserve">
-    <value>Select your preferred language. Requires restart to apply.</value>
+<value>Select your preferred language. Requires restart to apply.</value>
+  </data>
+  <data name="HotkeyTooltip" xml:space="preserve">
+    <value>Click to change hotkey</value>
   </data>
   
   <!-- Settings - Cache Management -->
@@ -258,7 +261,7 @@
     <value>Are you sure you want to clear all cached website icons? They will be downloaded again when needed.</value>
   </data>
   <data name="DialogClearCacheConfirm" xml:space="preserve">
-    <value>Clear</value>
+ <value>Clear</value>
   </data>
   <data name="DialogSuccessTitle" xml:space="preserve">
     <value>Success</value>

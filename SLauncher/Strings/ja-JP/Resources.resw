@@ -146,7 +146,7 @@
     <value>緑</value>
   </data>
   <data name="ColorBlue" xml:space="preserve">
-    <value>青</value>
+    <value>青</vale>
   </data>
   <data name="ColorIndigo" xml:space="preserve">
     <value>藍</value>
@@ -214,6 +214,9 @@
   <data name="SettingsLanguageDescription" xml:space="preserve">
     <value>お好みの言語を選択してください。適用には再起動が必要です。</value>
   </data>
+  <data name="HotkeyTooltip" xml:space="preserve">
+    <value>クリックしてホットキーを変更</value>
+  </data>
   
   <!-- Settings - Cache Management -->
   <data name="SettingsCacheManagementTitle" xml:space="preserve">
@@ -270,7 +273,7 @@
     <value>グローバルホットキーを変更</value>
   </data>
   <data name="DialogHotkeySave" xml:space="preserve">
-    <value>保存</value>
+  <value>保存</value>
   </data>
   <data name="DialogRestartTitle" xml:space="preserve">
     <value>再起動が必要</value>
@@ -303,14 +306,14 @@
   </data>
   <data name="AboutForkBy" xml:space="preserve">
     <value>フォーク作成者:</value>
-  </data>
+</data>
   <data name="AboutBasedOn" xml:space="preserve">
     <value>ベース:</value>
   </data>
   <data name="AboutGitHub" xml:space="preserve">
     <value>GitHub:</value>
   </data>
-  <data name="AboutLicense" xml:space="preserve">
+<data name="AboutLicense" xml:space="preserve">
   <value>ライセンス:</value>
   </data>
   <data name="AboutViewLicense" xml:space="preserve">
@@ -335,7 +338,7 @@
   
   <data name="SettingsLanguage" xml:space="preserve">
     <value>言語</value>
-  </data>
+</data>
   <data name="SettingsLanguageDescription" xml:space="preserve">
   <value>お好みの言語を選択してください</value>
   </data>
