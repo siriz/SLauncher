@@ -1,6 +1,16 @@
 MIT License
 
-Copyright (c) 2025 siriz
+Original work Copyright (c) 2020-present Apollo199999999
+  Original repository: LauncherX (https://github.com/Apollo199999999/LauncherX)
+
+Modified work Copyright (c) 2025 SIRIZ (https://github.com/siriz)
+  This fork (SLauncher) includes significant modifications:
+  - Multi-language support (English, Korean, Japanese)
+  - Real-time language switching without restart
+  - Tab management system with color coding
+  - Enhanced UI/UX improvements
+  - System tray integration
+  - Global hotkey support (Ctrl+Space)
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
