@@ -348,7 +348,7 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 ## ?? Changelog
 
-### v2.2.0 (Latest)
+### v1.0.0 (Latest)
 - ? Multi-language support (English, Korean, Japanese)
 - ? Real-time language switching
 - ? Partial class refactoring for better code organization
@@ -357,7 +357,7 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 - ?? Fixed Cache Management subtitle localization
 - ?? Comprehensive localization (90+ strings per language)
 
-### v2.1.x
+### Previous Versions
 - Tab management with colors
 - Global hotkey support
 - System tray integration
