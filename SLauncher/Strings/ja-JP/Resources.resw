@@ -234,6 +234,9 @@
   <data name="SettingsCacheSizeFormat" xml:space="preserve">
     <value>キャッシュサイズ: {0}</value>
   </data>
+  <data name="CacheSizeEmpty" xml:space="preserve">
+    <value>空</value>
+  </data>
   <data name="SettingsClearCacheButton" xml:space="preserve">
     <value>キャッシュをクリア</value>
   </data>
@@ -245,6 +248,41 @@
   </data>
   <data name="SettingsOpenFolderButton" xml:space="preserve">
     <value>フォルダを開く</value>
+  </data>
+  
+  <!-- Dialog Messages -->
+  <data name="DialogClearCacheTitle" xml:space="preserve">
+    <value>キャッシュをクリア</value>
+  </data>
+  <data name="DialogClearCacheContent" xml:space="preserve">
+    <value>キャッシュされたすべてのウェブサイトアイコンを削除しますか？必要に応じて再ダウンロードされます。</value>
+  </data>
+  <data name="DialogClearCacheConfirm" xml:space="preserve">
+    <value>クリア</value>
+  </data>
+  <data name="DialogSuccessTitle" xml:space="preserve">
+    <value>成功</value>
+  </data>
+  <data name="DialogCacheCleared" xml:space="preserve">
+    <value>キャッシュが正常にクリアされました！</value>
+  </data>
+  <data name="DialogHotkeyTitle" xml:space="preserve">
+    <value>グローバルホットキーを変更</value>
+  </data>
+  <data name="DialogHotkeySave" xml:space="preserve">
+    <value>保存</value>
+  </data>
+  <data name="DialogRestartTitle" xml:space="preserve">
+    <value>再起動が必要</value>
+  </data>
+  <data name="DialogRestartContent" xml:space="preserve">
+    <value>ホットキーの変更を適用するにはSLauncherを再起動してください。</value>
+  </data>
+  <data name="HotkeyModifierLabel" xml:space="preserve">
+    <value>修飾キー:</value>
+  </data>
+  <data name="HotkeyKeyLabel" xml:space="preserve">
+    <value>キー:</value>
   </data>
   
   <!-- Settings - About -->

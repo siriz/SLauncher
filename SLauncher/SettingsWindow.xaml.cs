@@ -87,30 +87,30 @@ UpdateCacheInfo();
 
    private void UpdateCacheInfo()
         {
-            // Update cache size
+      // Update cache size
        long cacheSize = IconHelpers.GetFaviconCacheSize();
-            string sizeText = cacheSize == 0 ? "Empty" : 
+            string sizeText = cacheSize == 0 ? LocalizationManager.GetString("CacheSizeEmpty") : 
  cacheSize < 1024 ? $"{cacheSize} bytes" :
      cacheSize < 1024 * 1024 ? $"{cacheSize / 1024:F2} KB" :
       $"{cacheSize / (1024.0 * 1024.0):F2} MB";
      
-   CacheSizeTextBlock.Text = $"Cache size: {sizeText}";
+   CacheSizeTextBlock.Text = string.Format(LocalizationManager.GetString("SettingsCacheSizeFormat"), sizeText);
 
-          // Update cache location
+   // Update cache location
     CacheLocationTextBlock.Text = IconHelpers.GetFaviconCacheDirectory();
         }
 
       private async void ClearCacheButton_Click(object sender, RoutedEventArgs e)
-        {
-            // Show confirmation dialog
-            ContentDialog confirmDialog = new ContentDialog
     {
-        Title = "Clear Cache",
-             Content = "Are you sure you want to clear all cached website icons? They will be downloaded again when needed.",
-      PrimaryButtonText = "Clear",
-         CloseButtonText = "Cancel",
+     // Show confirmation dialog
+  ContentDialog confirmDialog = new ContentDialog
+    {
+ Title = LocalizationManager.GetString("DialogClearCacheTitle"),
+          Content = LocalizationManager.GetString("DialogClearCacheContent"),
+ PrimaryButtonText = LocalizationManager.GetString("DialogClearCacheConfirm"),
+   CloseButtonText = LocalizationManager.GetString("ButtonCancel"),
        DefaultButton = ContentDialogButton.Close,
-                XamlRoot = this.Content.XamlRoot
+    XamlRoot = this.Content.XamlRoot
             };
 
    var result = await confirmDialog.ShowAsync();
@@ -119,25 +119,25 @@ UpdateCacheInfo();
     {
      // Clear cache
      IconHelpers.ClearFaviconCache();
-       
-          // Update cache info
+ 
+     // Update cache info
         UpdateCacheInfo();
 
     // Show success message
     ContentDialog successDialog = new ContentDialog
    {
-        Title = "Success",
-              Content = "Cache cleared successfully!",
-         CloseButtonText = "OK",
+        Title = LocalizationManager.GetString("DialogSuccessTitle"),
+     Content = LocalizationManager.GetString("DialogCacheCleared"),
+         CloseButtonText = LocalizationManager.GetString("ButtonOK"),
           XamlRoot = this.Content.XamlRoot
-                };
+      };
              await successDialog.ShowAsync();
     }
-        }
+      }
 
         private void OpenCacheFolderButton_Click(object sender, RoutedEventArgs e)
         {
-            string cacheDir = IconHelpers.GetFaviconCacheDirectory();
+         string cacheDir = IconHelpers.GetFaviconCacheDirectory();
             
     // Create directory if it doesn't exist
    if (!Directory.Exists(cacheDir))
@@ -145,7 +145,7 @@ UpdateCacheInfo();
            Directory.CreateDirectory(cacheDir);
    }
 
-            // Open in Windows Explorer
+     // Open in Windows Explorer
 Process.Start("explorer.exe", cacheDir);
         }
 
@@ -154,13 +154,13 @@ Process.Start("explorer.exe", cacheDir);
   // Update UserSettingsClass
  UserSettingsClass.UseFullscreen = FullscreenToggleSwitch.IsOn;
    UserSettingsClass.WriteSettingsFile();
-        }
+    }
         
  private void GridAlignComboBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
  // Update UserSettingsClass
-            UserSettingsClass.GridPosition = GridAlignComboBox.SelectedItem.ToString();
-            UserSettingsClass.WriteSettingsFile();
+   UserSettingsClass.GridPosition = GridAlignComboBox.SelectedItem.ToString();
+ UserSettingsClass.WriteSettingsFile();
         }
 
    private void StartWithWindowsToggleSwitch_Toggled(object sender, RoutedEventArgs e)
@@ -178,16 +178,16 @@ private void UpdateHotkeyButtonText()
    }
 
   private async void HotkeyButton_Click(object sender, RoutedEventArgs e)
-  {
+{
     ContentDialog hotkeyDialog = new ContentDialog
         {
-   Title = "Change Global Hotkey",
+   Title = LocalizationManager.GetString("DialogHotkeyTitle"),
             Content = CreateHotkeyDialogContent(),
-  PrimaryButtonText = "Save",
-  CloseButtonText = "Cancel",
-            DefaultButton = ContentDialogButton.Primary,
+  PrimaryButtonText = LocalizationManager.GetString("DialogHotkeySave"),
+  CloseButtonText = LocalizationManager.GetString("ButtonCancel"),
+DefaultButton = ContentDialogButton.Primary,
   XamlRoot = this.Content.XamlRoot
-   };
+ };
 
   var result = await hotkeyDialog.ShowAsync();
 
@@ -213,26 +213,26 @@ private void UpdateHotkeyButtonText()
       // Show info that app needs restart
   ContentDialog restartDialog = new ContentDialog
      {
-    Title = "Restart Required",
-   Content = "Please restart SLauncher for the hotkey change to take effect.",
-CloseButtonText = "OK",
-         XamlRoot = this.Content.XamlRoot
+    Title = LocalizationManager.GetString("DialogRestartTitle"),
+   Content = LocalizationManager.GetString("DialogRestartContent"),
+CloseButtonText = LocalizationManager.GetString("ButtonOK"),
+      XamlRoot = this.Content.XamlRoot
   };
-            await restartDialog.ShowAsync();
+        await restartDialog.ShowAsync();
     }
-     }
+ }
 
         private StackPanel CreateHotkeyDialogContent()
    {
   var panel = new StackPanel { Spacing = 10 };
 
     // Modifier label
-   panel.Children.Add(new TextBlock { Text = "Modifier Key:", FontWeight = Microsoft.UI.Text.FontWeights.SemiBold });
+   panel.Children.Add(new TextBlock { Text = LocalizationManager.GetString("HotkeyModifierLabel"), FontWeight = Microsoft.UI.Text.FontWeights.SemiBold });
 
   // Modifier ComboBox
     var modifierCombo = new ComboBox { Width = 200, SelectedIndex = 0 };
   modifierCombo.Items.Add(new ComboBoxItem { Content = "Ctrl" });
-      modifierCombo.Items.Add(new ComboBoxItem { Content = "Alt" });
+modifierCombo.Items.Add(new ComboBoxItem { Content = "Alt" });
  modifierCombo.Items.Add(new ComboBoxItem { Content = "Shift" });
         modifierCombo.Items.Add(new ComboBoxItem { Content = "Ctrl+Shift" });
   modifierCombo.Items.Add(new ComboBoxItem { Content = "Ctrl+Alt" });
@@ -244,7 +244,7 @@ CloseButtonText = "OK",
   {
    string currentModifier = string.Join("+", parts.Take(parts.Length - 1));
       for (int i = 0; i < modifierCombo.Items.Count; i++)
-         {
+       {
          if ((modifierCombo.Items[i] as ComboBoxItem).Content.ToString() == currentModifier)
       {
       modifierCombo.SelectedIndex = i;
@@ -255,28 +255,28 @@ CloseButtonText = "OK",
 panel.Children.Add(modifierCombo);
 
      // Key label
-  panel.Children.Add(new TextBlock { Text = "Key:", FontWeight = Microsoft.UI.Text.FontWeights.SemiBold, Margin = new Thickness(0, 10, 0, 0) });
+  panel.Children.Add(new TextBlock { Text = LocalizationManager.GetString("HotkeyKeyLabel"), FontWeight = Microsoft.UI.Text.FontWeights.SemiBold, Margin = new Thickness(0, 10, 0, 0) });
 
      // Key ComboBox
        var keyCombo = new ComboBox { Width = 200, SelectedIndex = 0 };
     keyCombo.Items.Add(new ComboBoxItem { Content = "Space" });
   keyCombo.Items.Add(new ComboBoxItem { Content = "Tab" });
-      keyCombo.Items.Add(new ComboBoxItem { Content = "Enter" });
+    keyCombo.Items.Add(new ComboBoxItem { Content = "Enter" });
      keyCombo.Items.Add(new ComboBoxItem { Content = "Esc" });
             keyCombo.Items.Add(new ComboBoxItem { Content = "F1" });
   keyCombo.Items.Add(new ComboBoxItem { Content = "F2" });
-        keyCombo.Items.Add(new ComboBoxItem { Content = "F3" });
+     keyCombo.Items.Add(new ComboBoxItem { Content = "F3" });
    keyCombo.Items.Add(new ComboBoxItem { Content = "F4" });
 
      // Set current key
        if (parts.Length >= 2)
  {
-            string currentKey = parts[parts.Length - 1];
+        string currentKey = parts[parts.Length - 1];
  for (int i = 0; i < keyCombo.Items.Count; i++)
       {
       if ((keyCombo.Items[i] as ComboBoxItem).Content.ToString() == currentKey)
      {
-       keyCombo.SelectedIndex = i;
+    keyCombo.SelectedIndex = i;
       break;
  }
     }
@@ -295,8 +295,8 @@ panel.Children.Add(modifierCombo);
             {
     if (LanguageComboBox.Items[i] is ComboBoxItem item && 
     item.Tag?.ToString() == currentLanguage)
-      {
-      LanguageComboBox.SelectedIndex = i;
+  {
+   LanguageComboBox.SelectedIndex = i;
       return;
      }
    }
@@ -306,23 +306,23 @@ panel.Children.Add(modifierCombo);
         }
 
    private void LanguageComboBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
-        {
+     {
      if (LanguageComboBox.SelectedItem is ComboBoxItem selectedItem)
        {
    string newLanguageCode = selectedItem.Tag?.ToString();
         
    if (!string.IsNullOrEmpty(newLanguageCode))
        {
-     System.Diagnostics.Debug.WriteLine($"[SettingsWindow] Language changed to: {newLanguageCode}");
+  System.Diagnostics.Debug.WriteLine($"[SettingsWindow] Language changed to: {newLanguageCode}");
        
       // Save and apply language preference immediately
      LocalizationManager.ChangeLanguage(newLanguageCode);
     
      // Update settings window UI immediately
       UpdateSettingsWindowUI();
-      
+ 
  System.Diagnostics.Debug.WriteLine($"[SettingsWindow] Language applied in real-time");
-         }
+       }
  }
      }
 
@@ -331,8 +331,8 @@ panel.Children.Add(modifierCombo);
    /// </summary>
    private void UpdateSettingsWindowUI()
     {
-      try
-        {
+   try
+{
  // Window title
      this.Title = LocalizationManager.GetString("SettingsTitle");
  AppTitleBar.Title = LocalizationManager.GetString("SettingsTitle");
@@ -356,7 +356,7 @@ StartWithWindowsToggleSwitch.OffContent = LocalizationManager.GetString("ToggleS
     if (currentSelection == "Left" || currentSelection == LocalizationManager.GetString("GridAlignmentLeft"))
     {
         GridAlignComboBox.SelectedIndex = 0;
-    }
+ }
     else if (currentSelection == "Center" || currentSelection == LocalizationManager.GetString("GridAlignmentCenter"))
     {
         GridAlignComboBox.SelectedIndex = 1;
@@ -365,17 +365,20 @@ StartWithWindowsToggleSwitch.OffContent = LocalizationManager.GetString("ToggleS
     {
         // Default to user's saved setting
    GridAlignComboBox.SelectedItem = UserSettingsClass.GridPosition == "Left" ? 
-            GridAlignComboBox.Items[0] : GridAlignComboBox.Items[1];
+    GridAlignComboBox.Items[0] : GridAlignComboBox.Items[1];
     }
 
     // Cache buttons
      ClearCacheButton.Content = LocalizationManager.GetString("SettingsClearCacheButton");
+     
+     // Update cache size text (keeping the actual size, just translating "Cache size:")
+     UpdateCacheInfo();
       
     System.Diagnostics.Debug.WriteLine("[SettingsWindow] UI updated with new language");
       }
  catch (Exception ex)
      {
-     System.Diagnostics.Debug.WriteLine($"[SettingsWindow] Error updating UI: {ex.Message}");
+   System.Diagnostics.Debug.WriteLine($"[SettingsWindow] Error updating UI: {ex.Message}");
           }
    }
 

@@ -229,10 +229,13 @@
     <value>Cached favicons are stored in UserCache\FaviconCache\ folder.</value>
   </data>
   <data name="SettingsCacheSizeCalculating" xml:space="preserve">
-    <value>Cache size: Calculating...</value>
+  <value>Cache size: Calculating...</value>
   </data>
   <data name="SettingsCacheSizeFormat" xml:space="preserve">
     <value>Cache size: {0}</value>
+  </data>
+  <data name="CacheSizeEmpty" xml:space="preserve">
+    <value>Empty</value>
   </data>
   <data name="SettingsClearCacheButton" xml:space="preserve">
     <value>Clear Cache</value>
@@ -245,6 +248,41 @@
   </data>
   <data name="SettingsOpenFolderButton" xml:space="preserve">
     <value>Open Folder</value>
+  </data>
+  
+  <!-- Dialog Messages -->
+  <data name="DialogClearCacheTitle" xml:space="preserve">
+    <value>Clear Cache</value>
+  </data>
+  <data name="DialogClearCacheContent" xml:space="preserve">
+    <value>Are you sure you want to clear all cached website icons? They will be downloaded again when needed.</value>
+  </data>
+  <data name="DialogClearCacheConfirm" xml:space="preserve">
+    <value>Clear</value>
+  </data>
+  <data name="DialogSuccessTitle" xml:space="preserve">
+    <value>Success</value>
+  </data>
+  <data name="DialogCacheCleared" xml:space="preserve">
+    <value>Cache cleared successfully!</value>
+  </data>
+  <data name="DialogHotkeyTitle" xml:space="preserve">
+<value>Change Global Hotkey</value>
+  </data>
+  <data name="DialogHotkeySave" xml:space="preserve">
+    <value>Save</value>
+  </data>
+  <data name="DialogRestartTitle" xml:space="preserve">
+    <value>Restart Required</value>
+  </data>
+  <data name="DialogRestartContent" xml:space="preserve">
+  <value>Please restart SLauncher for the hotkey change to take effect.</value>
+  </data>
+  <data name="HotkeyModifierLabel" xml:space="preserve">
+    <value>Modifier Key:</value>
+  </data>
+  <data name="HotkeyKeyLabel" xml:space="preserve">
+    <value>Key:</value>
   </data>
   
   <!-- Settings - About -->
@@ -260,7 +298,7 @@
   <data name="AboutSubtitle" xml:space="preserve">
     <value>Fork of LauncherX with multi-language support</value>
   </data>
-  <data name="AboutVersion" xml:space="preserve">
+<data name="AboutVersion" xml:space="preserve">
     <value>Version:</value>
   </data>
   <data name="AboutForkBy" xml:space="preserve">
