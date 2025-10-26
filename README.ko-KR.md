@@ -2,377 +2,377 @@
 
 <div align="center">
 
-**Windows¿ë ¸ð´ø ¸ÖÆ¼ ¾ð¾î ¾Û ·±Ã³**
+**Windowsìš© ëª¨ë˜ ë©€í‹° ì–¸ì–´ ì•± ëŸ°ì²˜**
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
 [![.NET](https://img.shields.io/badge/.NET-8.0-512BD4)](https://dotnet.microsoft.com/download)
 [![WinUI 3](https://img.shields.io/badge/WinUI-3-0078D4)](https://microsoft.github.io/microsoft-ui-xaml/)
 
-**¾ð¾î:** [English](README.md) ? [ÇÑ±¹¾î](README.ko-KR.md) ? ìíÜâåÞ (ÁØºñÁß)
+**ì–¸ì–´:** [English](README.md) â€¢ [í•œêµ­ì–´](README.ko-KR.md) â€¢ æ—¥æœ¬èªž (ì¤€ë¹„ì¤‘)
 
-[±â´É](#-±â´É) ? [¼³Ä¡](#-¼³Ä¡) ? [»ç¿ë¹ý](#-»ç¿ë¹ý) ? [¼Ò½º ºôµå](#%EF%B8%8F-¼Ò½º¿¡¼­-ºôµå) ? [±â¿©](#-±â¿©ÇÏ±â)
+[ê¸°ëŠ¥](#-ê¸°ëŠ¥) â€¢ [ì„¤ì¹˜](#-ì„¤ì¹˜) â€¢ [ì‚¬ìš©ë²•](#-ì‚¬ìš©ë²•) â€¢ [ì†ŒìŠ¤ ë¹Œë“œ](#%EF%B8%8F-ì†ŒìŠ¤ì—ì„œ-ë¹Œë“œ) â€¢ [ê¸°ì—¬](#-ê¸°ì—¬í•˜ê¸°)
 
 </div>
 
 ---
 
-## ?? ±â´É
+## ðŸŒŸ ê¸°ëŠ¥
 
-### ÇÙ½É ±â´É
-- ? **ºü¸¥ ½ÇÇà** - Áñ°Ü »ç¿ëÇÏ´Â ¾Û, Æú´õ, À¥»çÀÌÆ®¸¦ Áï½Ã ½ÇÇà
-- ?? **Àü¿ª ´ÜÃàÅ°** - ¾îµð¼­³ª ·±Ã³ È£Ãâ (±âº»: `Ctrl + Space`)
-- ?? **ÅÇ ±¸¼º** - ¿©·¯ ÅÇÀ¸·Î Ç×¸ñ Á¤¸® (ÀÌ¸§ ¹× »ö»ó º¯°æ °¡´É)
-- ??? **µå·¡±× ¾Ø µå·Ó** - Á÷°üÀûÀÎ Ç×¸ñ °ü¸®
-- ?? **½º¸¶Æ® °Ë»ö** - Ç×¸ñ °Ë»ö ¶Ç´Â Á÷Á¢ ÆÄÀÏ/Æú´õ/URL ¿­±â
-- ?? **¾ÆÀÌÄÜ Å©±â Á¶Àý** - ½½¶óÀÌ´õ ¶Ç´Â `Ctrl + ¸¶¿ì½º ÈÙ` (0.25x - 6.00x)
+### í•µì‹¬ ê¸°ëŠ¥
+- âš¡ **ë¹ ë¥¸ ì‹¤í–‰** - ì¦ê²¨ ì‚¬ìš©í•˜ëŠ” ì•±, í´ë”, ì›¹ì‚¬ì´íŠ¸ë¥¼ ì¦‰ì‹œ ì‹¤í–‰
+- ðŸ”‘ **ì „ì—­ ë‹¨ì¶•í‚¤** - ì–´ë””ì„œë‚˜ ëŸ°ì²˜ í˜¸ì¶œ (ê¸°ë³¸: `Ctrl + Space`)
+- ðŸ“‘ **íƒ­ êµ¬ì„±** - ì—¬ëŸ¬ íƒ­ìœ¼ë¡œ í•­ëª© ì •ë¦¬ (ì´ë¦„ ë° ìƒ‰ìƒ ë³€ê²½ ê°€ëŠ¥)
+- ðŸ–±ï¸ **ë“œëž˜ê·¸ ì•¤ ë“œë¡­** - ì§ê´€ì ì¸ í•­ëª© ê´€ë¦¬
+- ðŸ” **ìŠ¤ë§ˆíŠ¸ ê²€ìƒ‰** - í•­ëª© ê²€ìƒ‰ ë˜ëŠ” ì§ì ‘ íŒŒì¼/í´ë”/URL ì—´ê¸°
+- ðŸ“ **ì•„ì´ì½˜ í¬ê¸° ì¡°ì ˆ** - ìŠ¬ë¼ì´ë” ë˜ëŠ” `Ctrl + ë§ˆìš°ìŠ¤ íœ ` (0.25x - 6.00x)
 
-### ´Ù±¹¾î Áö¿ø
-- ???? **English** (¿µ¾î)
-- ???? **ÇÑ±¹¾î**
-- ???? **ìíÜâåÞ** (ÀÏº»¾î)
-- ? ½Ç½Ã°£ ¾ð¾î ÀüÈ¯ - Àç½ÃÀÛ ºÒÇÊ¿ä!
+### ë‹¤êµ­ì–´ ì§€ì›
+- ðŸ‡ºðŸ‡¸ **English** (ì˜ì–´)
+- ðŸ‡°ðŸ‡· **í•œêµ­ì–´**
+- ðŸ‡¯ðŸ‡µ **æ—¥æœ¬èªž** (ì¼ë³¸ì–´)
+- âš¡ ì‹¤ì‹œê°„ ì–¸ì–´ ì „í™˜ - ìž¬ì‹œìž‘ ë¶ˆí•„ìš”!
 
-### ¸ð´ø UI
-- ?? **Windows 11 µðÀÚÀÎ** - Mica/Acrylic È¿°ú¸¦ »ç¿ëÇÑ ³×ÀÌÆ¼ºê WinUI 3
-- ?? **Å×¸¶ Áö¿ø** - ½Ã½ºÅÛ ´ÙÅ©/¶óÀÌÆ® Å×¸¶ ÀÚµ¿ ÃßÁ¾
-- ?? **ÀüÃ¼È­¸é ¸ðµå** - ¸ôÀÔÇü ·±Ã³ °æÇè
-- ?? **±×¸®µå Á¤·Ä** - ¿ÞÂÊ ¶Ç´Â °¡¿îµ¥ Á¤·Ä ¼±ÅÃ
-- ?? **ÅÇ »ö»ó** - 8°¡Áö ÇÁ¸®¼Â »ö»óÀ¸·Î ÅÇ Ä¿½ºÅÍ¸¶ÀÌÂ¡
+### ëª¨ë˜ UI
+- ðŸŽ¨ **Windows 11 ë””ìžì¸** - Mica/Acrylic íš¨ê³¼ë¥¼ ì‚¬ìš©í•œ ë„¤ì´í‹°ë¸Œ WinUI 3
+- ðŸŒ“ **í…Œë§ˆ ì§€ì›** - ì‹œìŠ¤í…œ ë‹¤í¬/ë¼ì´íŠ¸ í…Œë§ˆ ìžë™ ì¶”ì¢…
+- ðŸ“º **ì „ì²´í™”ë©´ ëª¨ë“œ** - ëª°ìž…í˜• ëŸ°ì²˜ ê²½í—˜
+- âš–ï¸ **ê·¸ë¦¬ë“œ ì •ë ¬** - ì™¼ìª½ ë˜ëŠ” ê°€ìš´ë° ì •ë ¬ ì„ íƒ
+- ðŸŽ¨ **íƒ­ ìƒ‰ìƒ** - 8ê°€ì§€ í”„ë¦¬ì…‹ ìƒ‰ìƒìœ¼ë¡œ íƒ­ ì»¤ìŠ¤í„°ë§ˆì´ì§•
 
-### ¼º´É ¹× ÀÌ½Ä¼º
-- ?? **Æ÷ÅÍºí** - ½ÇÇà ÆÄÀÏ Æú´õ¿¡ ¸ðµç µ¥ÀÌÅÍ ÀúÀå (`UserCache/`)
-- ?? **ºü¸¥ ½ÃÀÛ** - Ä³½ÃµÈ µ¥ÀÌÅÍ·Î Áï½Ã ·Îµù
-- ?? **ÆÄºñÄÜ Ä³½Ã** - À¥»çÀÌÆ® ¾ÆÀÌÄÜ ·ÎÄÃ Ä³½Ì
-- ?? **°¡º­¿ò** - ÃÖ¼ÒÇÑÀÇ ¸®¼Ò½º »ç¿ë
+### ì„±ëŠ¥ ë° ì´ì‹ì„±
+- ðŸ“¦ **í¬í„°ë¸”** - ì‹¤í–‰ íŒŒì¼ í´ë”ì— ëª¨ë“  ë°ì´í„° ì €ìž¥ (`UserCache/`)
+- ðŸš€ **ë¹ ë¥¸ ì‹œìž‘** - ìºì‹œëœ ë°ì´í„°ë¡œ ì¦‰ì‹œ ë¡œë”©
+- ðŸ’¾ **íŒŒë¹„ì½˜ ìºì‹œ** - ì›¹ì‚¬ì´íŠ¸ ì•„ì´ì½˜ ë¡œì»¬ ìºì‹±
+- ðŸª¶ **ê°€ë²¼ì›€** - ìµœì†Œí•œì˜ ë¦¬ì†ŒìŠ¤ ì‚¬ìš©
 
 ---
 
-## ?? ¼³Ä¡
+## ðŸ“¦ ì„¤ì¹˜
 
-### ½Ã½ºÅÛ ¿ä±¸»çÇ×
-- **Windows 10** ¹öÀü 1809 (ºôµå 17763) ÀÌ»ó
-- **Windows 11** (ÃÖ»óÀÇ °æÇèÀ» À§ÇØ ±ÇÀå)
-- **.NET 8.0 ·±Å¸ÀÓ** (ÀÚÃ¼ Æ÷ÇÔ ºôµå¿¡ Æ÷ÇÔ)
+### ì‹œìŠ¤í…œ ìš”êµ¬ì‚¬í•­
+- **Windows 10** ë²„ì „ 1809 (ë¹Œë“œ 17763) ì´ìƒ
+- **Windows 11** (ìµœìƒì˜ ê²½í—˜ì„ ìœ„í•´ ê¶Œìž¥)
+- **.NET 8.0 ëŸ°íƒ€ìž„** (ìžì²´ í¬í•¨ ë¹Œë“œì— í¬í•¨)
 
-### ºü¸¥ ¼³Ä¡
-1. [Releases](https://github.com/siriz/SLauncher/releases)¿¡¼­ ÃÖ½Å ¸±¸®½º ´Ù¿î·Îµå
-2. ZIP ÆÄÀÏÀ» ¿øÇÏ´Â Æú´õ¿¡ ¾ÐÃà ÇØÁ¦
-3. `SLauncher.exe` ½ÇÇà
-4. (¼±ÅÃ»çÇ×) ¼³Á¤¿¡¼­ "Windows ½ÃÀÛ ½Ã ½ÇÇà" È°¼ºÈ­
+### ë¹ ë¥¸ ì„¤ì¹˜
+1. [Releases](https://github.com/siriz/SLauncher/releases)ì—ì„œ ìµœì‹  ë¦´ë¦¬ìŠ¤ ë‹¤ìš´ë¡œë“œ
+2. ZIP íŒŒì¼ì„ ì›í•˜ëŠ” í´ë”ì— ì••ì¶• í•´ì œ
+3. `SLauncher.exe` ì‹¤í–‰
+4. (ì„ íƒì‚¬í•­) ì„¤ì •ì—ì„œ "Windows ì‹œìž‘ ì‹œ ì‹¤í–‰" í™œì„±í™”
 
-### Æ÷ÅÍºí ¸ðµå
-¸ðµç ¼³Á¤°ú µ¥ÀÌÅÍ´Â ½ÇÇà ÆÄÀÏ ¿· `UserCache` Æú´õ¿¡ ÀúÀåµË´Ï´Ù:
+### í¬í„°ë¸” ëª¨ë“œ
+ëª¨ë“  ì„¤ì •ê³¼ ë°ì´í„°ëŠ” ì‹¤í–‰ íŒŒì¼ ì˜† `UserCache` í´ë”ì— ì €ìž¥ë©ë‹ˆë‹¤:
 ```
 SLauncher/
-¦§¦¡¦¡ SLauncher.exe
-¦¦¦¡¦¡ UserCache/
-    ¦§¦¡¦¡ Settings/      # »ç¿ëÀÚ ¼³Á¤
-    ¦§¦¡¦¡ Files/         # Ç×¸ñ µ¥ÀÌÅÍ
-    ¦¦¦¡¦¡ FaviconCache/  # À¥»çÀÌÆ® ¾ÆÀÌÄÜ
+â”œâ”€â”€ SLauncher.exe
+â””â”€â”€ UserCache/
+    â”œâ”€â”€ Settings/      # ì‚¬ìš©ìž ì„¤ì •
+ â”œâ”€â”€ Files/         # í•­ëª© ë°ì´í„°
+    â””â”€â”€ FaviconCache/  # ì›¹ì‚¬ì´íŠ¸ ì•„ì´ì½˜
 ```
 
 ---
 
-## ?? »ç¿ë¹ý
+## ðŸŽ® ì‚¬ìš©ë²•
 
-### Ç×¸ñ Ãß°¡
+### í•­ëª© ì¶”ê°€
 
-#### ¹æ¹ý 1: ¹öÆ°
-- **ÆÄÀÏ Ãß°¡**: ¹öÆ° Å¬¸¯ ÈÄ `.exe`, `.lnk` ¶Ç´Â ¸ðµç ÆÄÀÏ ¼±ÅÃ
-- **Æú´õ Ãß°¡**: ¹öÆ° Å¬¸¯ ÈÄ Æú´õ ¼±ÅÃ
-- **À¥»çÀÌÆ® Ãß°¡**: ¹öÆ° Å¬¸¯ ÈÄ URL ÀÔ·Â (¿¹: `https://github.com`)
+#### ë°©ë²• 1: ë²„íŠ¼
+- **íŒŒì¼ ì¶”ê°€**: ë²„íŠ¼ í´ë¦­ í›„ `.exe`, `.lnk` ë˜ëŠ” ëª¨ë“  íŒŒì¼ ì„ íƒ
+- **í´ë” ì¶”ê°€**: ë²„íŠ¼ í´ë¦­ í›„ í´ë” ì„ íƒ
+- **ì›¹ì‚¬ì´íŠ¸ ì¶”ê°€**: ë²„íŠ¼ í´ë¦­ í›„ URL ìž…ë ¥ (ì˜ˆ: `https://github.com`)
 
-#### ¹æ¹ý 2: µå·¡±× ¾Ø µå·Ó
-- ÆÄÀÏ, Æú´õ, ¹Ù·Î°¡±â¸¦ Ã¢¿¡ Á÷Á¢ µå·¡±×
-- ÅÇ °£ µå·¡±×·Î Ç×¸ñ ÀÌµ¿
-- ÇÑ Ç×¸ñÀ» ´Ù¸¥ Ç×¸ñ À§¿¡ µå·¡±×ÇÏ¿© ±×·ì »ý¼º
+#### ë°©ë²• 2: ë“œëž˜ê·¸ ì•¤ ë“œë¡­
+- íŒŒì¼, í´ë”, ë°”ë¡œê°€ê¸°ë¥¼ ì°½ì— ì§ì ‘ ë“œëž˜ê·¸
+- íƒ­ ê°„ ë“œëž˜ê·¸ë¡œ í•­ëª© ì´ë™
+- í•œ í•­ëª©ì„ ë‹¤ë¥¸ í•­ëª© ìœ„ì— ë“œëž˜ê·¸í•˜ì—¬ ê·¸ë£¹ ìƒì„±
 
-### Ç×¸ñ °ü¸®
+### í•­ëª© ê´€ë¦¬
 
-| ÀÛ¾÷ | ¹æ¹ý |
+| ìž‘ì—… | ë°©ë²• |
 |------|------|
-| **ÆíÁý** | Ç×¸ñ ¿ìÅ¬¸¯ ¡æ ÆíÁý |
-| **»èÁ¦** | Ç×¸ñ ¿ìÅ¬¸¯ ¡æ »èÁ¦ ¶Ç´Â `Delete` Å° |
-| **±×·ì »ý¼º** | ÇÑ Ç×¸ñÀ» ´Ù¸¥ Ç×¸ñ À§¿¡ µå·¡±× |
-| **¼ø¼­ º¯°æ** | Ç×¸ñÀ» »õ À§Ä¡·Î µå·¡±× |
+| **íŽ¸ì§‘** | í•­ëª© ìš°í´ë¦­ â†’ íŽ¸ì§‘ |
+| **ì‚­ì œ** | í•­ëª© ìš°í´ë¦­ â†’ ì‚­ì œ ë˜ëŠ” `Delete` í‚¤ |
+| **ê·¸ë£¹ ìƒì„±** | í•œ í•­ëª©ì„ ë‹¤ë¥¸ í•­ëª© ìœ„ì— ë“œëž˜ê·¸ |
+| **ìˆœì„œ ë³€ê²½** | í•­ëª©ì„ ìƒˆ ìœ„ì¹˜ë¡œ ë“œëž˜ê·¸ |
 
-### ÅÇ °ü¸®
+### íƒ­ ê´€ë¦¬
 
-#### ÅÇ »ý¼º
-- ÅÇ ¿· **+** ¹öÆ° Å¬¸¯
-- °¢ ÅÇÀº ¼­·Î ´Ù¸¥ Ç×¸ñ°ú ¼³Á¤ °¡´É
+#### íƒ­ ìƒì„±
+- íƒ­ ì˜† **+** ë²„íŠ¼ í´ë¦­
+- ê° íƒ­ì€ ì„œë¡œ ë‹¤ë¥¸ í•­ëª©ê³¼ ì„¤ì • ê°€ëŠ¥
 
-#### ÅÇ ¿É¼Ç (ÅÇ ¿ìÅ¬¸¯)
-- **ÀÌ¸§ º¯°æ** - ÅÇ¿¡ »ç¿ëÀÚ ÁöÁ¤ ÀÌ¸§ ºÎ¿©
-- **»ö»ó º¯°æ** - 8°¡Áö ÇÁ¸®¼Â »ö»ó Áß ¼±ÅÃ
-- **»èÁ¦** - ÅÇ Á¦°Å (Ç×¸ñÀÌ ÀÖÀ¸¸é È®ÀÎ ÇÊ¿ä)
+#### íƒ­ ì˜µì…˜ (íƒ­ ìš°í´ë¦­)
+- **ì´ë¦„ ë³€ê²½** - íƒ­ì— ì‚¬ìš©ìž ì§€ì • ì´ë¦„ ë¶€ì—¬
+- **ìƒ‰ìƒ ë³€ê²½** - 8ê°€ì§€ í”„ë¦¬ì…‹ ìƒ‰ìƒ ì¤‘ ì„ íƒ
+- **ì‚­ì œ** - íƒ­ ì œê±° (í•­ëª©ì´ ìžˆìœ¼ë©´ í™•ì¸ í•„ìš”)
 
-### °Ë»ö
+### ê²€ìƒ‰
 
-°Ë»öÃ¢Àº ¿©·¯ ÀÔ·Â À¯ÇüÀ» Áö¿øÇÕ´Ï´Ù:
+ê²€ìƒ‰ì°½ì€ ì—¬ëŸ¬ ìž…ë ¥ ìœ í˜•ì„ ì§€ì›í•©ë‹ˆë‹¤:
 
-| ÀÔ·Â À¯Çü | ¿¹½Ã | °á°ú |
+| ìž…ë ¥ ìœ í˜• | ì˜ˆì‹œ | ê²°ê³¼ |
 |-----------|------|------|
-| **Ç×¸ñ ÀÌ¸§** | `¸Þ¸ðÀå` | ¸ðµç Ç×¸ñ °Ë»ö |
-| **ÆÄÀÏ °æ·Î** | `C:\Windows\notepad.exe` | ÆÄÀÏ Á÷Á¢ ¿­±â |
-| **Æú´õ °æ·Î** | `C:\Users\Documents` | Å½»ö±â¿¡¼­ Æú´õ ¿­±â |
-| **À¥»çÀÌÆ® URL** | `https://google.com` | ±âº» ºê¶ó¿ìÀú·Î ¿­±â |
-| **°Ë»ö Äõ¸®** | `search:Å°¿öµå` | ±âº» ºê¶ó¿ìÀú·Î °Ë»ö |
+| **í•­ëª© ì´ë¦„** | `ë©”ëª¨ìž¥` | ëª¨ë“  í•­ëª© ê²€ìƒ‰ |
+| **íŒŒì¼ ê²½ë¡œ** | `C:\Windows\notepad.exe` | íŒŒì¼ ì§ì ‘ ì—´ê¸° |
+| **í´ë” ê²½ë¡œ** | `C:\Users\Documents` | íƒìƒ‰ê¸°ì—ì„œ í´ë” ì—´ê¸° |
+| **ì›¹ì‚¬ì´íŠ¸ URL** | `https://google.com` | ê¸°ë³¸ ë¸Œë¼ìš°ì €ë¡œ ì—´ê¸° |
+| **ê²€ìƒ‰ ì¿¼ë¦¬** | `search:í‚¤ì›Œë“œ` | ê¸°ë³¸ ë¸Œë¼ìš°ì €ë¡œ ê²€ìƒ‰ |
 
-### Å°º¸µå ´ÜÃàÅ°
+### í‚¤ë³´ë“œ ë‹¨ì¶•í‚¤
 
-| ´ÜÃàÅ° | µ¿ÀÛ |
+| ë‹¨ì¶•í‚¤ | ë™ìž‘ |
 |--------|------|
-| `Ctrl + Space` | ·±Ã³ Ç¥½Ã/¼û±è (¼³Á¤¿¡¼­ º¯°æ °¡´É) |
-| `Ctrl + ¸¶¿ì½º ÈÙ` | ¾ÆÀÌÄÜ Å©±â Á¶Àý (Ã¢ ÀüÃ¼¿¡¼­ ÀÛµ¿) |
-| `Delete` | ¼±ÅÃÇÑ Ç×¸ñ »èÁ¦ |
-| `Esc` | ·±Ã³ ´Ý±â (ÀüÃ¼È­¸é ¸ðµå) |
-| `Enter` | Ã¹ ¹øÂ° °Ë»ö °á°ú ¿­±â |
+| `Ctrl + Space` | ëŸ°ì²˜ í‘œì‹œ/ìˆ¨ê¹€ (ì„¤ì •ì—ì„œ ë³€ê²½ ê°€ëŠ¥) |
+| `Ctrl + ë§ˆìš°ìŠ¤ íœ ` | ì•„ì´ì½˜ í¬ê¸° ì¡°ì ˆ (ì°½ ì „ì²´ì—ì„œ ìž‘ë™) |
+| `Delete` | ì„ íƒí•œ í•­ëª© ì‚­ì œ |
+| `Esc` | ëŸ°ì²˜ ë‹«ê¸° (ì „ì²´í™”ë©´ ëª¨ë“œ) |
+| `Enter` | ì²« ë²ˆì§¸ ê²€ìƒ‰ ê²°ê³¼ ì—´ê¸° |
 
-### ¾ÆÀÌÄÜ Å©±â Á¶Àý
+### ì•„ì´ì½˜ í¬ê¸° ì¡°ì ˆ
 
-´ÙÀ½ ¹æ¹ýÀ¸·Î ¾ÆÀÌÄÜ Å©±â Á¶Àý:
-- ¿À¸¥ÂÊ ÇÏ´ÜÀÇ **½½¶óÀÌ´õ**
-- Ã¢ ¾îµð¼­³ª **Ctrl + ¸¶¿ì½º ÈÙ**
-- ¹üÀ§: 0.25x ~ 6.00x
-
----
-
-## ?? ¼³Á¤
-
-### ÀÏ¹Ý ¼³Á¤
-- **ÀüÃ¼È­¸é È°¼ºÈ­** - ÀüÃ¼È­¸é ¸ðµå·Î ·±Ã³ »ç¿ë
-- **±×¸®µå Á¤·Ä** - ¿ÞÂÊ (³Êºñ Ã¤¿ò) ¶Ç´Â °¡¿îµ¥ (°íÁ¤ ³Êºñ)
-- **Windows ½ÃÀÛ ½Ã ½ÇÇà** - ½ÃÀÛ ½Ã ÀÚµ¿ ½ÇÇà
-- **Àü¿ª ´ÜÃàÅ°** - Ç¥½Ã/¼û±è ´ÜÃàÅ° Ä¿½ºÅÍ¸¶ÀÌÂ¡
-  - ¼ö½Ä¾î: Ctrl, Alt, Shift, Ctrl+Shift, Ctrl+Alt
-  - Å°: Space, Tab, Enter, Esc, F1-F4
-- **¾ð¾î** - ¼±È£ ¾ð¾î ¼±ÅÃ (¿µ¾î, ÇÑ±¹¾î, ÀÏº»¾î)
-
-### Ä³½Ã °ü¸®
-- **Ä³½Ã Å©±â º¸±â** - ÆÄºñÄÜ Ä³½Ã »ç¿ë·® ¸ð´ÏÅÍ¸µ
-- **Ä³½Ã Áö¿ì±â** - ¸ðµç Ä³½ÃµÈ À¥»çÀÌÆ® ¾ÆÀÌÄÜ Á¦°Å
-- **Ä³½Ã Æú´õ ¿­±â** - Ä³½Ã µð·ºÅä¸® Á÷Á¢ Á¢±Ù
-- **Ä³½Ã À§Ä¡** - Æ÷ÅÍºí: `UserCache\FaviconCache\`
+ë‹¤ìŒ ë°©ë²•ìœ¼ë¡œ ì•„ì´ì½˜ í¬ê¸° ì¡°ì ˆ:
+- ì˜¤ë¥¸ìª½ í•˜ë‹¨ì˜ **ìŠ¬ë¼ì´ë”**
+- ì°½ ì–´ë””ì„œë‚˜ **Ctrl + ë§ˆìš°ìŠ¤ íœ **
+- ë²”ìœ„: 0.25x ~ 6.00x
 
 ---
 
-## ??? ¼Ò½º¿¡¼­ ºôµå
+## âš™ï¸ ì„¤ì •
 
-### ÇÊ¿ä »çÇ×
-- **Visual Studio 2022** (17.8 ÀÌ»ó)
-  - ¿öÅ©·Îµå: ".NET µ¥½ºÅ©Åé °³¹ß"
-  - ±¸¼º ¿ä¼Ò: "Windows App SDK C# ÅÛÇÃ¸´"
-- **Windows App SDK 1.5** ÀÌ»ó
+### ì¼ë°˜ ì„¤ì •
+- **ì „ì²´í™”ë©´ í™œì„±í™”** - ì „ì²´í™”ë©´ ëª¨ë“œë¡œ ëŸ°ì²˜ ì‚¬ìš©
+- **ê·¸ë¦¬ë“œ ì •ë ¬** - ì™¼ìª½ (ë„ˆë¹„ ì±„ì›€) ë˜ëŠ” ê°€ìš´ë° (ê³ ì • ë„ˆë¹„)
+- **Windows ì‹œìž‘ ì‹œ ì‹¤í–‰** - ì‹œìž‘ ì‹œ ìžë™ ì‹¤í–‰
+- **ì „ì—­ ë‹¨ì¶•í‚¤** - í‘œì‹œ/ìˆ¨ê¹€ ë‹¨ì¶•í‚¤ ì»¤ìŠ¤í„°ë§ˆì´ì§•
+  - ìˆ˜ì‹ì–´: Ctrl, Alt, Shift, Ctrl+Shift, Ctrl+Alt
+  - í‚¤: Space, Tab, Enter, Esc, F1-F4
+- **ì–¸ì–´** - ì„ í˜¸ ì–¸ì–´ ì„ íƒ (ì˜ì–´, í•œêµ­ì–´, ì¼ë³¸ì–´)
+
+### ìºì‹œ ê´€ë¦¬
+- **ìºì‹œ í¬ê¸° ë³´ê¸°** - íŒŒë¹„ì½˜ ìºì‹œ ì‚¬ìš©ëŸ‰ ëª¨ë‹ˆí„°ë§
+- **ìºì‹œ ì§€ìš°ê¸°** - ëª¨ë“  ìºì‹œëœ ì›¹ì‚¬ì´íŠ¸ ì•„ì´ì½˜ ì œê±°
+- **ìºì‹œ í´ë” ì—´ê¸°** - ìºì‹œ ë””ë ‰í† ë¦¬ ì§ì ‘ ì ‘ê·¼
+- **ìºì‹œ ìœ„ì¹˜** - í¬í„°ë¸”: `UserCache\FaviconCache\`
+
+---
+
+## ðŸ› ï¸ ì†ŒìŠ¤ì—ì„œ ë¹Œë“œ
+
+### í•„ìš” ì‚¬í•­
+- **Visual Studio 2022** (17.8 ì´ìƒ)
+  - ì›Œí¬ë¡œë“œ: ".NET ë°ìŠ¤í¬í†± ê°œë°œ"
+  - êµ¬ì„± ìš”ì†Œ: "Windows App SDK C# í…œí”Œë¦¿"
+- **Windows App SDK 1.5** ì´ìƒ
 - **.NET 8.0 SDK**
 
-### Å¬·Ð ¹× ºôµå
+### í´ë¡  ë° ë¹Œë“œ
 
 ```bash
-# ÀúÀå¼Ò Å¬·Ð
+# ì €ìž¥ì†Œ í´ë¡ 
 git clone https://github.com/siriz/SLauncher.git
 cd SLauncher
 
-# NuGet ÆÐÅ°Áö º¹¿ø
+# NuGet íŒ¨í‚¤ì§€ ë³µì›
 dotnet restore
 
-# ¼Ö·ç¼Ç ºôµå
+# ì†”ë£¨ì…˜ ë¹Œë“œ
 dotnet build -c Release
 
-# ¶Ç´Â Visual Studio¿¡¼­ ¿­±â
+# ë˜ëŠ” Visual Studioì—ì„œ ì—´ê¸°
 start SLauncher.sln
 ```
 
-### ÇÁ·ÎÁ§Æ® ±¸Á¶
+### í”„ë¡œì íŠ¸ êµ¬ì¡°
 
 ```
 SLauncher/
-¦§¦¡¦¡ SLauncher/         # ¸ÞÀÎ WinUI 3 ÇÁ·ÎÁ§Æ®
-¦¢   ¦§¦¡¦¡ Classes/            # ÇÙ½É Å¬·¡½º
-¦¢   ¦¢   ¦§¦¡¦¡ LocalizationManager.cs   # ´Ù±¹¾î Áö¿ø
-¦¢   ¦¢   ¦§¦¡¦¡ UserSettingsClass.cs     # ¼³Á¤ °ü¸®
-¦¢   ¦¢   ¦§¦¡¦¡ GlobalHotkeyManager.cs   # ´ÜÃàÅ° µî·Ï
-¦¢   ¦¢   ¦¦¦¡¦¡ IconHelpers.cs  # ¾ÆÀÌÄÜ ÃßÃâ ¹× Ä³½Ã
-¦¢   ¦§¦¡¦¡ Controls/    # »ç¿ëÀÚ ÁöÁ¤ ÄÁÆ®·Ñ
-¦¢   ¦¢   ¦§¦¡¦¡ GridViewTile.xaml        # ¾Û Å¸ÀÏ ÄÁÆ®·Ñ
-¦¢   ¦¢   ¦§¦¡¦¡ GridViewTileGroup.xaml   # ±×·ì ÄÁÆ®·Ñ
-¦¢   ¦¢   ¦¦¦¡¦¡ AboutSectionControl.xaml # Á¤º¸ ÆäÀÌÁö
-¦¢ ¦§¦¡¦¡ Strings/            # ´Ù±¹¾î ¸®¼Ò½º
-¦¢   ¦¢   ¦§¦¡¦¡ en-US/Resources.resw     # ¿µ¾î
-¦¢ ¦¢   ¦§¦¡¦¡ ko-KR/Resources.resw     # ÇÑ±¹¾î
-¦¢   ¦¢   ¦¦¦¡¦¡ ja-JP/Resources.resw   # ÀÏº»¾î
-¦¢   ¦§¦¡¦¡ MainWindow*.cs      # ¸ÞÀÎ Ã¢ (ºÎºÐ Å¬·¡½º)
-¦¢   ¦¢   ¦§¦¡¦¡ MainWindow.xaml.cs       # ¸ÞÀÎ ·ÎÁ÷
-¦¢   ¦¢   ¦§¦¡¦¡ MainWindow.UI.cs         # UI °ü¸®
-¦¢   ¦¢   ¦§¦¡¦¡ MainWindow.Tabs.cs       # ÅÇ °ü¸®
-¦¢   ¦¢   ¦§¦¡¦¡ MainWindow.Items.cs      # Ç×¸ñ °ü¸®
-¦¢   ¦¢   ¦§¦¡¦¡ MainWindow.DragDrop.cs   # µå·¡±× ¾Ø µå·Ó
-¦¢   ¦¢   ¦§¦¡¦¡ MainWindow.Search.cs     # °Ë»ö ·ÎÁ÷
-¦¢   ¦¢   ¦¦¦¡¦¡ MainWindow.Hotkeys.cs    # ´ÜÃàÅ° ¹× Æ®·¹ÀÌ
-¦¢   ¦¦¦¡¦¡ SettingsWindow*.cs  # ¼³Á¤ Ã¢ (ºÎºÐ Å¬·¡½º)
-¦¢       ¦§¦¡¦¡ SettingsWindow.xaml.cs      # ¸ÞÀÎ ·ÎÁ÷
-¦¢       ¦§¦¡¦¡ SettingsWindow.Localization.cs # ¾ð¾î UI
-¦¢     ¦§¦¡¦¡ SettingsWindow.Cache.cs        # Ä³½Ã °ü¸®
-¦¢       ¦§¦¡¦¡ SettingsWindow.Hotkey.cs       # ´ÜÃàÅ° ¼³Á¤
-¦¢       ¦¦¦¡¦¡ SettingsWindow.Settings.cs     # ¼³Á¤ Åä±Û
-¦¦¦¡¦¡ WinFormsClassLibrary/   # ÇïÆÛ ¶óÀÌºê·¯¸® (ÆÄÀÏ ´ëÈ­»óÀÚ)
+â”œâ”€â”€ SLauncher/    # ë©”ì¸ WinUI 3 í”„ë¡œì íŠ¸
+â”‚   â”œâ”€â”€ Classes/      # í•µì‹¬ í´ëž˜ìŠ¤
+â”‚   â”‚   â”œâ”€â”€ LocalizationManager.cs   # ë‹¤êµ­ì–´ ì§€ì›
+â”‚   â”‚   â”œâ”€â”€ UserSettingsClass.cs     # ì„¤ì • ê´€ë¦¬
+â”‚   â”‚   â”œâ”€â”€ GlobalHotkeyManager.cs   # ë‹¨ì¶•í‚¤ ë“±ë¡
+â”‚   â”‚   â””â”€â”€ IconHelpers.cs # ì•„ì´ì½˜ ì¶”ì¶œ ë° ìºì‹œ
+â”‚   â”œâ”€â”€ Controls/ # ì‚¬ìš©ìž ì§€ì • ì»¨íŠ¸ë¡¤
+â”‚   â”‚   â”œâ”€â”€ GridViewTile.xaml        # ì•± íƒ€ì¼ ì»¨íŠ¸ë¡¤
+â”‚   â”‚   â”œâ”€â”€ GridViewTileGroup.xaml   # ê·¸ë£¹ ì»¨íŠ¸ë¡¤
+â”‚   â”‚   â””â”€â”€ AboutSectionControl.xaml # ì •ë³´ íŽ˜ì´ì§€
+â”‚   â”œâ”€â”€ Strings/      # ë‹¤êµ­ì–´ ë¦¬ì†ŒìŠ¤
+â”‚   â”‚   â”œâ”€â”€ en-US/Resources.resw     # ì˜ì–´
+â”‚   â”‚   â”œâ”€â”€ ko-KR/Resources.resw     # í•œêµ­ì–´
+â”‚   â”‚   â””â”€â”€ ja-JP/Resources.resw   # ì¼ë³¸ì–´
+â”‚   â”œâ”€â”€ MainWindow*.cs    # ë©”ì¸ ì°½ (ë¶€ë¶„ í´ëž˜ìŠ¤)
+â”‚   â”‚   â”œâ”€â”€ MainWindow.xaml.cs       # ë©”ì¸ ë¡œì§
+â”‚   â”‚   â”œâ”€â”€ MainWindow.UI.cs       # UI ê´€ë¦¬
+â”‚   â”‚   â”œâ”€â”€ MainWindow.Tabs.cs  # íƒ­ ê´€ë¦¬
+â”‚   â”‚   â”œâ”€â”€ MainWindow.Items.cs      # í•­ëª© ê´€ë¦¬
+â”‚   â”‚   â”œâ”€â”€ MainWindow.DragDrop.cs   # ë“œëž˜ê·¸ ì•¤ ë“œë¡­
+â”‚   â”‚   â”œâ”€â”€ MainWindow.Search.cs     # ê²€ìƒ‰ ë¡œì§
+â”‚   â”‚   â””â”€â”€ MainWindow.Hotkeys.cs    # ë‹¨ì¶•í‚¤ ë° íŠ¸ë ˆì´
+â”‚   â””â”€â”€ SettingsWindow*.cs# ì„¤ì • ì°½ (ë¶€ë¶„ í´ëž˜ìŠ¤)
+â”‚    â”œâ”€â”€ SettingsWindow.xaml.cs         # ë©”ì¸ ë¡œì§
+â”‚       â”œâ”€â”€ SettingsWindow.Localization.cs # ì–¸ì–´ UI
+â”‚       â”œâ”€â”€ SettingsWindow.Cache.cs        # ìºì‹œ ê´€ë¦¬
+â”‚    â”œâ”€â”€ SettingsWindow.Hotkey.cs       # ë‹¨ì¶•í‚¤ ì„¤ì •
+â”‚       â””â”€â”€ SettingsWindow.Settings.cs     # ì„¤ì • í† ê¸€
+â””â”€â”€ WinFormsClassLibrary/   # í—¬í¼ ë¼ì´ë¸ŒëŸ¬ë¦¬ (íŒŒì¼ ëŒ€í™”ìƒìž)
 ```
 
-### ºÎºÐ Å¬·¡½º ÆÐÅÏ
+### ë¶€ë¶„ í´ëž˜ìŠ¤ íŒ¨í„´
 
-`MainWindow`¿Í `SettingsWindow` ¸ðµÎ ´õ ³ªÀº ÄÚµå ±¸¼ºÀ» À§ÇØ ºÎºÐ Å¬·¡½º¸¦ »ç¿ëÇÕ´Ï´Ù:
-- °¢ ºÎºÐ Å¬·¡½º ÆÄÀÏÀÌ Æ¯Á¤ ±â´É ¿µ¿ªÀ» Ã³¸®
-- ÄÚµå Å½»ö ¹× À¯Áö °ü¸®°¡ ½¬¿ò
-- ÀÏ°ü¼ºÀ» À§ÇØ `MainWindow`¿Í µ¿ÀÏÇÑ ÆÐÅÏ µû¸§
+`MainWindow`ì™€ `SettingsWindow` ëª¨ë‘ ë” ë‚˜ì€ ì½”ë“œ êµ¬ì„±ì„ ìœ„í•´ ë¶€ë¶„ í´ëž˜ìŠ¤ë¥¼ ì‚¬ìš©í•©ë‹ˆë‹¤:
+- ê° ë¶€ë¶„ í´ëž˜ìŠ¤ íŒŒì¼ì´ íŠ¹ì • ê¸°ëŠ¥ ì˜ì—­ì„ ì²˜ë¦¬
+- ì½”ë“œ íƒìƒ‰ ë° ìœ ì§€ ê´€ë¦¬ê°€ ì‰¬ì›€
+- ì¼ê´€ì„±ì„ ìœ„í•´ `MainWindow`ì™€ ë™ì¼í•œ íŒ¨í„´ ë”°ë¦„
 
 ---
 
-## ?? ´Ù±¹¾î Áö¿ø
+## ðŸŒ ë‹¤êµ­ì–´ ì§€ì›
 
-### Áö¿ø ¾ð¾î
+### ì§€ì› ì–¸ì–´
 
-| ¾ð¾î | ÄÚµå | »óÅÂ | ¸®¼Ò½º |
+| ì–¸ì–´ | ì½”ë“œ | ìƒíƒœ | ë¦¬ì†ŒìŠ¤ |
 |------|------|------|--------|
-| ???? English | en-US | ? ¿Ï·á | 90 ¹®ÀÚ¿­ |
-| ???? ÇÑ±¹¾î | ko-KR | ? ¿Ï·á | 91 ¹®ÀÚ¿­ |
-| ???? ìíÜâåÞ | ja-JP | ? ¿Ï·á | 91 ¹®ÀÚ¿­ |
+| ðŸ‡ºðŸ‡¸ English | en-US | âœ… ì™„ë£Œ | 90 ë¬¸ìžì—´ |
+| ðŸ‡°ðŸ‡· í•œêµ­ì–´ | ko-KR | âœ… ì™„ë£Œ | 91 ë¬¸ìžì—´ |
+| ðŸ‡¯ðŸ‡µ æ—¥æœ¬èªž | ja-JP | âœ… ì™„ë£Œ | 91 ë¬¸ìžì—´ |
 
-### »õ ¾ð¾î Ãß°¡
+### ìƒˆ ì–¸ì–´ ì¶”ê°€
 
-1. **¸®¼Ò½º ÆÄÀÏ »ý¼º**
+1. **ë¦¬ì†ŒìŠ¤ íŒŒì¼ ìƒì„±**
+```
+   SLauncher/Strings/{ì–¸ì–´-ì½”ë“œ}/Resources.resw
    ```
-   SLauncher/Strings/{¾ð¾î-ÄÚµå}/Resources.resw
-   ```
 
-2. **ÅÛÇÃ¸´ º¹»ç**
+2. **í…œí”Œë¦¿ ë³µì‚¬**
    ```bash
-   cp SLauncher/Strings/en-US/Resources.resw SLauncher/Strings/{¾ð¾î-ÄÚµå}/
+   cp SLauncher/Strings/en-US/Resources.resw SLauncher/Strings/{ì–¸ì–´-ì½”ë“œ}/
    ```
 
-3. **¹ø¿ª**
-   - Visual Studio¿¡¼­ `Resources.resw` ¿­±â
-   - `<value>` ³»¿ë ¹ø¿ª (`<data name>`Àº º¯°æÇÏÁö ¾ÊÀ½)
-   - UI ·¹ÀÌ¾Æ¿ô Å×½ºÆ® (ÀÏºÎ ¾ð¾î´Â ´õ ±è)
+3. **ë²ˆì—­**
+   - Visual Studioì—ì„œ `Resources.resw` ì—´ê¸°
+   - `<value>` ë‚´ìš© ë²ˆì—­ (`<data name>`ì€ ë³€ê²½í•˜ì§€ ì•ŠìŒ)
+   - UI ë ˆì´ì•„ì›ƒ í…ŒìŠ¤íŠ¸ (ì¼ë¶€ ì–¸ì–´ëŠ” ë” ê¹€)
 
-4. **¼³Á¤¿¡ Ãß°¡**
+4. **ì„¤ì •ì— ì¶”ê°€**
    ```xaml
-   <!-- SettingsWindow.xaml -->
+ <!-- SettingsWindow.xaml -->
    <ComboBox x:Name="LanguageComboBox">
-       <ComboBoxItem Content="±ÍÇÏÀÇ ¾ð¾î ÀÌ¸§" Tag="{¾ð¾î-ÄÚµå}" />
+       <ComboBoxItem Content="ê·€í•˜ì˜ ì–¸ì–´ ì´ë¦„" Tag="{ì–¸ì–´-ì½”ë“œ}" />
    </ComboBox>
    ```
 
-5. **Å×½ºÆ®**
-   - ºôµå ¹× ½ÇÇà
-   - ¼³Á¤ ¡æ ¾ð¾î¿¡¼­ »õ ¾ð¾î ¼±ÅÃ
-   - ¸ðµç UI ¿ä¼Ò°¡ ¿Ã¹Ù¸£°Ô Ç¥½ÃµÇ´ÂÁö È®ÀÎ
+5. **í…ŒìŠ¤íŠ¸**
+   - ë¹Œë“œ ë° ì‹¤í–‰
+   - ì„¤ì • â†’ ì–¸ì–´ì—ì„œ ìƒˆ ì–¸ì–´ ì„ íƒ
+   - ëª¨ë“  UI ìš”ì†Œê°€ ì˜¬ë°”ë¥´ê²Œ í‘œì‹œë˜ëŠ”ì§€ í™•ì¸
 
-### ¹ø¿ª °¡ÀÌµå¶óÀÎ
-- ÇÃ·¹ÀÌ½ºÈ¦´õ À¯Áö: `{0}`, `{1}` (¹®ÀÚ¿­ Çü½Ä¿¡ »ç¿ë)
-- ÁÙ ¹Ù²Þ ¹× Çü½Ä À¯Áö
-- °íÀ¯ °ü·Ê »ç¿ë (±¸µÎÁ¡, µû¿ÈÇ¥)
-- ±ä ¹ø¿ªÀ¸·Î Å×½ºÆ® (·¹ÀÌ¾Æ¿ô¿¡ ¿µÇâÀ» ÁÙ ¼ö ÀÖÀ½)
-- ±â¼ú ¿ë¾î ÀÏ°ü¼º À¯Áö (¿¹: "Ä³½Ã", "´ÜÃàÅ°")
+### ë²ˆì—­ ê°€ì´ë“œë¼ì¸
+- í”Œë ˆì´ìŠ¤í™€ë” ìœ ì§€: `{0}`, `{1}` (ë¬¸ìžì—´ í˜•ì‹ì— ì‚¬ìš©)
+- ì¤„ ë°”ê¿ˆ ë° í˜•ì‹ ìœ ì§€
+- ê³ ìœ  ê´€ë¡€ ì‚¬ìš© (êµ¬ë‘ì , ë”°ì˜´í‘œ)
+- ê¸´ ë²ˆì—­ìœ¼ë¡œ í…ŒìŠ¤íŠ¸ (ë ˆì´ì•„ì›ƒì— ì˜í–¥ì„ ì¤„ ìˆ˜ ìžˆìŒ)
+- ê¸°ìˆ  ìš©ì–´ ì¼ê´€ì„± ìœ ì§€ (ì˜ˆ: "ìºì‹œ", "ë‹¨ì¶•í‚¤")
 
 ---
 
-## ?? ±â¿©ÇÏ±â
+## ðŸ¤ ê¸°ì—¬í•˜ê¸°
 
-±â¿©¸¦ È¯¿µÇÕ´Ï´Ù! ´ÙÀ½°ú °°ÀÌ µµ¿ï ¼ö ÀÖ½À´Ï´Ù:
+ê¸°ì—¬ë¥¼ í™˜ì˜í•©ë‹ˆë‹¤! ë‹¤ìŒê³¼ ê°™ì´ ë„ìš¸ ìˆ˜ ìžˆìŠµë‹ˆë‹¤:
 
-### ±â¿© ¹æ¹ý
-- ?? **¹ø¿ª** - »õ ¾ð¾î Ãß°¡ ¶Ç´Â ±âÁ¸ ¾ð¾î °³¼±
-- ?? **¹ö±× ¸®Æ÷Æ®** - [GitHub Issues](https://github.com/siriz/SLauncher/issues)¿¡ ¹®Á¦ º¸°í
-- ? **±â´É Á¦¾È** - »õ ±â´É Á¦¾È
-- ?? **ÄÚµå** - Ç® ¸®Äù½ºÆ® Á¦Ãâ
-- ?? **¹®¼­** - README ¶Ç´Â ÄÚµå ÁÖ¼® °³¼±
+### ê¸°ì—¬ ë°©ë²•
+- ðŸŒ **ë²ˆì—­** - ìƒˆ ì–¸ì–´ ì¶”ê°€ ë˜ëŠ” ê¸°ì¡´ ì–¸ì–´ ê°œì„ 
+- ðŸ› **ë²„ê·¸ ë¦¬í¬íŠ¸** - [GitHub Issues](https://github.com/siriz/SLauncher/issues)ì— ë¬¸ì œ ë³´ê³ 
+- âœ¨ **ê¸°ëŠ¥ ì œì•ˆ** - ìƒˆ ê¸°ëŠ¥ ì œì•ˆ
+- ðŸ’» **ì½”ë“œ** - í’€ ë¦¬í€˜ìŠ¤íŠ¸ ì œì¶œ
+- ðŸ“– **ë¬¸ì„œ** - README ë˜ëŠ” ì½”ë“œ ì£¼ì„ ê°œì„ 
 
-### °³¹ß ¿öÅ©ÇÃ·Î
-1. **Æ÷Å©** ÀúÀå¼Ò
-2. **Å¬·Ð** Æ÷Å©
+### ê°œë°œ ì›Œí¬í”Œë¡œ
+1. **í¬í¬** ì €ìž¥ì†Œ
+2. **í´ë¡ ** í¬í¬
    ```bash
    git clone https://github.com/your-username/SLauncher.git
    ```
-3. **»ý¼º** ±â´É ºê·£Ä¡
- ```bash
+3. **ìƒì„±** ê¸°ëŠ¥ ë¸Œëžœì¹˜
+   ```bash
    git checkout -b feature/AmazingFeature
    ```
-4. **º¯°æ** ¹× Ã¶ÀúÈ÷ Å×½ºÆ®
-5. **Ä¿¹Ô** ¸íÈ®ÇÑ ¸Þ½ÃÁö¿Í ÇÔ²²
+4. **ë³€ê²½** ë° ì² ì €ížˆ í…ŒìŠ¤íŠ¸
+5. **ì»¤ë°‹** ëª…í™•í•œ ë©”ì‹œì§€ì™€ í•¨ê»˜
    ```bash
    git commit -m "feat: Add amazing feature"
    ```
-6. **Çª½Ã** Æ÷Å©·Î
+6. **í‘¸ì‹œ** í¬í¬ë¡œ
    ```bash
    git push origin feature/AmazingFeature
    ```
-7. **¿­±â** Ç® ¸®Äù½ºÆ®
+7. **ì—´ê¸°** í’€ ë¦¬í€˜ìŠ¤íŠ¸
 
-### ÄÚµå ½ºÅ¸ÀÏ °¡ÀÌµå¶óÀÎ
-- ±âÁ¸ ÄÚµå ÆÐÅÏ µû¸£±â
-- ÀÇ¹Ì ÀÖ´Â º¯¼ö/¸Þ¼­µå ÀÌ¸§ »ç¿ë
-- °ø°³ ¸Þ¼­µå¿¡ XML ÁÖ¼® Ãß°¡
-- ¸Þ¼­µå ÁýÁß À¯Áö (´ÜÀÏ Ã¥ÀÓ)
-- Å« ÆÄÀÏ¿¡ ºÎºÐ Å¬·¡½º »ç¿ë
-- ¸ðµç UI ÅØ½ºÆ®¿¡ ´Ù±¹¾î Áö¿ø Ãß°¡
-
----
-
-## ?? ¶óÀÌ¼±½º
-
-ÀÌ ÇÁ·ÎÁ§Æ®´Â MIT ¶óÀÌ¼±½º¿¡ µû¶ó ¶óÀÌ¼±½º°¡ ºÎ¿©µË´Ï´Ù - ÀÚ¼¼ÇÑ ³»¿ëÀº [LICENSE](LICENSE) ÆÄÀÏÀ» ÂüÁ¶ÇÏ¼¼¿ä.
-
-### ¼­µåÆÄÆ¼ ¶óÀÌºê·¯¸®
-- **WinUI 3** - MIT ¶óÀÌ¼±½º
-- **CommunityToolkit.WinUI** - MIT ¶óÀÌ¼±½º
-- **WinUIEx** - MIT ¶óÀÌ¼±½º
-- **System.Drawing.Common** - MIT ¶óÀÌ¼±½º
+### ì½”ë“œ ìŠ¤íƒ€ì¼ ê°€ì´ë“œë¼ì¸
+- ê¸°ì¡´ ì½”ë“œ íŒ¨í„´ ë”°ë¥´ê¸°
+- ì˜ë¯¸ ìžˆëŠ” ë³€ìˆ˜/ë©”ì„œë“œ ì´ë¦„ ì‚¬ìš©
+- ê³µê°œ ë©”ì„œë“œì— XML ì£¼ì„ ì¶”ê°€
+- ë©”ì„œë“œ ì§‘ì¤‘ ìœ ì§€ (ë‹¨ì¼ ì±…ìž„)
+- í° íŒŒì¼ì— ë¶€ë¶„ í´ëž˜ìŠ¤ ì‚¬ìš©
+- ëª¨ë“  UI í…ìŠ¤íŠ¸ì— ë‹¤êµ­ì–´ ì§€ì› ì¶”ê°€
 
 ---
 
-## ?? °¨»çÀÇ ¸»
+## ðŸ“„ ë¼ì´ì„ ìŠ¤
 
-- **±â¹Ý**: Lolle2000laÀÇ [LauncherX](https://github.com/Lolle2000la/LauncherX)
-- **UI ÇÁ·¹ÀÓ¿öÅ©**: [WinUI 3](https://microsoft.github.io/microsoft-ui-xaml/)
+ì´ í”„ë¡œì íŠ¸ëŠ” MIT ë¼ì´ì„ ìŠ¤ì— ë”°ë¼ ë¼ì´ì„ ìŠ¤ê°€ ë¶€ì—¬ë©ë‹ˆë‹¤ - ìžì„¸í•œ ë‚´ìš©ì€ [LICENSE](LICENSE) íŒŒì¼ì„ ì°¸ì¡°í•˜ì„¸ìš”.
+
+### ì„œë“œíŒŒí‹° ë¼ì´ë¸ŒëŸ¬ë¦¬
+- **WinUI 3** - MIT ë¼ì´ì„ ìŠ¤
+- **CommunityToolkit.WinUI** - MIT ë¼ì´ì„ ìŠ¤
+- **WinUIEx** - MIT ë¼ì´ì„ ìŠ¤
+- **System.Drawing.Common** - MIT ë¼ì´ì„ ìŠ¤
+
+---
+
+## ðŸ™ ê°ì‚¬ì˜ ë§
+
+- **ê¸°ë°˜**: Lolle2000laì˜ [LauncherX](https://github.com/Lolle2000la/LauncherX)
+- **UI í”„ë ˆìž„ì›Œí¬**: [WinUI 3](https://microsoft.github.io/microsoft-ui-xaml/)
 - **Community Toolkit**: [Windows Community Toolkit](https://github.com/CommunityToolkit/Windows)
-- **Ã¢ °ü¸®**: [WinUIEx](https://github.com/dotMorten/WinUIEx)
-- **¾ÆÀÌÄÜ**: [Segoe Fluent Icons](https://docs.microsoft.com/en-us/windows/apps/design/style/segoe-fluent-icons-font)
+- **ì°½ ê´€ë¦¬**: [WinUIEx](https://github.com/dotMorten/WinUIEx)
+- **ì•„ì´ì½˜**: [Segoe Fluent Icons](https://docs.microsoft.com/en-us/windows/apps/design/style/segoe-fluent-icons-font)
 
 ---
 
-## ?? Áö¿ø
+## ðŸ“§ ì§€ì›
 
 - **Issues**: [GitHub Issues](https://github.com/siriz/SLauncher/issues)
-- **Åä·Ð**: [GitHub Discussions](https://github.com/siriz/SLauncher/discussions)
-- **ÀÌ¸ÞÀÏ**: your.email@example.com
+- **í† ë¡ **: [GitHub Discussions](https://github.com/siriz/SLauncher/discussions)
+- **ì´ë©”ì¼**: your.email@example.com
 
 ---
 
-## ?? º¯°æ ·Î±×
+## ðŸ“Š ë³€ê²½ ë¡œê·¸
 
-### v1.0.0 (ÃÖ½Å)
-- ? ´Ù±¹¾î Áö¿ø (¿µ¾î, ÇÑ±¹¾î, ÀÏº»¾î)
-- ? ½Ç½Ã°£ ¾ð¾î ÀüÈ¯
-- ? ´õ ³ªÀº ÄÚµå ±¸¼ºÀ» À§ÇÑ ºÎºÐ Å¬·¡½º ¸®ÆÑÅä¸µ
-- ? Ã¢ ÀüÃ¼¿¡¼­ Ctrl+¸¶¿ì½ºÈÙ ¾ÆÀÌÄÜ Å©±â Á¶Àý
-- ?? ±×¸®µå Á¤·Ä ´Ù±¹¾î ¼öÁ¤
-- ?? Ä³½Ã °ü¸® ¼­ºêÅØ½ºÆ® ´Ù±¹¾î ¼öÁ¤
-- ?? Æ÷°ýÀûÀÎ ´Ù±¹¾î Áö¿ø (¾ð¾î´ç 90°³ ÀÌ»ó ¹®ÀÚ¿­)
+### v1.0.0 (ìµœì‹ )
+- âœ¨ ë‹¤êµ­ì–´ ì§€ì› (ì˜ì–´, í•œêµ­ì–´, ì¼ë³¸ì–´)
+- âœ¨ ì‹¤ì‹œê°„ ì–¸ì–´ ì „í™˜
+- âœ¨ ë” ë‚˜ì€ ì½”ë“œ êµ¬ì„±ì„ ìœ„í•œ ë¶€ë¶„ í´ëž˜ìŠ¤ ë¦¬íŒ©í† ë§
+- âœ¨ ì°½ ì „ì²´ì—ì„œ Ctrl+ë§ˆìš°ìŠ¤íœ  ì•„ì´ì½˜ í¬ê¸° ì¡°ì ˆ
+- ðŸ› ê·¸ë¦¬ë“œ ì •ë ¬ ë‹¤êµ­ì–´ ìˆ˜ì •
+- ðŸ› ìºì‹œ ê´€ë¦¬ ì„œë¸Œí…ìŠ¤íŠ¸ ë‹¤êµ­ì–´ ìˆ˜ì •
+- ðŸ“ í¬ê´„ì ì¸ ë‹¤êµ­ì–´ ì§€ì› (ì–¸ì–´ë‹¹ 90ê°œ ì´ìƒ ë¬¸ìžì—´)
 
-### ÀÌÀü ¹öÀü
-- »ö»óÀÌ ÀÖ´Â ÅÇ °ü¸®
-- Àü¿ª ´ÜÃàÅ° Áö¿ø
-- ½Ã½ºÅÛ Æ®·¹ÀÌ ÅëÇÕ
-- ÆÄºñÄÜ Ä³½Ì
+### ì´ì „ ë²„ì „
+- ìƒ‰ìƒì´ ìžˆëŠ” íƒ­ ê´€ë¦¬
+- ì „ì—­ ë‹¨ì¶•í‚¤ ì§€ì›
+- ì‹œìŠ¤í…œ íŠ¸ë ˆì´ í†µí•©
+- íŒŒë¹„ì½˜ ìºì‹±
 
-ÀüÃ¼ º¯°æ ·Î±×´Â [CHANGELOG.md](CHANGELOG.md)¸¦ ÂüÁ¶ÇÏ¼¼¿ä.
+ì „ì²´ ë³€ê²½ ë¡œê·¸ëŠ” [CHANGELOG.md](CHANGELOG.md)ë¥¼ ì°¸ì¡°í•˜ì„¸ìš”.
 
 ---
 
 <div align="center">
 
-**Windows ÆÄ¿ö À¯Àú¸¦ À§ÇØ ??·Î ¸¸µé¾ú½À´Ï´Ù**
+**Windows íŒŒì›Œ ìœ ì €ë¥¼ ìœ„í•´ â¤ï¸ë¡œ ë§Œë“¤ì—ˆìŠµë‹ˆë‹¤**
 
-[? ¸Ç À§·Î](#slauncher)
+[â¬† ë§¨ ìœ„ë¡œ](#slauncher)
 
 </div>
