@@ -8,7 +8,7 @@
 [![.NET](https://img.shields.io/badge/.NET-8.0-512BD4)](https://dotnet.microsoft.com/download)
 [![WinUI 3](https://img.shields.io/badge/WinUI-3-0078D4)](https://microsoft.github.io/microsoft-ui-xaml/)
 
-**언어:** [English](README.md) • [한국어](README.ko-KR.md) • 日本語 (준비중)
+**언어:** [English](README.md) • [한국어](README.ko-KR.md) • [日本語](README.ja-JP.md)
 
 [기능](#-기능) • [설치](#-설치) • [사용법](#-사용법) • [소스 빌드](#%EF%B8%8F-소스에서-빌드) • [기여](#-기여하기)
 
