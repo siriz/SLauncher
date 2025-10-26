@@ -123,10 +123,10 @@
  <value>最後のタブは削除できません。</value>
   </data>
   <data name="DefaultTabName" xml:space="preserve">
-    <value>メイン</value>
+    <value>Main</value>
   </data>
   <data name="NewTabName" xml:space="preserve">
-    <value>新しいタブ {0}</value>
+    <value>New Tab {0}</value>
   </data>
   
   <!-- Tab Colors -->
