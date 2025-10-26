@@ -10,7 +10,7 @@
 
 **언어:** [English](README.md) • [한국어](README.ko-KR.md) • [日本語](README.ja-JP.md)
 
-[기능](#-기능) • [설치](#-설치) • [사용법](#-사용법) • [소스 빌드](#%EF%B8%8F-소스에서-빌드) • [기여](#-기여하기)
+[기능](#-기능) • [설치](#-설치) • [사용법](#-사용법) • [소스 빌드](#%EF%B8%8F-소스에서-빌드)
 
 </div>
 
@@ -67,7 +67,7 @@ SLauncher/
 ├── SLauncher.exe
 └── UserCache/
     ├── Settings/      # 사용자 설정
- ├── Files/         # 항목 데이터
+  ├── Files/         # 항목 데이터
     └── FaviconCache/  # 웹사이트 아이콘
 ```
 
@@ -196,10 +196,10 @@ SLauncher/
 │   ├── Controls/ # 사용자 지정 컨트롤
 │   │   ├── GridViewTile.xaml        # 앱 타일 컨트롤
 │   │   ├── GridViewTileGroup.xaml   # 그룹 컨트롤
-│   │   └── AboutSectionControl.xaml # 정보 페이지
+│ │   └── AboutSectionControl.xaml # 정보 페이지
 │   ├── Strings/      # 다국어 리소스
 │   │   ├── en-US/Resources.resw     # 영어
-│   │   ├── ko-KR/Resources.resw     # 한국어
+││   ├── ko-KR/Resources.resw     # 한국어
 │   │   └── ja-JP/Resources.resw   # 일본어
 │   ├── MainWindow*.cs    # 메인 창 (부분 클래스)
 │   │   ├── MainWindow.xaml.cs       # 메인 로직
@@ -210,8 +210,8 @@ SLauncher/
 │   │   ├── MainWindow.Search.cs     # 검색 로직
 │   │   └── MainWindow.Hotkeys.cs    # 단축키 및 트레이
 │   └── SettingsWindow*.cs# 설정 창 (부분 클래스)
-│    ├── SettingsWindow.xaml.cs         # 메인 로직
-│       ├── SettingsWindow.Localization.cs # 언어 UI
+│    ├── SettingsWindow.xaml.cs   # 메인 로직
+│     ├── SettingsWindow.Localization.cs # 언어 UI
 │       ├── SettingsWindow.Cache.cs        # 캐시 관리
 │    ├── SettingsWindow.Hotkey.cs       # 단축키 설정
 │       └── SettingsWindow.Settings.cs     # 설정 토글
@@ -224,97 +224,6 @@ SLauncher/
 - 각 부분 클래스 파일이 특정 기능 영역을 처리
 - 코드 탐색 및 유지 관리가 쉬움
 - 일관성을 위해 `MainWindow`와 동일한 패턴 따름
-
----
-
-## 🌐 다국어 지원
-
-### 지원 언어
-
-| 언어 | 코드 | 상태 | 리소스 |
-|------|------|------|--------|
-| 🇺🇸 English | en-US | ✅ 완료 | 90 문자열 |
-| 🇰🇷 한국어 | ko-KR | ✅ 완료 | 91 문자열 |
-| 🇯🇵 日本語 | ja-JP | ✅ 완료 | 91 문자열 |
-
-### 새 언어 추가
-
-1. **리소스 파일 생성**
-```
-   SLauncher/Strings/{언어-코드}/Resources.resw
-   ```
-
-2. **템플릿 복사**
-   ```bash
-   cp SLauncher/Strings/en-US/Resources.resw SLauncher/Strings/{언어-코드}/
-   ```
-
-3. **번역**
-   - Visual Studio에서 `Resources.resw` 열기
-   - `<value>` 내용 번역 (`<data name>`은 변경하지 않음)
-   - UI 레이아웃 테스트 (일부 언어는 더 김)
-
-4. **설정에 추가**
-   ```xaml
- <!-- SettingsWindow.xaml -->
-   <ComboBox x:Name="LanguageComboBox">
-       <ComboBoxItem Content="귀하의 언어 이름" Tag="{언어-코드}" />
-   </ComboBox>
-   ```
-
-5. **테스트**
-   - 빌드 및 실행
-   - 설정 → 언어에서 새 언어 선택
-   - 모든 UI 요소가 올바르게 표시되는지 확인
-
-### 번역 가이드라인
-- 플레이스홀더 유지: `{0}`, `{1}` (문자열 형식에 사용)
-- 줄 바꿈 및 형식 유지
-- 고유 관례 사용 (구두점, 따옴표)
-- 긴 번역으로 테스트 (레이아웃에 영향을 줄 수 있음)
-- 기술 용어 일관성 유지 (예: "캐시", "단축키")
-
----
-
-## 🤝 기여하기
-
-기여를 환영합니다! 다음과 같이 도울 수 있습니다:
-
-### 기여 방법
-- 🌍 **번역** - 새 언어 추가 또는 기존 언어 개선
-- 🐛 **버그 리포트** - [GitHub Issues](https://github.com/siriz/SLauncher/issues)에 문제 보고
-- ✨ **기능 제안** - 새 기능 제안
-- 💻 **코드** - 풀 리퀘스트 제출
-- 📖 **문서** - README 또는 코드 주석 개선
-
-### 개발 워크플로
-1. **포크** 저장소
-2. **클론** 포크
-   ```bash
-   git clone https://github.com/your-username/SLauncher.git
-   ```
-3. **생성** 기능 브랜치
-   ```bash
-   git checkout -b feature/AmazingFeature
-   ```
-4. **변경** 및 철저히 테스트
-5. **커밋** 명확한 메시지와 함께
-   ```bash
-   git commit -m "feat: Add amazing feature"
-   ```
-6. **푸시** 포크로
-   ```bash
-   git push origin feature/AmazingFeature
-   ```
-7. **열기** 풀 리퀘스트
-
-### 코드 스타일 가이드라인
-- 기존 코드 패턴 따르기
-- 의미 있는 변수/메서드 이름 사용
-- 공개 메서드에 XML 주석 추가
-- 메서드 집중 유지 (단일 책임)
-- 큰 파일에 부분 클래스 사용
-- 모든 UI 텍스트에 다국어 지원 추가
 
 ---
 
@@ -332,19 +241,11 @@ SLauncher/
 
 ## 🙏 감사의 말
 
-- **기반**: Lolle2000la의 [LauncherX](https://github.com/Lolle2000la/LauncherX)
+- **기반**: Apollo199999999의 [LauncherX](https://github.com/Apollo199999999/LauncherX)
 - **UI 프레임워크**: [WinUI 3](https://microsoft.github.io/microsoft-ui-xaml/)
 - **Community Toolkit**: [Windows Community Toolkit](https://github.com/CommunityToolkit/Windows)
 - **창 관리**: [WinUIEx](https://github.com/dotMorten/WinUIEx)
 - **아이콘**: [Segoe Fluent Icons](https://docs.microsoft.com/en-us/windows/apps/design/style/segoe-fluent-icons-font)
-
----
-
-## 📧 지원
-
-- **Issues**: [GitHub Issues](https://github.com/siriz/SLauncher/issues)
-- **토론**: [GitHub Discussions](https://github.com/siriz/SLauncher/discussions)
-- **이메일**: your.email@example.com
 
 ---
 

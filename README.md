@@ -10,7 +10,7 @@
 
 **Languages:** [English](README.md) • [한국어](README.ko-KR.md) • [日本語](README.ja-JP.md)
 
-[Features](#-features) • [Installation](#-installation) • [Usage](#-usage) • [Building](#-building-from-source) • [Contributing](#-contributing)
+[Features](#-features) • [Installation](#-installation) • [Usage](#-usage) • [Building](#-building-from-source)
 
 </div>
 
@@ -189,10 +189,10 @@ start SLauncher.sln
 SLauncher/
 ├── SLauncher/   # Main WinUI 3 project
 │   ├── Classes/     # Core classes
-│   │   ├── LocalizationManager.cs   # Multi-language support
+│   │   ├── LocalizationManager.cs # Multi-language support
 │   │   ├── UserSettingsClass.cs     # Settings management
 │   │   ├── GlobalHotkeyManager.cs   # Hotkey registration
-│   │   └── IconHelpers.cs       # Icon extraction & cache
+│   │   └── IconHelpers.cs   # Icon extraction & cache
 │   ├── Controls/   # Custom controls
 │   │   ├── GridViewTile.xaml  # App tile control
 │   │   ├── GridViewTileGroup.xaml   # Group control
@@ -227,97 +227,6 @@ Both `MainWindow` and `SettingsWindow` use partial classes for better code organ
 
 ---
 
-## 🌐 Localization
-
-### Supported Languages
-
-| Language | Code | Status | Resources |
-|----------|------|--------|-----------|
-| 🇺🇸 English | en-US | ✅ Complete | 90 strings |
-| 🇰🇷 한국어 | ko-KR | ✅ Complete | 91 strings |
-| 🇯🇵 日本語 | ja-JP | ✅ Complete | 91 strings |
-
-### Adding New Language
-
-1. **Create Resource File**
-   ```
-   SLauncher/Strings/{language-code}/Resources.resw
-   ```
-
-2. **Copy Template**
-   ```bash
- cp SLauncher/Strings/en-US/Resources.resw SLauncher/Strings/{language-code}/
-   ```
-
-3. **Translate**
-   - Open `Resources.resw` in Visual Studio
-   - Translate `<value>` content (keep `<data name>` unchanged)
-   - Test UI layout (some languages are longer)
-
-4. **Add to Settings**
-   ```xaml
-   <!-- SettingsWindow.xaml -->
-   <ComboBox x:Name="LanguageComboBox">
-       <ComboBoxItem Content="Your Language Name" Tag="{language-code}" />
-   </ComboBox>
-   ```
-
-5. **Test**
-   - Build and run
-   - Select new language in Settings → Language
-   - Verify all UI elements display correctly
-
-### Translation Guidelines
-- Keep placeholders: `{0}`, `{1}` (used for string formatting)
-- Maintain line breaks and formatting
-- Use native conventions (punctuation, quotes)
-- Test with long translations (may affect layout)
-- Keep technical terms consistent (e.g., "cache", "hotkey")
-
----
-
-## 🤝 Contributing
-
-Contributions are welcome! Here's how you can help:
-
-### Ways to Contribute
-- 🌍 **Translations** - Add new languages or improve existing ones
-- 🐛 **Bug Reports** - Report issues on [GitHub Issues](https://github.com/siriz/SLauncher/issues)
-- ✨ **Feature Requests** - Suggest new features
-- 💻 **Code** - Submit pull requests
-- 📖 **Documentation** - Improve README or code comments
-
-### Development Workflow
-1. **Fork** the repository
-2. **Clone** your fork
-   ```bash
-   git clone https://github.com/your-username/SLauncher.git
-   ```
-3. **Create** feature branch
-   ```bash
-   git checkout -b feature/AmazingFeature
-   ```
-4. **Make** changes and test thoroughly
-5. **Commit** with clear messages
-   ```bash
-   git commit -m "feat: Add amazing feature"
-   ```
-6. **Push** to your fork
-   ```bash
-   git push origin feature/AmazingFeature
-   ```
-7. **Open** Pull Request
-
-### Code Style Guidelines
-- Follow existing code patterns
-- Use meaningful variable/method names
-- Add XML comments for public methods
-- Keep methods focused (single responsibility)
-- Use partial classes for large files
-- Add localization for all UI text
-
----
-
 ## 📄 License
 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
@@ -332,19 +241,11 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 ## 🙏 Acknowledgments
 
-- **Based on**: [LauncherX](https://github.com/Lolle2000la/LauncherX) by Lolle2000la
+- **Based on**: Apollo199999999's [LauncherX](https://github.com/Apollo199999999/LauncherX)
 - **UI Framework**: [WinUI 3](https://microsoft.github.io/microsoft-ui-xaml/)
 - **Community Toolkit**: [Windows Community Toolkit](https://github.com/CommunityToolkit/Windows)
 - **Window Management**: [WinUIEx](https://github.com/dotMorten/WinUIEx)
 - **Icons**: [Segoe Fluent Icons](https://docs.microsoft.com/en-us/windows/apps/design/style/segoe-fluent-icons-font)
-
----
-
-## 📧 Support
-
-- **Issues**: [GitHub Issues](https://github.com/siriz/SLauncher/issues)
-- **Discussions**: [GitHub Discussions](https://github.com/siriz/SLauncher/discussions)
-- **Email**: your.email@example.com
 
 ---
 

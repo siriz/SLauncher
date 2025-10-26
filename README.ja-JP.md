@@ -10,7 +10,7 @@
 
 **言語:** [English](README.md) • [한국어](README.ko-KR.md) • [日本語](README.ja-JP.md)
 
-[機能](#-機能) • [インストール](#-インストール) • [使い方](#-使い方) • [ソースからビルド](#%EF%B8%8F-ソースからビルド) • [貢献](#-貢献)
+[機能](#-機能) • [インストール](#-インストール) • [使い方](#-使い方) • [ソースからビルド](#%EF%B8%8F-ソースからビルド)
 
 </div>
 
@@ -198,13 +198,13 @@ SLauncher/
 │   │   ├── GridViewTileGroup.xaml   # グループコントロール
 │   │   └── AboutSectionControl.xaml # Aboutページ
 │   ├── Strings/      # 多言語リソース
-│ │   ├── en-US/Resources.resw     # 英語
+│   │   ├── en-US/Resources.resw     # 英語
 │   │   ├── ko-KR/Resources.resw     # 韓国語
-│ │   └── ja-JP/Resources.resw     # 日本語
+│   │   └── ja-JP/Resources.resw     # 日本語
 │   ├── MainWindow*.cs    # メインウィンドウ（部分クラス）
 │   │   ├── MainWindow.xaml.cs       # メインロジック
 │   │   ├── MainWindow.UI.cs     # UI管理
-│   │   ├── MainWindow.Tabs.cs       # タブ管理
+│   │   ├── MainWindow.Tabs.cs # タブ管理
 │   │   ├── MainWindow.Items.cs      # アイテム管理
 │   │   ├── MainWindow.DragDrop.cs   # ドラッグ＆ドロップ
 │   │   ├── MainWindow.Search.cs     # 検索ロジック
@@ -227,97 +227,6 @@ SLauncher/
 
 ---
 
-## 🌐 多言語化
-
-### サポートされている言語
-
-| 言語 | コード | ステータス | リソース |
-|------|--------|-----------|----------|
-| 🇺🇸 English | en-US | ✅ 完了 | 90文字列 |
-| 🇰🇷 한국어 | ko-KR | ✅ 完了 | 91文字列 |
-| 🇯🇵 日本語 | ja-JP | ✅ 完了 | 91文字列 |
-
-### 新しい言語の追加
-
-1. **リソースファイルの作成**
-   ```
-   SLauncher/Strings/{言語コード}/Resources.resw
-   ```
-
-2. **テンプレートのコピー**
-   ```bash
-   cp SLauncher/Strings/en-US/Resources.resw SLauncher/Strings/{言語コード}/
-   ```
-
-3. **翻訳**
-   - Visual Studioで`Resources.resw`を開く
-   - `<value>`の内容を翻訳（`<data name>`は変更しない）
-   - UIレイアウトをテスト（一部の言語は長い）
-
-4. **設定に追加**
-   ```xaml
-   <!-- SettingsWindow.xaml -->
-   <ComboBox x:Name="LanguageComboBox">
-       <ComboBoxItem Content="あなたの言語名" Tag="{言語コード}" />
-   </ComboBox>
-   ```
-
-5. **テスト**
-   - ビルドして実行
-   - 設定 → 言語で新しい言語を選択
-   - すべてのUI要素が正しく表示されることを確認
-
-### 翻訳ガイドライン
-- プレースホルダーを保持: `{0}`、`{1}`（文字列フォーマットに使用）
-- 改行とフォーマットを維持
-- ネイティブの慣習を使用（句読点、引用符）
-- 長い翻訳でテスト（レイアウトに影響する可能性あり）
-- 技術用語の一貫性を保つ（例: 「キャッシュ」、「ホットキー」）
-
----
-
-## 🤝 貢献
-
-貢献を歓迎します！次のように協力できます:
-
-### 貢献方法
-- 🌍 **翻訳** - 新しい言語を追加または既存の言語を改善
-- 🐛 **バグ報告** - [GitHub Issues](https://github.com/siriz/SLauncher/issues)で問題を報告
-- ✨ **機能リクエスト** - 新機能を提案
-- 💻 **コード** - プルリクエストを提出
-- 📖 **ドキュメント** - READMEまたはコードコメントを改善
-
-### 開発ワークフロー
-1. **フォーク** リポジトリ
-2. **クローン** フォーク
-   ```bash
-   git clone https://github.com/your-username/SLauncher.git
-   ```
-3. **作成** 機能ブランチ
-   ```bash
-   git checkout -b feature/AmazingFeature
-   ```
-4. **変更** して徹底的にテスト
-5. **コミット** 明確なメッセージで
-   ```bash
-   git commit -m "feat: Add amazing feature"
-   ```
-6. **プッシュ** フォークへ
- ```bash
-   git push origin feature/AmazingFeature
-   ```
-7. **開く** プルリクエスト
-
-### コードスタイルガイドライン
-- 既存のコードパターンに従う
-- 意味のある変数/メソッド名を使用
-- パブリックメソッドにXMLコメントを追加
-- メソッドを集中的に保つ（単一責任）
-- 大きなファイルには部分クラスを使用
-- すべてのUIテキストに多言語化を追加
-
----
-
 ## 📄 ライセンス
 
 このプロジェクトはMITライセンスの下でライセンスされています - 詳細は[LICENSE](LICENSE)ファイルを参照してください。
@@ -332,19 +241,11 @@ SLauncher/
 
 ## 🙏 謝辞
 
-- **ベース**: Lolle2000laの[LauncherX](https://github.com/Lolle2000la/LauncherX)
+- **ベース**: Apollo199999999の[LauncherX](https://github.com/Apollo199999999/LauncherX)
 - **UIフレームワーク**: [WinUI 3](https://microsoft.github.io/microsoft-ui-xaml/)
 - **Community Toolkit**: [Windows Community Toolkit](https://github.com/CommunityToolkit/Windows)
 - **ウィンドウ管理**: [WinUIEx](https://github.com/dotMorten/WinUIEx)
 - **アイコン**: [Segoe Fluent Icons](https://docs.microsoft.com/en-us/windows/apps/design/style/segoe-fluent-icons-font)
-
----
-
-## 📧 サポート
-
-- **Issues**: [GitHub Issues](https://github.com/siriz/SLauncher/issues)
-- **ディスカッション**: [GitHub Discussions](https://github.com/siriz/SLauncher/discussions)
-- **メール**: your.email@example.com
 
 ---
 
