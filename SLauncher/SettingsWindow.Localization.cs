@@ -92,17 +92,18 @@ namespace SLauncher
 }
          else if (child is TextBlock textBlock)
       {
-             // Cache Management title
-                   if (textBlock.Text.Contains("Cache") || textBlock.Text.Contains("キャッシュ") || textBlock.Text.Contains("캐시"))
+   // Cache Management title and subtitle
+        if (textBlock.Text.Contains("Cache") || textBlock.Text.Contains("キャッシュ") || textBlock.Text.Contains("캐시") ||
+      textBlock.Text.Contains("Website") || textBlock.Text.Contains("ウェブサイト") || textBlock.Text.Contains("웹사이트"))
      {
      if (textBlock.FontSize == 20) // Title
       {
   textBlock.Text = LocalizationManager.GetString("SettingsCacheManagementTitle");
-            }
-        else // Subtitle
-             {
-             textBlock.Text = LocalizationManager.GetString("SettingsCacheManagementSubtitle");
-          }
+     }
+    else if (textBlock.FontSize == 13) // Subtitle
+    {
+        textBlock.Text = LocalizationManager.GetString("SettingsCacheManagementSubtitle");
+       }
   }
        // About title
         else if (textBlock.Text.Contains("About") || textBlock.Text.Contains("について") || textBlock.Text.Contains("정보"))
