@@ -282,12 +282,6 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 - 🐛 Fixed Cache Management subtitle localization
 - 📝 Comprehensive localization (90+ strings per language)
 
-### Previous Versions (LauncherX)
-- Tab management with colors
-- Global hotkey support
-- System tray integration
-- Favicon caching
-
 ---
 
 <div align="center">
