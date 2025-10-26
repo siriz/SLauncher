@@ -8,6 +8,8 @@
 [![.NET](https://img.shields.io/badge/.NET-8.0-512BD4)](https://dotnet.microsoft.com/download)
 [![WinUI 3](https://img.shields.io/badge/WinUI-3-0078D4)](https://microsoft.github.io/microsoft-ui-xaml/)
 
+**[English](README.md)** | **[«—±πæÓ](README.ko-KR.md)** | **[ÏÌ‹‚Âﬁ](README.ja-JP.md)**
+
 [Features](#-features) ? [Installation](#-installation) ? [Usage](#-usage) ? [Building](#-building-from-source) ? [Contributing](#-contributing)
 
 </div>
