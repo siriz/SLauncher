@@ -16,38 +16,38 @@
 
 ---
 
-## ?? Features
+## 🌟 Features
 
 ### Core Functionality
-- ? **Quick Launch** - Access your favorite apps, folders, and websites instantly
-- ?? **Global Hotkey** - Show/hide launcher from anywhere (default: `Ctrl + Space`)
-- ?? **Tab Organization** - Organize items into multiple tabs with custom names and colors
-- ??? **Drag & Drop** - Easy item management with intuitive drag-and-drop
-- ?? **Smart Search** - Find items or directly open files/folders/URLs from search
-- ?? **Icon Scaling** - Adjust icon size with slider or `Ctrl + Mouse Wheel` (0.25x - 6.00x)
+- ⚡ **Quick Launch** - Access your favorite apps, folders, and websites instantly
+- 🔑 **Global Hotkey** - Show/hide launcher from anywhere (default: `Ctrl + Space`)
+- 📑 **Tab Organization** - Organize items into multiple tabs with custom names and colors
+- 🖱️ **Drag & Drop** - Easy item management with intuitive drag-and-drop
+- 🔍 **Smart Search** - Find items or directly open files/folders/URLs from search
+- 📐 **Icon Scaling** - Adjust icon size with slider or `Ctrl + Mouse Wheel` (0.25x - 6.00x)
 
 ### Multi-Language Support
-- ???? **English**
-- ???? **�ѱ���** (Korean)
-- ???? **������** (Japanese)
-- ? Real-time language switching - No restart required!
+- 🇺🇸 **English**
+- 🇰🇷 **한국어** (Korean)
+- 🇯🇵 **日本語** (Japanese)
+- ⚡ Real-time language switching - No restart required!
 
 ### Modern UI
-- ?? **Windows 11 Design** - Native WinUI 3 with Mica/Acrylic effects
-- ?? **Theme Support** - Automatically follows system dark/light theme
-- ?? **Fullscreen Mode** - Immersive launcher experience
-- ?? **Grid Alignment** - Choose between Left or Center alignment
-- ?? **Tab Colors** - 8 preset colors for tab customization
+- 🎨 **Windows 11 Design** - Native WinUI 3 with Mica/Acrylic effects
+- 🌓 **Theme Support** - Automatically follows system dark/light theme
+- 📺 **Fullscreen Mode** - Immersive launcher experience
+- ⚖️ **Grid Alignment** - Choose between Left or Center alignment
+- 🎨 **Tab Colors** - 8 preset colors for tab customization
 
 ### Performance & Portability
-- ?? **Portable** - All data stored in executable folder (`UserCache/`)
-- ?? **Fast Startup** - Cached data for instant loading
-- ?? **Favicon Cache** - Website icons cached locally
-- ?? **Lightweight** - Minimal resource usage
+- 📦 **Portable** - All data stored in executable folder (`UserCache/`)
+- 🚀 **Fast Startup** - Cached data for instant loading
+- 💾 **Favicon Cache** - Website icons cached locally
+- 🪶 **Lightweight** - Minimal resource usage
 
 ---
 
-## ?? Installation
+## 📦 Installation
 
 ### Requirements
 - **Windows 10** version 1809 (Build 17763) or later
@@ -64,16 +64,16 @@
 All settings and data are stored in the `UserCache` folder next to the executable:
 ```
 SLauncher/
-������ SLauncher.exe
-������ UserCache/
-    ������ Settings/   # User preferences
-    ������ Files/        # Item data
-  ������ FaviconCache/    # Website icons
+├── SLauncher.exe
+└── UserCache/
+    ├── Settings/   # User preferences
+    ├── Files/        # Item data
+    └── FaviconCache/    # Website icons
 ```
 
 ---
 
-## ?? Usage
+## 🎮 Usage
 
 ### Adding Items
 
@@ -91,8 +91,8 @@ SLauncher/
 
 | Action | Method |
 |--------|--------|
-| **Edit** | Right-click item �� Edit |
-| **Delete** | Right-click item �� Delete or press `Delete` key |
+| **Edit** | Right-click item → Edit |
+| **Delete** | Right-click item → Delete or press `Delete` key |
 | **Create Group** | Drag one item onto another |
 | **Reorder** | Drag items to new positions |
 
@@ -138,7 +138,7 @@ Adjust icon size using:
 
 ---
 
-## ?? Settings
+## ⚙️ Settings
 
 ### General Settings
 - **Enable Fullscreen** - Use launcher in fullscreen mode
@@ -157,7 +157,7 @@ Adjust icon size using:
 
 ---
 
-## ??? Building from Source
+## 🛠️ Building from Source
 
 ### Prerequisites
 - **Visual Studio 2022** (17.8 or later)
@@ -187,35 +187,35 @@ start SLauncher.sln
 
 ```
 SLauncher/
-������ SLauncher/              # Main WinUI 3 project
-��   ������ Classes/       # Core classes
-��   ��   ������ LocalizationManager.cs   # Multi-language support
-��   ��   ������ UserSettingsClass.cs     # Settings management
-��   ��   ������ GlobalHotkeyManager.cs   # Hotkey registration
-��   ��   ������ IconHelpers.cs       # Icon extraction & cache
-��   ������ Controls/           # Custom controls
-��   ��   ������ GridViewTile.xaml    # App tile control
-��   ��   ������ GridViewTileGroup.xaml   # Group control
-��   ��   ������ AboutSectionControl.xaml # About page
-��   ������ Strings/  # Localization resources
-��   �� ������ en-US/Resources.resw     # English
-��   ��   ������ ko-KR/Resources.resw     # Korean
-��   ��   ������ ja-JP/Resources.resw# Japanese
-��   ������ MainWindow*.cs  # Main window (partial classes)
-��   ��   ������ MainWindow.xaml.cs       # Main logic
-��   ��   ������ MainWindow.UI.cs   # UI management
-��   ��   ������ MainWindow.Tabs.cs       # Tab management
-��   �������� MainWindow.Items.cs      # Item management
-��   ��   ������ MainWindow.DragDrop.cs# Drag & drop
-��   ��   ������ MainWindow.Search.cs     # Search logic
-��   ��   ������ MainWindow.Hotkeys.cs    # Hotkey & tray
-��   ������ SettingsWindow*.cs  # Settings window (partial classes)
-��       ������ SettingsWindow.xaml.cs      # Main logic
-��       ������ SettingsWindow.Localization.cs # Language UI
-��       ������ SettingsWindow.Cache.cs     # Cache management
-��       ������ SettingsWindow.Hotkey.cs    # Hotkey config
-��       ������ SettingsWindow.Settings.cs  # Settings toggles
-������ WinFormsClassLibrary/   # Helper library (file dialogs)
+├── SLauncher/   # Main WinUI 3 project
+│   ├── Classes/       # Core classes
+│ │   ├── LocalizationManager.cs   # Multi-language support
+│   │   ├── UserSettingsClass.cs     # Settings management
+│   │   ├── GlobalHotkeyManager.cs   # Hotkey registration
+│   │   └── IconHelpers.cs       # Icon extraction & cache
+│   ├── Controls/   # Custom controls
+│   │   ├── GridViewTile.xaml    # App tile control
+│   │   ├── GridViewTileGroup.xaml   # Group control
+│   │   └── AboutSectionControl.xaml # About page
+│   ├── Strings/  # Localization resources
+│   │   ├── en-US/Resources.resw     # English
+│   │   ├── ko-KR/Resources.resw     # Korean
+│   │   └── ja-JP/Resources.resw# Japanese
+│   ├── MainWindow*.cs  # Main window (partial classes)
+│   │   ├── MainWindow.xaml.cs       # Main logic
+│   │   ├── MainWindow.UI.cs   # UI management
+│   │   ├── MainWindow.Tabs.cs       # Tab management
+│   │   ├── MainWindow.Items.cs      # Item management
+│   │   ├── MainWindow.DragDrop.cs# Drag & drop
+│   │   ├── MainWindow.Search.cs     # Search logic
+│   │   └── MainWindow.Hotkeys.cs    # Hotkey & tray
+│   └── SettingsWindow*.cs  # Settings window (partial classes)
+│       ├── SettingsWindow.xaml.cs    # Main logic
+│       ├── SettingsWindow.Localization.cs # Language UI
+│       ├── SettingsWindow.Cache.cs     # Cache management
+│       ├── SettingsWindow.Hotkey.cs    # Hotkey config
+│       └── SettingsWindow.Settings.cs  # Settings toggles
+└── WinFormsClassLibrary/   # Helper library (file dialogs)
 ```
 
 ### Partial Classes Pattern
@@ -227,15 +227,15 @@ Both `MainWindow` and `SettingsWindow` use partial classes for better code organ
 
 ---
 
-## ?? Localization
+## 🌐 Localization
 
 ### Supported Languages
 
 | Language | Code | Status | Resources |
 |----------|------|--------|-----------|
-| ???? English | en-US | ? Complete | 90 strings |
-| ???? �ѱ��� | ko-KR | ? Complete | 91 strings |
-| ???? ������ | ja-JP | ? Complete | 91 strings |
+| 🇺🇸 English | en-US | ✅ Complete | 90 strings |
+| 🇰🇷 한국어 | ko-KR | ✅ Complete | 91 strings |
+| 🇯🇵 日本語 | ja-JP | ✅ Complete | 91 strings |
 
 ### Adding New Language
 
@@ -258,13 +258,13 @@ Both `MainWindow` and `SettingsWindow` use partial classes for better code organ
    ```xaml
    <!-- SettingsWindow.xaml -->
    <ComboBox x:Name="LanguageComboBox">
-    <ComboBoxItem Content="Your Language Name" Tag="{language-code}" />
+       <ComboBoxItem Content="Your Language Name" Tag="{language-code}" />
    </ComboBox>
    ```
 
 5. **Test**
    - Build and run
-   - Select new language in Settings �� Language
+   - Select new language in Settings → Language
    - Verify all UI elements display correctly
 
 ### Translation Guidelines
@@ -276,16 +276,16 @@ Both `MainWindow` and `SettingsWindow` use partial classes for better code organ
 
 ---
 
-## ?? Contributing
+## 🤝 Contributing
 
 Contributions are welcome! Here's how you can help:
 
 ### Ways to Contribute
-- ?? **Translations** - Add new languages or improve existing ones
-- ?? **Bug Reports** - Report issues on [GitHub Issues](https://github.com/yourusername/SLauncher/issues)
-- ? **Feature Requests** - Suggest new features
-- ?? **Code** - Submit pull requests
-- ?? **Documentation** - Improve README or code comments
+- 🌍 **Translations** - Add new languages or improve existing ones
+- 🐛 **Bug Reports** - Report issues on [GitHub Issues](https://github.com/yourusername/SLauncher/issues)
+- ✨ **Feature Requests** - Suggest new features
+- 💻 **Code** - Submit pull requests
+- 📖 **Documentation** - Improve README or code comments
 
 ### Development Workflow
 1. **Fork** the repository
@@ -299,7 +299,7 @@ Contributions are welcome! Here's how you can help:
    ```
 4. **Make** changes and test thoroughly
 5. **Commit** with clear messages
- ```bash
+   ```bash
    git commit -m "feat: Add amazing feature"
    ```
 6. **Push** to your fork
@@ -318,7 +318,7 @@ Contributions are welcome! Here's how you can help:
 
 ---
 
-## ?? License
+## 📄 License
 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
@@ -330,7 +330,7 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 ---
 
-## ?? Acknowledgments
+## 🙏 Acknowledgments
 
 - **Based on**: [LauncherX](https://github.com/Lolle2000la/LauncherX) by Lolle2000la
 - **UI Framework**: [WinUI 3](https://microsoft.github.io/microsoft-ui-xaml/)
@@ -340,7 +340,7 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 ---
 
-## ?? Support
+## 📧 Support
 
 - **Issues**: [GitHub Issues](https://github.com/yourusername/SLauncher/issues)
 - **Discussions**: [GitHub Discussions](https://github.com/yourusername/SLauncher/discussions)
@@ -348,16 +348,16 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 ---
 
-## ?? Changelog
+## 📊 Changelog
 
 ### v1.0.0 (Latest)
-- ? Multi-language support (English, Korean, Japanese)
-- ? Real-time language switching
-- ? Partial class refactoring for better code organization
-- ? Window-wide Ctrl+MouseWheel icon scaling
-- ?? Fixed Grid Alignment localization
-- ?? Fixed Cache Management subtitle localization
-- ?? Comprehensive localization (90+ strings per language)
+- ✨ Multi-language support (English, Korean, Japanese)
+- ✨ Real-time language switching
+- ✨ Partial class refactoring for better code organization
+- ✨ Window-wide Ctrl+MouseWheel icon scaling
+- 🐛 Fixed Grid Alignment localization
+- 🐛 Fixed Cache Management subtitle localization
+- 📝 Comprehensive localization (90+ strings per language)
 
 ### Previous Versions
 - Tab management with colors
@@ -371,8 +371,8 @@ See full changelog in [CHANGELOG.md](CHANGELOG.md)
 
 <div align="center">
 
-**Made with ?? for Windows power users**
+**Made with ❤️ for Windows power users**
 
-[? Back to Top](#slauncher)
+[⬆ Back to Top](#slauncher)
 
 </div>
