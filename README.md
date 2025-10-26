@@ -1,4 +1,4 @@
-# SLauncher
+ï»¿# SLauncher
 
 <div align="center">
 
@@ -8,7 +8,7 @@
 [![.NET](https://img.shields.io/badge/.NET-8.0-512BD4)](https://dotnet.microsoft.com/download)
 [![WinUI 3](https://img.shields.io/badge/WinUI-3-0078D4)](https://microsoft.github.io/microsoft-ui-xaml/)
 
-**[English](README.md)** | **[ÇÑ±¹¾î](README.ko-KR.md)** | **[ìíÜâåÞ](README.ja-JP.md)**
+**[English](README.md)** | **[ï¿½Ñ±ï¿½ï¿½ï¿½](README.ko-KR.md)** | **[ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½](README.ja-JP.md)**
 
 [Features](#-features) ? [Installation](#-installation) ? [Usage](#-usage) ? [Building](#-building-from-source) ? [Contributing](#-contributing)
 
@@ -28,8 +28,8 @@
 
 ### Multi-Language Support
 - ???? **English**
-- ???? **ÇÑ±¹¾î** (Korean)
-- ???? **ìíÜâåÞ** (Japanese)
+- ???? **ï¿½Ñ±ï¿½ï¿½ï¿½** (Korean)
+- ???? **ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½** (Japanese)
 - ? Real-time language switching - No restart required!
 
 ### Modern UI
@@ -64,11 +64,11 @@
 All settings and data are stored in the `UserCache` folder next to the executable:
 ```
 SLauncher/
-¦§¦¡¦¡ SLauncher.exe
-¦¦¦¡¦¡ UserCache/
-    ¦§¦¡¦¡ Settings/   # User preferences
-    ¦§¦¡¦¡ Files/        # Item data
-  ¦¦¦¡¦¡ FaviconCache/    # Website icons
+ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ SLauncher.exe
+ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ UserCache/
+    ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ Settings/   # User preferences
+    ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ Files/        # Item data
+  ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ FaviconCache/    # Website icons
 ```
 
 ---
@@ -91,8 +91,8 @@ SLauncher/
 
 | Action | Method |
 |--------|--------|
-| **Edit** | Right-click item ¡æ Edit |
-| **Delete** | Right-click item ¡æ Delete or press `Delete` key |
+| **Edit** | Right-click item ï¿½ï¿½ Edit |
+| **Delete** | Right-click item ï¿½ï¿½ Delete or press `Delete` key |
 | **Create Group** | Drag one item onto another |
 | **Reorder** | Drag items to new positions |
 
@@ -187,35 +187,35 @@ start SLauncher.sln
 
 ```
 SLauncher/
-¦§¦¡¦¡ SLauncher/              # Main WinUI 3 project
-¦¢   ¦§¦¡¦¡ Classes/       # Core classes
-¦¢   ¦¢   ¦§¦¡¦¡ LocalizationManager.cs   # Multi-language support
-¦¢   ¦¢   ¦§¦¡¦¡ UserSettingsClass.cs     # Settings management
-¦¢   ¦¢   ¦§¦¡¦¡ GlobalHotkeyManager.cs   # Hotkey registration
-¦¢   ¦¢   ¦¦¦¡¦¡ IconHelpers.cs       # Icon extraction & cache
-¦¢   ¦§¦¡¦¡ Controls/           # Custom controls
-¦¢   ¦¢   ¦§¦¡¦¡ GridViewTile.xaml    # App tile control
-¦¢   ¦¢   ¦§¦¡¦¡ GridViewTileGroup.xaml   # Group control
-¦¢   ¦¢   ¦¦¦¡¦¡ AboutSectionControl.xaml # About page
-¦¢   ¦§¦¡¦¡ Strings/  # Localization resources
-¦¢   ¦¢ ¦§¦¡¦¡ en-US/Resources.resw     # English
-¦¢   ¦¢   ¦§¦¡¦¡ ko-KR/Resources.resw     # Korean
-¦¢   ¦¢   ¦¦¦¡¦¡ ja-JP/Resources.resw# Japanese
-¦¢   ¦§¦¡¦¡ MainWindow*.cs  # Main window (partial classes)
-¦¢   ¦¢   ¦§¦¡¦¡ MainWindow.xaml.cs       # Main logic
-¦¢   ¦¢   ¦§¦¡¦¡ MainWindow.UI.cs   # UI management
-¦¢   ¦¢   ¦§¦¡¦¡ MainWindow.Tabs.cs       # Tab management
-¦¢   ¦¢¦§¦¡¦¡ MainWindow.Items.cs      # Item management
-¦¢   ¦¢   ¦§¦¡¦¡ MainWindow.DragDrop.cs# Drag & drop
-¦¢   ¦¢   ¦§¦¡¦¡ MainWindow.Search.cs     # Search logic
-¦¢   ¦¢   ¦¦¦¡¦¡ MainWindow.Hotkeys.cs    # Hotkey & tray
-¦¢   ¦¦¦¡¦¡ SettingsWindow*.cs  # Settings window (partial classes)
-¦¢       ¦§¦¡¦¡ SettingsWindow.xaml.cs      # Main logic
-¦¢       ¦§¦¡¦¡ SettingsWindow.Localization.cs # Language UI
-¦¢       ¦§¦¡¦¡ SettingsWindow.Cache.cs     # Cache management
-¦¢       ¦§¦¡¦¡ SettingsWindow.Hotkey.cs    # Hotkey config
-¦¢       ¦¦¦¡¦¡ SettingsWindow.Settings.cs  # Settings toggles
-¦¦¦¡¦¡ WinFormsClassLibrary/   # Helper library (file dialogs)
+ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ SLauncher/              # Main WinUI 3 project
+ï¿½ï¿½   ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ Classes/       # Core classes
+ï¿½ï¿½   ï¿½ï¿½   ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ LocalizationManager.cs   # Multi-language support
+ï¿½ï¿½   ï¿½ï¿½   ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ UserSettingsClass.cs     # Settings management
+ï¿½ï¿½   ï¿½ï¿½   ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ GlobalHotkeyManager.cs   # Hotkey registration
+ï¿½ï¿½   ï¿½ï¿½   ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ IconHelpers.cs       # Icon extraction & cache
+ï¿½ï¿½   ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ Controls/           # Custom controls
+ï¿½ï¿½   ï¿½ï¿½   ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ GridViewTile.xaml    # App tile control
+ï¿½ï¿½   ï¿½ï¿½   ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ GridViewTileGroup.xaml   # Group control
+ï¿½ï¿½   ï¿½ï¿½   ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ AboutSectionControl.xaml # About page
+ï¿½ï¿½   ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ Strings/  # Localization resources
+ï¿½ï¿½   ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ en-US/Resources.resw     # English
+ï¿½ï¿½   ï¿½ï¿½   ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ko-KR/Resources.resw     # Korean
+ï¿½ï¿½   ï¿½ï¿½   ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ja-JP/Resources.resw# Japanese
+ï¿½ï¿½   ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ MainWindow*.cs  # Main window (partial classes)
+ï¿½ï¿½   ï¿½ï¿½   ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ MainWindow.xaml.cs       # Main logic
+ï¿½ï¿½   ï¿½ï¿½   ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ MainWindow.UI.cs   # UI management
+ï¿½ï¿½   ï¿½ï¿½   ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ MainWindow.Tabs.cs       # Tab management
+ï¿½ï¿½   ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ MainWindow.Items.cs      # Item management
+ï¿½ï¿½   ï¿½ï¿½   ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ MainWindow.DragDrop.cs# Drag & drop
+ï¿½ï¿½   ï¿½ï¿½   ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ MainWindow.Search.cs     # Search logic
+ï¿½ï¿½   ï¿½ï¿½   ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ MainWindow.Hotkeys.cs    # Hotkey & tray
+ï¿½ï¿½   ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ SettingsWindow*.cs  # Settings window (partial classes)
+ï¿½ï¿½       ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ SettingsWindow.xaml.cs      # Main logic
+ï¿½ï¿½       ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ SettingsWindow.Localization.cs # Language UI
+ï¿½ï¿½       ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ SettingsWindow.Cache.cs     # Cache management
+ï¿½ï¿½       ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ SettingsWindow.Hotkey.cs    # Hotkey config
+ï¿½ï¿½       ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ SettingsWindow.Settings.cs  # Settings toggles
+ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ WinFormsClassLibrary/   # Helper library (file dialogs)
 ```
 
 ### Partial Classes Pattern
@@ -234,8 +234,8 @@ Both `MainWindow` and `SettingsWindow` use partial classes for better code organ
 | Language | Code | Status | Resources |
 |----------|------|--------|-----------|
 | ???? English | en-US | ? Complete | 90 strings |
-| ???? ÇÑ±¹¾î | ko-KR | ? Complete | 91 strings |
-| ???? ìíÜâåÞ | ja-JP | ? Complete | 91 strings |
+| ???? ï¿½Ñ±ï¿½ï¿½ï¿½ | ko-KR | ? Complete | 91 strings |
+| ???? ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ | ja-JP | ? Complete | 91 strings |
 
 ### Adding New Language
 
@@ -264,7 +264,7 @@ Both `MainWindow` and `SettingsWindow` use partial classes for better code organ
 
 5. **Test**
    - Build and run
-   - Select new language in Settings ¡æ Language
+   - Select new language in Settings ï¿½ï¿½ Language
    - Verify all UI elements display correctly
 
 ### Translation Guidelines
