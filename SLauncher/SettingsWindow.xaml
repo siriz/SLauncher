@@ -1,0 +1,234 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<winex:WindowEx
+    x:Class="SLauncher.SettingsWindow"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:local="using:SLauncher.Controls"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:wct="using:CommunityToolkit.WinUI.Controls"
+    xmlns:winex="using:WinUIEx"
+    Title="SLauncher Settings"
+    Width="670"
+    Height="550"
+    IsAlwaysOnTop="True"
+    IsMaximizable="False"
+    IsMinimizable="False"
+    IsResizable="False"
+    mc:Ignorable="d">
+
+    <Grid
+        x:Name="Container"
+        VerticalAlignment="Stretch"
+        Loaded="Container_Loaded">
+        <Grid.Background>
+            <!--  Fallback solid colour in case both Mica and Acrylic are unsupported  -->
+            <SolidColorBrush
+                x:Name="ContainerFallbackBackgroundBrush"
+                Opacity="0.0"
+                Color="{ThemeResource SolidBackgroundFillColorBase}" />
+        </Grid.Background>
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="auto" />
+        </Grid.RowDefinitions>
+
+        <!--  Use our custom titlebar control  -->
+        <local:Titlebar
+            x:Name="AppTitleBar"
+            Title="SLauncher Settings"
+            Grid.Row="0"
+            Icon="Resources\icon.ico" />
+
+        <ScrollViewer
+            Grid.Row="1"
+            Margin="10,0,10,0"
+            Padding="10,0,10,0"
+            VerticalAlignment="Stretch">
+            <StackPanel Orientation="Vertical">
+              <!--  Settings section  -->
+                <TextBlock
+                    FontSize="20"
+                    FontWeight="Bold"
+                    Text="Settings" />
+                <TextBlock
+                    Margin="0,5,0,0"
+                    FontSize="13"
+                    FontStyle="Italic"
+                    Opacity="0.7"
+                    Text="Settings are automatically saved once modified." />
+
+                <!--  Fullscreen  -->
+                <wct:SettingsCard
+                    Margin="0,10,0,0"
+                    Description="Use SLauncher in fullscreen mode."
+                    Header="Enable fullscreen">
+                    <wct:SettingsCard.HeaderIcon>
+                        <FontIcon Glyph="&#xE740;" />
+                    </wct:SettingsCard.HeaderIcon>
+                    <ToggleSwitch
+                        x:Name="FullscreenToggleSwitch"
+                        OffContent="No"
+                        OnContent="Yes" />
+                </wct:SettingsCard>
+
+                <!--  Align GridView  -->
+                <wct:SettingsCard
+                    Margin="0,5,0,0"
+                    Description="Choose how to align the grid where your items are displayed."
+                    Header="Grid alignment">
+                    <wct:SettingsCard.HeaderIcon>
+                        <FontIcon Glyph="&#xF0E2;" />
+                    </wct:SettingsCard.HeaderIcon>
+                    <ComboBox
+                        x:Name="GridAlignComboBox"
+                        Width="150"
+                        SelectedIndex="0">
+                        <x:String>Left</x:String>
+                        <x:String>Center</x:String>
+                    </ComboBox>
+                </wct:SettingsCard>
+
+                <!--  Start with Windows (within Settings section) -->
+  <wct:SettingsCard
+ Margin="0,5,0,0"
+  Description="Launch SLauncher automatically when Windows starts."
+   Header="Start with Windows">
+    <wct:SettingsCard.HeaderIcon>
+    <FontIcon Glyph="&#xE7E8;" />
+ </wct:SettingsCard.HeaderIcon>
+        <ToggleSwitch
+   x:Name="StartWithWindowsToggleSwitch"
+  OffContent="No"
+    OnContent="Yes"
+           Toggled="StartWithWindowsToggleSwitch_Toggled" />
+   </wct:SettingsCard>
+
+       <!--  Global Hotkey  -->
+        <wct:SettingsCard
+      Margin="0,5,0,0"
+  Description="Press the hotkey anywhere to show/hide SLauncher. Click to change."
+       Header="Global Hotkey">
+       <wct:SettingsCard.HeaderIcon>
+  <FontIcon Glyph="&#xE765;" />
+    </wct:SettingsCard.HeaderIcon>
+      <Button
+   x:Name="HotkeyButton"
+   Content="Ctrl + Space"
+   Width="150"
+  Click="HotkeyButton_Click"
+  ToolTipService.ToolTip="Click to change hotkey" />
+           </wct:SettingsCard>
+
+        <!--  Language Selection  -->
+        <wct:SettingsCard
+   Margin="0,5,0,0"
+         Description="Select your preferred language. Requires restart to apply."
+        Header="Language">
+         <wct:SettingsCard.HeaderIcon>
+ <FontIcon Glyph="&#xF2B7;" />
+ </wct:SettingsCard.HeaderIcon>
+    <ComboBox
+   x:Name="LanguageComboBox"
+        Width="150"
+         SelectionChanged="LanguageComboBox_SelectionChanged">
+         <ComboBoxItem Content="English" Tag="en-US" />
+  <ComboBoxItem Content="한국어" Tag="ko-KR" />
+    <ComboBoxItem Content="日本語" Tag="ja-JP" />
+</ComboBox>
+     </wct:SettingsCard>
+
+     <!--  Cache Management section  -->
+    <TextBlock
+                     Margin="0,15,0,0"
+                    FontSize="20"
+                  FontWeight="Bold"
+                     Text="Cache Management" />
+                  <TextBlock
+                 Margin="0,5,0,0"
+                   FontSize="13"
+            FontStyle="Italic"
+            Opacity="0.7"
+                     Text="Website icons are cached locally in the executable folder." />
+
+                   <wct:SettingsCard
+      Margin="0,10,0,0"
+         Description="Cached favicons are stored in UserCache\FaviconCache\ folder."
+        Header="Favicon Cache">
+         <wct:SettingsCard.HeaderIcon>
+      <FontIcon Glyph="&#xE753;" />
+           </wct:SettingsCard.HeaderIcon>
+      <StackPanel Orientation="Vertical" Spacing="5">
+        <TextBlock x:Name="CacheSizeTextBlock" 
+     Text="Cache size: Calculating..." 
+        FontSize="12"
+             Opacity="0.7"/>
+       <Button x:Name="ClearCacheButton"
+    Content="Clear Cache"
+             Click="ClearCacheButton_Click"
+    Width="120"/>
+       </StackPanel>
+         </wct:SettingsCard>
+
+        <wct:SettingsCard
+                Margin="0,5,0,0"
+               Description="Portable: All data stored in executable folder\UserCache\"
+            Header="Cache Location">
+                 <wct:SettingsCard.HeaderIcon>
+         <FontIcon Glyph="&#xE8B7;" />
+       </wct:SettingsCard.HeaderIcon>
+         <StackPanel Orientation="Horizontal" Spacing="10">
+       <TextBlock x:Name="CacheLocationTextBlock"
+          Text="..."
+     FontSize="12"
+        Opacity="0.7"
+           VerticalAlignment="Center"
+               MaxWidth="250"
+     TextTrimming="CharacterEllipsis"/>
+       <Button Content="Open Folder"
+        Click="OpenCacheFolderButton_Click"
+           Width="100"/>
+     </StackPanel>
+      </wct:SettingsCard>
+
+     <!--  About section (moved to bottom)  -->
+    <TextBlock
+      Margin="0,15,0,0"
+       FontSize="20"
+       FontWeight="Bold"
+          Text="About" />
+
+      <wct:SettingsExpander
+           Margin="0,10,0,0"
+          Description="View info about SLauncher."
+        Header="About SLauncher"
+   IsExpanded="False">
+     <wct:SettingsExpander.HeaderIcon>
+       <FontIcon Glyph="&#xE946;" />
+            </wct:SettingsExpander.HeaderIcon>
+
+         <wct:SettingsExpander.Items>
+            <!--  Expander content  -->
+ <wct:SettingsCard ContentAlignment="Left">
+      <local:AboutSectionControl />
+    </wct:SettingsCard>
+               </wct:SettingsExpander.Items>
+      </wct:SettingsExpander>
+          </StackPanel>
+        </ScrollViewer>
+
+        <Button
+            x:Name="CloseButton"
+            Grid.Row="2"
+            Width="100"
+            Margin="20,10,20,20"
+            HorizontalAlignment="Right"
+            Click="CloseButton_Click"
+            Content="Close"
+            Style="{ThemeResource AccentButtonStyle}" />
+    </Grid>
+</winex:WindowEx>
+
+

@@ -1,0 +1,440 @@
+using Microsoft.UI.Xaml.Media.Imaging;
+using System;
+using System.Collections.Generic;
+using System.IO;
+using System.Linq;
+using System.Runtime.InteropServices.WindowsRuntime;
+using System.Runtime.InteropServices;
+using System.Text;
+using System.Threading.Tasks;
+using Windows.Storage;
+using Windows.Storage.FileProperties;
+using Microsoft.UI.Xaml.Media;
+using Windows.UI.Popups;
+using System.Drawing;
+using System.Drawing.Imaging;
+using Windows.Graphics.Imaging;
+using Windows.Storage.Streams;
+using Microsoft.Graphics.Display;
+using WinUIEx;
+using System.Runtime.CompilerServices;
+
+namespace SLauncher.Classes
+{
+    /// <summary>
+    /// Class to get the icon of a file, folder, or website
+    /// </summary>
+    public static class IconHelpers
+    {
+        // Get a list of all image file extensions
+        public static List<string> ImageFileExtensions = ImageCodecInfo.GetImageEncoders()
+                                                            .Select(c => c.FilenameExtension)
+                                                            .SelectMany(e => e.Split(';'))
+                                                            .Select(e => e.Replace("*", "").ToLower())
+                                                            .ToList();
+
+        /// <summary>
+        /// Get the favicon cache directory path (in executable folder)
+        /// </summary>
+        public static string GetFaviconCacheDirectory()
+        {
+            // Get the directory where the executable is located
+            string exeDirectory = AppDomain.CurrentDomain.BaseDirectory;
+ 
+   // Create UserCache subdirectory
+   string cacheDir = Path.Combine(exeDirectory, "UserCache", "FaviconCache");
+            
+  return cacheDir;
+        }
+
+    /// <summary>
+ /// Clear all cached favicons
+        /// </summary>
+        public static void ClearFaviconCache()
+        {
+     try
+        {
+     string cacheDir = GetFaviconCacheDirectory();
+       if (Directory.Exists(cacheDir))
+ {
+          Directory.Delete(cacheDir, true);
+    Directory.CreateDirectory(cacheDir);
+           }
+ }
+        catch
+   {
+                // Ignore errors
+          }
+        }
+
+        /// <summary>
+  /// Get the size of favicon cache in bytes
+        /// </summary>
+   public static long GetFaviconCacheSize()
+        {
+            try
+        {
+       string cacheDir = GetFaviconCacheDirectory();
+   if (Directory.Exists(cacheDir))
+     {
+  return new DirectoryInfo(cacheDir).GetFiles().Sum(file => file.Length);
+  }
+        }
+  catch
+            {
+                // Ignore errors
+     }
+      return 0;
+        }
+
+        // The following 2 functions are modified from WinLaunch
+        // The problem is this - when a file does not have a 256x256 icon,
+        // WinAPI just retrieves the 48x48 icon and draws it in the top left corner, leading to this bug: https://github.com/Apollo199999999/LauncherX/issues/14
+
+        /// <summary>
+        /// Resuzes a Jumbo (256x256) icon with a 48x48 icon on the top left to the specified size, for files that do not have a 256x256 icon
+        /// </summary>
+        /// <param name="imgToResize">Jumbo icon</param>
+        /// <param name="size">Final size to resize it to</param>
+        /// <returns>System.Drawing.Bitmap</returns>
+        private static System.Drawing.Bitmap ResizeJumbo(System.Drawing.Bitmap imgToResize, System.Drawing.Size size)
+        {
+            System.Drawing.Bitmap b = new System.Drawing.Bitmap(size.Width, size.Height);
+            System.Drawing.Graphics g = System.Drawing.Graphics.FromImage((System.Drawing.Image)b);
+            g.InterpolationMode = System.Drawing.Drawing2D.InterpolationMode.High;
+
+            int sourceWidth = (int)(48 * Shell32.GetDPI(App.MainWindow) / 96);
+            int sourceHeight = (int)(48 * Shell32.GetDPI(App.MainWindow) / 96);
+
+            double WidthScale = ((double)size.Width / (double)sourceWidth);
+            double HeightScale = ((double)size.Height / (double)sourceHeight);
+
+            g.DrawImage(imgToResize, 0, 0, (int)(256 * WidthScale), (int)(256 * HeightScale));
+            g.Dispose();
+
+            return b;
+        }
+
+        /// <summary>
+        /// Check whether a Jumbo icon is just a 48x48 icon at the top left 
+        /// </summary>
+        /// <param name="bitmap">Jumbo icon</param>
+        /// <returns>Boolean telling you whether a Jumbo icon just contains a 48x48 icon at the top left</returns>
+        private static bool IsScaledDown(System.Drawing.Bitmap bitmap)
+        {
+            System.Drawing.Color empty = System.Drawing.Color.FromArgb(0, 0, 0, 0);
+
+            if (bitmap != null)
+            {
+                if (bitmap.Width <= 48)
+                    return false;
+
+                int checks = 5;
+                double SmallImageSize = 48.0 * Shell32.GetDPI(App.MainWindow) / 96 + 1;
+                double CheckDistance = (bitmap.Width - SmallImageSize) / (double)(checks + 1);
+
+                for (int x = 0; x < checks + 1; x++)
+                {
+                    for (int y = 0; y < checks + 1; y++)
+                    {
+                        int xpos = (int)(SmallImageSize + (double)x * CheckDistance);
+                        int ypos = (int)(SmallImageSize + (double)y * CheckDistance);
+                        try
+                        {
+                            if (bitmap.GetPixel(xpos, ypos) != empty)
+                            {
+                                //not an empty pixel
+                                return false;
+                            }
+                        }
+                        catch { }
+                    }
+                }
+            }
+
+            return true;
+        }
+
+        // THANK GOD FOR STACKOVERFLOW: https://stackoverflow.com/questions/76640972/convert-system-drawing-icon-to-microsoft-ui-xaml-imagesource
+        /// <summary>
+        /// Converts System.Drawing.Bitmap to SoftwareBitmapSource
+     /// </summary>
+        /// <param name="bmp">Bitmap to convert</param>
+        /// <returns>BitmapImage for Image Control</returns>
+        private static async Task<BitmapImage> GetWinUI3BitmapSourceFromGdiBitmap(System.Drawing.Bitmap bmp)
+        {
+   if (bmp == null)
+                return null;
+
+            // get pixels as an array of bytes
+  var data = bmp.LockBits(new System.Drawing.Rectangle(0, 0, bmp.Width, bmp.Height), System.Drawing.Imaging.ImageLockMode.ReadOnly, bmp.PixelFormat);
+            var bytes = new byte[data.Stride * data.Height];
+        Marshal.Copy(data.Scan0, bytes, 0, bytes.Length);
+            bmp.UnlockBits(data);
+
+            // Create WriteableBitmap from byte array
+ WriteableBitmap writableBitmap = new WriteableBitmap(bmp.Width, bmp.Height);
+          await writableBitmap.PixelBuffer.AsStream().WriteAsync(bytes, 0, bytes.Length);
+
+       // Convert WriteableBitmap to BitmapImage
+    InMemoryRandomAccessStream inMemoryRandomAccessStream = new InMemoryRandomAccessStream();
+            BitmapEncoder encoder = await BitmapEncoder.CreateAsync(BitmapEncoder.PngEncoderId, inMemoryRandomAccessStream);
+            Stream pixelStream = writableBitmap.PixelBuffer.AsStream();
+            byte[] pixels = new byte[pixelStream.Length];
+      await pixelStream.ReadAsync(pixels, 0, pixels.Length);
+            encoder.SetPixelData(BitmapPixelFormat.Bgra8, BitmapAlphaMode.Straight, (uint)writableBitmap.PixelWidth, (uint)writableBitmap.PixelHeight, 96.0, 96.0, pixels);
+        await encoder.FlushAsync();
+BitmapImage bitmapImage = new BitmapImage();
+      bitmapImage.SetSource(inMemoryRandomAccessStream);
+
+            return bitmapImage;
+     }
+
+        /// <summary>
+        /// Method to get the icon of a website
+        /// </summary>
+        /// <param name="websiteUrl">URL of the website</param>
+        /// <returns></returns>
+     public static BitmapImage GetWebsiteIcon(string websiteUrl)
+        {
+   BitmapImage websiteIcon = new BitmapImage();
+
+   try
+            {
+              // Extract domain from URL for cache filename
+   Uri uri = new Uri(websiteUrl.StartsWith("http") ? websiteUrl : "https://" + websiteUrl);
+    string domain = uri.Host.Replace("www.", "");
+
+ // Cache directory path
+     string cacheDir = GetFaviconCacheDirectory();
+
+   // Create cache directory if it doesn't exist
+      if (!Directory.Exists(cacheDir))
+       {
+        Directory.CreateDirectory(cacheDir);
+   }
+
+                // Cache file path
+        string cacheFile = Path.Combine(cacheDir, $"{domain}.png");
+
+                // Check if cached file exists
+          if (File.Exists(cacheFile))
+          {
+          // Load from cache
+ try
+          {
+      websiteIcon.UriSource = new Uri(cacheFile, UriKind.Absolute);
+             return websiteIcon;
+          }
+   catch
+   {
+     // Cache file corrupted, delete it
+     File.Delete(cacheFile);
+         }
+    }
+
+    // Not in cache - try to download from Google Favicon API
+         Uri iconUri = new Uri($"https://www.google.com/s2/favicons?sz=128&domain_url={websiteUrl}", UriKind.Absolute);
+          
+      // Fallback placeholder path
+             Uri fallbackUri = new Uri(Path.GetFullPath(@"Resources\websitePlaceholder.png"), UriKind.Absolute);
+
+                // Set up ImageFailed event handler (download failed or blocked)
+   websiteIcon.ImageFailed += async (s, e) =>
+        {
+        // Use fallback placeholder
+     websiteIcon.UriSource = fallbackUri;
+
+        // Save placeholder to cache to avoid retrying blocked sites
+        try
+       {
+              if (File.Exists(fallbackUri.LocalPath))
+            {
+             await Task.Run(() => File.Copy(fallbackUri.LocalPath, cacheFile, true));
+          }
+    }
+   catch
+        {
+             // Ignore cache save errors
+            }
+      };
+
+      // Set up ImageOpened event handler (download succeeded)
+        websiteIcon.ImageOpened += async (s, e) =>
+  {
+   // Download successful - save to cache
+             try
+         {
+            // Use HttpClient instead of WebClient (recommended for .NET 5+)
+         await Task.Run(async () =>
+   {
+            try
+               {
+    using (var httpClient = new System.Net.Http.HttpClient())
+    {
+          httpClient.Timeout = TimeSpan.FromSeconds(10);
+            var imageBytes = await httpClient.GetByteArrayAsync(iconUri);
+          await File.WriteAllBytesAsync(cacheFile, imageBytes);
+            }
+       }
+     catch
+         {
+          // Download failed, ignore
+    }
+     });
+   }
+       catch
+   {
+     // Ignore cache save errors
+        }
+         };
+
+      // Set the URI - will trigger download
+         websiteIcon.UriSource = iconUri;
+            }
+            catch
+            {
+                // On any error, use fallback placeholder
+try
+    {
+     Uri fallbackUri = new Uri(Path.GetFullPath(@"Resources\websitePlaceholder.png"), UriKind.Absolute);
+      websiteIcon.UriSource = fallbackUri;
+     }
+         catch
+    {
+         // Return empty BitmapImage if all fails
+     }
+     }
+
+          return websiteIcon;
+    }
+
+        /// <summary>
+        /// Method to get the icon of a path, using Win32 methods
+        /// </summary>
+        /// <param name="path">Path to file/folder</param>
+        /// <param name="isDirectory">Whether the path belongs to a folder</param>
+        private async static Task<BitmapImage> GetPathIconWin32(string path, bool isDirectory)
+        {
+            IntPtr hIcon;
+
+            if (isDirectory)
+            {
+                hIcon = Shell32.GetJumboIcon(Shell32.GetFolderIconIndex(path));
+            }
+            else
+            {
+                hIcon = Shell32.GetJumboIcon(Shell32.GetFileIconIndex(path));
+            }
+
+            System.Drawing.Icon ico = (System.Drawing.Icon)System.Drawing.Icon.FromHandle(hIcon).Clone();
+            System.Drawing.Bitmap bitmapIcon = ico.ToBitmap();
+            ico.Dispose();
+
+            // For some files, the 256x256 icon may not be available, and we need to account for that to prevent this bug: https://github.com/Apollo199999999/LauncherX/issues/14
+            if (IsScaledDown(bitmapIcon))
+            {
+                bitmapIcon = ResizeJumbo(bitmapIcon, new System.Drawing.Size(200, 200));
+            }
+
+            // Convert Bitmap to BitmapImage
+            BitmapImage fileIcon = await GetWinUI3BitmapSourceFromGdiBitmap(bitmapIcon);
+
+            // Clean up
+            Shell32.DestroyIcon(hIcon);
+            bitmapIcon.Dispose();
+
+            return fileIcon;
+        }
+
+
+        /// <summary>
+        /// Method to get the icon of a folder, using WinRT/WASDK APIs
+        /// </summary>
+        /// <param name="storageFolder">StorageFolder object storing the folder</param>
+        /// <returns></returns>
+        private async static Task<BitmapImage> GetFolderIconWinRT(StorageFolder storageFolder)
+        {
+            // Get the thumbnail of the folder
+            StorageItemThumbnail thumbnail = await storageFolder.GetThumbnailAsync(ThumbnailMode.SingleItem, 256);
+            BitmapImage bitmapImage = new BitmapImage();
+            bitmapImage.SetSource(thumbnail);
+
+            return bitmapImage;
+        }
+
+        /// <summary>
+        /// One unified method that works with all folders, hidden or not, to get the icon of a folder
+        /// </summary>
+        /// <returns>BitmapImage that can be used directly with an image control</returns>
+        public async static Task<BitmapImage> GetFolderIcon(string folderPath)
+        {
+            try
+            {
+                StorageFolder folder = await StorageFolder.GetFolderFromPathAsync(folderPath);
+                return await GetFolderIconWinRT(folder);
+            }
+            catch
+            {
+                return await GetPathIconWin32(folderPath, true);
+            }
+        }
+
+        /// <summary>
+        /// Method to get the icon of a file, using WinRT/WASDK APIs
+        /// </summary>
+        /// <param name="storageFile">StorageFile object storing the file</param>
+        /// <returns></returns>
+        private async static Task<BitmapImage> GetFileIconWinRT(StorageFile storageFile)
+        {
+            // Get the thumbnail of the folder
+            StorageItemThumbnail thumbnail = await storageFile.GetThumbnailAsync(ThumbnailMode.SingleItem, 256);
+            BitmapImage bitmapImage = new BitmapImage();
+            bitmapImage.SetSource(thumbnail);
+
+            return bitmapImage;
+        }
+
+
+        /// <summary>
+        /// One unified method that works with all file types to get the icon of a file
+        /// </summary>
+        /// <returns>BitmapImage that can be used directly with an image control</returns>
+        public async static Task<BitmapImage> GetFileIcon(string filePath)
+        {
+            // Get the extension of the file
+            string ext = Path.GetExtension(filePath);
+
+            // StorageFile is not compatible with files of extension .lnk, .wsh, or .url, thus if our file has those extensions, we must use Win32 methods to retrieve the file icon
+            if (ext == ".lnk" || ext == ".url" || ext == ".wsh")
+            {
+                BitmapImage fileIcon = await GetPathIconWin32(filePath, false);
+                return fileIcon;
+            }
+            else if (ImageFileExtensions.Contains(ext))
+            {
+                try
+                {
+                    // Use WinRT methods to get the thumbnail of the image
+                    StorageFile storageFile = await StorageFile.GetFileFromPathAsync(filePath);
+                    BitmapImage fileIcon = await GetFileIconWinRT(storageFile);
+                    return fileIcon;
+                }
+                catch
+                {
+                    // Use Win32 methods
+                    BitmapImage fileIcon = await GetPathIconWin32(filePath, false);
+                    return fileIcon;
+                }
+            }
+            else
+            {
+                // Use Win32 methods
+                BitmapImage fileIcon = await GetPathIconWin32(filePath, false);
+                return fileIcon;
+            }
+        }
+    }
+}
+
+

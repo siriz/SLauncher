@@ -1,0 +1,199 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+ <xsd:element name="metadata">
+ <xsd:complexType>
+    <xsd:sequence>
+       <xsd:element name="value" type="xsd:string" minOccurs="0" />
+         </xsd:sequence>
+        <xsd:attribute name="name" use="required" type="xsd:string" />
+            <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+  <xsd:attribute ref="xml:space" />
+   </xsd:complexType>
+   </xsd:element>
+          <xsd:element name="assembly">
+    <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+          <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+   <xsd:element name="data">
+        <xsd:complexType>
+            <xsd:sequence>
+      <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+     <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+       </xsd:sequence>
+        <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+  <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+ </xsd:complexType>
+          </xsd:element>
+   <xsd:element name="resheader">
+          <xsd:complexType>
+        <xsd:sequence>
+     <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+     </xsd:sequence>
+   <xsd:attribute name="name" type="xsd:string" use="required" />
+  </xsd:complexType>
+          </xsd:element>
+    </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+<value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+
+  <!-- Main Window -->
+  <data name="AppTitle" xml:space="preserve">
+    <value>SLauncher - Windows用モダンアプリランチャー</value>
+  </data>
+  <data name="SearchPlaceholder" xml:space="preserve">
+    <value>SLauncherのすべてを検索</value>
+  </data>
+  <data name="AddFileButton" xml:space="preserve">
+    <value>ファイルを追加</value>
+  </data>
+  <data name="AddFolderButton" xml:space="preserve">
+    <value>フォルダを追加</value>
+  </data>
+  <data name="AddWebsiteButton" xml:space="preserve">
+    <value>ウェブサイトを追加</value>
+  </data>
+  <data name="EmptyNoticeTitle" xml:space="preserve">
+    <value>何もありません。</value>
+  </data>
+  <data name="EmptyNoticeMessage" xml:space="preserve">
+    <value>アイテムを追加するには、上のボタンをクリックするか、このウィンドウにドラッグしてください。</value>
+  </data>
+  <data name="LoadingMessage" xml:space="preserve">
+    <value>アイテムを読み込んでいます。お待ちください...</value>
+  </data>
+  <data name="LoadingWarning" xml:space="preserve">
+    <value>SLauncherを閉じないでください。</value>
+  </data>
+  <data name="DragDropMessage" xml:space="preserve">
+    <value>アイテムをここにドラッグ＆ドロップ</value>
+  </data>
+  
+  <!-- Tab Context Menu -->
+  <data name="TabRename" xml:space="preserve">
+    <value>名前を変更</value>
+  </data>
+  <data name="TabChangeColor" xml:space="preserve">
+    <value>色を変更</value>
+  </data>
+  <data name="TabDelete" xml:space="preserve">
+    <value>削除</value>
+  </data>
+  <data name="TabRenameTitle" xml:space="preserve">
+    <value>タブ名を変更</value>
+  </data>
+  <data name="TabRenamePlaceholder" xml:space="preserve">
+ <value>タブ名を入力</value>
+  </data>
+  <data name="TabDeleteTitle" xml:space="preserve">
+    <value>タブの削除確認</value>
+  </data>
+  <data name="TabDeleteMessage" xml:space="preserve">
+    <value>このタブを削除しますか？</value>
+  </data>
+<data name="TabDeleteWithItemsMessage" xml:space="preserve">
+    <value>このタブには{0}個のアイテムがあります。\nタブを削除すると、すべてのアイテムも削除されます。\n\n本当に削除しますか？</value>
+  </data>
+  <data name="TabCannotDeleteTitle" xml:space="preserve">
+    <value>削除できません</value>
+  </data>
+  <data name="TabCannotDeleteMessage" xml:space="preserve">
+ <value>最後のタブは削除できません。</value>
+  </data>
+  <data name="DefaultTabName" xml:space="preserve">
+    <value>既定</value>
+  </data>
+  <data name="NewTabName" xml:space="preserve">
+    <value>タブ {0}</value>
+  </data>
+  
+  <!-- Tab Colors -->
+  <data name="ColorDefault" xml:space="preserve">
+    <value>既定</value>
+  </data>
+  <data name="ColorRed" xml:space="preserve">
+    <value>赤</value>
+  </data>
+  <data name="ColorOrange" xml:space="preserve">
+    <value>オレンジ</value>
+  </data>
+  <data name="ColorYellow" xml:space="preserve">
+    <value>黄</value>
+  </data>
+  <data name="ColorGreen" xml:space="preserve">
+    <value>緑</value>
+  </data>
+  <data name="ColorBlue" xml:space="preserve">
+    <value>青</value>
+  </data>
+  <data name="ColorIndigo" xml:space="preserve">
+    <value>藍</value>
+  </data>
+  <data name="ColorPurple" xml:space="preserve">
+    <value>紫</value>
+  </data>
+  <data name="ColorPink" xml:space="preserve">
+    <value>ピンク</value>
+  </data>
+  <data name="ColorGray" xml:space="preserve">
+    <value>灰色</value>
+  </data>
+  
+  <!-- Common Buttons -->
+  <data name="ButtonOK" xml:space="preserve">
+    <value>OK</value>
+  </data>
+  <data name="ButtonCancel" xml:space="preserve">
+    <value>キャンセル</value>
+  </data>
+  <data name="ButtonDelete" xml:space="preserve">
+    <value>削除</value>
+  </data>
+  <data name="ButtonClose" xml:space="preserve">
+    <value>閉じる</value>
+  </data>
+  
+  <!-- Settings Window -->
+  <data name="SettingsTitle" xml:space="preserve">
+    <value>設定</value>
+  </data>
+  <data name="SettingsLanguage" xml:space="preserve">
+    <value>言語</value>
+  </data>
+  <data name="SettingsLanguageDescription" xml:space="preserve">
+    <value>お好みの言語を選択してください</value>
+  </data>
+  <data name="SettingsRestartRequired" xml:space="preserve">
+    <value>言語変更を適用するには再起動が必要です</value>
+  </data>
+  
+  <!-- Tooltips -->
+  <data name="TooltipSettings" xml:space="preserve">
+    <value>設定</value>
+  </data>
+  <data name="TooltipClose" xml:space="preserve">
+    <value>SLauncherを閉じる</value>
+  </data>
+</root>

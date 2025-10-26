@@ -1,0 +1,199 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+  <xsd:complexType>
+   <xsd:choice maxOccurs="unbounded">
+  <xsd:element name="metadata">
+         <xsd:complexType>
+              <xsd:sequence>
+             <xsd:element name="value" type="xsd:string" minOccurs="0" />
+         </xsd:sequence>
+   <xsd:attribute name="name" use="required" type="xsd:string" />
+          <xsd:attribute name="type" type="xsd:string" />
+     <xsd:attribute name="mimetype" type="xsd:string" />
+       <xsd:attribute ref="xml:space" />
+ </xsd:complexType>
+        </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+   <xsd:attribute name="name" type="xsd:string" />
+      </xsd:complexType>
+          </xsd:element>
+     <xsd:element name="data">
+      <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+    <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+      </xsd:sequence>
+          <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+     <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+  <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+ </xsd:element>
+    <xsd:element name="resheader">
+    <xsd:complexType>
+            <xsd:sequence>
+          <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+           </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+  </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  
+  <!-- Main Window -->
+  <data name="AppTitle" xml:space="preserve">
+    <value>SLauncher - Modern app launcher for Windows</value>
+  </data>
+  <data name="SearchPlaceholder" xml:space="preserve">
+    <value>Search through everything in SLauncher</value>
+  </data>
+  <data name="AddFileButton" xml:space="preserve">
+    <value>Add a file</value>
+  </data>
+  <data name="AddFolderButton" xml:space="preserve">
+    <value>Add a folder</value>
+  </data>
+  <data name="AddWebsiteButton" xml:space="preserve">
+    <value>Add a website</value>
+  </data>
+  <data name="EmptyNoticeTitle" xml:space="preserve">
+    <value>There is nothing here.</value>
+  </data>
+  <data name="EmptyNoticeMessage" xml:space="preserve">
+    <value>To add an item, click the buttons above, or simply drag them into this window.</value>
+  </data>
+  <data name="LoadingMessage" xml:space="preserve">
+    <value>Loading your items, please wait...</value>
+  </data>
+  <data name="LoadingWarning" xml:space="preserve">
+    <value>Please do not close SLauncher.</value>
+  </data>
+  <data name="DragDropMessage" xml:space="preserve">
+    <value>Drag and drop your items here</value>
+  </data>
+  
+  <!-- Tab Context Menu -->
+  <data name="TabRename" xml:space="preserve">
+    <value>Rename</value>
+  </data>
+  <data name="TabChangeColor" xml:space="preserve">
+    <value>Change Color</value>
+  </data>
+  <data name="TabDelete" xml:space="preserve">
+    <value>Delete</value>
+  </data>
+  <data name="TabRenameTitle" xml:space="preserve">
+    <value>Rename Tab</value>
+  </data>
+  <data name="TabRenamePlaceholder" xml:space="preserve">
+    <value>Enter tab name</value>
+</data>
+  <data name="TabDeleteTitle" xml:space="preserve">
+    <value>Confirm Tab Deletion</value>
+  </data>
+  <data name="TabDeleteMessage" xml:space="preserve">
+    <value>Are you sure you want to delete this tab?</value>
+  </data>
+  <data name="TabDeleteWithItemsMessage" xml:space="preserve">
+    <value>This tab contains {0} items.\nDeleting the tab will also delete all items.\n\nAre you sure?</value>
+  </data>
+  <data name="TabCannotDeleteTitle" xml:space="preserve">
+    <value>Cannot Delete</value>
+  </data>
+  <data name="TabCannotDeleteMessage" xml:space="preserve">
+    <value>The last tab cannot be deleted.</value>
+  </data>
+  <data name="DefaultTabName" xml:space="preserve">
+    <value>Default</value>
+  </data>
+  <data name="NewTabName" xml:space="preserve">
+    <value>Tab {0}</value>
+  </data>
+  
+  <!-- Tab Colors -->
+  <data name="ColorDefault" xml:space="preserve">
+    <value>Default</value>
+  </data>
+  <data name="ColorRed" xml:space="preserve">
+    <value>Red</value>
+  </data>
+  <data name="ColorOrange" xml:space="preserve">
+    <value>Orange</value>
+  </data>
+  <data name="ColorYellow" xml:space="preserve">
+    <value>Yellow</value>
+  </data>
+  <data name="ColorGreen" xml:space="preserve">
+    <value>Green</value>
+  </data>
+  <data name="ColorBlue" xml:space="preserve">
+    <value>Blue</value>
+  </data>
+  <data name="ColorIndigo" xml:space="preserve">
+    <value>Indigo</value>
+  </data>
+  <data name="ColorPurple" xml:space="preserve">
+    <value>Purple</value>
+  </data>
+  <data name="ColorPink" xml:space="preserve">
+<value>Pink</value>
+  </data>
+  <data name="ColorGray" xml:space="preserve">
+    <value>Gray</value>
+  </data>
+  
+  <!-- Common Buttons -->
+  <data name="ButtonOK" xml:space="preserve">
+    <value>OK</value>
+  </data>
+  <data name="ButtonCancel" xml:space="preserve">
+    <value>Cancel</value>
+  </data>
+  <data name="ButtonDelete" xml:space="preserve">
+    <value>Delete</value>
+  </data>
+  <data name="ButtonClose" xml:space="preserve">
+    <value>Close</value>
+  </data>
+  
+  <!-- Settings Window -->
+  <data name="SettingsTitle" xml:space="preserve">
+    <value>Settings</value>
+  </data>
+  <data name="SettingsLanguage" xml:space="preserve">
+    <value>Language</value>
+</data>
+  <data name="SettingsLanguageDescription" xml:space="preserve">
+    <value>Select your preferred language</value>
+  </data>
+  <data name="SettingsRestartRequired" xml:space="preserve">
+    <value>Restart required to apply language changes</value>
+  </data>
+  
+  <!-- Tooltips -->
+  <data name="TooltipSettings" xml:space="preserve">
+    <value>Settings</value>
+  </data>
+  <data name="TooltipClose" xml:space="preserve">
+    <value>Close SLauncher</value>
+  </data>
+</root>
