@@ -179,12 +179,122 @@
   <data name="SettingsTitle" xml:space="preserve">
     <value>Settings</value>
   </data>
-  <data name="SettingsLanguage" xml:space="preserve">
-    <value>Language</value>
-</data>
-  <data name="SettingsLanguageDescription" xml:space="preserve">
-    <value>Select your preferred language</value>
+  <data name="SettingsSubtitle" xml:space="preserve">
+ <value>Settings are automatically saved once modified.</value>
   </data>
+  
+  <!-- Settings - General -->
+  <data name="SettingsFullscreenHeader" xml:space="preserve">
+    <value>Enable fullscreen</value>
+  </data>
+  <data name="SettingsFullscreenDescription" xml:space="preserve">
+    <value>Use SLauncher in fullscreen mode.</value>
+  </data>
+  <data name="SettingsGridAlignmentHeader" xml:space="preserve">
+    <value>Grid alignment</value>
+  </data>
+  <data name="SettingsGridAlignmentDescription" xml:space="preserve">
+    <value>Choose how to align the grid where your items are displayed.</value>
+  </data>
+  <data name="SettingsStartWithWindowsHeader" xml:space="preserve">
+    <value>Start with Windows</value>
+  </data>
+  <data name="SettingsStartWithWindowsDescription" xml:space="preserve">
+    <value>Launch SLauncher automatically when Windows starts.</value>
+  </data>
+  <data name="SettingsGlobalHotkeyHeader" xml:space="preserve">
+    <value>Global Hotkey</value>
+  </data>
+  <data name="SettingsGlobalHotkeyDescription" xml:space="preserve">
+    <value>Press the hotkey anywhere to show/hide SLauncher. Click to change.</value>
+  </data>
+  <data name="SettingsLanguageHeader" xml:space="preserve">
+    <value>Language</value>
+  </data>
+  <data name="SettingsLanguageDescription" xml:space="preserve">
+    <value>Select your preferred language. Requires restart to apply.</value>
+  </data>
+  
+  <!-- Settings - Cache Management -->
+  <data name="SettingsCacheManagementTitle" xml:space="preserve">
+    <value>Cache Management</value>
+  </data>
+  <data name="SettingsCacheManagementSubtitle" xml:space="preserve">
+    <value>Website icons are cached locally in the executable folder.</value>
+  </data>
+  <data name="SettingsFaviconCacheHeader" xml:space="preserve">
+ <value>Favicon Cache</value>
+  </data>
+  <data name="SettingsFaviconCacheDescription" xml:space="preserve">
+    <value>Cached favicons are stored in UserCache\FaviconCache\ folder.</value>
+  </data>
+  <data name="SettingsCacheSizeCalculating" xml:space="preserve">
+    <value>Cache size: Calculating...</value>
+  </data>
+  <data name="SettingsCacheSizeFormat" xml:space="preserve">
+    <value>Cache size: {0}</value>
+  </data>
+  <data name="SettingsClearCacheButton" xml:space="preserve">
+    <value>Clear Cache</value>
+  </data>
+  <data name="SettingsCacheLocationHeader" xml:space="preserve">
+    <value>Cache Location</value>
+  </data>
+  <data name="SettingsCacheLocationDescription" xml:space="preserve">
+    <value>Portable: All data stored in executable folder\UserCache\</value>
+  </data>
+  <data name="SettingsOpenFolderButton" xml:space="preserve">
+    <value>Open Folder</value>
+  </data>
+  
+  <!-- Settings - About -->
+  <data name="SettingsAboutTitle" xml:space="preserve">
+    <value>About</value>
+  </data>
+  <data name="SettingsAboutHeader" xml:space="preserve">
+    <value>About SLauncher</value>
+  </data>
+  <data name="SettingsAboutDescription" xml:space="preserve">
+    <value>View info about SLauncher.</value>
+  </data>
+  <data name="AboutSubtitle" xml:space="preserve">
+    <value>Fork of LauncherX with multi-language support</value>
+  </data>
+  <data name="AboutVersion" xml:space="preserve">
+    <value>Version:</value>
+  </data>
+  <data name="AboutForkBy" xml:space="preserve">
+    <value>Fork by:</value>
+  </data>
+<data name="AboutBasedOn" xml:space="preserve">
+  <value>Based on:</value>
+  </data>
+  <data name="AboutGitHub" xml:space="preserve">
+    <value>GitHub:</value>
+  </data>
+  <data name="AboutLicense" xml:space="preserve">
+    <value>License:</value>
+  </data>
+  <data name="AboutViewLicense" xml:space="preserve">
+    <value>View MIT License</value>
+  </data>
+  
+  <!-- Toggle Switch -->
+  <data name="ToggleSwitchOn" xml:space="preserve">
+    <value>Yes</value>
+  </data>
+  <data name="ToggleSwitchOff" xml:space="preserve">
+    <value>No</value>
+  </data>
+  
+  <!-- Grid Alignment Options -->
+  <data name="GridAlignmentLeft" xml:space="preserve">
+    <value>Left</value>
+  </data>
+  <data name="GridAlignmentCenter" xml:space="preserve">
+    <value>Center</value>
+  </data>
+  
   <data name="SettingsRestartRequired" xml:space="preserve">
     <value>Restart required to apply language changes</value>
   </data>
