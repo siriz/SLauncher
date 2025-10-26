@@ -348,4 +348,17 @@
   <data name="TooltipClose" xml:space="preserve">
     <value>Close SLauncher</value>
   </data>
+  
+  <!-- Drag and Drop -->
+  <data name="DragDropMessage" xml:space="preserve">
+    <value>Drag and drop your items here</value>
+  </data>
+  
+  <!-- Loading Dialog -->
+  <data name="LoadingTitle" xml:space="preserve">
+    <value>Loading your items, please wait...</value>
+  </data>
+  <data name="LoadingSubtitle" xml:space="preserve">
+    <value>Please do not close SLauncher.</value>
+  </data>
 </root>

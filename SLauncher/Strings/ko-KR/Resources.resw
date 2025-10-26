@@ -88,7 +88,7 @@
     <value>SLauncher를 닫지 마세요.</value>
   </data>
   <data name="DragDropMessage" xml:space="preserve">
-    <value>항목을 여기에 드래그 앤 드롭하세요</value>
+    <value>여기에 항목을 드래그하세요</value>
   </data>
   
   <!-- Tab Context Menu -->
@@ -352,5 +352,18 @@
   </data>
   <data name="TooltipClose" xml:space="preserve">
     <value>SLauncher 닫기</value>
+  </data>
+  
+  <!-- Drag and Drop -->
+  <data name="DragDropMessage" xml:space="preserve">
+    <value>여기에 항목을 드래그하세요</value>
+  </data>
+  
+  <!-- Loading Dialog -->
+  <data name="LoadingTitle" xml:space="preserve">
+    <value>항목을 불러오는 중입니다...</value>
+  </data>
+  <data name="LoadingSubtitle" xml:space="preserve">
+    <value>SLauncher를 닫지 마세요.</value>
   </data>
 </root>

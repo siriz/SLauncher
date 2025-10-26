@@ -353,4 +353,17 @@
   <data name="TooltipClose" xml:space="preserve">
     <value>SLauncherを閉じる</value>
   </data>
+  
+  <!-- Drag and Drop -->
+  <data name="DragDropMessage" xml:space="preserve">
+    <value>ここにアイテムをドラッグ</value>
+  </data>
+  
+  <!-- Loading Dialog -->
+  <data name="LoadingTitle" xml:space="preserve">
+    <value>アイテムを読み込んでいます...</value>
+  </data>
+  <data name="LoadingSubtitle" xml:space="preserve">
+    <value>SLauncherを閉じないでください。</value>
+  </data>
 </root>

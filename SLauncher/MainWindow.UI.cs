@@ -23,15 +23,15 @@ namespace SLauncher
        try
        {
       System.Diagnostics.Debug.WriteLine("[MainWindow.UI] Initializing localized UI...");
-      
+ 
     // Set window title
       string appTitle = LocalizationManager.GetString("AppTitle");
   System.Diagnostics.Debug.WriteLine($"[MainWindow.UI] AppTitle: {appTitle}");
       this.Title = appTitle;
      AppTitleBar.Title = appTitle;
    
-          // Set SearchBox placeholder
-      string searchPlaceholder = LocalizationManager.GetString("SearchPlaceholder");
+   // Set SearchBox placeholder
+  string searchPlaceholder = LocalizationManager.GetString("SearchPlaceholder");
       System.Diagnostics.Debug.WriteLine($"[MainWindow.UI] SearchPlaceholder: {searchPlaceholder}");
        SearchBox.PlaceholderText = searchPlaceholder;
        
@@ -41,14 +41,14 @@ namespace SLauncher
        AddWebsiteBtn.Content = LocalizationManager.GetString("AddWebsiteButton");
   
       // Set tooltips
-    Microsoft.UI.Xaml.Controls.ToolTipService.SetToolTip(SettingsButton, LocalizationManager.GetString("TooltipSettings"));
+Microsoft.UI.Xaml.Controls.ToolTipService.SetToolTip(SettingsButton, LocalizationManager.GetString("TooltipSettings"));
    Microsoft.UI.Xaml.Controls.ToolTipService.SetToolTip(CloseButton, LocalizationManager.GetString("TooltipClose"));
    
     // Set empty notice text
       if (EmptyNotice != null && EmptyNotice.Children.Count >= 3)
          {
       if (EmptyNotice.Children[1] is TextBlock titleBlock)
-         {
+      {
     titleBlock.Text = LocalizationManager.GetString("EmptyNoticeTitle");
  }
     if (EmptyNotice.Children[2] is TextBlock messageBlock)
@@ -56,12 +56,45 @@ namespace SLauncher
    messageBlock.Text = LocalizationManager.GetString("EmptyNoticeMessage");
   }
           }
+      
+        // Set drag-drop interface text
+        if (DragDropInterface != null && DragDropInterface.Children.Count > 0)
+    {
+  if (DragDropInterface.Children[0] is StackPanel dragPanel && dragPanel.Children.Count >= 2)
+            {
+     if (dragPanel.Children[1] is TextBlock dragText)
+ {
+          dragText.Text = LocalizationManager.GetString("DragDropMessage");
+                }
+            }
+ }
+        
+  // Set loading dialog text
+        if (LoadingDialog != null && LoadingDialog.Children.Count > 0)
+        {
+            // Navigate through the Border -> StackPanel structure
+         if (LoadingDialog.Children[0] is Border loadingBorder && 
+         loadingBorder.Child is StackPanel outerPanel && 
+           outerPanel.Children.Count >= 2 &&
+    outerPanel.Children[1] is StackPanel textPanel && 
+   textPanel.Children.Count >= 2)
+    {
+ if (textPanel.Children[0] is TextBlock loadingTitle)
+     {
+  loadingTitle.Text = LocalizationManager.GetString("LoadingTitle");
+      }
+                if (textPanel.Children[1] is TextBlock loadingSubtitle)
+        {
+  loadingSubtitle.Text = LocalizationManager.GetString("LoadingSubtitle");
+          }
+     }
+    }
   
         System.Diagnostics.Debug.WriteLine("[MainWindow.UI] Localized UI initialized successfully");
  }
-            catch (Exception ex)
+   catch (Exception ex)
   {
-     System.Diagnostics.Debug.WriteLine($"[MainWindow.UI] Error initializing localized UI: {ex.Message}\n{ex.StackTrace}");
+  System.Diagnostics.Debug.WriteLine($"[MainWindow.UI] Error initializing localized UI: {ex.Message}\n{ex.StackTrace}");
    }
    }
 
