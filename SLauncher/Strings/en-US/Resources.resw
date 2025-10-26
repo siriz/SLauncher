@@ -122,11 +122,12 @@
   <data name="TabCannotDeleteMessage" xml:space="preserve">
     <value>The last tab cannot be deleted.</value>
   </data>
+  <!-- Tabs -->
   <data name="DefaultTabName" xml:space="preserve">
-    <value>Default</value>
+    <value>All Items</value>
   </data>
   <data name="NewTabName" xml:space="preserve">
-    <value>Tab {0}</value>
+    <value>New Tab {0}</value>
   </data>
   
   <!-- Tab Colors -->
