@@ -12,6 +12,10 @@
 
 [Features](#-features) • [Installation](#-installation) • [Usage](#-usage) • [Building](#-building-from-source)
 
+---
+
+⭐ **If you find this project useful, please consider giving it a star on [GitHub](https://github.com/siriz/SLauncher)!**
+
 </div>
 
 ---
