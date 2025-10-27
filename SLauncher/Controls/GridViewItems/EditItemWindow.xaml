@@ -39,6 +39,7 @@
         <!--  Use our custom titlebar control  -->
         <local:Titlebar
             x:Name="AppTitleBar"
+            x:Uid="EditItem_WindowTitle"
             Title="Edit item"
             Grid.Row="0"
             Icon="..\..\Resources\icon.ico" />
@@ -61,11 +62,13 @@
                 Orientation="Horizontal">
                 <Button
                     x:Name="EditIconBtn"
+                    x:Uid="EditItem_EditIconButton"
                     x:FieldModifier="Public"
                     Content="Edit icon" />
                 <Button
                     x:Name="ResetIconBtn"
                     Margin="10,0,0,0"
+                    x:Uid="EditItem_ResetIconButton"
                     x:FieldModifier="Public"
                     Content="Reset icon" />
             </StackPanel>
@@ -88,6 +91,7 @@
 
             <!--  Edit display text  -->
             <TextBlock
+                x:Uid="EditItem_DisplayTextLabel"
                 Grid.Row="0"
                 Grid.Column="0"
                 VerticalAlignment="Center"
@@ -103,6 +107,7 @@
 
             <!--  Edit link (NEW)  -->
             <TextBlock
+                x:Uid="EditItem_LinkLabel"
                 Grid.Row="1"
                 Grid.Column="0"
                 Margin="0,10,0,0"
@@ -121,6 +126,7 @@
             <!--  Edit launch args  -->
             <TextBlock
                 x:Name="LaunchArgsTextBlock"
+                x:Uid="EditItem_LaunchArgsLabel"
                 Grid.Row="2"
                 Grid.Column="0"
                 Margin="0,10,0,0"
@@ -151,6 +157,7 @@
 
             <Button
                 x:Name="CloseBtn"
+                x:Uid="EditItem_CloseButton"
                 Grid.Column="0"
                 Margin="5,0,0,0"
                 HorizontalAlignment="Stretch"
@@ -159,6 +166,7 @@
                 Content="Close" />
             <Button
                 x:Name="SaveBtn"
+                x:Uid="EditItem_SaveButton"
                 Grid.Column="1"
                 Margin="5,0,0,0"
                 HorizontalAlignment="Stretch"

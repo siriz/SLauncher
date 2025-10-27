@@ -452,35 +452,39 @@ namespace SLauncher.Controls.GridViewItems
         private void GridViewTileControl_RightTapped(object sender, RightTappedRoutedEventArgs e)
         {
             // Implement right click menu
-            // Rename options based on the ExecutingPath
+     // Rename options based on the ExecutingPath
             if (ExecutingPath.StartsWith("http://") || ExecutingPath.StartsWith("https://"))
             {
-                // This item belongs to a website
-                MenuOpenOptionIcon.Glyph = "\uE774";
-                MenuOpenOption.Text = "Open website";
-                MenuOpenLocOption.Visibility = Visibility.Collapsed;
-                MenuAdminOption.Visibility = Visibility.Collapsed;
-                MenuRemoveGroupOption.Text = "Remove website from group";
-                MenuRemoveOption.Text = "Remove website from SLauncher";
-            }
+          // This item belongs to a website
+      MenuOpenOptionIcon.Glyph = "\uE774";
+      MenuOpenOption.Text = LocalizationManager.GetString("ContextMenu_OpenWebsite");
+       MenuOpenLocOption.Visibility = Visibility.Collapsed;
+      MenuAdminOption.Visibility = Visibility.Collapsed;
+       MenuRemoveGroupOption.Text = LocalizationManager.GetString("ContextMenu_RemoveWebsiteFromGroup");
+   MenuRemoveOption.Text = LocalizationManager.GetString("ContextMenu_RemoveWebsiteFromSLauncher");
+       }
             else if (IsPathDirectory(ExecutingPath))
-            {
-                MenuOpenOptionIcon.Glyph = "\uE8DA";
-                MenuOpenOption.Text = "Open folder";
-                MenuOpenLocOption.Text = "Open folder location";
-                MenuRemoveGroupOption.Text = "Remove folder from group";
-                MenuRemoveOption.Text = "Remove folder from SLauncher";
+{
+    MenuOpenOptionIcon.Glyph = "\uE8DA";
+    MenuOpenOption.Text = LocalizationManager.GetString("ContextMenu_OpenFolder");
+    MenuOpenLocOption.Text = LocalizationManager.GetString("ContextMenu_OpenFolderLocation");
+ MenuRemoveGroupOption.Text = LocalizationManager.GetString("ContextMenu_RemoveFolderFromGroup");
+    MenuRemoveOption.Text = LocalizationManager.GetString("ContextMenu_RemoveFolderFromSLauncher");
                 MenuAdminOption.Visibility = Visibility.Collapsed;
             }
-            else
-            {
-                MenuOpenOptionIcon.Glyph = "\uE8E5";
-                MenuOpenOption.Text = "Open file";
-                MenuOpenLocOption.Text = "Open file location";
-                MenuRemoveGroupOption.Text = "Remove file from group";
-                MenuRemoveOption.Text = "Remove file from SLauncher";
-                MenuAdminOption.Visibility = Visibility.Visible;
-            }
+   else
+  {
+      MenuOpenOptionIcon.Glyph = "\uE8E5";
+            MenuOpenOption.Text = LocalizationManager.GetString("ContextMenu_OpenFile");
+        MenuOpenLocOption.Text = LocalizationManager.GetString("ContextMenu_OpenFileLocation");
+         MenuRemoveGroupOption.Text = LocalizationManager.GetString("ContextMenu_RemoveFileFromGroup");
+       MenuRemoveOption.Text = LocalizationManager.GetString("ContextMenu_RemoveFileFromSLauncher");
+         MenuAdminOption.Visibility = Visibility.Visible;
+     }
+
+            // Update common menu items
+            MenuAdminOption.Text = LocalizationManager.GetString("ContextMenu_RunAsAdmin");
+MenuEditOption.Text = LocalizationManager.GetString("ContextMenu_EditItem");
 
             MenuFlyout flyoutBase = (MenuFlyout)FlyoutBase.GetAttachedFlyout(TilePanel);
             flyoutBase.ShowAt(TilePanel, e.GetPosition(TilePanel));
