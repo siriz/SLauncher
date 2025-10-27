@@ -429,13 +429,13 @@
 <data name="ContextMenu_EditItem" xml:space="preserve">
   <value>Edit item</value>
 </data>
-<data name="EditItem_WindowTitle.Title" xml:space="preserve">
+<data name="EditItem_WindowTitle" xml:space="preserve">
   <value>Edit item</value>
 </data>
-<data name="EditItem_EditIconButton.Content" xml:space="preserve">
+<data name="EditItem_EditIconButton" xml:space="preserve">
   <value>Edit icon</value>
 </data>
-<data name="EditItem_ResetIconButton.Content" xml:space="preserve">
+<data name="EditItem_ResetIconButton" xml:space="preserve">
   <value>Reset icon</value>
 </data>
 <data name="EditItem_DisplayTextLabel.Text" xml:space="preserve">
@@ -453,10 +453,10 @@
 <data name="EditItem_LaunchArgsLabel.Text" xml:space="preserve">
   <value>Launch arguments:</value>
 </data>
-<data name="EditItem_CloseButton.Content" xml:space="preserve">
+<data name="EditItem_CloseButton" xml:space="preserve">
   <value>Close</value>
 </data>
-<data name="EditItem_SaveButton.Content" xml:space="preserve">
+<data name="EditItem_SaveButton" xml:space="preserve">
   <value>Save and Exit</value>
 </data>
 </root>
