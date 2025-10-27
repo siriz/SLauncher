@@ -580,31 +580,38 @@ App.MainWindow.AppWindow.Hide();
         {
          // Show the EditItemWindow
 editItemWindow = new EditItemWindow();
-    editItemWindow.EditDialogImage.Source = this.ImageSource;
+  editItemWindow.EditDialogImage.Source = this.ImageSource;
       editItemWindow.EditDisplayTextTextBox.Text = this.DisplayText;
-    editItemWindow.EditLinkTextBox.Text = this.Link ?? this.ExecutingPath; // NEW: Load Link field
+        editItemWindow.EditLinkTextBox.Text = this.Link ?? this.ExecutingPath; // NEW: Load Link field
       TempCustomImagePath = this.CustomImagePath;
 
-    // Set localized label text
-    editItemWindow.DisplayTextLabel.Text = LocalizationManager.GetString("EditItem_DisplayTextLabel");
-     editItemWindow.LinkLabel.Text = LocalizationManager.GetString("EditItem_LinkLabel");
+   // Set localized label text and tooltips
+editItemWindow.DisplayTextLabel.Text = LocalizationManager.GetString("EditItem_DisplayText");
+      Microsoft.UI.Xaml.Controls.ToolTipService.SetToolTip(
+  editItemWindow.DisplayTextLabel, 
+    LocalizationManager.GetString("EditItem_DisplayTextTooltip"));
+    
+editItemWindow.LinkLabel.Text = LocalizationManager.GetString("EditItem_Link");
+        Microsoft.UI.Xaml.Controls.ToolTipService.SetToolTip(
+    editItemWindow.LinkLabel,
+     LocalizationManager.GetString("EditItem_LinkTooltip"));
 
    // Show the launch args section only if this is a file
 if (!this.ExecutingPath.StartsWith("https://") && !this.ExecutingPath.StartsWith("http://") && IsPathDirectory(this.ExecutingPath) == false)
     {
-   editItemWindow.EditLaunchArgsTextBox.Visibility = Visibility.Visible;
+ editItemWindow.EditLaunchArgsTextBox.Visibility = Visibility.Visible;
          editItemWindow.LaunchArgsTextBlock.Visibility = Visibility.Visible;
-      editItemWindow.LaunchArgsTextBlock.Text = LocalizationManager.GetString("EditItem_LaunchArgsLabel");
-         editItemWindow.EditLaunchArgsTextBox.Text = this.ExecutingArguments;
-   }
+      editItemWindow.LaunchArgsTextBlock.Text = LocalizationManager.GetString("EditItem_LaunchArgs");
+           editItemWindow.EditLaunchArgsTextBox.Text = this.ExecutingArguments;
+      }
 
-            // Hook up event handlers
-        editItemWindow.EditIconBtn.Click += EditItemWindow_EditIconBtn_Click;
+   // Hook up event handlers
+     editItemWindow.EditIconBtn.Click += EditItemWindow_EditIconBtn_Click;
    editItemWindow.ResetIconBtn.Click += EditItemWindow_ResetIconBtn_Click;
-   editItemWindow.SaveBtn.Click += SaveBtn_Click;
-    editItemWindow.Closed += EditItemWindow_Closed;
+  editItemWindow.SaveBtn.Click += SaveBtn_Click;
+       editItemWindow.Closed += EditItemWindow_Closed;
 
- // Show the window
+            // Show the window
     UIFunctionsClass.CreateModalWindow(editItemWindow, App.MainWindow);
   }
 

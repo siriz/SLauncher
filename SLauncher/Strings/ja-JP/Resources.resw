@@ -61,66 +61,66 @@
 
   <!-- Main Window -->
   <data name="AppTitle" xml:space="preserve">
-    <value>SLauncher - Windows?�モ?�?�ア?�リ?�ン?�ャ??/value>
+    <value>SLauncher - Windows用モダンアプリランチャー</value>
   </data>
   <data name="SearchPlaceholder" xml:space="preserve">
-    <value>SLauncher??��?�て?�検�?/value>
+    <value>SLauncherのすべてを検索</value>
   </data>
   <data name="AddFileButton" xml:space="preserve">
-    <value>?�ァ?�ル追加</value>
+    <value>ファイル追加</value>
   </data>
   <data name="AddFolderButton" xml:space="preserve">
-    <value>?�ォ?��?追加</value>
+    <value>フォルダ追加</value>
   </data>
   <data name="AddWebsiteButton" xml:space="preserve">
-    <value>?�イ?�追??/value>
+    <value>サイト追加</value>
   </data>
   <data name="EmptyNoticeTitle" xml:space="preserve">
-    <value>何も?�り?�せ?��?/value>
+    <value>何もありません。</value>
   </data>
   <data name="EmptyNoticeMessage" xml:space="preserve">
-    <value>?�イ?�ム?�追?�す?�に??��上??��?�ン?�ク?�ッ??��?�か?�こ??��?�ン?�ウ?�ド?�ッ?�し?�く?�さ?��?/value>
+    <value>アイテムを追加するには、上のボタンをクリックするか、このウィンドウにドラッグしてください。</value>
   </data>
   <data name="LoadingMessage" xml:space="preserve">
-    <value>?�イ?�ム?�読?�込?�で?�ま?�。お待ち?�だ?�い...</value>
+    <value>アイテムを読み込んでいます。お待ちください...</value>
   </data>
   <data name="LoadingWarning" xml:space="preserve">
-    <value>SLauncher?�閉?�な?�で?�だ?�い??/value>
+    <value>SLauncherを閉じないでください。</value>
   </data>
   <data name="DragDropMessage" xml:space="preserve">
-    <value>?�イ?�ム?�こ?�に?�ラ?�グ＆ド??��??/value>
+    <value>アイテムをここにドラッグ＆ドロップ</value>
   </data>
   
   <!-- Tab Context Menu -->
   <data name="TabRename" xml:space="preserve">
-    <value>?�前?�変??/value>
+    <value>名前を変更</value>
   </data>
   <data name="TabChangeColor" xml:space="preserve">
-    <value>?�を変更</value>
+    <value>色を変更</value>
   </data>
   <data name="TabDelete" xml:space="preserve">
-    <value>?�除</value>
+    <value>削除</value>
   </data>
   <data name="TabRenameTitle" xml:space="preserve">
-    <value>?�ブ?�を変更</value>
+    <value>タブ名を変更</value>
   </data>
   <data name="TabRenamePlaceholder" xml:space="preserve">
- <value>?�ブ?�を?�力</value>
+ <value>タブ名を入力</value>
   </data>
   <data name="TabDeleteTitle" xml:space="preserve">
-    <value>?�ブ??��?�確�?/value>
+    <value>タブの削除確認</value>
   </data>
   <data name="TabDeleteMessage" xml:space="preserve">
-    <value>?�の?�ブ?�削?�し?�す?�？</value>
+    <value>このタブを削除しますか？</value>
   </data>
 <data name="TabDeleteWithItemsMessage" xml:space="preserve">
-    <value>?�の?�ブ?�は{0}?�の?�イ?�ム?�あ?�ま?��?n?�ブ?�削?�す?�と?�す?�て??��?�テ?�も?�除?�れ?�す??n\n?�当?�削?�し?�す?�？</value>
+    <value>このタブには{0}個のアイテムがあります。\nタブを削除すると、すべてのアイテムも削除されます。\n\n本当に削除しますか？</value>
   </data>
   <data name="TabCannotDeleteTitle" xml:space="preserve">
-    <value>?�除?�き?�せ??/value>
+    <value>削除できません</value>
   </data>
   <data name="TabCannotDeleteMessage" xml:space="preserve">
- <value>?�後の?�ブ??��?�で?�ま?�ん??/value>
+ <value>最後のタブは削除できません。</value>
   </data>
   <data name="DefaultTabName" xml:space="preserve">
     <value>Main</value>
@@ -131,34 +131,34 @@
   
   <!-- Tab Colors -->
   <data name="ColorDefault" xml:space="preserve">
-    <value>?�定</value>
+    <value>既定</value>
   </data>
   <data name="ColorRed" xml:space="preserve">
-    <value>�?/value>
+    <value>赤</value>
   </data>
   <data name="ColorOrange" xml:space="preserve">
-    <value>?�レ?�ジ</value>
+    <value>オレンジ</value>
   </data>
   <data name="ColorYellow" xml:space="preserve">
-    <value>�?/value>
+    <value>黄</value>
   </data>
   <data name="ColorGreen" xml:space="preserve">
-    <value>�?/value>
+    <value>緑</value>
   </data>
   <data name="ColorBlue" xml:space="preserve">
-    <value>??/value>
+    <value>青</value>
   </data>
   <data name="ColorIndigo" xml:space="preserve">
-    <value>??/value>
+    <value>藍</value>
   </data>
   <data name="ColorPurple" xml:space="preserve">
-    <value>�?/value>
+    <value>紫</value>
   </data>
   <data name="ColorPink" xml:space="preserve">
-    <value>?�ン??/value>
+    <value>ピンク</value>
   </data>
   <data name="ColorGray" xml:space="preserve">
-    <value>?�色</value>
+    <value>灰色</value>
   </data>
   
   <!-- Common Buttons -->
@@ -166,274 +166,274 @@
     <value>OK</value>
   </data>
   <data name="ButtonCancel" xml:space="preserve">
-    <value>??��?�セ??/value>
+    <value>キャンセル</value>
   </data>
   <data name="ButtonDelete" xml:space="preserve">
-    <value>?�除</value>
+    <value>削除</value>
   </data>
   <data name="ButtonClose" xml:space="preserve">
-    <value>?�じ??/value>
+    <value>閉じる</value>
   </data>
   
   <!-- Settings Window -->
   <data name="SettingsTitle" xml:space="preserve">
-    <value>�?��</value>
+    <value>設定</value>
   </data>
   <data name="SettingsSubtitle" xml:space="preserve">
-    <value>�?��??��?�さ?�る?�自?�的?�保存さ?�ま?��?/value>
+    <value>設定は変更されると自動的に保存されます。</value>
   </data>
   
   <!-- Settings - General -->
   <data name="SettingsFullscreenHeader" xml:space="preserve">
-    <value>?�画??��示を?�効?�す??/value>
+    <value>全画面表示を有効にする</value>
   </data>
   <data name="SettingsFullscreenDescription" xml:space="preserve">
-    <value>SLauncher?�全?�面?�ー?�で使用?�ま?��?/value>
+    <value>SLauncherを全画面モードで使用します。</value>
   </data>
   <data name="SettingsGridAlignmentHeader" xml:space="preserve">
-    <value>?�リ?�ド?�置</value>
+    <value>グリッド配置</value>
   </data>
   <data name="SettingsGridAlignmentDescription" xml:space="preserve">
-    <value>?�イ?�ム?�表示さ?�る?�リ?�ド??���?��法を?�択?�ま?��?/value>
+    <value>アイテムが表示されるグリッドの配置方法を選択します。</value>
   </data>
   <data name="SettingsStartWithWindowsHeader" xml:space="preserve">
-    <value>Windows?�同?�に起動</value>
+    <value>Windowsと同時に起動</value>
   </data>
   <data name="SettingsStartWithWindowsDescription" xml:space="preserve">
-    <value>Windows??��?�時?�SLauncher?�自?�的?�起?�し?�す??/value>
+    <value>Windowsの起動時にSLauncherを自動的に起動します。</value>
   </data>
   <data name="SettingsGlobalHotkeyHeader" xml:space="preserve">
-    <value>?�ロ?�バ?�ホ?�ト??��</value>
+    <value>グローバルホットキー</value>
   </data>
   <data name="SettingsGlobalHotkeyDescription" xml:space="preserve">
-    <value>?�こ?�ら?�も?�ッ?�キ?�を?�し?�SLauncher?�表�??�表示。ク?�ッ??��??��?��?/value>
+    <value>どこからでもホットキーを押してSLauncherを表示/非表示。クリックして変更。</value>
   </data>
   <data name="SettingsLanguageHeader" xml:space="preserve">
-    <value>言�?/value>
+    <value>言語</value>
   </data>
   <data name="SettingsLanguageDescription" xml:space="preserve">
-    <value>?��??�の言語を?�択?�て?�だ?�い?�適?�に??��起動?�必要で?��?/value>
+    <value>お好みの言語を選択してください。適用には再起動が必要です。</value>
   </data>
   <data name="HotkeyTooltip" xml:space="preserve">
-    <value>??��?�ク?�て?�ッ?�キ?�を変更</value>
+    <value>クリックしてホットキーを変更</value>
   </data>
   
   <!-- Settings - Cache Management -->
   <data name="SettingsCacheManagementTitle" xml:space="preserve">
-    <value>??��?�シ?��???/value>
+    <value>キャッシュ管理</value>
   </data>
   <data name="SettingsCacheManagementSubtitle" xml:space="preserve">
-    <value>?�ェ?�サ?�ト?�イ?�ン??��行フ?�イ?�フ?�ル?�?�ロ?�カ?�に??��?�シ?�さ?�ま?��?/value>
+    <value>ウェブサイトアイコンは実行ファイルフォルダにローカルにキャッシュされます。</value>
   </data>
   <data name="SettingsFaviconCacheHeader" xml:space="preserve">
-    <value>?�ァ?�コ?�キ?�ッ?�ュ</value>
+    <value>ファビコンキャッシュ</value>
   </data>
   <data name="SettingsFaviconCacheDescription" xml:space="preserve">
-    <value>??��?�シ?�さ?�た?�ァ?�コ?�はUserCache\FaviconCache\?�ォ?��??�保存さ?�ま?��?/value>
+    <value>キャッシュされたファビコンはUserCache\FaviconCache\フォルダに保存されます。</value>
   </data>
   <data name="SettingsCacheSizeCalculating" xml:space="preserve">
-  <value>??��?�シ?�サ?�ズ: 計算�?..</value>
+  <value>キャッシュサイズ: 計算中...</value>
   </data>
   <data name="SettingsCacheSizeFormat" xml:space="preserve">
-    <value>??��?�シ?�サ?�ズ: {0}</value>
+    <value>キャッシュサイズ: {0}</value>
   </data>
   <data name="CacheSizeEmpty" xml:space="preserve">
-    <value>�?/value>
+    <value>空</value>
   </data>
   <data name="SettingsClearCacheButton" xml:space="preserve">
-    <value>??��?�シ?�を??��??/value>
+    <value>キャッシュをクリア</value>
   </data>
   <data name="SettingsCacheLocationHeader" xml:space="preserve">
-    <value>??��?�シ?�の?��?</value>
+    <value>キャッシュの場所</value>
   </data>
   <data name="SettingsCacheLocationDescription" xml:space="preserve">
-    <value>?�ー?�ブ?? ?�べ?�の?�ー?�は実行?�ァ?�ル?�ォ?��?\UserCache\?�保存さ?�ま??/value>
+    <value>ポータブル: すべてのデータは実行ファイルフォルダ\UserCache\に保存されます</value>
   </data>
   <data name="SettingsOpenFolderButton" xml:space="preserve">
-    <value>?�ォ?��??�開??/value>
+    <value>フォルダを開く</value>
   </data>
   
   <!-- Dialog Messages -->
   <data name="DialogClearCacheTitle" xml:space="preserve">
-    <value>??��?�シ?�を??��??/value>
+    <value>キャッシュをクリア</value>
   </data>
   <data name="DialogClearCacheContent" xml:space="preserve">
-    <value>??��?�シ?�さ?�た?�べ?�の?�ェ?�サ?�ト?�イ?�ン?�削?�し?�す?�？必要?�応?�て?��??�ン??��?�さ?�ま?��?/value>
+    <value>キャッシュされたすべてのウェブサイトアイコンを削除しますか？必要に応じて再ダウンロードされます。</value>
   </data>
   <data name="DialogClearCacheConfirm" xml:space="preserve">
-    <value>??��??/value>
+    <value>クリア</value>
   </data>
   <data name="DialogSuccessTitle" xml:space="preserve">
-    <value>?�功</value>
+    <value>成功</value>
   </data>
   <data name="DialogCacheCleared" xml:space="preserve">
-    <value>??��?�シ?�が正常?�ク?�ア?�れ?�し?�！</value>
+    <value>キャッシュが正常にクリアされました！</value>
   </data>
   <data name="DialogHotkeyTitle" xml:space="preserve">
-    <value>?�ロ?�バ?�ホ?�ト??��?�変??/value>
+    <value>グローバルホットキーを変更</value>
   </data>
   <data name="DialogHotkeySave" xml:space="preserve">
   <value>保存</value>
   </data>
   <data name="DialogRestartTitle" xml:space="preserve">
-    <value>?�起?�が必要</value>
+    <value>再起動が必要</value>
   </data>
   <data name="DialogRestartContent" xml:space="preserve">
-    <value>?�ッ?�キ?�の変更?�適?�す?�に?�SLauncher?�再起動?�て?�だ?�い??/value>
+    <value>ホットキーの変更を適用するにはSLauncherを再起動してください。</value>
   </data>
   <data name="HotkeyModifierLabel" xml:space="preserve">
-    <value>�?��??��:</value>
+    <value>修飾キー:</value>
   </data>
   <data name="HotkeyKeyLabel" xml:space="preserve">
-    <value>??��:</value>
+    <value>キー:</value>
   </data>
   
   <!-- Settings - About -->
   <data name="SettingsAboutTitle" xml:space="preserve">
-    <value>?�つ?�て</value>
+    <value>について</value>
   </data>
   <data name="SettingsAboutHeader" xml:space="preserve">
-    <value>SLauncher?�つ?�て</value>
+    <value>SLauncherについて</value>
   </data>
   <data name="SettingsAboutDescription" xml:space="preserve">
-    <value>SLauncher?�関?�る?�報?�表示し?�す??/value>
+    <value>SLauncherに関する情報を表示します。</value>
   </data>
   <data name="AboutSubtitle" xml:space="preserve">
-    <value>多�?語サ?�ー?�付?�LauncherX??��?�ー??/value>
+    <value>多言語サポート付きLauncherXのフォーク</value>
   </data>
   <data name="AboutVersion" xml:space="preserve">
-    <value>?�ー?�ョ??</value>
+    <value>バージョン:</value>
   </data>
   <data name="AboutForkBy" xml:space="preserve">
-    <value>?�ォ?�ク作成??</value>
+    <value>フォーク作成者:</value>
 </data>
   <data name="AboutBasedOn" xml:space="preserve">
-    <value>?�ー??</value>
+    <value>ベース:</value>
   </data>
   <data name="AboutGitHub" xml:space="preserve">
     <value>GitHub:</value>
   </data>
 <data name="AboutLicense" xml:space="preserve">
-  <value>?�イ?�ン??</value>
+  <value>ライセンス:</value>
   </data>
   <data name="AboutViewLicense" xml:space="preserve">
-  <value>MIT?�イ?�ン?�を表示</value>
+  <value>MITライセンスを表示</value>
   </data>
   
   <!-- Toggle Switch -->
   <data name="ToggleSwitchOn" xml:space="preserve">
-    <value>??��</value>
+    <value>はい</value>
   </data>
   <data name="ToggleSwitchOff" xml:space="preserve">
-    <value>?�い??/value>
+    <value>いいえ</value>
   </data>
   
   <!-- Grid Alignment Options -->
   <data name="GridAlignmentLeft" xml:space="preserve">
- <value>�?/value>
+ <value>左</value>
   </data>
   <data name="GridAlignmentCenter" xml:space="preserve">
-    <value>�?��</value>
+    <value>中央</value>
   </data>
   
   <data name="SettingsLanguage" xml:space="preserve">
-    <value>言�?/value>
+    <value>言語</value>
 </data>
   <data name="SettingsLanguageDescription" xml:space="preserve">
-  <value>?��??�の言語を?�択?�て?�だ?�い</value>
+  <value>お好みの言語を選択してください</value>
   </data>
   <data name="SettingsRestartRequired" xml:space="preserve">
-    <value>言語変?�を?�用?�る?�は?�起?�が必要?�す</value>
+    <value>言語変更を適用するには再起動が必要です</value>
   </data>
   
   <!-- Tooltips -->
   <data name="TooltipSettings" xml:space="preserve">
-    <value>�?��</value>
+    <value>設定</value>
   </data>
   <data name="TooltipClose" xml:space="preserve">
-    <value>SLauncher?�閉?�る</value>
+    <value>SLauncherを閉じる</value>
   </data>
   
   <!-- Drag and Drop -->
   <data name="DragDropMessage" xml:space="preserve">
-    <value>?�こ?�ア?�テ?�を?�ラ?�グ</value>
+    <value>ここにアイテムをドラッグ</value>
   </data>
   
   <!-- Loading Dialog -->
   <data name="LoadingTitle" xml:space="preserve">
-    <value>?�イ?�ム?�読?�込?�で?�ま??..</value>
+    <value>アイテムを読み込んでいます...</value>
   </data>
   <data name="LoadingSubtitle" xml:space="preserve">
-    <value>SLauncher?�閉?�な?�で?�だ?�い??/value>
+    <value>SLauncherを閉じないでください。</value>
   </data>
 
   <data name="ContextMenu_OpenFile" xml:space="preserve">
-  <value>?�ァ?�ル?�開??/value>
+  <value>ファイルを開く</value>
 </data>
 <data name="ContextMenu_OpenFileLocation" xml:space="preserve">
-  <value>?�ァ?�ル??��?�?�開??/value>
+  <value>ファイルの場所を開く</value>
 </data>
 <data name="ContextMenu_RemoveFileFromGroup" xml:space="preserve">
-  <value>?�ル?�プ?�ら?�ァ?�ル?�削??/value>
+  <value>グループからファイルを削除</value>
 </data>
 <data name="ContextMenu_RemoveFileFromSLauncher" xml:space="preserve">
-  <value>SLauncher?�ら?�ァ?�ル?�削??/value>
+  <value>SLauncherからファイルを削除</value>
 </data>
 
 <data name="ContextMenu_OpenFolder" xml:space="preserve">
-  <value>?�ォ?��??�開??/value>
+  <value>フォルダを開く</value>
 </data>
 <data name="ContextMenu_OpenFolderLocation" xml:space="preserve">
-  <value>?�ォ?��???��?�?�開??/value>
+  <value>フォルダの場所を開く</value>
 </data>
 <data name="ContextMenu_RemoveFolderFromGroup" xml:space="preserve">
-  <value>?�ル?�プ?�ら?�ォ?��??�削??/value>
+  <value>グループからフォルダを削除</value>
 </data>
 <data name="ContextMenu_RemoveFolderFromSLauncher" xml:space="preserve">
-  <value>SLauncher?�ら?�ォ?��??�削??/value>
+  <value>SLauncherからフォルダを削除</value>
 </data>
 
 <data name="ContextMenu_OpenWebsite" xml:space="preserve">
-  <value>?�ェ?�サ?�ト?�開??/value>
+  <value>ウェブサイトを開く</value>
 </data>
 <data name="ContextMenu_RemoveWebsiteFromGroup" xml:space="preserve">
-  <value>?�ル?�プ?�ら?�ェ?�サ?�ト?�削??/value>
+  <value>グループからウェブサイトを削除</value>
 </data>
 <data name="ContextMenu_RemoveWebsiteFromSLauncher" xml:space="preserve">
-  <value>SLauncher?�ら?�ェ?�サ?�ト?�削??/value>
+  <value>SLauncherからウェブサイトを削除</value>
 </data>
 
 <data name="ContextMenu_RunAsAdmin" xml:space="preserve">
-  <value>管理?�と?�て実行?�試?�る</value>
+  <value>管理者として実行を試みる</value>
 </data>
 <data name="ContextMenu_EditItem" xml:space="preserve">
-  <value>?�イ?�ム?�編??/value>
+  <value>アイテムを編集</value>
 </data>
 
 <data name="EditItem_WindowTitle" xml:space="preserve">
-  <value>?�イ?�ム?�編??/value>
+  <value>アイテムを編集</value>
 </data>
 
 <data name="EditItem_EditIconButton" xml:space="preserve">
-  <value>?�イ?�ン?�編??/value>
+  <value>アイコンを編集</value>
 </data>
 
 <data name="EditItem_ResetIconButton" xml:space="preserve">
-  <value>?�イ?�ン?�リ?�ッ??/value>
+  <value>アイコンをリセット</value>
 </data>
 
 <data name="EditItem_DisplayTextLabel.Text" xml:space="preserve">
-  <value>表示?�キ?�ト:</value>
+  <value>表示テキスト:</value>
 </data>
 <data name="EditItem_DisplayTextLabel.ToolTip" xml:space="preserve">
-  <value>SLauncher?�表示さ?�る?�キ?�ト?�す?�ク?�ッ??��?�起?�さ?�る?�イ?�ム?�は影響?�ま?�ん??/value>
+  <value>SLauncherで表示されるテキストです。クリック時に起動されるアイテムには影響しません。</value>
 </data>
 
 <data name="EditItem_LinkLabel.Text" xml:space="preserve">
-  <value>?�ン??</value>
+  <value>リンク:</value>
 </data>
 <data name="EditItem_LinkLabel.ToolTip" xml:space="preserve">
-  <value>実際?�起?�さ?�る?�ス?�た?�URL?�す?�通常??��示テ??��?�と?�じ?�す??/value>
+  <value>実際に起動されるパスまたはURLです。通常は表示テキストと同じです。</value>
 </data>
 
 <data name="EditItem_LaunchArgsLabel.Text" xml:space="preserve">
@@ -441,10 +441,10 @@
 </data>
 
 <data name="EditItem_CloseButton" xml:space="preserve">
-  <value>?�じ??/value>
+  <value>閉じる</value>
 </data>
 
 <data name="EditItem_SaveButton" xml:space="preserve">
-  <value>保存?�て終了</value>
+  <value>保存して終了</value>
 </data>
 </root>

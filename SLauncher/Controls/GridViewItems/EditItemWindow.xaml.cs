@@ -62,8 +62,9 @@ namespace SLauncher.Controls.GridViewItems
             CloseBtn.Content = LocalizationManager.GetString("EditItem_CloseButton");
             SaveBtn.Content = LocalizationManager.GetString("EditItem_SaveButton");
 
-            // Labels (we'll update these in code, not XAML x:Uid)
-            // DisplayTextLabel, LinkLabel, LaunchArgsLabel text will be set in GridViewTile.xaml.cs
+            // Labels - will be set in GridViewTile.xaml.cs when opening the window
+            // But we can set default text here
+            // Note: GridViewTile.xaml.cs will override these
         }
 
         private void CloseBtn_Click(object sender, RoutedEventArgs e)
