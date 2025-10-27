@@ -66,57 +66,110 @@ sender.Text = args.SelectedItem.ToString();
         }
 
    private async void SearchBox_QuerySubmitted(AutoSuggestBox sender, AutoSuggestBoxQuerySubmittedEventArgs args)
-        {
-            string query = sender.Text?.Trim();
-            
+     {
+        string query = sender.Text?.Trim();
+   
    // If query is empty, do nothing
      if (string.IsNullOrWhiteSpace(query))
-       {
+   {
              return;
+            }
+
+            // Check if the query is a URL
+       bool isUrl = false;
+     if (query.StartsWith("http://", StringComparison.OrdinalIgnoreCase) || 
+                query.StartsWith("https://", StringComparison.OrdinalIgnoreCase) ||
+    query.StartsWith("www.", StringComparison.OrdinalIgnoreCase))
+            {
+    isUrl = true;
+            
+      // Add https:// if it starts with www.
+ if (query.StartsWith("www.", StringComparison.OrdinalIgnoreCase))
+          {
+   query = "https://" + query;
+       }
+       
+      try
+        {
+              // Open URL in default browser
+     ProcessStartInfo processStartInfo = new ProcessStartInfo 
+           { 
+     FileName = query, 
+              UseShellExecute = true 
+      };
+            Process.Start(processStartInfo);
+        
+     // Clear search box
+        sender.Text = "";
+        
+            // Hide window if MinimizeToTray is enabled
+           if (UserSettingsClass.MinimizeToTray)
+   {
+  this.AppWindow.Hide();
+           }
+      
+         return;
+        }
+       catch (Exception ex)
+        {
+   System.Diagnostics.Debug.WriteLine($"Error opening URL: {ex.Message}");
+           
+        // Show error message
+    var dialog = new ContentDialog
+        {
+      Title = LocalizationManager.GetString("Error"),
+     Content = $"Unable to open URL:\n{query}\n\nError: {ex.Message}",
+        CloseButtonText = LocalizationManager.GetString("OK"),
+  XamlRoot = this.Content.XamlRoot
+      };
+         await dialog.ShowAsync();
+      
+       return;
+     }
             }
 
   // Check if the query is a file or folder path
             bool isPath = false;
-            bool pathExists = false;
+    bool pathExists = false;
     
             // Check for absolute paths (C:\, D:\, \\server\share, etc.)
          if (query.Length >= 2)
       {
           // Windows drive letter path (C:\, D:\, etc.)
-    if (char.IsLetter(query[0]) && query[1] == ':')
+if (char.IsLetter(query[0]) && query[1] == ':')
      {
   isPath = true;
-            }
+  }
        // UNC network path (\\server\share)
-       else if (query.StartsWith("\\\\"))
+ else if (query.StartsWith("\\\\"))
      {
     isPath = true;
-    }
+  }
         }
 
       // If it looks like a path, try to open it directly
        if (isPath)
-            {
+{
  try
           {
           // Check if file exists
       if (System.IO.File.Exists(query))
-       {
+   {
     pathExists = true;
-                // Open file
-          ProcessStartInfo processStartInfo = new ProcessStartInfo 
+             // Open file
+      ProcessStartInfo processStartInfo = new ProcessStartInfo 
            { 
        FileName = query, 
       UseShellExecute = true 
-           };
-           Process.Start(processStartInfo);
+       };
+         Process.Start(processStartInfo);
     
       // Clear search box
     sender.Text = "";
        
-      // Hide window if MinimizeToTray is enabled
+  // Hide window if MinimizeToTray is enabled
        if (UserSettingsClass.MinimizeToTray)
-           {
+  {
     this.AppWindow.Hide();
             }
 
@@ -124,19 +177,19 @@ sender.Text = args.SelectedItem.ToString();
 }
        // Check if directory exists
    else if (System.IO.Directory.Exists(query))
-         {
-          pathExists = true;
-         // Open folder
+   {
+     pathExists = true;
+      // Open folder
            ProcessStartInfo processStartInfo = new ProcessStartInfo 
-           { 
+  { 
         FileName = "explorer.exe", 
    UseShellExecute = true, 
             Arguments = $"\"{query}\"" 
-                   };
-         Process.Start(processStartInfo);
-        
-          // Clear search box
-                 sender.Text = "";
+            };
+    Process.Start(processStartInfo);
+   
+     // Clear search box
+        sender.Text = "";
     
             // Hide window if MinimizeToTray is enabled
       if (UserSettingsClass.MinimizeToTray)
@@ -148,33 +201,33 @@ sender.Text = args.SelectedItem.ToString();
   }
           }
     catch (Exception ex)
-                {
+          {
      System.Diagnostics.Debug.WriteLine($"Error opening path: {ex.Message}");
-               
+            
 // Show error message
         var dialog = new ContentDialog
           {
-                Title = "Error",
+            Title = LocalizationManager.GetString("Error"),
  Content = $"Unable to open:\n{query}\n\nError: {ex.Message}",
-      CloseButtonText = "OK",
+      CloseButtonText = LocalizationManager.GetString("OK"),
               XamlRoot = this.Content.XamlRoot
  };
  await dialog.ShowAsync();
-      
-        return;
+    
+      return;
 }
          
-         // If path format but doesn't exist, show error
+  // If path format but doesn't exist, show error
       if (!pathExists)
      {
          var dialog = new ContentDialog
-      {
-    Title = "Path Not Found",
+  {
+    Title = LocalizationManager.GetString("PathNotFound"),
       Content = $"The specified path does not exist:\n{query}\n\nPlease check the path and try again.",
-            CloseButtonText = "OK",
+    CloseButtonText = LocalizationManager.GetString("OK"),
             XamlRoot = this.Content.XamlRoot
         };
-        await dialog.ShowAsync();
+   await dialog.ShowAsync();
  
          return;
      }
@@ -183,25 +236,25 @@ sender.Text = args.SelectedItem.ToString();
      // Original search functionality - search through items
             // If there's nothing in the dropdown of the SearchBox, don't do anything
     if (SearchBoxDropdownItems.Count <= 0)
-            {
+       {
      return;
-          }
+}
 
-            string chosenSuggestion = "";
-            if (args.ChosenSuggestion != null)
+        string chosenSuggestion = "";
+  if (args.ChosenSuggestion != null)
             {
     // User selected an item from the suggestion list, take an action on it here.
-          chosenSuggestion = args.ChosenSuggestion.ToString();
+ chosenSuggestion = args.ChosenSuggestion.ToString();
      }
             else
-            {
+  {
       chosenSuggestion = SearchBoxDropdownItems[0];
-      }
+  }
 
          sender.Text = chosenSuggestion;
 
      // Find the corresponding GridViewTile, and start its associated process
-            foreach (GridViewTile gridViewTile in AllLauncherXItems)
+          foreach (GridViewTile gridViewTile in AllLauncherXItems)
             {
     if (gridViewTile.DisplayText.ToLower() == chosenSuggestion.ToLower())
        {
@@ -209,16 +262,16 @@ sender.Text = args.SelectedItem.ToString();
           
    // Hide window if MinimizeToTray is enabled
        if (UserSettingsClass.MinimizeToTray)
-            {
+        {
      this.AppWindow.Hide();
         }
       
       break;
-          }
-            }
+     }
+   }
 
-            AllLauncherXItems.Clear();
-       SearchBoxDropdownItems.Clear();
+      AllLauncherXItems.Clear();
+ SearchBoxDropdownItems.Clear();
           
    // Clear search box
     sender.Text = "";

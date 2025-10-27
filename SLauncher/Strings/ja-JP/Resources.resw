@@ -422,21 +422,21 @@
   <value>アイコンをリセット</value>
 </data>
 
-<data name="EditItem_DisplayTextLabel.Text" xml:space="preserve">
+<data name="EditItem_DisplayText" xml:space="preserve">
   <value>表示テキスト:</value>
 </data>
-<data name="EditItem_DisplayTextLabel.ToolTip" xml:space="preserve">
+<data name="EditItem_DisplayTextTooltip" xml:space="preserve">
   <value>SLauncherで表示されるテキストです。クリック時に起動されるアイテムには影響しません。</value>
 </data>
 
-<data name="EditItem_LinkLabel.Text" xml:space="preserve">
+<data name="EditItem_Link" xml:space="preserve">
   <value>リンク:</value>
 </data>
-<data name="EditItem_LinkLabel.ToolTip" xml:space="preserve">
+<data name="EditItem_LinkTooltip" xml:space="preserve">
   <value>実際に起動されるパスまたはURLです。通常は表示テキストと同じです。</value>
 </data>
 
-<data name="EditItem_LaunchArgsLabel.Text" xml:space="preserve">
+<data name="EditItem_LaunchArgs" xml:space="preserve">
   <value>起動引数:</value>
 </data>
 

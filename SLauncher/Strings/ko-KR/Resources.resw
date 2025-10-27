@@ -422,21 +422,21 @@
   <value>아이콘 초기화</value>
 </data>
 
-<data name="EditItem_DisplayTextLabel.Text" xml:space="preserve">
+<data name="EditItem_DisplayText" xml:space="preserve">
   <value>표시 텍스트:</value>
 </data>
-<data name="EditItem_DisplayTextLabel.ToolTip" xml:space="preserve">
+<data name="EditItem_DisplayTextTooltip" xml:space="preserve">
   <value>SLauncher에서 표시되는 텍스트입니다. 클릭 시 실행되는 항목에는 영향을 주지 않습니다.</value>
 </data>
 
-<data name="EditItem_LinkLabel.Text" xml:space="preserve">
+<data name="EditItem_Link" xml:space="preserve">
   <value>링크:</value>
 </data>
-<data name="EditItem_LinkLabel.ToolTip" xml:space="preserve">
+<data name="EditItem_LinkTooltip" xml:space="preserve">
   <value>실제로 실행될 경로 또는 URL입니다. 일반적으로 표시 텍스트와 동일합니다.</value>
 </data>
 
-<data name="EditItem_LaunchArgsLabel.Text" xml:space="preserve">
+<data name="EditItem_LaunchArgs" xml:space="preserve">
   <value>실행 인수:</value>
 </data>
 

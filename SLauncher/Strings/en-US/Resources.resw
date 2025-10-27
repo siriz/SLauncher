@@ -438,19 +438,19 @@
 <data name="EditItem_ResetIconButton" xml:space="preserve">
   <value>Reset icon</value>
 </data>
-<data name="EditItem_DisplayTextLabel.Text" xml:space="preserve">
+<data name="EditItem_DisplayText" xml:space="preserve">
   <value>Display Text:</value>
 </data>
-<data name="EditItem_DisplayTextLabel.ToolTip" xml:space="preserve">
+<data name="EditItem_DisplayTextTooltip" xml:space="preserve">
   <value>The text that is displayed on this item in SLauncher. Does not affect what is launched when this item is clicked.</value>
 </data>
-<data name="EditItem_LinkLabel.Text" xml:space="preserve">
+<data name="EditItem_Link" xml:space="preserve">
   <value>Link:</value>
 </data>
-<data name="EditItem_LinkLabel.ToolTip" xml:space="preserve">
+<data name="EditItem_LinkTooltip" xml:space="preserve">
   <value>The actual path or URL that will be launched. Usually same as the display text.</value>
 </data>
-<data name="EditItem_LaunchArgsLabel.Text" xml:space="preserve">
+<data name="EditItem_LaunchArgs" xml:space="preserve">
   <value>Launch arguments:</value>
 </data>
 <data name="EditItem_CloseButton" xml:space="preserve">
