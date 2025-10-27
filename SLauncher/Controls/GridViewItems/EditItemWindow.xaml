@@ -9,7 +9,7 @@
     xmlns:winex="using:WinUIEx"
     Title="Edit item"
     Width="385"
-    Height="370"
+    Height="410"
     IsAlwaysOnTop="True"
     IsMaximizable="False"
     IsMinimizable="False"
@@ -83,6 +83,7 @@
             <Grid.RowDefinitions>
                 <RowDefinition Height="auto" />
                 <RowDefinition Height="auto" />
+                <RowDefinition Height="auto" />
             </Grid.RowDefinitions>
 
             <!--  Edit display text  -->
@@ -91,7 +92,7 @@
                 Grid.Column="0"
                 VerticalAlignment="Center"
                 Text="Display Text:"
-                ToolTipService.ToolTip="The text that is displayed on this item in LauncherX. Does not affect what is launched when this item is clicked." />
+                ToolTipService.ToolTip="The text that is displayed on this item in SLauncher. Does not affect what is launched when this item is clicked." />
             <TextBox
                 x:Name="EditDisplayTextTextBox"
                 Grid.Row="0"
@@ -100,10 +101,27 @@
                 HorizontalAlignment="Stretch"
                 x:FieldModifier="Public" />
 
+            <!--  Edit link (NEW)  -->
+            <TextBlock
+                Grid.Row="1"
+                Grid.Column="0"
+                Margin="0,10,0,0"
+                VerticalAlignment="Center"
+                Text="Link:"
+                ToolTipService.ToolTip="The actual path or URL that will be launched. Usually same as the display text." />
+            <TextBox
+                x:Name="EditLinkTextBox"
+                Grid.Row="1"
+                Grid.Column="1"
+                Margin="10,10,0,0"
+                HorizontalAlignment="Stretch"
+                x:FieldModifier="Public"
+                PlaceholderText="Path or URL" />
+
             <!--  Edit launch args  -->
             <TextBlock
                 x:Name="LaunchArgsTextBlock"
-                Grid.Row="1"
+                Grid.Row="2"
                 Grid.Column="0"
                 Margin="0,10,0,0"
                 VerticalAlignment="Center"
@@ -112,7 +130,7 @@
                 Visibility="Collapsed" />
             <TextBox
                 x:Name="EditLaunchArgsTextBox"
-                Grid.Row="1"
+                Grid.Row="2"
                 Grid.Column="1"
                 Margin="10,10,0,0"
                 HorizontalAlignment="Stretch"
@@ -150,4 +168,5 @@
         </Grid>
     </Grid>
 </winex:WindowEx>
+
 

@@ -172,8 +172,36 @@ namespace SLauncher.Controls.GridViewItems
                 // Update textblock
                 gridViewTile.TileText.Text = newDisplayText;
 
+                // Update tooltip - show DisplayText and Link
+                string tooltipString = newDisplayText + " - " + (string.IsNullOrEmpty(gridViewTile.Link) ? gridViewTile.ExecutingPath : gridViewTile.Link);
+                ToolTipService.SetToolTip(gridViewTile.TilePanel, tooltipString);
+            }
+        }
+
+        /// <summary>
+        /// The actual link (path/URL) - separate from display name
+        /// </summary>
+        public string Link
+        {
+            get => (string)GetValue(LinkProperty);
+            set => SetValue(LinkProperty, value);
+        }
+
+        DependencyProperty LinkProperty = DependencyProperty.Register(
+            nameof(Link),
+            typeof(string),
+            typeof(GridViewTile),
+            new PropertyMetadata(default(string), new PropertyChangedCallback(OnLinkChanged)));
+
+        private static void OnLinkChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
+        {
+            GridViewTile gridViewTile = d as GridViewTile;
+            string newLink = e.NewValue as string;
+
+            if (newLink != null)
+            {
                 // Update tooltip
-                string tooltipString = newDisplayText + " - " + gridViewTile.ExecutingPath;
+                string tooltipString = gridViewTile.DisplayText + " - " + newLink;
                 ToolTipService.SetToolTip(gridViewTile.TilePanel, tooltipString);
             }
         }
@@ -201,8 +229,9 @@ namespace SLauncher.Controls.GridViewItems
 
             if (newExecutingPath != null)
             {
-                // Update tooltip
-                string tooltipString = gridViewTile.DisplayText + " - " + newExecutingPath;
+                // Update tooltip - show DisplayText and Link (or ExecutingPath if Link is empty)
+                string linkToShow = string.IsNullOrEmpty(gridViewTile.Link) ? newExecutingPath : gridViewTile.Link;
+                string tooltipString = gridViewTile.DisplayText + " - " + linkToShow;
                 ToolTipService.SetToolTip(gridViewTile.TilePanel, tooltipString);
             }
         }
@@ -545,56 +574,58 @@ App.MainWindow.AppWindow.Hide();
         private EditItemWindow editItemWindow;
         private void MenuEditOption_Click(object sender, RoutedEventArgs e)
         {
-            // Show the EditItemWindow
-            editItemWindow = new EditItemWindow();
+         // Show the EditItemWindow
+editItemWindow = new EditItemWindow();
             editItemWindow.EditDialogImage.Source = this.ImageSource;
-            editItemWindow.EditDisplayTextTextBox.Text = this.DisplayText;
-            TempCustomImagePath = this.CustomImagePath;
+      editItemWindow.EditDisplayTextTextBox.Text = this.DisplayText;
+        editItemWindow.EditLinkTextBox.Text = this.Link ?? this.ExecutingPath; // NEW: Load Link field
+      TempCustomImagePath = this.CustomImagePath;
 
-            // Show the launch args section only if this is a file
-            if (!this.ExecutingPath.StartsWith("https://") && !this.ExecutingPath.StartsWith("http://") && IsPathDirectory(this.ExecutingPath) == false)
-            {
-                editItemWindow.EditLaunchArgsTextBox.Visibility = Visibility.Visible;
-                editItemWindow.LaunchArgsTextBlock.Visibility = Visibility.Visible;
-                editItemWindow.EditLaunchArgsTextBox.Text = this.ExecutingArguments;
-            }
+   // Show the launch args section only if this is a file
+if (!this.ExecutingPath.StartsWith("https://") && !this.ExecutingPath.StartsWith("http://") && IsPathDirectory(this.ExecutingPath) == false)
+    {
+     editItemWindow.EditLaunchArgsTextBox.Visibility = Visibility.Visible;
+         editItemWindow.LaunchArgsTextBlock.Visibility = Visibility.Visible;
+           editItemWindow.EditLaunchArgsTextBox.Text = this.ExecutingArguments;
+      }
 
             // Hook up event handlers
             editItemWindow.EditIconBtn.Click += EditItemWindow_EditIconBtn_Click;
-            editItemWindow.ResetIconBtn.Click += EditItemWindow_ResetIconBtn_Click;
+   editItemWindow.ResetIconBtn.Click += EditItemWindow_ResetIconBtn_Click;
             editItemWindow.SaveBtn.Click += SaveBtn_Click;
-            editItemWindow.Closed += EditItemWindow_Closed;
+       editItemWindow.Closed += EditItemWindow_Closed;
 
             // Show the window
-            UIFunctionsClass.CreateModalWindow(editItemWindow, App.MainWindow);
-        }
+    UIFunctionsClass.CreateModalWindow(editItemWindow, App.MainWindow);
+  }
 
         private void EditItemWindow_Closed(object sender, WindowEventArgs args)
         {
-            editItemWindow = null;
-        }
+     editItemWindow = null;
+     }
 
-        private void SaveBtn_Click(object sender, RoutedEventArgs e)
-        {
-            // Update props of this GridViewTile
-            this.DisplayText = editItemWindow.EditDisplayTextTextBox.Text;
-            this.ImageSource = editItemWindow.EditDialogImage.Source as BitmapImage;
-            this.CustomImagePath = TempCustomImagePath;
+private void SaveBtn_Click(object sender, RoutedEventArgs e)
+      {
+        // Update props of this GridViewTile
+       this.DisplayText = editItemWindow.EditDisplayTextTextBox.Text;
+       this.Link = editItemWindow.EditLinkTextBox.Text; // NEW: Save Link field
+  this.ImageSource = editItemWindow.EditDialogImage.Source as BitmapImage;
+      this.CustomImagePath = TempCustomImagePath;
 
             // Update launch args only if file
-            // Show the launch args section only if this is a file
-            if (!this.ExecutingPath.StartsWith("https://") && !this.ExecutingPath.StartsWith("http://") && IsPathDirectory(this.ExecutingPath) == false)
+// Show the launch args section only if this is a file
+         if (!this.ExecutingPath.StartsWith("https://") && !this.ExecutingPath.StartsWith("http://") && IsPathDirectory(this.ExecutingPath) == false)
             {
-                this.ExecutingArguments = editItemWindow.EditLaunchArgsTextBox.Text;
+        this.ExecutingArguments = editItemWindow.EditLaunchArgsTextBox.Text;
             }
 
-            // If this GridViewTile belongs to a GridViewTileGroup, update its preview
-            if (this.GroupParent != null)
-            {
-                this.GroupParent.UpdatePreview();
-            }
+    // If this GridViewTile belongs to a GridViewTileGroup, update its preview
+    if (this.GroupParent != null)
+        {
+         this.GroupParent.UpdatePreview();
+        }
 
-            // Close the editItemWindow
+     // Close the editItemWindow
             editItemWindow.Close();
         }
 

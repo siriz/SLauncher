@@ -30,6 +30,7 @@ namespace SLauncher
       gridViewTile.ExecutingPath = executingPath;
             gridViewTile.ExecutingArguments = executingArguments;
    gridViewTile.DisplayText = displayText;
+ gridViewTile.Link = executingPath; // NEW: Initialize Link with executingPath
  gridViewTile.ImageSource = imageSource;
     gridViewTile.Size = UserSettingsClass.GridScale;
             gridViewTile.Drop += GridViewTile_Drop;

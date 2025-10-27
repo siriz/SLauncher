@@ -43,10 +43,11 @@ namespace SLauncher.Classes
     /// </summary>
     public class GridViewTileJson
     {
-        public string executingPath { get; set; } = "";
-        public string executingArguments { get; set; } = "";
-        public string displayText { get; set; } = "";
-        public string customImagePath { get; set; } = "";
+      public string executingPath { get; set; } = "";
+   public string executingArguments { get; set; } = "";
+     public string displayText { get; set; } = "";
+  public string link { get; set; } = "";  // NEW: Actual link (path/URL)
+     public string customImagePath { get; set; } = "";
         public bool isLinkedFolder { get; set; } = false;
     }
 
@@ -457,25 +458,26 @@ namespace SLauncher.Classes
 
         // Helper methods for saving items
         /// <summary>
-        /// Method that serialises a GridViewTile object to a Json file
+      /// Method that serialises a GridViewTile object to a Json file
         /// </summary>
         /// <param name="gridViewTile">GridViewTile to save</param>
-        /// <param name="jsonFilePath">Path to save Json file at</param>
+   /// <param name="jsonFilePath">Path to save Json file at</param>
         private static void SerialiseGridViewTileToJson(GridViewTile gridViewTile, string jsonFilePath)
         {
-            // Use the GridViewTileJson class to write a json file
-            var gridViewTileJson = new GridViewTileJson
-            {
-                executingPath = gridViewTile.ExecutingPath,
-                executingArguments = gridViewTile.ExecutingArguments,
-                displayText = gridViewTile.DisplayText,
-                customImagePath = gridViewTile.CustomImagePath,
-                isLinkedFolder = gridViewTile.IsLinkedFolder
-            };
+ // Use the GridViewTileJson class to write a json file
+      var gridViewTileJson = new GridViewTileJson
+     {
+          executingPath = gridViewTile.ExecutingPath,
+          executingArguments = gridViewTile.ExecutingArguments,
+  displayText = gridViewTile.DisplayText,
+     link = gridViewTile.Link ?? "", // NEW: Save Link property
+     customImagePath = gridViewTile.CustomImagePath,
+        isLinkedFolder = gridViewTile.IsLinkedFolder
+       };
 
             string itemFilePath = Path.Combine(DataDir, jsonFilePath);
-            string jsonString = JsonSerializer.Serialize(gridViewTileJson!, SourceGenerationContext.Default.GridViewTileJson);
-            File.WriteAllText(itemFilePath, jsonString);
+         string jsonString = JsonSerializer.Serialize(gridViewTileJson!, SourceGenerationContext.Default.GridViewTileJson);
+  File.WriteAllText(itemFilePath, jsonString);
         }
 
         /// <summary>
@@ -772,52 +774,53 @@ string cleanIndexStr = indexStr.TrimEnd('/');
         /// Create a GridViewTile object from a Json file
 /// </summary>
         /// <param name="jsonFile">Path to Json file</param>
-     /// <returns>GridViewTile</returns>
-        private async static Task<GridViewTile> DeserialiseJsonToGridViewTile(string jsonFile)
+ /// <returns>GridViewTile</returns>
+    private async static Task<GridViewTile> DeserialiseJsonToGridViewTile(string jsonFile)
     {
   // Deserialise the json
-        string jsonString = File.ReadAllText(jsonFile);
-            GridViewTileJson gridViewTileJson = JsonSerializer.Deserialize<GridViewTileJson>(jsonString, SourceGenerationContext.Default.GridViewTileJson);
+      string jsonString = File.ReadAllText(jsonFile);
+         GridViewTileJson gridViewTileJson = JsonSerializer.Deserialize<GridViewTileJson>(jsonString, SourceGenerationContext.Default.GridViewTileJson);
 
           // Create a new GridViewTile
  GridViewTile gridViewTile = new GridViewTile();
        gridViewTile.ExecutingPath = gridViewTileJson.executingPath;
      gridViewTile.ExecutingArguments = gridViewTileJson.executingArguments;
      gridViewTile.DisplayText = gridViewTileJson.displayText;
+            gridViewTile.Link = gridViewTileJson.link ?? "";  // NEW: Load Link property
             gridViewTile.IsLinkedFolder = gridViewTileJson.isLinkedFolder;
-            gridViewTile.Size = GridScale;
+     gridViewTile.Size = GridScale;
 
             // Depending on if a custom icon is used, we need to retrieve the icon in different ways
        if (gridViewTileJson.customImagePath != "" && File.Exists(gridViewTileJson.customImagePath))
             {
     // Load the custom image in GridViewTile
-           BitmapImage image = new BitmapImage();
+      BitmapImage image = new BitmapImage();
      image.UriSource = new Uri(gridViewTileJson.customImagePath, UriKind.Absolute);
       gridViewTile.CustomImagePath = gridViewTileJson.customImagePath;
-                gridViewTile.ImageSource = image;
-       }
-            // Manually retrieve the icon depending on if its a website, folder, or file
+          gridViewTile.ImageSource = image;
+     }
+      // Manually retrieve the icon depending on if its a website, folder, or file
     else if (gridViewTileJson.executingPath.StartsWith("https://") || gridViewTileJson.executingPath.StartsWith("http://"))
-        {
-           // Website
+     {
+     // Website
      gridViewTile.ImageSource = IconHelpers.GetWebsiteIcon(gridViewTileJson.executingPath);
  }
  else if (IsPathDirectory(gridViewTileJson.executingPath) && Path.Exists(gridViewTileJson.executingPath))
-       {
-      // Folder
+{
+  // Folder
     BitmapImage folderIcon = await IconHelpers.GetFolderIcon(gridViewTileJson.executingPath);
  gridViewTile.ImageSource = folderIcon;
-          }
+    }
             else if (!IsPathDirectory(gridViewTileJson.executingPath) && Path.Exists(gridViewTileJson.executingPath))
-       {
+    {
     // File
         gridViewTile.ImageSource = await IconHelpers.GetFileIcon(gridViewTileJson.executingPath);
-            }
+      }
           else if (!Path.Exists(gridViewTileJson.executingPath) && gridViewTileJson.isLinkedFolder == false)
-            {
+{
   // Not a website, not part of a linked folder, and path doesn't exist
-                ErrorPaths.Add(gridViewTileJson.executingPath);
-       return null;
+       ErrorPaths.Add(gridViewTileJson.executingPath);
+ return null;
             }
 
   return gridViewTile;
