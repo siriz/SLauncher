@@ -366,4 +366,85 @@
   <data name="LoadingSubtitle" xml:space="preserve">
     <value>SLauncherを閉じないでください。</value>
   </data>
+
+  <data name="ContextMenu_OpenFile" xml:space="preserve">
+  <value>ファイルを開く</value>
+</data>
+<data name="ContextMenu_OpenFileLocation" xml:space="preserve">
+  <value>ファイルの場所を開く</value>
+</data>
+<data name="ContextMenu_RemoveFileFromGroup" xml:space="preserve">
+  <value>グループからファイルを削除</value>
+</data>
+<data name="ContextMenu_RemoveFileFromSLauncher" xml:space="preserve">
+  <value>SLauncherからファイルを削除</value>
+</data>
+
+<data name="ContextMenu_OpenFolder" xml:space="preserve">
+  <value>フォルダを開く</value>
+</data>
+<data name="ContextMenu_OpenFolderLocation" xml:space="preserve">
+  <value>フォルダの場所を開く</value>
+</data>
+<data name="ContextMenu_RemoveFolderFromGroup" xml:space="preserve">
+  <value>グループからフォルダを削除</value>
+</data>
+<data name="ContextMenu_RemoveFolderFromSLauncher" xml:space="preserve">
+  <value>SLauncherからフォルダを削除</value>
+</data>
+
+<data name="ContextMenu_OpenWebsite" xml:space="preserve">
+  <value>ウェブサイトを開く</value>
+</data>
+<data name="ContextMenu_RemoveWebsiteFromGroup" xml:space="preserve">
+  <value>グループからウェブサイトを削除</value>
+</data>
+<data name="ContextMenu_RemoveWebsiteFromSLauncher" xml:space="preserve">
+  <value>SLauncherからウェブサイトを削除</value>
+</data>
+
+<data name="ContextMenu_RunAsAdmin" xml:space="preserve">
+  <value>管理者として実行を試みる</value>
+</data>
+<data name="ContextMenu_EditItem" xml:space="preserve">
+  <value>アイテムを編集</value>
+</data>
+
+<data name="EditItem_WindowTitle.Title" xml:space="preserve">
+  <value>アイテムを編集</value>
+</data>
+
+<data name="EditItem_EditIconButton.Content" xml:space="preserve">
+  <value>アイコンを編集</value>
+</data>
+
+<data name="EditItem_ResetIconButton.Content" xml:space="preserve">
+  <value>アイコンをリセット</value>
+</data>
+
+<data name="EditItem_DisplayTextLabel.Text" xml:space="preserve">
+  <value>表示テキスト:</value>
+</data>
+<data name="EditItem_DisplayTextLabel.ToolTip" xml:space="preserve">
+  <value>SLauncherで表示されるテキストです。クリック時に起動されるアイテムには影響しません。</value>
+</data>
+
+<data name="EditItem_LinkLabel.Text" xml:space="preserve">
+  <value>リンク:</value>
+</data>
+<data name="EditItem_LinkLabel.ToolTip" xml:space="preserve">
+  <value>実際に起動されるパスまたはURLです。通常は表示テキストと同じです。</value>
+</data>
+
+<data name="EditItem_LaunchArgsLabel.Text" xml:space="preserve">
+  <value>起動引数:</value>
+</data>
+
+<data name="EditItem_CloseButton.Content" xml:space="preserve">
+  <value>閉じる</value>
+</data>
+
+<data name="EditItem_SaveButton.Content" xml:space="preserve">
+  <value>保存して終了</value>
+</data>
 </root>

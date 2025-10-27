@@ -38,10 +38,32 @@ namespace SLauncher.Controls.GridViewItems
             // Disable maximise
             UIFunctionsClass.PreventWindowMaximise(this);
 
+            // Initialize localized text
+            InitializeLocalizedText();
+
             // Properly set the decode pixel width and height of the icon rendered
             BitmapImage ItemIcon = EditDialogImage.Source as BitmapImage;
             OriginalDecodeWidth = ItemIcon.DecodePixelWidth;
             ItemIcon.DecodePixelWidth = (int)EditDialogImage.Width * 2;
+        }
+
+        /// <summary>
+        /// Initialize all localized text in the window
+        /// </summary>
+        private void InitializeLocalizedText()
+        {
+            // Window title
+            this.Title = LocalizationManager.GetString("EditItem_WindowTitle");
+            AppTitleBar.Title = LocalizationManager.GetString("EditItem_WindowTitle");
+
+            // Buttons
+            EditIconBtn.Content = LocalizationManager.GetString("EditItem_EditIconButton");
+            ResetIconBtn.Content = LocalizationManager.GetString("EditItem_ResetIconButton");
+            CloseBtn.Content = LocalizationManager.GetString("EditItem_CloseButton");
+            SaveBtn.Content = LocalizationManager.GetString("EditItem_SaveButton");
+
+            // Labels (we'll update these in code, not XAML x:Uid)
+            // DisplayTextLabel, LinkLabel, LaunchArgsLabel text will be set in GridViewTile.xaml.cs
         }
 
         private void CloseBtn_Click(object sender, RoutedEventArgs e)
@@ -53,4 +75,5 @@ namespace SLauncher.Controls.GridViewItems
         }
     }
 }
+
 

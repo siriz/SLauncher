@@ -580,26 +580,31 @@ App.MainWindow.AppWindow.Hide();
         {
          // Show the EditItemWindow
 editItemWindow = new EditItemWindow();
-            editItemWindow.EditDialogImage.Source = this.ImageSource;
+    editItemWindow.EditDialogImage.Source = this.ImageSource;
       editItemWindow.EditDisplayTextTextBox.Text = this.DisplayText;
-        editItemWindow.EditLinkTextBox.Text = this.Link ?? this.ExecutingPath; // NEW: Load Link field
+    editItemWindow.EditLinkTextBox.Text = this.Link ?? this.ExecutingPath; // NEW: Load Link field
       TempCustomImagePath = this.CustomImagePath;
+
+    // Set localized label text
+    editItemWindow.DisplayTextLabel.Text = LocalizationManager.GetString("EditItem_DisplayTextLabel");
+     editItemWindow.LinkLabel.Text = LocalizationManager.GetString("EditItem_LinkLabel");
 
    // Show the launch args section only if this is a file
 if (!this.ExecutingPath.StartsWith("https://") && !this.ExecutingPath.StartsWith("http://") && IsPathDirectory(this.ExecutingPath) == false)
     {
-     editItemWindow.EditLaunchArgsTextBox.Visibility = Visibility.Visible;
+   editItemWindow.EditLaunchArgsTextBox.Visibility = Visibility.Visible;
          editItemWindow.LaunchArgsTextBlock.Visibility = Visibility.Visible;
-           editItemWindow.EditLaunchArgsTextBox.Text = this.ExecutingArguments;
-      }
+      editItemWindow.LaunchArgsTextBlock.Text = LocalizationManager.GetString("EditItem_LaunchArgsLabel");
+         editItemWindow.EditLaunchArgsTextBox.Text = this.ExecutingArguments;
+   }
 
             // Hook up event handlers
-            editItemWindow.EditIconBtn.Click += EditItemWindow_EditIconBtn_Click;
+        editItemWindow.EditIconBtn.Click += EditItemWindow_EditIconBtn_Click;
    editItemWindow.ResetIconBtn.Click += EditItemWindow_ResetIconBtn_Click;
-            editItemWindow.SaveBtn.Click += SaveBtn_Click;
-       editItemWindow.Closed += EditItemWindow_Closed;
+   editItemWindow.SaveBtn.Click += SaveBtn_Click;
+    editItemWindow.Closed += EditItemWindow_Closed;
 
-            // Show the window
+ // Show the window
     UIFunctionsClass.CreateModalWindow(editItemWindow, App.MainWindow);
   }
 
