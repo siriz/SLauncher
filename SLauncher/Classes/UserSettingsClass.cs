@@ -1,5 +1,6 @@
 using System;
 using System.IO;
+using System.IO.Compression;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text.Json;
@@ -251,6 +252,66 @@ namespace SLauncher.Classes
             {
                 CopyDirectoryRecursive(subDir, Path.Combine(destDir, Path.GetFileName(subDir)));
             }
+        }
+
+        /// <summary>
+        /// Exports the current settings, saved items and tabs to a single zip file, so a user can move
+        /// their data to another PC (or back it up) even though it now lives in a stable per-user
+        /// location instead of a portable folder next to the executable. FaviconCache is intentionally
+        /// excluded - it's just a regenerable cache, not user configuration.
+        /// </summary>
+        /// <param name="destinationZipPath">Path to the zip file to create</param>
+        public static void ExportSettings(string destinationZipPath)
+        {
+            if (File.Exists(destinationZipPath))
+            {
+                File.Delete(destinationZipPath);
+            }
+
+            using ZipArchive archive = ZipFile.Open(destinationZipPath, ZipArchiveMode.Create);
+
+            foreach (string file in Directory.GetFiles(SettingsDir))
+            {
+                archive.CreateEntryFromFile(file, Path.GetFileName(file));
+            }
+
+            foreach (string file in Directory.GetFiles(DataDir, "*", SearchOption.AllDirectories))
+            {
+                string relativePath = Path.Combine("Files", Path.GetRelativePath(DataDir, file)).Replace('\\', '/');
+                archive.CreateEntryFromFile(file, relativePath);
+            }
+        }
+
+        /// <summary>
+        /// Imports settings, saved items and tabs from a zip file previously created by ExportSettings,
+        /// overwriting whatever is currently saved. The app must be restarted for the imported data to
+        /// take effect, since settings/items/tabs are only read once at startup.
+        /// </summary>
+        /// <param name="sourceZipPath">Path to the zip file to import</param>
+        public static void ImportSettings(string sourceZipPath)
+        {
+            using ZipArchive archive = ZipFile.OpenRead(sourceZipPath);
+
+            if (!archive.Entries.Any(entry => entry.FullName == "userSettings.json"))
+            {
+                throw new InvalidDataException("This file is not a valid SLauncher settings export.");
+            }
+
+            Directory.CreateDirectory(SettingsDir);
+            Directory.CreateDirectory(DataDir);
+
+            // Clear out currently saved items first, so items removed since the export don't linger
+            var dataDirInfo = new DirectoryInfo(DataDir);
+            foreach (FileInfo file in dataDirInfo.GetFiles())
+            {
+                file.Delete();
+            }
+            foreach (DirectoryInfo dir in dataDirInfo.GetDirectories())
+            {
+                dir.Delete(true);
+            }
+
+            archive.ExtractToDirectory(SettingsDir, overwriteFiles: true);
         }
 
         /// <summary>

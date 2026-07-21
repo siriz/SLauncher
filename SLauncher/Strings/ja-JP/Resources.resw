@@ -218,12 +218,38 @@
     <value>クリックしてホットキーを変更</value>
   </data>
   
+  <!-- Settings - Backup & Restore -->
+  <data name="SettingsBackupRestoreTitle" xml:space="preserve">
+    <value>バックアップと復元</value>
+  </data>
+  <data name="SettingsBackupRestoreSubtitle" xml:space="preserve">
+    <value>設定はユーザーごとに保存され、実行ファイルと一緒には移動しません。他のPCに設定を持っていくにはエクスポートしてください。</value>
+  </data>
+  <data name="SettingsExportHeader" xml:space="preserve">
+    <value>設定のエクスポート</value>
+  </data>
+  <data name="SettingsExportDescription" xml:space="preserve">
+    <value>設定、アイテム、タブを1つのファイルに保存します。</value>
+  </data>
+  <data name="SettingsExportButton" xml:space="preserve">
+    <value>エクスポート...</value>
+  </data>
+  <data name="SettingsImportHeader" xml:space="preserve">
+    <value>設定のインポート</value>
+  </data>
+  <data name="SettingsImportDescription" xml:space="preserve">
+    <value>エクスポートしたファイルから設定、アイテム、タブを復元します。復元後は再起動が必要です。</value>
+  </data>
+  <data name="SettingsImportButton" xml:space="preserve">
+    <value>インポート...</value>
+  </data>
+
   <!-- Settings - Cache Management -->
   <data name="SettingsCacheManagementTitle" xml:space="preserve">
     <value>キャッシュ管理</value>
   </data>
   <data name="SettingsCacheManagementSubtitle" xml:space="preserve">
-    <value>ウェブサイトアイコンは実行ファイルフォルダにローカルにキャッシュされます。</value>
+    <value>ウェブサイトアイコンはこのPCにローカルにキャッシュされます。</value>
   </data>
   <data name="SettingsFaviconCacheHeader" xml:space="preserve">
     <value>ファビコンキャッシュ</value>
@@ -247,7 +273,7 @@
     <value>キャッシュの場所</value>
   </data>
   <data name="SettingsCacheLocationDescription" xml:space="preserve">
-    <value>ポータブル: すべてのデータは実行ファイルフォルダ\UserCache\に保存されます</value>
+    <value>キャッシュされたファビコンは、実行ファイルの場所に関係なくユーザーごとのフォルダに保存されます。</value>
   </data>
   <data name="SettingsOpenFolderButton" xml:space="preserve">
     <value>フォルダを開く</value>
@@ -268,6 +294,30 @@
   </data>
   <data name="DialogCacheCleared" xml:space="preserve">
     <value>キャッシュが正常にクリアされました！</value>
+  </data>
+  <data name="DialogExportSuccessContent" xml:space="preserve">
+    <value>設定をエクスポートしました。</value>
+  </data>
+  <data name="DialogExportErrorTitle" xml:space="preserve">
+    <value>エクスポートに失敗しました</value>
+  </data>
+  <data name="DialogImportConfirmTitle" xml:space="preserve">
+    <value>設定をインポートしますか？</value>
+  </data>
+  <data name="DialogImportConfirmContent" xml:space="preserve">
+    <value>現在の設定、アイテム、タブが上書きされます。続行しますか？</value>
+  </data>
+  <data name="ButtonImport" xml:space="preserve">
+    <value>インポート</value>
+  </data>
+  <data name="DialogImportSuccessTitle" xml:space="preserve">
+    <value>インポート完了</value>
+  </data>
+  <data name="DialogImportSuccessContent" xml:space="preserve">
+    <value>設定をインポートしました。変更を反映するにはSLauncherを再起動してください。</value>
+  </data>
+  <data name="DialogImportErrorTitle" xml:space="preserve">
+    <value>インポートに失敗しました</value>
   </data>
   <data name="DialogHotkeyTitle" xml:space="preserve">
     <value>グローバルホットキーを変更</value>

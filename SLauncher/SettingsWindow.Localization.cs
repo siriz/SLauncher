@@ -89,6 +89,26 @@ namespace SLauncher
            openFolderBtn.Content = LocalizationManager.GetString("SettingsOpenFolderButton");
                  }
           }
+       else if (currentHeader.Contains("Export") || currentHeader.Contains("エクスポート") || currentHeader.Contains("내보내기"))
+       {
+           settingsCard.Header = LocalizationManager.GetString("SettingsExportHeader");
+           settingsCard.Description = LocalizationManager.GetString("SettingsExportDescription");
+
+           if (settingsCard.Content is Button exportBtn)
+           {
+               exportBtn.Content = LocalizationManager.GetString("SettingsExportButton");
+           }
+       }
+       else if (currentHeader.Contains("Import") || currentHeader.Contains("インポート") || currentHeader.Contains("가져오기"))
+       {
+           settingsCard.Header = LocalizationManager.GetString("SettingsImportHeader");
+           settingsCard.Description = LocalizationManager.GetString("SettingsImportDescription");
+
+           if (settingsCard.Content is Button importBtn)
+           {
+               importBtn.Content = LocalizationManager.GetString("SettingsImportButton");
+           }
+       }
 }
          else if (child is TextBlock textBlock)
       {
@@ -110,6 +130,19 @@ namespace SLauncher
       {
          textBlock.Text = LocalizationManager.GetString("SettingsAboutTitle");
     }
+       // Backup & Restore title and subtitle
+       else if (textBlock.Text.Contains("Backup") || textBlock.Text.Contains("バックアップ") || textBlock.Text.Contains("백업") ||
+                textBlock.Text.Contains("per-user") || textBlock.Text.Contains("実行ファイル") || textBlock.Text.Contains("실행 파일"))
+       {
+           if (textBlock.FontSize == 20) // Title
+           {
+               textBlock.Text = LocalizationManager.GetString("SettingsBackupRestoreTitle");
+           }
+           else if (textBlock.FontSize == 13) // Subtitle
+           {
+               textBlock.Text = LocalizationManager.GetString("SettingsBackupRestoreSubtitle");
+           }
+       }
                }
       else if (child is SettingsExpander expander)
             {

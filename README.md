@@ -45,8 +45,8 @@
 - ⚖️ **Grid Alignment** - Choose between Left or Center alignment
 - 🎨 **Tab Colors** - 8 preset colors for tab customization
 
-### Performance & Portability
-- 📦 **Portable** - All data stored in executable folder (`UserCache/`)
+### Performance & Data
+- 💼 **Backup & Restore** - Export your settings, items and tabs to a single file, import them on another PC
 - 🚀 **Fast Startup** - Cached data for instant loading
 - 💾 **Favicon Cache** - Website icons cached locally
 - 🪶 **Lightweight** - Minimal resource usage
@@ -82,16 +82,17 @@
 3. Run `SLauncher.exe`
 4. (Optional) Enable "Start with Windows" in Settings
 
-### Portable Mode
-All settings and data are stored in the `UserCache` folder next to the executable:
+### Settings Storage
+Settings, items and tabs are stored per-user in `%LOCALAPPDATA%\SLauncher\UserCache`, so they survive reinstalls/updates and aren't affected by where you put the executable:
 ```
-SLauncher/
-├── SLauncher.exe
+%LOCALAPPDATA%\SLauncher\
 └── UserCache/
-    ├── Settings/   # User preferences
-    ├── Files/        # Item data
-    └── FaviconCache/    # Website icons
+    ├── userSettings.json   # User preferences
+    ├── tabs.json           # Tab layout
+    ├── Files/              # Item data
+    └── FaviconCache/       # Website icons (cache only)
 ```
+To move your setup to another PC, use **Settings → Backup & Restore → Export**, then **Import** on the other machine.
 
 ---
 
@@ -171,11 +172,15 @@ Adjust icon size using:
   - Keys: Space, Tab, Enter, Esc, F1-F4
 - **Language** - Select preferred language (English, Korean, Japanese)
 
+### Backup & Restore
+- **Export Settings** - Save your settings, items and tabs to a single `.slauncherbackup` file
+- **Import Settings** - Restore settings, items and tabs from an exported file (requires a restart)
+
 ### Cache Management
 - **View Cache Size** - Monitor favicon cache usage
 - **Clear Cache** - Remove all cached website icons
 - **Open Cache Folder** - Access cache directory directly
-- **Cache Location** - Portable: `UserCache\FaviconCache\`
+- **Cache Location** - Per-user folder, not tied to the executable location
 
 ---
 
@@ -273,7 +278,19 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 ## 📊 Changelog
 
-### SLauncher v1.0.0 (Latest)
+### SLauncher v1.1.0 (Latest)
+- ✨ Backup & Restore - export/import settings, items and tabs
+- 🔧 Settings/items/tabs now stored per-user in `%LOCALAPPDATA%\SLauncher` instead of next to the executable (existing data migrates automatically)
+- 🐛 Fixed settings/items/tabs resetting on rebuild, reinstall, or Debug/Release switching
+- 🐛 Fixed fullscreen mode's close button not saving before exit
+- 🐛 Fixed drag-and-drop group creation breaking after switching tabs
+- 🐛 Fixed a memory leak in the group item dialog
+- 🐛 Fixed broken Korean/Japanese text in language names and real-time re-localization
+- 🪶 Smaller build output (removed unused per-culture resource folders)
+
+See [full release notes](docs/RELEASE-NOTES-v1.1.0.md) for details.
+
+### SLauncher v1.0.0
 - ✨ Multi-language support (English, Korean, Japanese)
 - ✨ Real-time language switching
 - ✨ Partial class refactoring for better code organization

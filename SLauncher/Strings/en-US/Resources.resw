@@ -264,11 +264,35 @@
   <data name="HotkeyTooltip" xml:space="preserve">
     <value>Click to change hotkey</value>
   </data>
+  <data name="SettingsBackupRestoreTitle" xml:space="preserve">
+    <value>Backup &amp; Restore</value>
+  </data>
+  <data name="SettingsBackupRestoreSubtitle" xml:space="preserve">
+    <value>Settings are stored per-user and don't move with the executable - export them to bring your setup to another PC.</value>
+  </data>
+  <data name="SettingsExportHeader" xml:space="preserve">
+    <value>Export Settings</value>
+  </data>
+  <data name="SettingsExportDescription" xml:space="preserve">
+    <value>Save your settings, items and tabs to a single file.</value>
+  </data>
+  <data name="SettingsExportButton" xml:space="preserve">
+    <value>Export...</value>
+  </data>
+  <data name="SettingsImportHeader" xml:space="preserve">
+    <value>Import Settings</value>
+  </data>
+  <data name="SettingsImportDescription" xml:space="preserve">
+    <value>Restore settings, items and tabs from an exported file. Requires a restart afterwards.</value>
+  </data>
+  <data name="SettingsImportButton" xml:space="preserve">
+    <value>Import...</value>
+  </data>
   <data name="SettingsCacheManagementTitle" xml:space="preserve">
     <value>Cache Management</value>
   </data>
   <data name="SettingsCacheManagementSubtitle" xml:space="preserve">
-    <value>Website icons are cached locally in the executable folder.</value>
+    <value>Website icons are cached locally on your PC.</value>
   </data>
   <data name="SettingsFaviconCacheHeader" xml:space="preserve">
     <value>Favicon Cache</value>
@@ -292,7 +316,7 @@
     <value>Cache Location</value>
   </data>
   <data name="SettingsCacheLocationDescription" xml:space="preserve">
-    <value>Portable: All data stored in executable folder\UserCache\</value>
+    <value>Cached favicons are stored in a per-user folder, not tied to the executable location.</value>
   </data>
   <data name="SettingsOpenFolderButton" xml:space="preserve">
     <value>Open Folder</value>
@@ -311,6 +335,30 @@
   </data>
   <data name="DialogCacheCleared" xml:space="preserve">
     <value>Cache cleared successfully!</value>
+  </data>
+  <data name="DialogExportSuccessContent" xml:space="preserve">
+    <value>Settings exported successfully.</value>
+  </data>
+  <data name="DialogExportErrorTitle" xml:space="preserve">
+    <value>Export Failed</value>
+  </data>
+  <data name="DialogImportConfirmTitle" xml:space="preserve">
+    <value>Import Settings?</value>
+  </data>
+  <data name="DialogImportConfirmContent" xml:space="preserve">
+    <value>This will overwrite your current settings, items and tabs. Continue?</value>
+  </data>
+  <data name="ButtonImport" xml:space="preserve">
+    <value>Import</value>
+  </data>
+  <data name="DialogImportSuccessTitle" xml:space="preserve">
+    <value>Import Successful</value>
+  </data>
+  <data name="DialogImportSuccessContent" xml:space="preserve">
+    <value>Settings imported. Please restart SLauncher for the changes to take effect.</value>
+  </data>
+  <data name="DialogImportErrorTitle" xml:space="preserve">
+    <value>Import Failed</value>
   </data>
   <data name="DialogHotkeyTitle" xml:space="preserve">
     <value>Change Global Hotkey</value>

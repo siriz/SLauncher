@@ -18,9 +18,9 @@
     <Description>SLauncher - Modern app launcher for Windows (Fork of LauncherX with multi-language support)</Description>
     <Copyright>Copyright © 2025 SIRIZ. Based on LauncherX © 2020-present ClickPhase</Copyright>
     <PackageProjectUrl>https://github.com/siriz/SLauncher</PackageProjectUrl>
-  <AssemblyVersion>1.0.0.0</AssemblyVersion>
-    <FileVersion>1.0.0.0</FileVersion>
-    <Version>1.0.0</Version>
+  <AssemblyVersion>1.1.0.0</AssemblyVersion>
+    <FileVersion>1.1.0.0</FileVersion>
+    <Version>1.1.0</Version>
     <PackageIcon>icon.png</PackageIcon>
     <AllowUnsafeBlocks>True</AllowUnsafeBlocks>
     <BuiltInComInteropSupport>true</BuiltInComInteropSupport>
