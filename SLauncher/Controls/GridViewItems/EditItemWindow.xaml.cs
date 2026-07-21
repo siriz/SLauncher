@@ -30,7 +30,7 @@ namespace SLauncher.Controls.GridViewItems
             this.SetTitleBar(AppTitleBar);
 
             // Set Window icon
-            UIFunctionsClass.SetWindowLauncherXIcon(this);
+            UIFunctionsClass.SetWindowIcon(this);
 
             // Set Window Background
             UIFunctionsClass.SetWindowBackground(this, ContainerFallbackBackgroundBrush);

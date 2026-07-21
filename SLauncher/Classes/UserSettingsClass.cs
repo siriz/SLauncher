@@ -90,7 +90,7 @@ namespace SLauncher.Classes
         public static double GridScale = 1.0f;
 
         /// <summary>
-        /// Variable which stores whether LauncherX should be in fullscreen
+        /// Variable which stores whether SLauncher should be in fullscreen
         /// </summary>
         public static bool UseFullscreen = false;
 
@@ -128,17 +128,21 @@ namespace SLauncher.Classes
 
         // DIRECTORIES
         /// <summary>
-        /// Root directory where user data for LauncherX is stored (in executable folder)
+        /// Root directory where user data for SLauncher is stored.
+        /// This must be a stable per-user location (%LOCALAPPDATA%) rather than a folder next to the
+        /// executable: exe-relative paths (AppDomain.CurrentDomain.BaseDirectory) live inside the build/publish
+        /// output directory, which gets wiped on every rebuild, "Clean", or reinstall - causing all saved
+        /// settings, items and tabs to appear to reset.
         /// </summary>
-        public static string SettingsDir = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "UserCache");
+        public static string SettingsDir = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData), "SLauncher", "UserCache");
 
         /// <summary>
-        /// Directory where the items added to LauncherX are stored
+        /// Directory where the items added to SLauncher are stored
         /// </summary>
-        public static string DataDir = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "UserCache", "Files");
+        public static string DataDir = Path.Combine(SettingsDir, "Files");
 
         /// <summary>
-        /// Variable which stores items that could not be added to LauncherX as their file paths no longer exist
+        /// Variable which stores items that could not be added to SLauncher as their file paths no longer exist
         /// </summary>
         public static List<string> ErrorPaths = new List<string>();
 
@@ -173,12 +177,80 @@ namespace SLauncher.Classes
 
         // Public methods
         /// <summary>
-        /// Method to create all of the directories that LauncherX will store user data in
+        /// Method to create all of the directories that SLauncher will store user data in
         /// </summary>
         public static void CreateSettingsDirectories()
         {
+            // Bring forward any data saved by older builds that stored it next to the executable
+            MigrateLegacyExeRelativeSettings();
+
             Directory.CreateDirectory(SettingsDir);
             Directory.CreateDirectory(DataDir);
+        }
+
+        /// <summary>
+        /// Older builds stored SettingsDir/DataDir next to the executable (AppDomain.CurrentDomain.BaseDirectory\UserCache),
+        /// which is wiped by every rebuild/clean/reinstall. If such data exists next to the currently running
+        /// executable and nothing has been migrated to the new stable location yet, copy it over so the user
+        /// doesn't lose settings/items/tabs they already configured.
+        /// </summary>
+        private static void MigrateLegacyExeRelativeSettings()
+        {
+            try
+            {
+                string legacyDir = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "UserCache");
+
+                if (!Directory.Exists(legacyDir))
+                {
+                    return;
+                }
+
+                // Migration already done (or user already has settings in the new location)
+                if (File.Exists(Path.Combine(SettingsDir, "userSettings.json")))
+                {
+                    return;
+                }
+
+                Directory.CreateDirectory(SettingsDir);
+
+                foreach (string file in Directory.GetFiles(legacyDir))
+                {
+                    string destFile = Path.Combine(SettingsDir, Path.GetFileName(file));
+                    if (!File.Exists(destFile))
+                    {
+                        File.Copy(file, destFile);
+                    }
+                }
+
+                string legacyDataDir = Path.Combine(legacyDir, "Files");
+                if (Directory.Exists(legacyDataDir) && !Directory.Exists(DataDir))
+                {
+                    CopyDirectoryRecursive(legacyDataDir, DataDir);
+                }
+            }
+            catch
+            {
+                // Best-effort migration only; if anything goes wrong just continue with whatever
+                // is already present in the new SettingsDir/DataDir location
+            }
+        }
+
+        /// <summary>
+        /// Helper method to recursively copy a directory and its contents
+        /// </summary>
+        private static void CopyDirectoryRecursive(string sourceDir, string destDir)
+        {
+            Directory.CreateDirectory(destDir);
+
+            foreach (string file in Directory.GetFiles(sourceDir))
+            {
+                File.Copy(file, Path.Combine(destDir, Path.GetFileName(file)), overwrite: false);
+            }
+
+            foreach (string subDir in Directory.GetDirectories(sourceDir))
+            {
+                CopyDirectoryRecursive(subDir, Path.Combine(destDir, Path.GetFileName(subDir)));
+            }
         }
 
         /// <summary>
@@ -378,7 +450,7 @@ namespace SLauncher.Classes
         /// Dictionary<string, object> is in the format of {"ExecutingPath": string, "ExecutingArguments": string, "DisplayText": string, "ImageSource": BitmapImage or SoftwareBitmapSource}
         /// </summary>
         /// <returns>List of dictionaries that stores all the necessary properties to create the GridViewTiles in MainWindow.xaml.cs</returns>
-        public async static Task<List<Dictionary<string, object>>> UpgradeOldLauncherXItems()
+        public async static Task<List<Dictionary<string, object>>> UpgradeOldItems()
         {
             // List of Dictionaries that will be returned
             List<Dictionary<string, object>> gridViewTilesProps = new List<Dictionary<string, object>>();
@@ -448,7 +520,7 @@ namespace SLauncher.Classes
         }
 
         /// <summary>
-        /// Method that checks whether there were any errors adding items to LauncherX
+        /// Method that checks whether there were any errors adding items to SLauncher
         /// </summary>
         /// <returns></returns>
         public static bool ErrorAddingItems()
@@ -509,10 +581,10 @@ namespace SLauncher.Classes
         }
 
         /// <summary>
-        /// Method to write the items in LauncherX to disk
+        /// Method to write the items in SLauncher to disk
         /// </summary>
         /// <param name="gridViewItems">GridView.Items property</param>
-        public static void SaveLauncherXItems(ItemCollection gridViewItems)
+        public static void SaveItems(ItemCollection gridViewItems)
 {
     var itemsList = new List<UserControl>();
     foreach (var item in gridViewItems)
@@ -522,18 +594,18 @@ if (item is UserControl control)
       itemsList.Add(control);
    }
     }
-  SaveLauncherXItems(itemsList);
+  SaveItems(itemsList);
         }
 
         /// <summary>
-  /// Method to write the items in LauncherX to disk
+  /// Method to write the items in SLauncher to disk
    /// </summary>
   /// <param name="items">List of UserControl items</param>
-  public static void SaveLauncherXItems(List<UserControl> items)
+  public static void SaveItems(List<UserControl> items)
    {
       try
             {
-     System.Diagnostics.Debug.WriteLine($"DEBUG SaveLauncherXItems: Saving {items.Count} items");
+     System.Diagnostics.Debug.WriteLine($"DEBUG SaveItems: Saving {items.Count} items");
 
   // Clear the DataDir
       System.IO.DirectoryInfo di = new DirectoryInfo(DataDir);
@@ -573,11 +645,11 @@ System.Diagnostics.Debug.WriteLine($"  Saved group {globalFilename}: {gridViewTi
          globalFilename += 1;
    }
    
-  System.Diagnostics.Debug.WriteLine($"DEBUG SaveLauncherXItems: Successfully saved {globalFilename} items/groups");
+  System.Diagnostics.Debug.WriteLine($"DEBUG SaveItems: Successfully saved {globalFilename} items/groups");
   }
   catch (Exception ex)
    {
-    System.Diagnostics.Debug.WriteLine($"ERROR SaveLauncherXItems: {ex.Message}\n{ex.StackTrace}");
+    System.Diagnostics.Debug.WriteLine($"ERROR SaveItems: {ex.Message}\n{ex.StackTrace}");
   }
         }
 
@@ -866,14 +938,14 @@ gridViewTile.AssociateGroup(gridViewTileGroup);
         }
 
    /// <summary>
-        /// Method that finds all the GridViewTiles in LauncherX that belong to a linked folder
+        /// Method that finds all the GridViewTiles in SLauncher that belong to a linked folder
         /// </summary>
-        /// <param name="launcherXItems">List of UserControls in LauncherX</param>
+        /// <param name="items">List of UserControls in SLauncher</param>
         /// <returns>List of GridViewTiles that belong to a linked folder</returns>
-        public static List<GridViewTile> FindAllLinkedFolderGridViewTiles(List<UserControl> launcherXItems)
+        public static List<GridViewTile> FindAllLinkedFolderGridViewTiles(List<UserControl> items)
         {
             List<GridViewTile> LinkedFolderItems = new List<GridViewTile>();
- foreach (UserControl gridViewItem in launcherXItems)
+ foreach (UserControl gridViewItem in items)
  {
            if (gridViewItem is GridViewTile)
      {
@@ -901,9 +973,9 @@ gridViewTile.AssociateGroup(gridViewTileGroup);
  }
 
     /// <summary>
-        /// Method that retrieves a list of linked folders to LauncherX, based on the list of items that are marked as belonging to a linked folder in LauncherX
+        /// Method that retrieves a list of linked folders to SLauncher, based on the list of items that are marked as belonging to a linked folder in SLauncher
      /// </summary>
-  /// <param name="linkedFolderItems">List of items that are marked as belonging to a linked folder in LauncherX</param>
+  /// <param name="linkedFolderItems">List of items that are marked as belonging to a linked folder in SLauncher</param>
         /// <returns>List containing all the paths of linked folders</returns>
         public static List<string> FindLinkedFolderPaths(List<GridViewTile> linkedFolderItems)
         {
@@ -933,28 +1005,28 @@ gridViewTile.AssociateGroup(gridViewTileGroup);
         }
 
         /// <summary>
-  /// Method that removes a specific GridViewTile from a list of UserControls that store a record of the items in LauncherX
+  /// Method that removes a specific GridViewTile from a list of UserControls that store a record of the items in SLauncher
    /// </summary>
-   /// <param name="launcherXItems">List of UserControls in LauncherX</param>
+   /// <param name="items">List of UserControls in SLauncher</param>
         /// <param name="itemToRemove">GridViewTile to remove</param>
-    private static void RemoveGridViewTileFromLauncherXItemsList(List<UserControl> launcherXItems, GridViewTile itemToRemove)
+    private static void RemoveGridViewTileFromItemsList(List<UserControl> items, GridViewTile itemToRemove)
         {
             // Iterate backwards because we are removing items
-            for (int i = launcherXItems.Count - 1; i >= 0; i--)
+            for (int i = items.Count - 1; i >= 0; i--)
     {
-         if (launcherXItems[i] is GridViewTile)
+         if (items[i] is GridViewTile)
                 {
-        GridViewTile gridViewTile = launcherXItems[i] as GridViewTile;
+        GridViewTile gridViewTile = items[i] as GridViewTile;
 
     if (gridViewTile == itemToRemove)
               {
-       launcherXItems.RemoveAt(i);
+       items.RemoveAt(i);
            break;
      }
             }
-       else if (launcherXItems[i] is GridViewTileGroup) 
+       else if (items[i] is GridViewTileGroup)
     {
-       GridViewTileGroup gridViewTileGroup = launcherXItems[i] as GridViewTileGroup;
+       GridViewTileGroup gridViewTileGroup = items[i] as GridViewTileGroup;
             if (gridViewTileGroup.Items.Contains(itemToRemove))
 {
    gridViewTileGroup.Items.Remove(itemToRemove);
@@ -965,12 +1037,12 @@ gridViewTile.AssociateGroup(gridViewTileGroup);
         }
 
         /// <summary>
-        /// Method that updates the items in LauncherX from the linked folders
+        /// Method that updates the items in SLauncher from the linked folders
         /// </summary>
         /// <returns>A list of GridViewTiles/GridViewTileGroups, that can be used in MainWindow to load the items in the GridView</returns>
         public async static Task UpdateItemsFromLinkedFolders(List<UserControl> loadedItems)
    {
-            // First, we find all the items in LauncherX that belong to linked folders
+            // First, we find all the items in SLauncher that belong to linked folders
             List<GridViewTile> LinkedFolderGridViewTiles = FindAllLinkedFolderGridViewTiles(loadedItems);
 
     if (LinkedFolderGridViewTiles.Count <= 0)
@@ -981,17 +1053,17 @@ gridViewTile.AssociateGroup(gridViewTileGroup);
 
           // The user updates a linked folder by creating new files or deleting files from the folder
        // Account for both types of updates
-       // Update type 1: file is deleted from linked folder, remove the corresponding item in LauncherX
+       // Update type 1: file is deleted from linked folder, remove the corresponding item in SLauncher
             foreach (GridViewTile linkedTile in LinkedFolderGridViewTiles)
     {
      if (!Path.Exists(linkedTile.ExecutingPath))
          {
-         RemoveGridViewTileFromLauncherXItemsList(loadedItems, linkedTile);
+         RemoveGridViewTileFromItemsList(loadedItems, linkedTile);
             }
        }
 
         // Update type 2: New files/folders are added to the linked folder
-            // Retrieve the list of linked folders added to LauncherX
+            // Retrieve the list of linked folders added to SLauncher
             List<string> LinkedFolderPaths = FindLinkedFolderPaths(LinkedFolderGridViewTiles);
       if (LinkedFolderPaths.Count <= 0)
             {
@@ -999,7 +1071,7 @@ gridViewTile.AssociateGroup(gridViewTileGroup);
     return;
             }
 
-            // Retrieve the list of all the executingPaths of all items marked as belonging to a linked folder in LauncherX
+            // Retrieve the list of all the executingPaths of all items marked as belonging to a linked folder in SLauncher
       List<string> LinkedFolderGridViewTilesExecutingPaths = LinkedFolderGridViewTiles.Select(x => x.ExecutingPath).ToList();
 
        foreach (string linkedFolder in LinkedFolderPaths)
@@ -1046,10 +1118,10 @@ gridViewTile.IsLinkedFolder = true;
         /// Method that loads GridViewTiles/GridViewTileGroups from Json files
         /// </summary>
         /// <returns>A list of GridViewTiles/GridViewTileGroups, that can be used in MainWindow to load the items in the GridView</returns>
-        public async static Task<List<UserControl>> LoadLauncherXItems()
+        public async static Task<List<UserControl>> LoadItems()
         {
-     System.Diagnostics.Debug.WriteLine("DEBUG LoadLauncherXItems: Start loading items");
-      
+     System.Diagnostics.Debug.WriteLine("DEBUG LoadItems: Start loading items");
+
  // List to return
   List<UserControl> loadedItems = new List<UserControl>();
 
@@ -1058,11 +1130,11 @@ gridViewTile.IsLinkedFolder = true;
    List<string> folders = Directory.GetDirectories(DataDir).ToList();
             files.AddRange(folders);
 
-   // allPaths stores the serialised items from LauncherX, in order
+   // allPaths stores the serialised items from SLauncher, in order
      string[] allPaths = files.ToArray();
             Array.Sort(allPaths, new AlphanumComparatorFast());
 
-            System.Diagnostics.Debug.WriteLine($"DEBUG LoadLauncherXItems: Found {allPaths.Length} items in Files directory");
+            System.Diagnostics.Debug.WriteLine($"DEBUG LoadItems: Found {allPaths.Length} items in Files directory");
 
    foreach (string path in allPaths)
             {
@@ -1085,7 +1157,7 @@ if (Path.GetExtension(path) == ".json")
    // Now, we need to deal with linked folders
         await UpdateItemsFromLinkedFolders(loadedItems);
 
-    System.Diagnostics.Debug.WriteLine($"DEBUG LoadLauncherXItems: Loaded {loadedItems.Count} total items");
+    System.Diagnostics.Debug.WriteLine($"DEBUG LoadItems: Loaded {loadedItems.Count} total items");
          
     return loadedItems;
         }

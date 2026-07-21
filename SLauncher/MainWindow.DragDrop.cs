@@ -206,7 +206,7 @@ GridViewTileGroup DraggedOverTileGroup = sender as GridViewTileGroup;
 
         private void DragDropInterface_DragEnter(object sender, DragEventArgs e)
         {
-            // Modify the caption that shows when something is dragged into LauncherX
+            // Modify the caption that shows when something is dragged into SLauncher
             e.AcceptedOperation = DataPackageOperation.Copy;
             if (e.DragUIOverride != null)
             {
@@ -217,7 +217,7 @@ GridViewTileGroup DraggedOverTileGroup = sender as GridViewTileGroup;
 
      private void DragDropInterface_DragOver(object sender, DragEventArgs e)
      {
-      // Modify the caption that shows when something is dragged into LauncherX
+      // Modify the caption that shows when something is dragged into SLauncher
 e.AcceptedOperation = DataPackageOperation.Copy;
  if (e.DragUIOverride != null)
     {

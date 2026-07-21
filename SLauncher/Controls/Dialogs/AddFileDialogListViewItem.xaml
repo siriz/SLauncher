@@ -26,7 +26,7 @@
                 x:Name="RemoveBtn"
                 Margin="10,0,0,0"
                 Click="RemoveBtn_Click"
-                ToolTipService.ToolTip="Remove from LauncherX">
+                ToolTipService.ToolTip="Remove from SLauncher">
                 <Viewbox
                     Width="18"
                     Height="18"

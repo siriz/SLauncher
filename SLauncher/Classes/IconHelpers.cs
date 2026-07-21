@@ -34,17 +34,13 @@ namespace SLauncher.Classes
                                                             .ToList();
 
         /// <summary>
-        /// Get the favicon cache directory path (in executable folder)
+        /// Get the favicon cache directory path.
+        /// Stored under UserSettingsClass.SettingsDir (a stable per-user location) rather than next to the
+        /// executable, so the cache doesn't disappear on every rebuild/reinstall.
         /// </summary>
         public static string GetFaviconCacheDirectory()
         {
-            // Get the directory where the executable is located
-            string exeDirectory = AppDomain.CurrentDomain.BaseDirectory;
- 
-   // Create UserCache subdirectory
-   string cacheDir = Path.Combine(exeDirectory, "UserCache", "FaviconCache");
-            
-  return cacheDir;
+            return Path.Combine(UserSettingsClass.SettingsDir, "FaviconCache");
         }
 
     /// <summary>

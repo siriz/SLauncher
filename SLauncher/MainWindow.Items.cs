@@ -135,7 +135,7 @@ gridViewTile.Drop += GridViewTile_Drop;
     }
 
         // Save items
- UserSettingsClass.SaveLauncherXItems(ItemsGridView.Items);
+ UserSettingsClass.SaveItems(ItemsGridView.Items);
 
      // Hide LoadingDialog
    await Task.Delay(20);
@@ -169,7 +169,7 @@ foreach (AddFolderDialogListViewItem folderItem in addFolderDialog.AddedFolders)
             }
 
         // Save items
-            UserSettingsClass.SaveLauncherXItems(ItemsGridView.Items);
+            UserSettingsClass.SaveItems(ItemsGridView.Items);
 
           // Hide LoadingDialog
             await Task.Delay(20);
@@ -199,7 +199,7 @@ if (result == ContentDialogResult.Primary)
             }
 
             // Save items
-    UserSettingsClass.SaveLauncherXItems(ItemsGridView.Items);
+    UserSettingsClass.SaveItems(ItemsGridView.Items);
 
       // Hide LoadingDialog
        await Task.Delay(20);

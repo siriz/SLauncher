@@ -363,9 +363,13 @@ Microsoft.UI.Xaml.Controls.ToolTipService.SetToolTip(SettingsButton, Localizatio
             };
         }
 
-     // For fullscreen mode - Exit LauncherX
+     // For fullscreen mode - Exit SLauncher
         private void CloseButton_Click(object sender, RoutedEventArgs e)
         {
+       // Save all tabs/items before exiting - Application.Current.Exit() does not reliably
+       // raise WindowEx_Closed, so without this any changes since the last save were lost
+       // (matches the save-before-exit done in the system tray icon's Exit handler)
+       SaveAllTabs();
        Application.Current.Exit();
     }
 

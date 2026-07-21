@@ -250,8 +250,8 @@ namespace SLauncher.Classes
             return new[]
             {
                 ("en-US", "English"),
-                ("ko-KR", "ΗΡ±ΉΎξ"),
-                ("ja-JP", "μνάβεή")
+                ("ko-KR", "ν•κµ­μ–΄"),
+                ("ja-JP", "ζ—¥ζ¬θª")
             };
         }
 

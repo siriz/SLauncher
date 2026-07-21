@@ -14,12 +14,12 @@ namespace SLauncher
  /// </summary>
     public sealed partial class MainWindow
     {
- List<GridViewTile> AllLauncherXItems = new List<GridViewTile>();
+ List<GridViewTile> AllItems = new List<GridViewTile>();
         List<string> SearchBoxDropdownItems = new List<string>();
 
  private void SearchBox_GotFocus(object sender, RoutedEventArgs e)
         {
-      AllLauncherXItems.Clear();
+      AllItems.Clear();
 
             // Retrieve all the items in SLauncher
     foreach (UserControl gridViewItem in ItemsGridView.Items)
@@ -27,14 +27,14 @@ namespace SLauncher
          if (gridViewItem is GridViewTile)
                 {
             GridViewTile gridViewTile = gridViewItem as GridViewTile;
-  AllLauncherXItems.Add(gridViewTile);
+  AllItems.Add(gridViewTile);
       }
      else if (gridViewItem is GridViewTileGroup)
     {
                     GridViewTileGroup gridViewTileGroup = gridViewItem as GridViewTileGroup;
         foreach (GridViewTile tile in gridViewTileGroup.Items)
      {
-       AllLauncherXItems.Add(tile);
+       AllItems.Add(tile);
        }
     }
     }
@@ -49,7 +49,7 @@ namespace SLauncher
         {
         // Set the ItemsSource to be your filtered dataset
           SearchBoxDropdownItems = new List<string>();
-      foreach (GridViewTile gridViewTile in AllLauncherXItems)
+      foreach (GridViewTile gridViewTile in AllItems)
               {
                     if (gridViewTile.DisplayText.ToLower().Contains(sender.Text.ToLower()))
        {
@@ -254,7 +254,7 @@ if (char.IsLetter(query[0]) && query[1] == ':')
          sender.Text = chosenSuggestion;
 
      // Find the corresponding GridViewTile, and start its associated process
-          foreach (GridViewTile gridViewTile in AllLauncherXItems)
+          foreach (GridViewTile gridViewTile in AllItems)
             {
     if (gridViewTile.DisplayText.ToLower() == chosenSuggestion.ToLower())
        {
@@ -270,7 +270,7 @@ if (char.IsLetter(query[0]) && query[1] == ':')
      }
    }
 
-      AllLauncherXItems.Clear();
+      AllItems.Clear();
  SearchBoxDropdownItems.Clear();
           
    // Clear search box

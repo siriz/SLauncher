@@ -35,6 +35,8 @@
     <!-- Optimization settings -->
     <PublishTrimmed>false</PublishTrimmed>
  <TrimMode>partial</TrimMode>
+    <!-- Only keep satellite resources for languages SLauncher actually supports, instead of every WindowsAppSDK/.NET locale -->
+    <SatelliteResourceLanguages>en-US;ko-KR;ja-JP</SatelliteResourceLanguages>
     <EnableCompressionInSingleFile>true</EnableCompressionInSingleFile>
  <DebugType>none</DebugType>
     <DebugSymbols>false</DebugSymbols>
@@ -84,6 +86,17 @@
     </ItemGroup>
     <Copy SourceFiles="@(StringsFiles)" DestinationFiles="@(StringsFiles->'$(OutputPath)Strings\%(RecursiveDir)%(Filename)%(Extension)')" SkipUnchangedFiles="true" />
     <Message Text="Copied Strings folder to output directory" Importance="high" />
+  </Target>
+
+  <!--
+    WindowsAppSDK (self-contained) ships its own native ".mui" resource-only files for every
+    Windows UI language (af-ZA, am-ET, ... dozens of them) as package content, not as .NET
+    satellite assemblies - so SatelliteResourceLanguages has no effect on them. Delete every
+    output language folder that isn't one SLauncher actually supports.
+  -->
+  <Target Name="RemoveUnusedSatelliteResourceCultures" AfterTargets="Build;Publish">
+    <Exec Command="powershell -NoProfile -ExecutionPolicy Bypass -Command &quot;Get-ChildItem -LiteralPath '$(TargetDir)' -Directory -ErrorAction SilentlyContinue | Where-Object { $_.Name -match '^[a-z]{2,3}(-[a-z]+)*$' -and $_.Name -notin @('en-US','ko-KR','ja-JP') } | Remove-Item -Recurse -Force&quot;"
+          Condition="'$(OS)' == 'Windows_NT'" />
   </Target>
 
   <!-- Enable PRI generation for localization -->

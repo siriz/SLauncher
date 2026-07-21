@@ -151,7 +151,7 @@ namespace SLauncher
 this.SetTitleBar(AppTitleBar);
 
      // Set Window icon
-            UIFunctionsClass.SetWindowLauncherXIcon(this);
+            UIFunctionsClass.SetWindowIcon(this);
 
   // Set Window Background
       UIFunctionsClass.SetWindowBackground(this, ContainerFallbackBackgroundBrush);
@@ -206,7 +206,7 @@ this.SetTitleBar(AppTitleBar);
       this.SizeChanged += WindowEx_SizeChanged;
 
               // Upgrade items as well
-    List<Dictionary<string, object>> oldSLauncherItems = await UserSettingsClass.UpgradeOldLauncherXItems();
+    List<Dictionary<string, object>> oldSLauncherItems = await UserSettingsClass.UpgradeOldItems();
 
     foreach (Dictionary<string, object> gridViewTileProps in oldSLauncherItems)
        {
@@ -218,7 +218,7 @@ this.SetTitleBar(AppTitleBar);
          }
 
          // Save items after
-        UserSettingsClass.SaveLauncherXItems(ItemsGridView.Items);
+        UserSettingsClass.SaveItems(ItemsGridView.Items);
  }
    else
             {
@@ -232,7 +232,7 @@ this.SetTitleBar(AppTitleBar);
                 this.SizeChanged += WindowEx_SizeChanged;
 
                 // Load SLauncher items as normal
-    List<UserControl> controls = await UserSettingsClass.LoadLauncherXItems();
+    List<UserControl> controls = await UserSettingsClass.LoadItems();
 
       // Try to load saved tabs
      var tabsData = UserSettingsClass.LoadTabs();
@@ -295,7 +295,7 @@ this.SetTitleBar(AppTitleBar);
      SaveAllTabs();
          
     // Note: SaveAllTabs now handles saving items internally
-        // UserSettingsClass.SaveLauncherXItems is called inside SaveAllTabs
+        // UserSettingsClass.SaveItems is called inside SaveAllTabs
 
          System.Diagnostics.Debug.WriteLine("DEBUG: WindowEx_Closed - Save complete");
   

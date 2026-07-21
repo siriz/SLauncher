@@ -8,7 +8,7 @@ using WinUIEx.Messaging;
 namespace SLauncher.Classes
 {
     /// <summary>
-    /// Class that handles all methods and variables relating to controlling the user interface of LauncherX
+    /// Class that handles all methods and variables relating to controlling the user interface of SLauncher
     /// </summary>
     public static class UIFunctionsClass
     {
@@ -44,10 +44,10 @@ namespace SLauncher.Classes
         }
 
         /// <summary>
-        /// Sets the icon of a window to use the LauncherX ico file
+        /// Sets the icon of a window to use the SLauncher ico file
         /// </summary>
         /// <param name="window">Window to set the icon of</param>
-        public static void SetWindowLauncherXIcon(Window window)
+        public static void SetWindowIcon(Window window)
         {
             AppWindow appWindow = window.AppWindow;
             appWindow.SetIcon(@"Resources\icon.ico");

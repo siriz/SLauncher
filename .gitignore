@@ -354,6 +354,9 @@ WinFormsClassLibrary/obj/
 SLauncher_*.txt
 commit_message.txt
 
+# Claude Code - project settings.json is shared/committed, local overrides are not
+.claude/settings.local.json
+
 # Windows App SDK
 **/MsixContent/
 **/Manifests/

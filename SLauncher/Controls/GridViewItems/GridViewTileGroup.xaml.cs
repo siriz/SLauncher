@@ -236,19 +236,12 @@ namespace SLauncher.Controls.GridViewItems
             // 2. Clear the items in the ItemsGridView, so that when GridViewTiles from this control are added to a new GridViewTileGroup control to add more GridViewTiles (see MainWindow.xaml.cs),
             // there won't be a case where a GridViewTile has 2 parents
             // 3. Unselect this control in the ItemsGridView in MainWindow
-            GroupDialog.Closing += (s, e) =>
-            {
-                GroupDialogTitleTextBox.TextChanged -= GroupDialogTitleTextBox_TextChanged;
-                ItemsGridView.Items.VectorChanged -= ItemsGridViewItems_VectorChanged;
-                ItemsGridView.Items.Clear();
-
-                // Unselect this item
-                GridView parentGridView = this.Parent as GridView;
-                if (parentGridView != null)
-                {
-                    parentGridView.SelectedItem = null;
-                }
-            };
+            // Named methods (not lambdas) so they can be unsubscribed below - this dialog can be
+            // opened many times over the group's lifetime, and re-subscribing anonymous lambdas each
+            // time would leak a Closing handler and, worse, a permanent App.MainWindow.SizeChanged
+            // subscription that keeps this GridViewTileGroup alive for the rest of the app's lifetime.
+            GroupDialog.Closing -= GroupDialog_Closing;
+            GroupDialog.Closing += GroupDialog_Closing;
 
             // Configure the title of the GroupDialog
             GroupDialogTitleTextBox.Text = DisplayText;
@@ -257,14 +250,33 @@ namespace SLauncher.Controls.GridViewItems
             // Configure the size of the GroupDialog
             GroupDialogContent.Width = App.MainWindow.Width * 0.8;
             GroupDialogContent.Height = App.MainWindow.Height * 0.6;
-            App.MainWindow.SizeChanged += (s, e) =>
-            {
-                GroupDialogContent.Width = App.MainWindow.Width * 0.8;
-                GroupDialogContent.Height = App.MainWindow.Height * 0.6;
-            };
+            App.MainWindow.SizeChanged -= MainWindow_SizeChanged;
+            App.MainWindow.SizeChanged += MainWindow_SizeChanged;
 
             var result = await GroupDialog.ShowAsync();
             UnhighlightControl();
+        }
+
+        private void MainWindow_SizeChanged(object sender, WindowSizeChangedEventArgs e)
+        {
+            GroupDialogContent.Width = App.MainWindow.Width * 0.8;
+            GroupDialogContent.Height = App.MainWindow.Height * 0.6;
+        }
+
+        private void GroupDialog_Closing(ContentDialog sender, ContentDialogClosingEventArgs args)
+        {
+            GroupDialogTitleTextBox.TextChanged -= GroupDialogTitleTextBox_TextChanged;
+            ItemsGridView.Items.VectorChanged -= ItemsGridViewItems_VectorChanged;
+            App.MainWindow.SizeChanged -= MainWindow_SizeChanged;
+
+            ItemsGridView.Items.Clear();
+
+            // Unselect this item
+            GridView parentGridView = this.Parent as GridView;
+            if (parentGridView != null)
+            {
+                parentGridView.SelectedItem = null;
+            }
         }
 
         // Only fires when the GroupDialog is open

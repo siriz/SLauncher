@@ -317,7 +317,7 @@
             </StackPanel>
         </Grid>
 
-        <!--  Loading dialog that appears when LauncherX is loading items on startup  -->
+        <!--  Loading dialog that appears when SLauncher is loading items on startup  -->
         <Grid
             x:Name="LoadingDialog"
             HorizontalAlignment="Stretch"

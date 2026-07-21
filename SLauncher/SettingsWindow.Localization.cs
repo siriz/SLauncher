@@ -42,22 +42,22 @@ namespace SLauncher
              // Update based on the card's current header
              string currentHeader = settingsCard.Header?.ToString() ?? "";
 
-     if (currentHeader.Contains("fullscreen") || currentHeader.Contains("îï?Øü") || currentHeader.Contains("ÀüÃ¼"))
+     if (currentHeader.Contains("fullscreen") || currentHeader.Contains("å…¨ç”»é¢") || currentHeader.Contains("ì „ì²´"))
              {
             settingsCard.Header = LocalizationManager.GetString("SettingsFullscreenHeader");
       settingsCard.Description = LocalizationManager.GetString("SettingsFullscreenDescription");
   }
-        else if (currentHeader.Contains("Grid") || currentHeader.Contains("«°«ê«Ã«É") || currentHeader.Contains("±×¸®µå"))
+        else if (currentHeader.Contains("Grid") || currentHeader.Contains("ã‚°ãƒªãƒƒãƒ‰") || currentHeader.Contains("ê·¸ë¦¬ë“œ"))
     {
             settingsCard.Header = LocalizationManager.GetString("SettingsGridAlignmentHeader");
         settingsCard.Description = LocalizationManager.GetString("SettingsGridAlignmentDescription");
        }
-    else if (currentHeader.Contains("Start") || currentHeader.Contains("ÑÃÔÑ") || currentHeader.Contains("½ÃÀÛ"))
+    else if (currentHeader.Contains("Start") || currentHeader.Contains("èµ·å‹•") || currentHeader.Contains("ì‹œì‘"))
  {
              settingsCard.Header = LocalizationManager.GetString("SettingsStartWithWindowsHeader");
     settingsCard.Description = LocalizationManager.GetString("SettingsStartWithWindowsDescription");
  }
-           else if (currentHeader.Contains("Hotkey") || currentHeader.Contains("«Û«Ã«È«­?") || currentHeader.Contains("´ÜÃàÅ°"))
+           else if (currentHeader.Contains("Hotkey") || currentHeader.Contains("ãƒ›ãƒƒãƒˆã‚­ãƒ¼") || currentHeader.Contains("ë‹¨ì¶•í‚¤"))
   {
      settingsCard.Header = LocalizationManager.GetString("SettingsGlobalHotkeyHeader");
        settingsCard.Description = LocalizationManager.GetString("SettingsGlobalHotkeyDescription");
@@ -68,17 +68,17 @@ namespace SLauncher
       Microsoft.UI.Xaml.Controls.ToolTipService.SetToolTip(hotkeyBtn, LocalizationManager.GetString("HotkeyTooltip"));
     }
         }
-   else if (currentHeader.Contains("Language") || currentHeader.Contains("åëåŞ") || currentHeader.Contains("¾ğ¾î"))
+   else if (currentHeader.Contains("Language") || currentHeader.Contains("è¨€èª") || currentHeader.Contains("ì–¸ì–´"))
        {
       settingsCard.Header = LocalizationManager.GetString("SettingsLanguageHeader");
   settingsCard.Description = LocalizationManager.GetString("SettingsLanguageDescription");
 }
-       else if (currentHeader.Contains("Favicon") || currentHeader.Contains("«Õ«¡«Ó«³«ó") || currentHeader.Contains("ÆÄºñÄÜ"))
+       else if (currentHeader.Contains("Favicon") || currentHeader.Contains("ãƒ•ã‚¡ãƒ“ã‚³ãƒ³") || currentHeader.Contains("íŒŒë¹„ì½˜"))
        {
    settingsCard.Header = LocalizationManager.GetString("SettingsFaviconCacheHeader");
           settingsCard.Description = LocalizationManager.GetString("SettingsFaviconCacheDescription");
         }
-         else if (currentHeader.Contains("Location") || currentHeader.Contains("íŞá¶") || currentHeader.Contains("À§Ä¡"))
+         else if (currentHeader.Contains("Location") || currentHeader.Contains("å ´æ‰€") || currentHeader.Contains("ìœ„ì¹˜"))
     {
            settingsCard.Header = LocalizationManager.GetString("SettingsCacheLocationHeader");
       settingsCard.Description = LocalizationManager.GetString("SettingsCacheLocationDescription");
@@ -93,8 +93,8 @@ namespace SLauncher
          else if (child is TextBlock textBlock)
       {
    // Cache Management title and subtitle
-        if (textBlock.Text.Contains("Cache") || textBlock.Text.Contains("«­«ã«Ã«·«å") || textBlock.Text.Contains("Ä³½Ã") ||
-      textBlock.Text.Contains("Website") || textBlock.Text.Contains("«¦«§«Ö«µ«¤«È") || textBlock.Text.Contains("À¥»çÀÌÆ®"))
+        if (textBlock.Text.Contains("Cache") || textBlock.Text.Contains("ã‚­ãƒ£ãƒƒã‚·ãƒ¥") || textBlock.Text.Contains("ìºì‹œ") ||
+      textBlock.Text.Contains("Website") || textBlock.Text.Contains("ã‚¦ã‚§ãƒ–ã‚µã‚¤ãƒˆ") || textBlock.Text.Contains("ì›¹ì‚¬ì´íŠ¸"))
      {
      if (textBlock.FontSize == 20) // Title
       {
@@ -106,7 +106,7 @@ namespace SLauncher
        }
   }
        // About title
-        else if (textBlock.Text.Contains("About") || textBlock.Text.Contains("ªËªÄª¤ªÆ") || textBlock.Text.Contains("Á¤º¸"))
+        else if (textBlock.Text.Contains("About") || textBlock.Text.Contains("ã«ã¤ã„ã¦") || textBlock.Text.Contains("ì •ë³´"))
       {
          textBlock.Text = LocalizationManager.GetString("SettingsAboutTitle");
     }
@@ -115,8 +115,8 @@ namespace SLauncher
             {
       // About SLauncher expander
      if (expander.Header?.ToString().Contains("About") == true ||
-        expander.Header?.ToString().Contains("ªËªÄª¤ªÆ") == true ||
-        expander.Header?.ToString().Contains("Á¤º¸") == true)
+        expander.Header?.ToString().Contains("ã«ã¤ã„ã¦") == true ||
+        expander.Header?.ToString().Contains("ì •ë³´") == true)
         {
      expander.Header = LocalizationManager.GetString("SettingsAboutHeader");
      expander.Description = LocalizationManager.GetString("SettingsAboutDescription");

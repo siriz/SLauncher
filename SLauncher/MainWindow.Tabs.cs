@@ -465,6 +465,13 @@ System.Diagnostics.Debug.WriteLine("SaveCurrentTabItems called");
     {
   if (item is GridViewTile tile)
      {
+   // Tiles persist across tab switches (they live in tab.Tag), so unsubscribe first to
+   // avoid stacking duplicate handlers each time this tab is reloaded - otherwise dropping
+   // one tile onto another after switching tabs a few times fires GridViewTile_Drop multiple
+   // times for a single drop, corrupting/duplicating group creation.
+   tile.Drop -= GridViewTile_Drop;
+   tile.DragEnter -= GridViewTile_DragEnter;
+   tile.DragLeave -= GridViewTile_DragLeave;
    tile.Drop += GridViewTile_Drop;
         tile.DragEnter += GridViewTile_DragEnter;
             tile.DragLeave += GridViewTile_DragLeave;
@@ -472,6 +479,10 @@ System.Diagnostics.Debug.WriteLine("SaveCurrentTabItems called");
         }
           else if (item is GridViewTileGroup group)
           {
+       // Same idempotency concern as GridViewTile above
+       group.DragEnter -= GridViewTileGroup_DragEnter;
+       group.DragLeave -= GridViewTileGroup_DragLeave;
+       group.Drop -= GridViewTileGroup_Drop;
        group.DragEnter += GridViewTileGroup_DragEnter;
     group.DragLeave += GridViewTileGroup_DragLeave;
    group.Drop += GridViewTileGroup_Drop;
@@ -546,7 +557,7 @@ if (tab.Tag is List<UserControl> tabItems)
   }
 
   // Save all unique items to Files directory FIRST
-    UserSettingsClass.SaveLauncherXItems(allUniqueItems);
+    UserSettingsClass.SaveItems(allUniqueItems);
  System.Diagnostics.Debug.WriteLine("Saved all items to Files directory");
 
    // Now save tabs data - pass the standard List instead of WinRT collection

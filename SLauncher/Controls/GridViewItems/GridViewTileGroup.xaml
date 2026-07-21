@@ -117,7 +117,7 @@
                         x:Name="MenuRemoveOption"
                         Click="MenuRemoveOption_Click"
                         Icon="Delete"
-                        Text="Remove group from LauncherX" />
+                        Text="Remove group from SLauncher" />
                 </MenuFlyout>
             </FlyoutBase.AttachedFlyout>
         </Grid>
