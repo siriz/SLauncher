@@ -185,6 +185,9 @@ GridViewTileGroup DraggedOverTileGroup = sender as GridViewTileGroup;
           gridViewTileGroup.UnhighlightControl();
      }
 }
+
+            // Save items - covers both plain reordering and group creation/merging via drag-drop
+            SaveAllTabs();
       }
 
         // External drag-drop events (files/folders/websites from outside)
@@ -274,6 +277,9 @@ AddGridViewTile(storageItem.Path, "", storageItem.Name, bitmapImage);
           AddGridViewTile(filePath, "", storageItem.Name, await IconHelpers.GetFileIcon(filePath));
              }
   }
+
+     // Save items - this previously relied entirely on a clean app exit to ever reach disk
+     SaveAllTabs();
 
      // Hide LoadingDialog
             await Task.Delay(20);

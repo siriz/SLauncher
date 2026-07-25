@@ -66,9 +66,14 @@ private void MainTabView_AddTabButtonClick(Microsoft.UI.Xaml.Controls.TabView se
     // Add to TabView
    MainTabView.TabItems.Add(newTab);
    MainTabView.SelectedItem = newTab;
- 
+
         // Clear items for new tab (already empty, but for consistency)
    ItemsGridView.Items.Clear();
+
+        // Persist the new tab list immediately - previously tabs were only written to disk on
+        // a clean app exit, so a crash, force-kill, or minimize-to-tray-then-relaunch (a second
+        // instance reading the stale tabs.json) would make newly created tabs appear to vanish.
+        SaveAllTabs();
      }
 
         /// <summary>
@@ -142,9 +147,12 @@ private void MainTabView_AddTabButtonClick(Microsoft.UI.Xaml.Controls.TabView se
  {
       // Store the color in the dictionary
       _tabColors[tab] = color;
-            
+
           // Apply the color with a separator for visual distinction
             UpdateTabColorSeparator(tab, color);
+
+          // Persist immediately - see the comment in MainTabView_AddTabButtonClick
+          SaveAllTabs();
   }
 
         /// <summary>
@@ -213,6 +221,9 @@ XamlRoot = this.Content.XamlRoot
     if (result == ContentDialogResult.Primary && !string.IsNullOrWhiteSpace(textBox.Text))
        {
  tab.Header = textBox.Text;
+
+            // Persist immediately - see the comment in MainTabView_AddTabButtonClick
+            SaveAllTabs();
         }
         }
 
@@ -292,6 +303,9 @@ if (_tabColors.ContainsKey(tab))
           UpdateTabColorSeparator(selectedTab, _tabColors[selectedTab]);
        }
      }
+
+            // Persist immediately - see the comment in MainTabView_AddTabButtonClick
+            SaveAllTabs();
        }
    }
 
@@ -418,6 +432,9 @@ if (_tabColors.ContainsKey(_previousTab))
     UpdateTabColorSeparator(selectedTab, _tabColors[selectedTab]);
       }
   }
+
+            // Persist immediately - see the comment in MainTabView_AddTabButtonClick
+            SaveAllTabs();
         }
 
         /// <summary>

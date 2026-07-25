@@ -324,6 +324,8 @@ namespace SLauncher.Controls.GridViewItems
             {
                 parentGridView.Items.Remove(this);
             }
+
+            App.MainWindow.SaveAllTabs();
         }
     }
 }

@@ -134,8 +134,10 @@ gridViewTile.Drop += GridViewTile_Drop;
  AddGridViewTile(fileItem.ExecutingPath, fileItem.ExecutingArguments, fileItem.DisplayText, fileItem.FileIcon);
     }
 
-        // Save items
- UserSettingsClass.SaveItems(ItemsGridView.Items);
+        // Save items - use SaveAllTabs (not UserSettingsClass.SaveItems(ItemsGridView.Items))
+        // since the latter only covers the CURRENTLY VISIBLE tab and wipes the saved item files
+        // of every other tab, which then only got restored if the app later exited cleanly
+        SaveAllTabs();
 
      // Hide LoadingDialog
    await Task.Delay(20);
@@ -168,8 +170,8 @@ foreach (AddFolderDialogListViewItem folderItem in addFolderDialog.AddedFolders)
       AddGridViewTile(folderItem.ExecutingPath, "", folderItem.DisplayText, folderItem.FolderIcon);
             }
 
-        // Save items
-            UserSettingsClass.SaveItems(ItemsGridView.Items);
+        // Save items - see the comment in AddFileBtn_Click for why this uses SaveAllTabs
+            SaveAllTabs();
 
           // Hide LoadingDialog
             await Task.Delay(20);
@@ -198,8 +200,8 @@ if (result == ContentDialogResult.Primary)
   AddGridViewTile(addWebsiteDialog.InputWebsiteUrl, "", addWebsiteDialog.InputWebsiteUrl, websiteIcon);
             }
 
-            // Save items
-    UserSettingsClass.SaveItems(ItemsGridView.Items);
+            // Save items - see the comment in AddFileBtn_Click for why this uses SaveAllTabs
+    SaveAllTabs();
 
       // Hide LoadingDialog
        await Task.Delay(20);

@@ -548,6 +548,8 @@ App.MainWindow.AppWindow.Hide();
             {
                 parentGridView.Items.Remove(this);
             }
+
+            App.MainWindow.SaveAllTabs();
         }
 
         private void MenuRemoveGroupOption_Click(object sender, RoutedEventArgs e)
@@ -564,6 +566,7 @@ App.MainWindow.AppWindow.Hide();
             UnassociateGroup();
             mainWindowGridView.Items.Add(this);
 
+            App.MainWindow.SaveAllTabs();
         }
         private void MenuUnlinkOption_Click(object sender, RoutedEventArgs e)
         {
@@ -640,6 +643,8 @@ private void SaveBtn_Click(object sender, RoutedEventArgs e)
         {
          this.GroupParent.UpdatePreview();
         }
+
+     App.MainWindow.SaveAllTabs();
 
      // Close the editItemWindow
             editItemWindow.Close();
