@@ -208,6 +208,11 @@ this.SetTitleBar(AppTitleBar);
               // Upgrade items as well
     List<Dictionary<string, object>> oldSLauncherItems = await UserSettingsClass.UpgradeOldItems();
 
+    // This upgrade path predates the tab feature, so - unlike the normal load path below -
+    // there's no tabs.json to restore from. Create a default tab to hold the upgraded items,
+    // otherwise MainTabView stays empty and nothing here ever gets attached to a tab.
+    InitializeTabs();
+
     foreach (Dictionary<string, object> gridViewTileProps in oldSLauncherItems)
        {
       string executingPath = gridViewTileProps["ExecutingPath"] as string;
@@ -218,7 +223,8 @@ this.SetTitleBar(AppTitleBar);
          }
 
          // Save items after
-        UserSettingsClass.SaveItems(ItemsGridView.Items);
+        SaveCurrentTabItems();
+        SaveAllTabs();
  }
    else
             {

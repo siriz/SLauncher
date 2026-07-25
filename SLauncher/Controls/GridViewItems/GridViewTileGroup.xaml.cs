@@ -277,6 +277,10 @@ namespace SLauncher.Controls.GridViewItems
             {
                 parentGridView.SelectedItem = null;
             }
+
+            // Persist any rename (GroupDialogTitleTextBox_TextChanged) or item reorder
+            // (ItemsGridViewItems_VectorChanged) made while this dialog was open
+            App.MainWindow.SaveAllTabs();
         }
 
         // Only fires when the GroupDialog is open
