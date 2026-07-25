@@ -120,6 +120,15 @@
   <data name="AppTitle" xml:space="preserve">
     <value>SLauncher - Modern app launcher for Windows</value>
   </data>
+  <data name="TrayTooltip" xml:space="preserve">
+    <value>SLauncher - Double-click to open</value>
+  </data>
+  <data name="TrayMenuOpen" xml:space="preserve">
+    <value>Open SLauncher</value>
+  </data>
+  <data name="TrayMenuExit" xml:space="preserve">
+    <value>Exit</value>
+  </data>
   <data name="SearchPlaceholder" xml:space="preserve">
     <value>Search through everything in SLauncher</value>
   </data>

@@ -63,6 +63,15 @@
   <data name="AppTitle" xml:space="preserve">
     <value>SLauncher - Windows用モダンアプリランチャー</value>
   </data>
+  <data name="TrayTooltip" xml:space="preserve">
+    <value>SLauncher - ダブルクリックで開く</value>
+  </data>
+  <data name="TrayMenuOpen" xml:space="preserve">
+    <value>SLauncherを開く</value>
+  </data>
+  <data name="TrayMenuExit" xml:space="preserve">
+    <value>終了</value>
+  </data>
   <data name="SearchPlaceholder" xml:space="preserve">
     <value>SLauncherのすべてを検索</value>
   </data>

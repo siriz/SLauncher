@@ -142,10 +142,10 @@ namespace SLauncher.Classes
             IntPtr hMenu = CreatePopupMenu();
 
             // Add menu items
-            AppendMenu(hMenu, MF_STRING, (UIntPtr)MENU_OPEN, "Open SLauncher");
-            AppendMenu(hMenu, MF_STRING, (UIntPtr)MENU_SETTINGS, "Settings");
+            AppendMenu(hMenu, MF_STRING, (UIntPtr)MENU_OPEN, LocalizationManager.GetString("TrayMenuOpen"));
+            AppendMenu(hMenu, MF_STRING, (UIntPtr)MENU_SETTINGS, LocalizationManager.GetString("SettingsTitle"));
             AppendMenu(hMenu, MF_SEPARATOR, UIntPtr.Zero, null);
-            AppendMenu(hMenu, MF_STRING, (UIntPtr)MENU_EXIT, "Exit");
+            AppendMenu(hMenu, MF_STRING, (UIntPtr)MENU_EXIT, LocalizationManager.GetString("TrayMenuExit"));
 
             // Get cursor position
             GetCursorPos(out POINT cursorPos);
@@ -180,6 +180,15 @@ namespace SLauncher.Classes
 
         [DllImport("user32.dll")]
         private static extern IntPtr LoadIcon(IntPtr hInstance, IntPtr lpIconName);
+
+        /// <summary>
+        /// Update the tray icon's tooltip text (e.g. after the display language changes)
+        /// </summary>
+        public void UpdateTooltip(string tooltip)
+        {
+            _iconData.szTip = tooltip;
+            Shell_NotifyIcon(NotifyIconAction.NIM_MODIFY, ref _iconData);
+        }
 
         public void SetOnLeftClick(Action action)
         {

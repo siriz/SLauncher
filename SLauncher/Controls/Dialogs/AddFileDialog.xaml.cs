@@ -34,7 +34,7 @@ namespace SLauncher.Controls.Dialogs
 
         DependencyProperty AddedFilesProperty = DependencyProperty.Register(
             nameof(AddedFiles),
-            typeof(string),
+            typeof(List<AddFileDialogListViewItem>),
             typeof(AddFileDialog),
             new PropertyMetadata(new List<AddFileDialogListViewItem>()));
 

@@ -89,7 +89,12 @@ Microsoft.UI.Xaml.Controls.ToolTipService.SetToolTip(SettingsButton, Localizatio
           }
      }
     }
-  
+
+        // Set tray icon tooltip - trayIcon is null on the very first call (InitializeLocalizedUI
+        // runs before InitializeTrayIcon during startup); the initial tooltip is instead set
+        // directly when the tray icon is created
+        trayIcon?.UpdateTooltip(LocalizationManager.GetString("TrayTooltip"));
+
         System.Diagnostics.Debug.WriteLine("[MainWindow.UI] Localized UI initialized successfully");
  }
    catch (Exception ex)

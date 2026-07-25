@@ -20,7 +20,7 @@ try
      var iconPath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Resources", "icon.ico");
           var hwnd = WinRT.Interop.WindowNative.GetWindowHandle(this);
 
-      trayIcon = new SystemTrayIcon(hwnd, iconPath, "SLauncher - Double-click to open");
+      trayIcon = new SystemTrayIcon(hwnd, iconPath, LocalizationManager.GetString("TrayTooltip"));
 
     // Set left click handler (double-click)
      trayIcon.SetOnLeftClick(() =>

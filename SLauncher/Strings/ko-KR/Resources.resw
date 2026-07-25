@@ -63,6 +63,15 @@
   <data name="AppTitle" xml:space="preserve">
     <value>SLauncher - Windows용 모던 앱 런처</value>
   </data>
+  <data name="TrayTooltip" xml:space="preserve">
+    <value>SLauncher - 더블클릭하여 열기</value>
+  </data>
+  <data name="TrayMenuOpen" xml:space="preserve">
+    <value>SLauncher 열기</value>
+  </data>
+  <data name="TrayMenuExit" xml:space="preserve">
+    <value>종료</value>
+  </data>
   <data name="SearchPlaceholder" xml:space="preserve">
     <value>SLauncher의 모든 항목 검색</value>
   </data>

@@ -43,7 +43,7 @@ namespace SLauncher.Controls.Dialogs
 
         DependencyProperty AddedFoldersProperty = DependencyProperty.Register(
             nameof(AddedFolders),
-            typeof(string),
+            typeof(List<AddFolderDialogListViewItem>),
             typeof(AddFolderDialog),
             new PropertyMetadata(new List<AddFolderDialogListViewItem>()));
 
@@ -58,24 +58,26 @@ namespace SLauncher.Controls.Dialogs
             // WHY THE FUCK IS MICROSHIT DIDDLING AROUND WITH COPILOT AND AI WHEN THEY CANT EVEN GET THIS SHIT RIGHT??!??!?
             // aNYWAYS, we must use the WinForms FolderBrowserDialog as a replacement for now
             // System.Windows.Forms is exposed via the "WinForms Class Library" project
-            FolderBrowserDialog folderBrowserDialog = new FolderBrowserDialog();
-            if (folderBrowserDialog.ShowDialog() == DialogResult.OK)
+            using (FolderBrowserDialog folderBrowserDialog = new FolderBrowserDialog())
             {
-                string folderPath = folderBrowserDialog.SelectedPath;
+                if (folderBrowserDialog.ShowDialog() == DialogResult.OK)
+                {
+                    string folderPath = folderBrowserDialog.SelectedPath;
 
-                SelectedFoldersListView.Items.Remove(PlaceholderListViewItem);
+                    SelectedFoldersListView.Items.Remove(PlaceholderListViewItem);
 
-                // Display the folder in the ListView
-                AddFolderDialogListViewItem addFolderDialogListViewItem = new AddFolderDialogListViewItem();
-                addFolderDialogListViewItem.ExecutingPath = folderPath;
-                addFolderDialogListViewItem.DisplayText = new DirectoryInfo(folderPath).Name;
-                SelectedFoldersListView.Items.Add(addFolderDialogListViewItem);
+                    // Display the folder in the ListView
+                    AddFolderDialogListViewItem addFolderDialogListViewItem = new AddFolderDialogListViewItem();
+                    addFolderDialogListViewItem.ExecutingPath = folderPath;
+                    addFolderDialogListViewItem.DisplayText = new DirectoryInfo(folderPath).Name;
+                    SelectedFoldersListView.Items.Add(addFolderDialogListViewItem);
 
-                // Get the thumbnail of the folder
-                BitmapImage bitmapImage = await IconHelpers.GetFolderIcon(folderPath);
-                addFolderDialogListViewItem.FolderIcon = bitmapImage;
+                    // Get the thumbnail of the folder
+                    BitmapImage bitmapImage = await IconHelpers.GetFolderIcon(folderPath);
+                    addFolderDialogListViewItem.FolderIcon = bitmapImage;
+                }
             }
-           
+
             // Configure UI
             this.IsPrimaryButtonEnabled = true;
             OpenFolderProgressRing.IsActive = false;
