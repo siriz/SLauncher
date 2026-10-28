@@ -162,7 +162,7 @@
             </wct:SettingsCard.HeaderIcon>
             <Button
                 x:Name="ExportSettingsButton"
-                Width="120"
+                MinWidth="120"
                 Click="ExportSettingsButton_Click"
                 Content="Export..." />
         </wct:SettingsCard>
@@ -176,7 +176,7 @@
             </wct:SettingsCard.HeaderIcon>
             <Button
                 x:Name="ImportSettingsButton"
-                Width="120"
+                MinWidth="120"
                 Click="ImportSettingsButton_Click"
                 Content="Import..." />
         </wct:SettingsCard>
@@ -209,7 +209,7 @@
        <Button x:Name="ClearCacheButton"
     Content="Clear Cache"
              Click="ClearCacheButton_Click"
-    Width="120"/>
+    MinWidth="120"/>
        </StackPanel>
          </wct:SettingsCard>
 
@@ -220,17 +220,19 @@
                  <wct:SettingsCard.HeaderIcon>
          <FontIcon Glyph="&#xE8B7;" />
        </wct:SettingsCard.HeaderIcon>
-         <StackPanel Orientation="Horizontal" Spacing="10">
+         <StackPanel Orientation="Vertical" Spacing="5" HorizontalAlignment="Right">
        <TextBlock x:Name="CacheLocationTextBlock"
           Text="..."
      FontSize="12"
         Opacity="0.7"
            VerticalAlignment="Center"
                MaxWidth="250"
+               HorizontalAlignment="Right"
      TextTrimming="CharacterEllipsis"/>
        <Button Content="Open Folder"
         Click="OpenCacheFolderButton_Click"
-           Width="100"/>
+           MinWidth="100"
+           HorizontalAlignment="Right"/>
      </StackPanel>
       </wct:SettingsCard>
 
