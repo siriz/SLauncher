@@ -1,3 +1,4 @@
+using SLauncher.Classes;
 using Microsoft.UI.Xaml;
 using Microsoft.UI.Xaml.Controls;
 using Microsoft.UI.Xaml.Media;
@@ -13,6 +14,8 @@ namespace SLauncher.Controls.Dialogs
         public AddFileDialogListViewItem()
         {
             this.InitializeComponent();
+            LaunchArgsTextBox.PlaceholderText = LocalizationManager.GetString("LaunchArgumentsOptionalPlaceholder");
+            ToolTipService.SetToolTip(RemoveBtn, LocalizationManager.GetString("AddItemsDialog_RemoveTooltip"));
         }
 
         /// <summary>

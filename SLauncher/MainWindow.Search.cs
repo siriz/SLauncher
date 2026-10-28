@@ -118,8 +118,8 @@ sender.Text = args.SelectedItem.ToString();
     var dialog = new ContentDialog
         {
       Title = LocalizationManager.GetString("Error"),
-     Content = $"Unable to open URL:\n{query}\n\nError: {ex.Message}",
-        CloseButtonText = LocalizationManager.GetString("OK"),
+     Content = LocalizationManager.FormatSearchMessage("Search_OpenUrlError", query, ex.Message),
+        CloseButtonText = LocalizationManager.GetString("ButtonOK"),
   XamlRoot = this.Content.XamlRoot
       };
          await dialog.ShowAsync();
@@ -208,8 +208,8 @@ if (char.IsLetter(query[0]) && query[1] == ':')
         var dialog = new ContentDialog
           {
             Title = LocalizationManager.GetString("Error"),
- Content = $"Unable to open:\n{query}\n\nError: {ex.Message}",
-      CloseButtonText = LocalizationManager.GetString("OK"),
+ Content = LocalizationManager.FormatSearchMessage("Search_OpenPathError", query, ex.Message),
+      CloseButtonText = LocalizationManager.GetString("ButtonOK"),
               XamlRoot = this.Content.XamlRoot
  };
  await dialog.ShowAsync();
@@ -223,8 +223,8 @@ if (char.IsLetter(query[0]) && query[1] == ':')
          var dialog = new ContentDialog
   {
     Title = LocalizationManager.GetString("PathNotFound"),
-      Content = $"The specified path does not exist:\n{query}\n\nPlease check the path and try again.",
-    CloseButtonText = LocalizationManager.GetString("OK"),
+      Content = LocalizationManager.FormatSearchMessage("Search_PathNotFoundMessage", query),
+    CloseButtonText = LocalizationManager.GetString("ButtonOK"),
             XamlRoot = this.Content.XamlRoot
         };
    await dialog.ShowAsync();

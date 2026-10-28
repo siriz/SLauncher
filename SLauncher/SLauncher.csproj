@@ -36,7 +36,7 @@
     <PublishTrimmed>false</PublishTrimmed>
  <TrimMode>partial</TrimMode>
     <!-- Only keep satellite resources for languages SLauncher actually supports, instead of every WindowsAppSDK/.NET locale -->
-    <SatelliteResourceLanguages>en-US;ko-KR;ja-JP</SatelliteResourceLanguages>
+    <SatelliteResourceLanguages>en-US;ko-KR;ja-JP;zh-CN</SatelliteResourceLanguages>
     <EnableCompressionInSingleFile>true</EnableCompressionInSingleFile>
  <DebugType>none</DebugType>
     <DebugSymbols>false</DebugSymbols>
@@ -95,7 +95,7 @@
     output language folder that isn't one SLauncher actually supports.
   -->
   <Target Name="RemoveUnusedSatelliteResourceCultures" AfterTargets="Build;Publish">
-    <Exec Command="powershell -NoProfile -ExecutionPolicy Bypass -Command &quot;Get-ChildItem -LiteralPath '$(TargetDir)' -Directory -ErrorAction SilentlyContinue | Where-Object { $_.Name -match '^[a-z]{2,3}(-[a-z]+)*$' -and $_.Name -notin @('en-US','ko-KR','ja-JP') } | Remove-Item -Recurse -Force&quot;"
+    <Exec Command="powershell -NoProfile -ExecutionPolicy Bypass -Command &quot;Get-ChildItem -LiteralPath '$(TargetDir)' -Directory -ErrorAction SilentlyContinue | Where-Object { $_.Name -match '^[a-z]{2,3}(-[a-z]+)*$' -and $_.Name -notin @('en-US','ko-KR','ja-JP','zh-CN') } | Remove-Item -Recurse -Force&quot;"
           Condition="'$(OS)' == 'Windows_NT'" />
   </Target>
 
@@ -213,6 +213,7 @@
   <ItemGroup>
     <PRIResource Remove="Strings\ja-JP\Resources.resw" />
     <PRIResource Remove="Strings\ko-KR\Resources.resw" />
+    <PRIResource Remove="Strings\zh-CN\Resources.resw" />
   </ItemGroup>
   <ItemGroup>
     <Resource Remove="Controls\GridViewTileGroup.xaml" />

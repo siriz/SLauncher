@@ -30,6 +30,13 @@ namespace SLauncher.Controls.Dialogs
         public AddFolderDialog()
         {
             this.InitializeComponent();
+            Title = LocalizationManager.GetString("AddFolderDialog_Title");
+            PrimaryButtonText = LocalizationManager.GetString("AddFolderDialog_Title");
+            CloseButtonText = LocalizationManager.GetString("ButtonCancel");
+            SelectFolderLabel.Text = LocalizationManager.GetString("AddFolderDialog_SelectLabel");
+            PickAFolderButton.Content = LocalizationManager.GetString("AddFolderDialog_OpenButton");
+            FolderListHelp.Text = LocalizationManager.GetString("AddFolderDialog_ListHelp");
+            PlaceholderListViewItem.Text = LocalizationManager.GetString("AddFolderDialog_EmptyList");
         }
 
         /// <summary>

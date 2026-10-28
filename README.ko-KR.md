@@ -10,7 +10,7 @@
 [![.NET](https://img.shields.io/badge/.NET-8.0-512BD4)](https://dotnet.microsoft.com/download)
 [![WinUI 3](https://img.shields.io/badge/WinUI-3-0078D4)](https://microsoft.github.io/microsoft-ui-xaml/)
 
-**언어:** [English](README.md) • [한국어](README.ko-KR.md) • [日本語](README.ja-JP.md)
+**언어:** [English](README.md) • [한국어](README.ko-KR.md) • [日本語](README.ja-JP.md) • [简体中文](README.zh-CN.md)
 
 [기능](#-기능) • [설치](#-설치) • [사용법](#-사용법) • [소스 빌드](#%EF%B8%8F-소스에서-빌드)
 
@@ -36,6 +36,7 @@
 - 🇺🇸 **English** (영어)
 - 🇰🇷 **한국어**
 - 🇯🇵 **日本語** (일본어)
+- **简体中文** (중국어 간체)
 - ⚡ 실시간 언어 전환 - 재시작 불필요!
 
 ### 모던 UI
@@ -170,7 +171,7 @@
 - **전역 단축키** - 표시/숨김 단축키 커스터마이징
   - 수식어: Ctrl, Alt, Shift, Ctrl+Shift, Ctrl+Alt
   - 키: Space, Tab, Enter, Esc, F1-F4
-- **언어** - 선호 언어 선택 (영어, 한국어, 일본어)
+- **언어** - 선호 언어 선택 (영어, 한국어, 일본어, 중국어 간체)
 
 ### 백업 및 복원
 - **설정 내보내기** - 설정, 항목, 탭을 `.slauncherbackup` 파일 하나로 저장
@@ -227,7 +228,8 @@ SLauncher/
 │   ├── Strings/      # 다국어 리소스
 │   │   ├── en-US/Resources.resw     # 영어
 ││   ├── ko-KR/Resources.resw     # 한국어
-│   │   └── ja-JP/Resources.resw   # 일본어
+│   │   ├── ja-JP/Resources.resw   # 일본어
+│   │   └── zh-CN/Resources.resw   # 중국어 간체
 │   ├── MainWindow*.cs    # 메인 창 (부분 클래스)
 │   │   ├── MainWindow.xaml.cs       # 메인 로직
 │   │   ├── MainWindow.UI.cs       # UI 관리

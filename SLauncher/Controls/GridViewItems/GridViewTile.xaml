@@ -16,7 +16,7 @@
     mc:Ignorable="d">
     <FlyoutBase.AttachedFlyout>
         <MenuFlyout x:Name="CreateGroupFlyout">
-            <MenuFlyoutItem Text="Create new group" />
+            <MenuFlyoutItem x:Name="CreateGroupIndicator" Text="Create new group" />
         </MenuFlyout>
     </FlyoutBase.AttachedFlyout>
     <!--  The BorderThickness is set as such because when clicking on the GridViewTile, the highlight happens too quickly which causes the bottom border to be too thin  -->

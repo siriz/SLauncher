@@ -328,6 +328,7 @@ namespace SLauncher.Controls.GridViewItems
         /// </summary>
         public void ShowCreateGroupIndicator()
         {
+            CreateGroupIndicator.Text = LocalizationManager.GetString("Group_CreateIndicator");
             MenuFlyout flyoutBase = (MenuFlyout)FlyoutBase.GetAttachedFlyout(GridViewTileControl);
             flyoutBase.ShowAt(GridViewTileControl);
             HighlightControl();
@@ -407,8 +408,9 @@ namespace SLauncher.Controls.GridViewItems
             catch
             {
                 // Use a MessageDialog to show the error message
-                MessageDialog messageDialog = new MessageDialog("If you are attempting to run this item as an administrator, check that it is possible to do so in the first place. " +
-                                  "Finally, check that the file/folder has not been moved or deleted.", "Error running item");
+                MessageDialog messageDialog = new MessageDialog(
+                    LocalizationManager.GetString("Item_RunErrorMessage"),
+                    LocalizationManager.GetString("Item_RunErrorTitle"));
                 WinRT.Interop.InitializeWithWindow.Initialize(messageDialog, WinRT.Interop.WindowNative.GetWindowHandle(App.MainWindow));
 
                 await messageDialog.ShowAsync();
@@ -485,6 +487,7 @@ namespace SLauncher.Controls.GridViewItems
             // Update common menu items
             MenuAdminOption.Text = LocalizationManager.GetString("ContextMenu_RunAsAdmin");
 MenuEditOption.Text = LocalizationManager.GetString("ContextMenu_EditItem");
+            MenuUnlinkOption.Text = LocalizationManager.GetString("LinkedFolder_UnlinkParent");
 
             MenuFlyout flyoutBase = (MenuFlyout)FlyoutBase.GetAttachedFlyout(TilePanel);
             flyoutBase.ShowAt(TilePanel, e.GetPosition(TilePanel));
@@ -532,8 +535,9 @@ App.MainWindow.AppWindow.Hide();
             {
                 // Show error message if unable to open file location
                 // Use a MessageDialog to show the error message
-                MessageDialog messageDialog = new MessageDialog("Unable to open location on disk. Check that the file/folder has not been moved or deleted, or try again later.",
-                    "Error opening location");
+                MessageDialog messageDialog = new MessageDialog(
+                    LocalizationManager.GetString("Item_OpenLocationErrorMessage"),
+                    LocalizationManager.GetString("Item_OpenLocationErrorTitle"));
                 WinRT.Interop.InitializeWithWindow.Initialize(messageDialog, WinRT.Interop.WindowNative.GetWindowHandle(App.MainWindow));
 
                 await messageDialog.ShowAsync();
@@ -656,7 +660,7 @@ private void SaveBtn_Click(object sender, RoutedEventArgs e)
             System.Windows.Forms.OpenFileDialog openFileDialog = new System.Windows.Forms.OpenFileDialog();
             openFileDialog.DereferenceLinks = false;
             openFileDialog.Multiselect = false;
-            openFileDialog.Filter = "Image Files|*.jpg;*.jpeg;*.png;*.tif;*.tiff;*.bmp;*.ico";
+            openFileDialog.Filter = LocalizationManager.GetString("EditIcon_FileFilter");
 
             // When the user select the image
             if (openFileDialog.ShowDialog() == System.Windows.Forms.DialogResult.OK)

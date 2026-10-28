@@ -12,7 +12,7 @@
 
     <FlyoutBase.AttachedFlyout>
         <MenuFlyout x:Name="AddItemFlyout">
-            <MenuFlyoutItem Text="Add item to group" />
+            <MenuFlyoutItem x:Name="AddItemIndicator" Text="Add item to group" />
         </MenuFlyout>
     </FlyoutBase.AttachedFlyout>
 
@@ -78,7 +78,7 @@
                     </Grid.RowDefinitions>
 
                     <StackPanel Grid.Row="0" Orientation="Horizontal">
-                        <TextBlock
+                        <TextBlock x:Name="GroupNameLabel"
                             VerticalAlignment="Center"
                             Style="{ThemeResource SubtitleTextBlockStyle}"
                             Text="Name of group:" />

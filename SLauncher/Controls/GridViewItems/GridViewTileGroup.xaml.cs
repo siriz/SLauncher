@@ -1,3 +1,4 @@
+using SLauncher.Classes;
 using Microsoft.UI.Xaml;
 using Microsoft.UI.Xaml.Controls;
 using Microsoft.UI.Xaml.Controls.Primitives;
@@ -194,6 +195,7 @@ namespace SLauncher.Controls.GridViewItems
         /// </summary>
         public void ShowAddItemIndicator()
         {
+            AddItemIndicator.Text = LocalizationManager.GetString("Group_AddItemIndicator");
             MenuFlyout flyoutBase = (MenuFlyout)FlyoutBase.GetAttachedFlyout(GridViewTileGroupControl);
             flyoutBase.ShowAt(GridViewTileGroupControl);
             HighlightControl();
@@ -222,6 +224,8 @@ namespace SLauncher.Controls.GridViewItems
 
         private async void GroupPanel_Tapped(object sender, Microsoft.UI.Xaml.Input.TappedRoutedEventArgs e)
         {
+            GroupNameLabel.Text = LocalizationManager.GetString("Group_NameLabel");
+            GroupDialog.CloseButtonText = LocalizationManager.GetString("ButtonClose");
             // Show the ContentDialog to display the items in this Group
             ItemsGridView.Items.Clear();
             foreach (GridViewTile gridViewTile in Items)
@@ -316,6 +320,7 @@ namespace SLauncher.Controls.GridViewItems
         private void GroupPanel_RightTapped(object sender, Microsoft.UI.Xaml.Input.RightTappedRoutedEventArgs e)
         {
             // Show right click menu options
+            MenuRemoveOption.Text = LocalizationManager.GetString("Group_RemoveFromSLauncher");
             MenuFlyout flyoutBase = (MenuFlyout)FlyoutBase.GetAttachedFlyout(GroupPanel);
             flyoutBase.ShowAt(GroupPanel, e.GetPosition(GroupPanel));
         }

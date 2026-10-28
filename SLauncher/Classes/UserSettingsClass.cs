@@ -294,7 +294,7 @@ namespace SLauncher.Classes
 
             if (!archive.Entries.Any(entry => entry.FullName == "userSettings.json"))
             {
-                throw new InvalidDataException("This file is not a valid SLauncher settings export.");
+                throw new InvalidDataException(LocalizationManager.GetString("Backup_InvalidFileMessage"));
             }
 
             Directory.CreateDirectory(SettingsDir);
@@ -1047,9 +1047,10 @@ gridViewTile.AssociateGroup(gridViewTileGroup);
 
      if (!Directory.Exists(parentDir))
  {
-     if (!ErrorPaths.Contains(parentDir + " (linked folder)"))
+     string missingFolder = parentDir + LocalizationManager.GetString("LinkedFolder_MissingSuffix");
+     if (!ErrorPaths.Contains(missingFolder))
          {
-        ErrorPaths.Add(parentDir + " (linked folder)");
+        ErrorPaths.Add(missingFolder);
           }
      continue;
         }

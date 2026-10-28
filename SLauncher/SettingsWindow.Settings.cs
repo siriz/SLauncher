@@ -24,6 +24,7 @@ namespace SLauncher
       /// </summary>
         private void GridAlignComboBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
      {
+    if (_updatingLocalizedSettings) return;
     // Save position as "Left" or "Center" (not translated text)
        if (GridAlignComboBox.SelectedIndex == 0)
      {

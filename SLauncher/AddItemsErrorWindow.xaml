@@ -47,7 +47,7 @@
                 <RowDefinition Height="auto" />
             </Grid.RowDefinitions>
 
-            <TextBlock
+            <TextBlock x:Name="ErrorMessageText"
                 Grid.Row="0"
                 HorizontalAlignment="Stretch"
                 VerticalAlignment="Top"

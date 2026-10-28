@@ -14,6 +14,7 @@ namespace SLauncher
   {
         // Track if settings window is already open
         private bool isSettingsWindowOpen = false;
+        private FontIcon _iconScaleIcon;
 
         /// <summary>
    /// Initialize UI text from localized resources
@@ -94,6 +95,7 @@ Microsoft.UI.Xaml.Controls.ToolTipService.SetToolTip(SettingsButton, Localizatio
         // runs before InitializeTrayIcon during startup); the initial tooltip is instead set
         // directly when the tray icon is created
         trayIcon?.UpdateTooltip(LocalizationManager.GetString("TrayTooltip"));
+        UpdateIconScaleTooltips();
 
         System.Diagnostics.Debug.WriteLine("[MainWindow.UI] Localized UI initialized successfully");
  }
@@ -198,6 +200,16 @@ Microsoft.UI.Xaml.Controls.ToolTipService.SetToolTip(SettingsButton, Localizatio
         /// <summary>
       /// Create Icon Scale Slider dynamically to avoid XAML compiler bug
  /// </summary>
+        private void UpdateIconScaleTooltips()
+        {
+            if (_iconScaleIcon != null)
+                ToolTipService.SetToolTip(_iconScaleIcon, LocalizationManager.GetString("IconScale_Tooltip"));
+            if (IconScaleSlider != null)
+                ToolTipService.SetToolTip(IconScaleSlider, LocalizationManager.GetString("IconScale_AdjustTooltip"));
+            if (ScaleValueText != null)
+                ToolTipService.SetToolTip(ScaleValueText, LocalizationManager.GetString("IconScale_CurrentTooltip"));
+        }
+
         private void CreateIconScaleSlider()
     {
             try
@@ -210,7 +222,7 @@ Microsoft.UI.Xaml.Controls.ToolTipService.SetToolTip(SettingsButton, Localizatio
            VerticalAlignment = VerticalAlignment.Center,
            Opacity = 0.7
         };
-   Microsoft.UI.Xaml.Controls.ToolTipService.SetToolTip(icon, "Icon Scale");
+   _iconScaleIcon = icon;
 
     // Create Slider
          IconScaleSlider = new Slider
@@ -225,7 +237,7 @@ Microsoft.UI.Xaml.Controls.ToolTipService.SetToolTip(SettingsButton, Localizatio
       TickFrequency = 0.05
           };
   IconScaleSlider.ValueChanged += IconScaleSlider_ValueChanged;
-           Microsoft.UI.Xaml.Controls.ToolTipService.SetToolTip(IconScaleSlider, "Adjust icon scale");
+
 
       // Create scale value TextBlock
               ScaleValueText = new TextBlock
@@ -236,7 +248,7 @@ Microsoft.UI.Xaml.Controls.ToolTipService.SetToolTip(SettingsButton, Localizatio
         Text = $"{UserSettingsClass.GridScale:F2}x",
               MinWidth = 40
           };
-       Microsoft.UI.Xaml.Controls.ToolTipService.SetToolTip(ScaleValueText, "Current scale");
+       UpdateIconScaleTooltips();
 
  // Add controls to container
        IconScaleContainer.Children.Add(icon);
