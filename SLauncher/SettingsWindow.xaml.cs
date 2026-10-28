@@ -20,6 +20,7 @@ namespace SLauncher
   
             // Subscribe to language change event
  LocalizationManager.LanguageChanged += OnLanguageChanged;
+            this.Closed += (sender, args) => LocalizationManager.LanguageChanged -= OnLanguageChanged;
    }
 
    /// <summary>
@@ -56,7 +57,7 @@ namespace SLauncher
 
             // Update the textbox and slider to show correct values
         FullscreenToggleSwitch.IsOn = UserSettingsClass.UseFullscreen;
-        GridAlignComboBox.SelectedItem = UserSettingsClass.GridPosition;
+        // UpdateSettingsWindowUI restores the selection by its stable index.
     
      // Set startup toggle
             StartWithWindowsToggleSwitch.IsOn = UserSettingsClass.StartWithWindows;

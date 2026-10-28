@@ -10,7 +10,7 @@
 [![.NET](https://img.shields.io/badge/.NET-8.0-512BD4)](https://dotnet.microsoft.com/download)
 [![WinUI 3](https://img.shields.io/badge/WinUI-3-0078D4)](https://microsoft.github.io/microsoft-ui-xaml/)
 
-**Languages:** [English](README.md) • [한국어](README.ko-KR.md) • [日本語](README.ja-JP.md)
+**Languages:** [English](README.md) • [한국어](README.ko-KR.md) • [日本語](README.ja-JP.md) • [简体中文](README.zh-CN.md)
 
 [Features](#-features) • [Installation](#-installation) • [Usage](#-usage) • [Building](#-building-from-source)
 
@@ -36,6 +36,7 @@
 - 🇺🇸 **English**
 - 🇰🇷 **한국어** (Korean)
 - 🇯🇵 **日本語** (Japanese)
+- **简体中文** (Simplified Chinese)
 - ⚡ Real-time language switching - No restart required!
 
 ### Modern UI
@@ -170,7 +171,7 @@ Adjust icon size using:
 - **Global Hotkey** - Customize show/hide hotkey
   - Modifiers: Ctrl, Alt, Shift, Ctrl+Shift, Ctrl+Alt
   - Keys: Space, Tab, Enter, Esc, F1-F4
-- **Language** - Select preferred language (English, Korean, Japanese)
+- **Language** - Select preferred language (English, Korean, Japanese, Simplified Chinese)
 
 ### Backup & Restore
 - **Export Settings** - Save your settings, items and tabs to a single `.slauncherbackup` file
@@ -227,7 +228,8 @@ SLauncher/
 │   ├── Strings/  # Localization resources
 │   │   ├── en-US/Resources.resw     # English
 │   │   ├── ko-KR/Resources.resw   # Korean
-│   │   └── ja-JP/Resources.resw# Japanese
+│   │   ├── ja-JP/Resources.resw# Japanese
+│   │   └── zh-CN/Resources.resw# Simplified Chinese
 │   ├── MainWindow*.cs  # Main window (partial classes)
 │   │   ├── MainWindow.xaml.cs  # Main logic
 │   │   ├── MainWindow.UI.cs   # UI management

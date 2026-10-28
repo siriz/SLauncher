@@ -49,11 +49,11 @@
             VerticalAlignment="Stretch">
             <StackPanel Orientation="Vertical">
               <!--  Settings section  -->
-                <TextBlock
+                <TextBlock x:Name="SettingsHeading"
                     FontSize="20"
                     FontWeight="Bold"
                     Text="Settings" />
-                <TextBlock
+                <TextBlock x:Name="SettingsSubheading"
                     Margin="0,5,0,0"
                     FontSize="13"
                     FontStyle="Italic"
@@ -61,7 +61,7 @@
                     Text="Settings are automatically saved once modified." />
 
                 <!--  Fullscreen  -->
-                <wct:SettingsCard
+                <wct:SettingsCard x:Name="FullscreenSettingsCard"
                     Margin="0,10,0,0"
                     Description="Use SLauncher in fullscreen mode."
                     Header="Enable fullscreen">
@@ -75,7 +75,7 @@
                 </wct:SettingsCard>
 
                 <!--  Align GridView  -->
-                <wct:SettingsCard
+                <wct:SettingsCard x:Name="GridAlignmentSettingsCard"
                     Margin="0,5,0,0"
                     Description="Choose how to align the grid where your items are displayed."
                     Header="Grid alignment">
@@ -92,7 +92,7 @@
                 </wct:SettingsCard>
 
                 <!--  Start with Windows (within Settings section) -->
-  <wct:SettingsCard
+  <wct:SettingsCard x:Name="StartupSettingsCard"
  Margin="0,5,0,0"
   Description="Launch SLauncher automatically when Windows starts."
    Header="Start with Windows">
@@ -107,7 +107,7 @@
    </wct:SettingsCard>
 
        <!--  Global Hotkey  -->
-        <wct:SettingsCard
+        <wct:SettingsCard x:Name="HotkeySettingsCard"
       Margin="0,5,0,0"
   Description="Press the hotkey anywhere to show/hide SLauncher. Click to change."
        Header="Global Hotkey">
@@ -123,7 +123,7 @@
            </wct:SettingsCard>
 
         <!--  Language Selection  -->
-        <wct:SettingsCard
+        <wct:SettingsCard x:Name="LanguageSettingsCard"
    Margin="0,5,0,0"
          Description="Select your preferred language. Requires restart to apply."
         Header="Language">
@@ -137,23 +137,24 @@
          <ComboBoxItem Content="English" Tag="en-US" />
   <ComboBoxItem Content="한국어" Tag="ko-KR" />
     <ComboBoxItem Content="日本語" Tag="ja-JP" />
+    <ComboBoxItem Content="简体中文" Tag="zh-CN" />
 </ComboBox>
      </wct:SettingsCard>
 
         <!--  Backup & Restore section  -->
-        <TextBlock
+        <TextBlock x:Name="BackupHeading"
             Margin="0,15,0,0"
             FontSize="20"
             FontWeight="Bold"
             Text="Backup &amp; Restore" />
-        <TextBlock
+        <TextBlock x:Name="BackupSubheading"
             Margin="0,5,0,0"
             FontSize="13"
             FontStyle="Italic"
             Opacity="0.7"
             Text="Settings are stored per-user and don't move with the executable - export them to bring your setup to another PC." />
 
-        <wct:SettingsCard
+        <wct:SettingsCard x:Name="ExportSettingsCard"
             Margin="0,10,0,0"
             Description="Save your settings, items and tabs to a single file."
             Header="Export Settings">
@@ -167,7 +168,7 @@
                 Content="Export..." />
         </wct:SettingsCard>
 
-        <wct:SettingsCard
+        <wct:SettingsCard x:Name="ImportSettingsCard"
             Margin="0,5,0,0"
             Description="Restore settings, items and tabs from an exported file. Requires a restart afterwards."
             Header="Import Settings">
@@ -182,19 +183,19 @@
         </wct:SettingsCard>
 
      <!--  Cache Management section  -->
-    <TextBlock
+    <TextBlock x:Name="CacheHeading"
                      Margin="0,15,0,0"
                     FontSize="20"
                   FontWeight="Bold"
                      Text="Cache Management" />
-                  <TextBlock
+                  <TextBlock x:Name="CacheSubheading"
                  Margin="0,5,0,0"
                    FontSize="13"
             FontStyle="Italic"
             Opacity="0.7"
                      Text="Website icons are cached locally on your PC." />
 
-                   <wct:SettingsCard
+                   <wct:SettingsCard x:Name="FaviconSettingsCard"
       Margin="0,10,0,0"
          Description="Cached favicons are stored in a per-user FaviconCache folder."
         Header="Favicon Cache">
@@ -213,7 +214,7 @@
        </StackPanel>
          </wct:SettingsCard>
 
-        <wct:SettingsCard
+        <wct:SettingsCard x:Name="CacheLocationSettingsCard"
                 Margin="0,5,0,0"
                Description="Cached favicons are stored in a per-user folder, not tied to the executable location."
             Header="Cache Location">
@@ -228,20 +229,20 @@
            VerticalAlignment="Center"
                MaxWidth="250"
      TextTrimming="CharacterEllipsis"/>
-       <Button Content="Open Folder"
+       <Button x:Name="OpenCacheFolderButton" Content="Open Folder"
         Click="OpenCacheFolderButton_Click"
            Width="100"/>
      </StackPanel>
       </wct:SettingsCard>
 
      <!--  About section (moved to bottom)  -->
-    <TextBlock
+    <TextBlock x:Name="AboutHeading"
       Margin="0,15,0,0"
        FontSize="20"
        FontWeight="Bold"
           Text="About" />
 
-      <wct:SettingsExpander
+      <wct:SettingsExpander x:Name="AboutSettingsExpander"
            Margin="0,10,0,0"
           Description="View info about SLauncher."
         Header="About SLauncher"

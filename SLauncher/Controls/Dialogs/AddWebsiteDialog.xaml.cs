@@ -1,3 +1,4 @@
+using SLauncher.Classes;
 using Microsoft.UI.Xaml;
 using Microsoft.UI.Xaml.Controls;
 using System.Diagnostics;
@@ -12,6 +13,10 @@ namespace SLauncher.Controls.Dialogs
         public AddWebsiteDialog()
         {
             this.InitializeComponent();
+            Title = LocalizationManager.GetString("AddWebsiteButton");
+            PrimaryButtonText = LocalizationManager.GetString("AddWebsiteDialog_Confirm");
+            CloseButtonText = LocalizationManager.GetString("ButtonCancel");
+            WebsiteUrlLabel.Text = LocalizationManager.GetString("AddWebsiteDialog_UrlLabel");
         }
 
         /// <summary>

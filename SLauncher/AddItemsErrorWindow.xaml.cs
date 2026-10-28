@@ -29,6 +29,10 @@ namespace SLauncher
         public AddItemsErrorWindow()
         {
             this.InitializeComponent();
+            Title = LocalizationManager.GetString("AddItemsError_Title");
+            AppTitleBar.Title = LocalizationManager.GetString("AddItemsError_Title");
+            ErrorMessageText.Text = LocalizationManager.GetString("AddItemsError_Message");
+            CloseBtn.Content = LocalizationManager.GetString("ButtonOK");
         }
         // Properties
         /// <summary>

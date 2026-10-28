@@ -1,3 +1,4 @@
+using SLauncher.Classes;
 using Microsoft.UI.Xaml;
 using Microsoft.UI.Xaml.Controls;
 using Microsoft.UI.Xaml.Controls.Primitives;
@@ -24,6 +25,7 @@ namespace SLauncher.Controls.Dialogs
         public AddFolderDialogListViewItem()
         {
             this.InitializeComponent();
+            ToolTipService.SetToolTip(RemoveBtn, LocalizationManager.GetString("AddItemsDialog_RemoveTooltip"));
         }
 
         /// <summary>

@@ -99,7 +99,7 @@ namespace SLauncher
                 // Create a new group when a GridViewTile is dropped over a GridViewTile
                 GridViewTileGroup newGridViewTileGroup = new GridViewTileGroup();
       newGridViewTileGroup.Size = UserSettingsClass.GridScale;
-  newGridViewTileGroup.DisplayText = "New group";
+  newGridViewTileGroup.DisplayText = LocalizationManager.GetString("Group_DefaultName");
         newGridViewTileGroup.DragEnter += GridViewTileGroup_DragEnter;
   newGridViewTileGroup.DragLeave += GridViewTileGroup_DragLeave;
          newGridViewTileGroup.Drop += GridViewTileGroup_Drop;
@@ -213,7 +213,7 @@ GridViewTileGroup DraggedOverTileGroup = sender as GridViewTileGroup;
             e.AcceptedOperation = DataPackageOperation.Copy;
             if (e.DragUIOverride != null)
             {
-    e.DragUIOverride.Caption = "Add to SLauncher";
+    e.DragUIOverride.Caption = LocalizationManager.GetString("DragDrop_AddToSLauncher");
  e.DragUIOverride.IsContentVisible = true;
   }
         }
@@ -224,7 +224,7 @@ GridViewTileGroup DraggedOverTileGroup = sender as GridViewTileGroup;
 e.AcceptedOperation = DataPackageOperation.Copy;
  if (e.DragUIOverride != null)
     {
-         e.DragUIOverride.Caption = "Add to SLauncher";
+         e.DragUIOverride.Caption = LocalizationManager.GetString("DragDrop_AddToSLauncher");
            e.DragUIOverride.IsContentVisible = true;
             }
         }

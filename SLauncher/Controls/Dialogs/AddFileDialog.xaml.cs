@@ -21,6 +21,13 @@ namespace SLauncher.Controls.Dialogs
         public AddFileDialog()
         {
             this.InitializeComponent();
+            Title = LocalizationManager.GetString("AddFileDialog_Title");
+            PrimaryButtonText = LocalizationManager.GetString("AddFileDialog_Title");
+            CloseButtonText = LocalizationManager.GetString("ButtonCancel");
+            SelectFileLabel.Text = LocalizationManager.GetString("AddFileDialog_SelectLabel");
+            PickAFileButton.Content = LocalizationManager.GetString("AddFileDialog_OpenButton");
+            FileListHelp.Text = LocalizationManager.GetString("AddFileDialog_ListHelp");
+            PlaceholderListViewItem.Text = LocalizationManager.GetString("AddFileDialog_EmptyList");
         }
 
         /// <summary>

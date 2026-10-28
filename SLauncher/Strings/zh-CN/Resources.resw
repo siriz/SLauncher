@@ -1,0 +1,648 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="AppTitle" xml:space="preserve">
+    <value>SLauncher - Windows 现代应用启动器</value>
+  </data>
+  <data name="TrayTooltip" xml:space="preserve">
+    <value>SLauncher - 双击打开</value>
+  </data>
+  <data name="TrayMenuOpen" xml:space="preserve">
+    <value>打开 SLauncher</value>
+  </data>
+  <data name="TrayMenuExit" xml:space="preserve">
+    <value>退出</value>
+  </data>
+  <data name="SearchPlaceholder" xml:space="preserve">
+    <value>搜索 SLauncher 中的所有项目</value>
+  </data>
+  <data name="AddFileButton" xml:space="preserve">
+    <value>添加文件</value>
+  </data>
+  <data name="AddFolderButton" xml:space="preserve">
+    <value>添加文件夹</value>
+  </data>
+  <data name="AddWebsiteButton" xml:space="preserve">
+    <value>添加网站</value>
+  </data>
+  <data name="EmptyNoticeTitle" xml:space="preserve">
+    <value>这里空空如也。</value>
+  </data>
+  <data name="EmptyNoticeMessage" xml:space="preserve">
+    <value>点击上方按钮添加项目，或直接将项目拖入此窗口。</value>
+  </data>
+  <data name="LoadingMessage" xml:space="preserve">
+    <value>正在加载项目，请稍候…</value>
+  </data>
+  <data name="LoadingWarning" xml:space="preserve">
+    <value>请勿关闭 SLauncher。</value>
+  </data>
+  <data name="DragDropMessage" xml:space="preserve">
+    <value>将项目拖放到此处</value>
+  </data>
+  <data name="TabRename" xml:space="preserve">
+    <value>重命名</value>
+  </data>
+  <data name="TabChangeColor" xml:space="preserve">
+    <value>更改颜色</value>
+  </data>
+  <data name="TabDelete" xml:space="preserve">
+    <value>删除</value>
+  </data>
+  <data name="TabRenameTitle" xml:space="preserve">
+    <value>重命名标签页</value>
+  </data>
+  <data name="TabRenamePlaceholder" xml:space="preserve">
+    <value>输入标签页名称</value>
+  </data>
+  <data name="TabDeleteTitle" xml:space="preserve">
+    <value>确认删除标签页</value>
+  </data>
+  <data name="TabDeleteMessage" xml:space="preserve">
+    <value>确定要删除此标签页吗？</value>
+  </data>
+  <data name="TabDeleteWithItemsMessage" xml:space="preserve">
+    <value>此标签页包含 {0} 个项目。\n删除标签页也会移除其中的所有项目。\n\n确定要继续吗？</value>
+  </data>
+  <data name="TabCannotDeleteTitle" xml:space="preserve">
+    <value>无法删除</value>
+  </data>
+  <data name="TabCannotDeleteMessage" xml:space="preserve">
+    <value>不能删除最后一个标签页。</value>
+  </data>
+  <data name="DefaultTabName" xml:space="preserve">
+    <value>主</value>
+  </data>
+  <data name="NewTabName" xml:space="preserve">
+    <value>新标签页 {0}</value>
+  </data>
+  <data name="ColorDefault" xml:space="preserve">
+    <value>默认</value>
+  </data>
+  <data name="ColorRed" xml:space="preserve">
+    <value>红色</value>
+  </data>
+  <data name="ColorOrange" xml:space="preserve">
+    <value>橙色</value>
+  </data>
+  <data name="ColorYellow" xml:space="preserve">
+    <value>黄色</value>
+  </data>
+  <data name="ColorGreen" xml:space="preserve">
+    <value>绿色</value>
+  </data>
+  <data name="ColorBlue" xml:space="preserve">
+    <value>蓝色</value>
+  </data>
+  <data name="ColorIndigo" xml:space="preserve">
+    <value>靛蓝色</value>
+  </data>
+  <data name="ColorPurple" xml:space="preserve">
+    <value>紫色</value>
+  </data>
+  <data name="ColorPink" xml:space="preserve">
+    <value>粉色</value>
+  </data>
+  <data name="ColorGray" xml:space="preserve">
+    <value>灰色</value>
+  </data>
+  <data name="ButtonOK" xml:space="preserve">
+    <value>确定</value>
+  </data>
+  <data name="ButtonCancel" xml:space="preserve">
+    <value>取消</value>
+  </data>
+  <data name="ButtonDelete" xml:space="preserve">
+    <value>删除</value>
+  </data>
+  <data name="ButtonClose" xml:space="preserve">
+    <value>关闭</value>
+  </data>
+  <data name="SettingsTitle" xml:space="preserve">
+    <value>设置</value>
+  </data>
+  <data name="SettingsSubtitle" xml:space="preserve">
+    <value>更改设置后会自动保存。</value>
+  </data>
+  <data name="SettingsFullscreenHeader" xml:space="preserve">
+    <value>启用全屏</value>
+  </data>
+  <data name="SettingsFullscreenDescription" xml:space="preserve">
+    <value>以全屏模式使用 SLauncher。</value>
+  </data>
+  <data name="SettingsGridAlignmentHeader" xml:space="preserve">
+    <value>网格对齐方式</value>
+  </data>
+  <data name="SettingsGridAlignmentDescription" xml:space="preserve">
+    <value>选择项目显示网格的对齐方式。</value>
+  </data>
+  <data name="SettingsStartWithWindowsHeader" xml:space="preserve">
+    <value>开机启动</value>
+  </data>
+  <data name="SettingsStartWithWindowsDescription" xml:space="preserve">
+    <value>Windows 启动时自动运行 SLauncher。</value>
+  </data>
+  <data name="SettingsGlobalHotkeyHeader" xml:space="preserve">
+    <value>全局快捷键</value>
+  </data>
+  <data name="SettingsGlobalHotkeyDescription" xml:space="preserve">
+    <value>在任意位置按快捷键可显示或隐藏 SLauncher。点击可更改快捷键。</value>
+  </data>
+  <data name="SettingsLanguageHeader" xml:space="preserve">
+    <value>语言</value>
+  </data>
+  <data name="SettingsLanguageDescription" xml:space="preserve">
+    <value>选择首选语言。需要重启才能生效。</value>
+  </data>
+  <data name="HotkeyTooltip" xml:space="preserve">
+    <value>点击更改快捷键</value>
+  </data>
+  <data name="SettingsBackupRestoreTitle" xml:space="preserve">
+    <value>备份与还原</value>
+  </data>
+  <data name="SettingsBackupRestoreSubtitle" xml:space="preserve">
+    <value>设置按用户分别保存，不会随可执行文件迁移。若要在其他电脑上使用，请先导出。</value>
+  </data>
+  <data name="SettingsExportHeader" xml:space="preserve">
+    <value>导出设置</value>
+  </data>
+  <data name="SettingsExportDescription" xml:space="preserve">
+    <value>将设置、项目和标签页保存到一个文件中。</value>
+  </data>
+  <data name="SettingsExportButton" xml:space="preserve">
+    <value>导出…</value>
+  </data>
+  <data name="SettingsImportHeader" xml:space="preserve">
+    <value>导入设置</value>
+  </data>
+  <data name="SettingsImportDescription" xml:space="preserve">
+    <value>从导出的文件中还原设置、项目和标签页。导入后需要重启。</value>
+  </data>
+  <data name="SettingsImportButton" xml:space="preserve">
+    <value>导入…</value>
+  </data>
+  <data name="SettingsCacheManagementTitle" xml:space="preserve">
+    <value>缓存管理</value>
+  </data>
+  <data name="SettingsCacheManagementSubtitle" xml:space="preserve">
+    <value>网站图标会缓存在本机。</value>
+  </data>
+  <data name="SettingsFaviconCacheHeader" xml:space="preserve">
+    <value>网站图标缓存</value>
+  </data>
+  <data name="SettingsFaviconCacheDescription" xml:space="preserve">
+    <value>网站图标缓存保存在 UserCache\FaviconCache\ 文件夹中。</value>
+  </data>
+  <data name="SettingsCacheSizeCalculating" xml:space="preserve">
+    <value>缓存大小：正在计算…</value>
+  </data>
+  <data name="SettingsCacheSizeFormat" xml:space="preserve">
+    <value>缓存大小：{0}</value>
+  </data>
+  <data name="CacheSizeEmpty" xml:space="preserve">
+    <value>空</value>
+  </data>
+  <data name="SettingsClearCacheButton" xml:space="preserve">
+    <value>清除缓存</value>
+  </data>
+  <data name="SettingsCacheLocationHeader" xml:space="preserve">
+    <value>缓存位置</value>
+  </data>
+  <data name="SettingsCacheLocationDescription" xml:space="preserve">
+    <value>网站图标缓存保存在各用户的专用文件夹中，不受可执行文件位置影响。</value>
+  </data>
+  <data name="SettingsOpenFolderButton" xml:space="preserve">
+    <value>打开文件夹</value>
+  </data>
+  <data name="DialogClearCacheTitle" xml:space="preserve">
+    <value>清除缓存</value>
+  </data>
+  <data name="DialogClearCacheContent" xml:space="preserve">
+    <value>确定要清除所有缓存的网站图标吗？需要时会重新下载。</value>
+  </data>
+  <data name="DialogClearCacheConfirm" xml:space="preserve">
+    <value>清除</value>
+  </data>
+  <data name="DialogSuccessTitle" xml:space="preserve">
+    <value>操作成功</value>
+  </data>
+  <data name="DialogCacheCleared" xml:space="preserve">
+    <value>缓存已清除。</value>
+  </data>
+  <data name="DialogExportSuccessContent" xml:space="preserve">
+    <value>设置已导出。</value>
+  </data>
+  <data name="DialogExportErrorTitle" xml:space="preserve">
+    <value>导出失败</value>
+  </data>
+  <data name="DialogImportConfirmTitle" xml:space="preserve">
+    <value>导入设置？</value>
+  </data>
+  <data name="DialogImportConfirmContent" xml:space="preserve">
+    <value>这将覆盖当前的设置、项目和标签页。是否继续？</value>
+  </data>
+  <data name="ButtonImport" xml:space="preserve">
+    <value>导入</value>
+  </data>
+  <data name="DialogImportSuccessTitle" xml:space="preserve">
+    <value>导入成功</value>
+  </data>
+  <data name="DialogImportSuccessContent" xml:space="preserve">
+    <value>设置已导入。请重启 SLauncher 以使更改生效。</value>
+  </data>
+  <data name="DialogImportErrorTitle" xml:space="preserve">
+    <value>导入失败</value>
+  </data>
+  <data name="DialogHotkeyTitle" xml:space="preserve">
+    <value>更改全局快捷键</value>
+  </data>
+  <data name="DialogHotkeySave" xml:space="preserve">
+    <value>保存</value>
+  </data>
+  <data name="DialogRestartTitle" xml:space="preserve">
+    <value>需要重启</value>
+  </data>
+  <data name="DialogRestartContent" xml:space="preserve">
+    <value>请重启 SLauncher 以使快捷键更改生效。</value>
+  </data>
+  <data name="HotkeyModifierLabel" xml:space="preserve">
+    <value>修饰键：</value>
+  </data>
+  <data name="HotkeyKeyLabel" xml:space="preserve">
+    <value>按键：</value>
+  </data>
+  <data name="SettingsAboutTitle" xml:space="preserve">
+    <value>关于</value>
+  </data>
+  <data name="SettingsAboutHeader" xml:space="preserve">
+    <value>关于 SLauncher</value>
+  </data>
+  <data name="SettingsAboutDescription" xml:space="preserve">
+    <value>查看 SLauncher 的相关信息。</value>
+  </data>
+  <data name="AboutSubtitle" xml:space="preserve">
+    <value>支持多语言的 LauncherX 分支</value>
+  </data>
+  <data name="AboutVersion" xml:space="preserve">
+    <value>版本：</value>
+  </data>
+  <data name="AboutForkBy" xml:space="preserve">
+    <value>分支作者：</value>
+  </data>
+  <data name="AboutBasedOn" xml:space="preserve">
+    <value>基于：</value>
+  </data>
+  <data name="AboutGitHub" xml:space="preserve">
+    <value>GitHub：</value>
+  </data>
+  <data name="AboutLicense" xml:space="preserve">
+    <value>许可证：</value>
+  </data>
+  <data name="AboutViewLicense" xml:space="preserve">
+    <value>查看 MIT 许可证</value>
+  </data>
+  <data name="ToggleSwitchOn" xml:space="preserve">
+    <value>是</value>
+  </data>
+  <data name="ToggleSwitchOff" xml:space="preserve">
+    <value>否</value>
+  </data>
+  <data name="GridAlignmentLeft" xml:space="preserve">
+    <value>左对齐</value>
+  </data>
+  <data name="GridAlignmentCenter" xml:space="preserve">
+    <value>居中</value>
+  </data>
+  <data name="SettingsLanguage" xml:space="preserve">
+    <value>语言</value>
+  </data>
+  <data name="SettingsRestartRequired" xml:space="preserve">
+    <value>需要重启才能使语言更改生效</value>
+  </data>
+  <data name="TooltipSettings" xml:space="preserve">
+    <value>设置</value>
+  </data>
+  <data name="TooltipClose" xml:space="preserve">
+    <value>关闭 SLauncher</value>
+  </data>
+  <data name="LoadingTitle" xml:space="preserve">
+    <value>正在加载项目，请稍候…</value>
+  </data>
+  <data name="LoadingSubtitle" xml:space="preserve">
+    <value>请勿关闭 SLauncher。</value>
+  </data>
+  <data name="ContextMenu_OpenFile" xml:space="preserve">
+  <value>打开文件</value>
+</data>
+<data name="ContextMenu_OpenFileLocation" xml:space="preserve">
+  <value>打开文件所在位置</value>
+</data>
+<data name="ContextMenu_RemoveFileFromGroup" xml:space="preserve">
+  <value>从分组中移除文件</value>
+</data>
+<data name="ContextMenu_RemoveFileFromSLauncher" xml:space="preserve">
+  <value>从 SLauncher 中移除文件</value>
+</data>
+<data name="ContextMenu_OpenFolder" xml:space="preserve">
+<value>打开文件夹</value>
+</data>
+<data name="ContextMenu_OpenFolderLocation" xml:space="preserve">
+  <value>打开文件夹所在位置</value>
+</data>
+<data name="ContextMenu_RemoveFolderFromGroup" xml:space="preserve">
+  <value>从分组中移除文件夹</value>
+</data>
+<data name="ContextMenu_RemoveFolderFromSLauncher" xml:space="preserve">
+  <value>从 SLauncher 中移除文件夹</value>
+</data>
+<data name="ContextMenu_OpenWebsite" xml:space="preserve">
+  <value>打开网站</value>
+</data>
+<data name="ContextMenu_RemoveWebsiteFromGroup" xml:space="preserve">
+  <value>从分组中移除网站</value>
+</data>
+<data name="ContextMenu_RemoveWebsiteFromSLauncher" xml:space="preserve">
+  <value>从 SLauncher 中移除网站</value>
+</data>
+<data name="ContextMenu_RunAsAdmin" xml:space="preserve">
+  <value>尝试以管理员身份运行</value>
+</data>
+<data name="ContextMenu_EditItem" xml:space="preserve">
+  <value>编辑项目</value>
+</data>
+<data name="EditItem_WindowTitle" xml:space="preserve">
+  <value>编辑项目</value>
+</data>
+<data name="EditItem_EditIconButton" xml:space="preserve">
+  <value>编辑图标</value>
+</data>
+<data name="EditItem_ResetIconButton" xml:space="preserve">
+  <value>重置图标</value>
+</data>
+<data name="EditItem_DisplayText" xml:space="preserve">
+  <value>显示文本：</value>
+</data>
+<data name="EditItem_DisplayTextTooltip" xml:space="preserve">
+  <value>项目在 SLauncher 中显示的文本。更改此文本不会影响点击项目时启动的内容。</value>
+</data>
+<data name="EditItem_Link" xml:space="preserve">
+  <value>链接：</value>
+</data>
+<data name="EditItem_LinkTooltip" xml:space="preserve">
+  <value>实际启动的路径或 URL，通常与显示文本相同。</value>
+</data>
+<data name="EditItem_LaunchArgs" xml:space="preserve">
+  <value>启动参数：</value>
+</data>
+<data name="EditItem_CloseButton" xml:space="preserve">
+  <value>关闭</value>
+</data>
+<data name="EditItem_SaveButton" xml:space="preserve">
+  <value>保存并关闭</value>
+</data>
+  <data name="AddFileDialog_SelectLabel" xml:space="preserve">
+    <value>选择要添加的文件： </value>
+  </data>
+  <data name="AddFileDialog_OpenButton" xml:space="preserve">
+    <value>打开文件</value>
+  </data>
+  <data name="AddFileDialog_ListHelp" xml:space="preserve">
+    <value>所选文件将显示在下方列表中。添加后可以重新排列文件。</value>
+  </data>
+  <data name="AddFileDialog_EmptyList" xml:space="preserve">
+    <value>未选择文件</value>
+  </data>
+  <data name="AddFolderDialog_SelectLabel" xml:space="preserve">
+    <value>选择要添加的文件夹： </value>
+  </data>
+  <data name="AddFolderDialog_OpenButton" xml:space="preserve">
+    <value>打开文件夹</value>
+  </data>
+  <data name="AddFolderDialog_ListHelp" xml:space="preserve">
+    <value>所选文件夹将显示在下方列表中。添加后可以重新排列文件夹。</value>
+  </data>
+  <data name="AddFolderDialog_EmptyList" xml:space="preserve">
+    <value>未选择文件夹</value>
+  </data>
+  <data name="AddWebsiteDialog_UrlLabel" xml:space="preserve">
+    <value>在下方输入网站 URL：</value>
+  </data>
+  <data name="AddItemsDialog_RemoveTooltip" xml:space="preserve">
+    <value>从 SLauncher 中移除</value>
+  </data>
+  <data name="LaunchArgumentsOptionalPlaceholder" xml:space="preserve">
+    <value>启动参数（可选）</value>
+  </data>
+  <data name="EditItem_PathOrUrlPlaceholder" xml:space="preserve">
+    <value>路径或 URL</value>
+  </data>
+  <data name="Group_CreateIndicator" xml:space="preserve">
+    <value>新建分组</value>
+  </data>
+  <data name="Group_AddItemIndicator" xml:space="preserve">
+    <value>将项目添加到分组</value>
+  </data>
+  <data name="Group_NameLabel" xml:space="preserve">
+    <value>分组名称：</value>
+  </data>
+  <data name="Group_RemoveFromSLauncher" xml:space="preserve">
+    <value>从 SLauncher 中移除分组</value>
+  </data>
+  <data name="LinkedFolder_UnlinkParent" xml:space="preserve">
+    <value>从 SLauncher 中取消链接父文件夹</value>
+  </data>
+  <data name="AddItemsError_Title" xml:space="preserve">
+    <value>添加项目时出错</value>
+  </data>
+  <data name="AddItemsError_Message" xml:space="preserve">
+    <value>以下项目无法加载到 SLauncher。文件或文件夹可能已被移动或删除。请确认它们位于正确的位置，然后重新添加文件或文件夹。</value>
+  </data>
+  <data name="DragDrop_AddToSLauncher" xml:space="preserve">
+    <value>添加到 SLauncher</value>
+  </data>
+  <data name="Group_DefaultName" xml:space="preserve">
+    <value>新分组</value>
+  </data>
+  <data name="IconScale_Tooltip" xml:space="preserve">
+    <value>图标缩放</value>
+  </data>
+  <data name="IconScale_AdjustTooltip" xml:space="preserve">
+    <value>调整图标缩放比例</value>
+  </data>
+  <data name="IconScale_CurrentTooltip" xml:space="preserve">
+    <value>当前缩放比例</value>
+  </data>
+  <data name="Error" xml:space="preserve">
+    <value>错误</value>
+  </data>
+  <data name="PathNotFound" xml:space="preserve">
+    <value>路径不存在</value>
+  </data>
+  <data name="Search_OpenUrlError" xml:space="preserve">
+    <value>无法打开 URL：\n{query}\n\n错误：{ex.Message}</value>
+  </data>
+  <data name="Search_OpenPathError" xml:space="preserve">
+    <value>无法打开：\n{query}\n\n错误：{ex.Message}</value>
+  </data>
+  <data name="Search_PathNotFoundMessage" xml:space="preserve">
+    <value>指定的路径不存在：\n{query}\n\n请检查路径后重试。</value>
+  </data>
+  <data name="Item_RunErrorTitle" xml:space="preserve">
+    <value>运行项目时出错</value>
+  </data>
+  <data name="Item_RunErrorMessage" xml:space="preserve">
+    <value>如果你正尝试以管理员身份运行此项目，请先确认该项目支持以管理员身份运行。最后，请检查文件或文件夹是否已被移动或删除。</value>
+  </data>
+  <data name="Item_OpenLocationErrorTitle" xml:space="preserve">
+    <value>打开位置时出错</value>
+  </data>
+  <data name="Item_OpenLocationErrorMessage" xml:space="preserve">
+    <value>无法打开磁盘上的位置。请检查文件或文件夹是否已被移动或删除，或稍后重试。</value>
+  </data>
+  <data name="EditIcon_FileFilter" xml:space="preserve">
+    <value>图像文件|*.jpg;*.jpeg;*.png;*.tif;*.tiff;*.bmp;*.ico</value>
+  </data>
+  <data name="Backup_ExportFileFilter" xml:space="preserve">
+    <value>SLauncher 设置 (*.slauncherbackup)|*.slauncherbackup</value>
+  </data>
+  <data name="Backup_ImportFileFilter" xml:space="preserve">
+    <value>SLauncher 设置 (*.slauncherbackup)|*.slauncherbackup|所有文件 (*.*)|*.*</value>
+  </data>
+  <data name="Backup_InvalidFileMessage" xml:space="preserve">
+    <value>此文件不是有效的 SLauncher 设置导出文件。</value>
+  </data>
+  <data name="LinkedFolder_MissingSuffix" xml:space="preserve">
+    <value> (链接的文件夹)</value>
+  </data>
+  <data name="Legacy_DefaultTabName" xml:space="preserve">
+    <value>新标签页</value>
+  </data>
+  <data name="Legacy_NullTabNameFallback" xml:space="preserve">
+    <value>标签页 {tabIndex + 1}</value>
+  </data>
+  <data name="AddFileDialog_Title" xml:space="preserve">
+    <value>添加文件</value>
+  </data>
+  <data name="AddFolderDialog_Title" xml:space="preserve">
+    <value>添加文件夹</value>
+  </data>
+  <data name="AddWebsiteDialog_Confirm" xml:space="preserve">
+    <value>添加网站</value>
+  </data>
+</root>

@@ -24,11 +24,24 @@ namespace SLauncher.Controls
         {
             this.InitializeComponent();
             this.Loaded += AboutSectionControl_Loaded;
+            this.Unloaded += AboutSectionControl_Unloaded;
         }
 
         private void AboutSectionControl_Loaded(object sender, RoutedEventArgs e)
         {
+            LocalizationManager.LanguageChanged -= AboutSectionControl_LanguageChanged;
+            LocalizationManager.LanguageChanged += AboutSectionControl_LanguageChanged;
             LoadLocalizedStrings();
+        }
+
+        private void AboutSectionControl_Unloaded(object sender, RoutedEventArgs e)
+        {
+            LocalizationManager.LanguageChanged -= AboutSectionControl_LanguageChanged;
+        }
+
+        private void AboutSectionControl_LanguageChanged(object sender, EventArgs e)
+        {
+            DispatcherQueue.TryEnqueue(LoadLocalizedStrings);
         }
 
         private void LoadLocalizedStrings()

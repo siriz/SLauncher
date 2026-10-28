@@ -25,7 +25,7 @@
             Margin="0,0,0,0"
             VerticalAlignment="Top"
             Orientation="Horizontal">
-            <TextBlock
+            <TextBlock x:Name="SelectFileLabel"
                 Padding="0,5,0,0"
                 FontWeight="Bold"
                 Text="Select file(s) to add: "
@@ -42,7 +42,7 @@
                 IsActive="False" />
         </StackPanel>
 
-        <TextBlock Text="Files selected will show up in the list below. You can reorder your files after adding them." TextWrapping="WrapWholeWords" />
+        <TextBlock x:Name="FileListHelp" Text="Files selected will show up in the list below. You can reorder your files after adding them." TextWrapping="WrapWholeWords" />
         <ListView
             x:Name="SelectedFilesListView"
             Height="200"

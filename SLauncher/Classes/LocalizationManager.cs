@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Globalization;
 using System.IO;
 using System.Linq;
+using System.Text.RegularExpressions;
 using System.Xml.Linq;
 using Windows.Globalization;
 
@@ -95,7 +96,7 @@ namespace SLauncher.Classes
         /// </summary>
         private static bool IsSupportedLanguage(string languageCode)
         {
-            var supported = new[] { "en-US", "ko-KR", "ja-JP" };
+            var supported = new[] { "en-US", "ko-KR", "ja-JP", "zh-CN" };
             return Array.Exists(supported, lang => lang.Equals(languageCode, StringComparison.OrdinalIgnoreCase));
         }
 
@@ -107,67 +108,55 @@ namespace SLauncher.Classes
             try
             {
                 _currentResources.Clear();
-
-                string resourceFile = Path.Combine(_resourceBasePath, languageCode, "Resources.resw");
-
-                System.Diagnostics.Debug.WriteLine($"[LocalizationManager] Attempting to load: {resourceFile}");
-                System.Diagnostics.Debug.WriteLine($"[LocalizationManager] Base path exists: {Directory.Exists(_resourceBasePath)}");
-
-                if (!File.Exists(resourceFile))
+                // Load English first so untranslated keys in other languages have a readable fallback.
+                LoadResourceEntries("en-US");
+                if (!languageCode.Equals("en-US", StringComparison.OrdinalIgnoreCase))
                 {
-                    System.Diagnostics.Debug.WriteLine($"[LocalizationManager] Resource file not found: {resourceFile}");
-
-                    // List available language folders
-                    if (Directory.Exists(_resourceBasePath))
-                    {
-                        var folders = Directory.GetDirectories(_resourceBasePath);
-                        System.Diagnostics.Debug.WriteLine($"[LocalizationManager] Available language folders: {string.Join(", ", folders.Select(Path.GetFileName))}");
-                    }
-
-                    // Try fallback to English
-                    resourceFile = Path.Combine(_resourceBasePath, "en-US", "Resources.resw");
-                    System.Diagnostics.Debug.WriteLine($"[LocalizationManager] Trying fallback: {resourceFile}");
-                }
-
-                if (File.Exists(resourceFile))
-                {
-                    System.Diagnostics.Debug.WriteLine($"[LocalizationManager] Loading resource file: {resourceFile}");
-
-                    // Read with explicit UTF-8 encoding
-                    string xmlContent = File.ReadAllText(resourceFile, System.Text.Encoding.UTF8);
-                    XDocument doc = XDocument.Parse(xmlContent);
-                    var dataElements = doc.Descendants("data");
-
-                    int loadedCount = 0;
-                    foreach (var element in dataElements)
-                    {
-                        string name = element.Attribute("name")?.Value;
-                        string value = element.Element("value")?.Value;
-
-                        if (!string.IsNullOrEmpty(name) && value != null)
-                        {
-                            _currentResources[name] = value;
-                            loadedCount++;
-
-                            // Debug first few entries
-                            if (loadedCount <= 5)
-                            {
-                                System.Diagnostics.Debug.WriteLine($"[LocalizationManager] Loaded: {name} = {value}");
-                            }
-                        }
-                    }
-
-                    System.Diagnostics.Debug.WriteLine($"[LocalizationManager] Successfully loaded {_currentResources.Count} resources from {languageCode}");
-                }
-                else
-                {
-                    System.Diagnostics.Debug.WriteLine($"[LocalizationManager] ERROR: Resource file not found at {resourceFile}");
+                    LoadResourceEntries(languageCode);
                 }
             }
             catch (Exception ex)
             {
                 System.Diagnostics.Debug.WriteLine($"[LocalizationManager] ERROR loading resource file: {ex.Message}\n{ex.StackTrace}");
             }
+        }
+
+        private static void LoadResourceEntries(string languageCode)
+        {
+            string resourceFile = Path.Combine(_resourceBasePath, languageCode, "Resources.resw");
+            if (!File.Exists(resourceFile))
+            {
+                System.Diagnostics.Debug.WriteLine($"[LocalizationManager] Resource file not found: {resourceFile}");
+                return;
+            }
+
+            string xmlContent = File.ReadAllText(resourceFile, System.Text.Encoding.UTF8);
+            XDocument doc = XDocument.Parse(xmlContent);
+            foreach (var element in doc.Descendants("data"))
+            {
+                string name = element.Attribute("name")?.Value;
+                string value = element.Element("value")?.Value;
+                if (!string.IsNullOrEmpty(name) && value != null)
+                {
+                    _currentResources[name] = value;
+                }
+            }
+        }
+
+        // These templates originate in C# interpolated strings. Keep their named tokens and
+        // literal \\n in the resource files, but reproduce the original C# display behavior.
+        public static string FormatSearchMessage(string key, string query, string error = null)
+        {
+            return Regex.Replace(GetString(key), @"\\n|\{query\}|\{ex\.Message\}", match =>
+            {
+                switch (match.Value)
+                {
+                    case @"\n": return "\n";
+                    case "{query}": return query ?? string.Empty;
+                    case "{ex.Message}": return error ?? string.Empty;
+                    default: return match.Value;
+                }
+            });
         }
 
         /// <summary>
@@ -251,7 +240,8 @@ namespace SLauncher.Classes
             {
                 ("en-US", "English"),
                 ("ko-KR", "한국어"),
-                ("ja-JP", "日本語")
+                ("ja-JP", "日本語"),
+                ("zh-CN", "简体中文")
             };
         }
 

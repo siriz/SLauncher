@@ -62,6 +62,9 @@ namespace SLauncher.Controls.GridViewItems
             CloseBtn.Content = LocalizationManager.GetString("EditItem_CloseButton");
             SaveBtn.Content = LocalizationManager.GetString("EditItem_SaveButton");
 
+            EditLinkTextBox.PlaceholderText = LocalizationManager.GetString("EditItem_PathOrUrlPlaceholder");
+            EditLaunchArgsTextBox.PlaceholderText = LocalizationManager.GetString("LaunchArgumentsOptionalPlaceholder");
+
             // Labels - will be set in GridViewTile.xaml.cs when opening the window
             // But we can set default text here
             // Note: GridViewTile.xaml.cs will override these

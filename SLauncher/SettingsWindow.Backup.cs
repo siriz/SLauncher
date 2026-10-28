@@ -17,7 +17,7 @@ namespace SLauncher
         {
             var saveFileDialog = new System.Windows.Forms.SaveFileDialog
             {
-                Filter = "SLauncher Settings (*.slauncherbackup)|*.slauncherbackup",
+                Filter = LocalizationManager.GetString("Backup_ExportFileFilter"),
                 FileName = $"SLauncher-Settings-{DateTime.Now:yyyy-MM-dd}.slauncherbackup"
             };
 
@@ -59,7 +59,7 @@ namespace SLauncher
         {
             var openFileDialog = new System.Windows.Forms.OpenFileDialog
             {
-                Filter = "SLauncher Settings (*.slauncherbackup)|*.slauncherbackup|All files (*.*)|*.*"
+                Filter = LocalizationManager.GetString("Backup_ImportFileFilter")
             };
 
             if (openFileDialog.ShowDialog() != System.Windows.Forms.DialogResult.OK)
