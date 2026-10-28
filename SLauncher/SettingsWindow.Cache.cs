@@ -27,7 +27,9 @@ namespace SLauncher
     CacheSizeTextBlock.Text = string.Format(LocalizationManager.GetString("SettingsCacheSizeFormat"), sizeText);
 
         // Update cache location
-            CacheLocationTextBlock.Text = IconHelpers.GetFaviconCacheDirectory();
+            string cacheDirectory = IconHelpers.GetFaviconCacheDirectory();
+            CacheLocationTextBlock.Text = cacheDirectory;
+            ToolTipService.SetToolTip(CacheLocationTextBlock, cacheDirectory);
         }
 
         /// <summary>
