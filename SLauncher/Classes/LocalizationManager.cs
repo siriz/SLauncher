@@ -201,7 +201,7 @@ namespace SLauncher.Classes
         {
             try
             {
-                string format = GetString(key);
+                string format = GetString(key).Replace(@"\n", "\n");
                 return string.Format(format, args);
             }
             catch (Exception ex)
